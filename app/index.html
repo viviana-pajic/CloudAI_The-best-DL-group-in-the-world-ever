@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CloudAI | Mushroom baseline</title>
+  <style>
+    :root { --ink:#193d2d; --muted:#63766a; --line:#d7e0d5; --green:#285c40; --paper:#f5f6ef; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.55 system-ui,sans-serif; }
+    .shell { max-width:1140px; margin:auto; padding:28px 28px 36px; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding-bottom:25px; border-bottom:1px solid var(--line); }
+    .brand { font-size:21px; font-weight:750; letter-spacing:-.7px; }
+    .brand span { color:#5c8266; }
+    .pill { font-size:12px; font-weight:650; border:1px solid #c7d8c7; border-radius:30px; padding:6px 12px; }
+    header { display:grid; grid-template-columns:1.6fr 1fr; align-items:end; gap:40px; margin:38px 0 28px; }
+    .eyebrow { color:var(--muted); letter-spacing:2px; font-size:11px; font-weight:700; text-transform:uppercase; }
+    h1 { font-size:clamp(30px,4vw,44px); letter-spacing:-1.8px; line-height:1.12; margin:9px 0 15px; font-weight:650; }
+    header p { max-width:560px; margin:0; color:var(--muted); }
+    .facts { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .fact { border-left:2px solid #b5c8b4; padding-left:16px; }
+    .fact strong { display:block; font-size:28px; letter-spacing:-1px; font-weight:650; }
+    .fact span { font-size:12px; color:var(--muted); }
+    main { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(290px,1fr); gap:22px; align-items:start; }
+    .panel { background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px; }
+    .panel-title { display:flex; justify-content:space-between; gap:12px; align-items:center; margin-bottom:7px; }
+    h2 { font-size:20px; letter-spacing:-.5px; font-weight:650; margin:0; }
+    .helper { color:var(--muted); font-size:13px; margin:0 0 23px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 24px; }
+    button { cursor:pointer; font:inherit; border-radius:8px; padding:10px 17px; }
+    button:disabled { opacity:.55; cursor:wait; }
+    .secondary { background:#fff; color:var(--green); border:1px solid var(--line); font-size:13px; padding:7px 12px; }
+    fieldset { border:0; padding:0; margin:0 0 22px; min-width:0; }
+    legend { color:var(--muted); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; padding:0 0 12px; }
+    .fields { display:grid; grid-template-columns:1fr 1fr; gap:15px 16px; }
+    label { display:block; font-size:13px; font-weight:550; }
+    input,select { display:block; width:100%; margin-top:6px; border:1px solid var(--line); border-radius:7px; background:#fbfcf9; color:var(--ink); padding:10px 11px; font:14px system-ui; min-height:41px; }
+    input:focus,select:focus { outline:2px solid #8da98e; outline-offset:2px; }
+    .primary { width:100%; background:var(--green); color:#fff; border:0; font-weight:600; }
+    .results { background:#e9f0e5; border-color:#cbdcc7; }
+    #prediction { display:block; font-size:30px; font-weight:650; letter-spacing:-1px; line-height:1.2; margin:14px 0 9px; }
+    #result-note { color:var(--muted); font-size:13px; margin:0 0 26px; }
+    .score-label { display:flex; justify-content:space-between; gap:10px; font-size:12px; }
+    #score { font-weight:750; }
+    .track { height:9px; border-radius:20px; background:#d0ddcb; margin:10px 0; overflow:hidden; }
+    #score-bar { height:100%; width:0; background:var(--green); border-radius:20px; transition:width .3s; }
+    .small { color:var(--muted); font-size:12px; }
+    .divider { border:0; border-top:1px solid #cbdac5; margin:23px 0; }
+    .steps { list-style:none; padding:0; margin:15px 0 0; }
+    .steps li { display:flex; align-items:start; gap:11px; margin:13px 0; font-size:13px; }
+    .step-number { display:inline-grid; place-items:center; flex:0 0 23px; width:23px; height:23px; border:1px solid #b6cab0; border-radius:50%; font-size:11px; font-weight:700; }
+    .notice { margin-top:20px; padding:16px; background:#f7f3e7; border:1px solid #e4d9b9; border-radius:10px; font-size:12px; color:#706039; }
+    footer { display:flex; justify-content:space-between; gap:20px; margin-top:30px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }
+    @media(max-width:780px) { header,main { grid-template-columns:1fr; } header { gap:24px; } .shell { padding:22px 18px; } .panel { padding:21px; } footer { flex-direction:column; gap:7px; } }
+    @media(max-width:420px) { .fields { grid-template-columns:1fr; } .panel-title { align-items:start; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav><div class="brand">Cloud<span>AI</span></div><span class="pill" id="status">Loading baseline</span></nav>
+    <header>
+      <div><div class="eyebrow">Going green / First experiment</div><h1>Explore the mushroom<br>classification baseline.</h1><p>Enter features from the coursework dataset and see how the saved random forest responds. Unknown values can stay blank.</p></div>
+      <div class="facts"><div class="fact"><strong id="accuracy">—</strong><span>Validation accuracy</span></div><div class="fact"><strong id="recall">—</strong><span>Poisonous-class recall</span></div></div>
+    </header>
+    <main>
+      <section class="panel">
+        <div class="panel-title"><h2>Dataset features</h2><span class="small" id="feature-count"></span></div>
+        <p class="helper">Use the dataset's values and category codes. Blank fields use the saved missing-value preprocessing.</p>
+        <div class="actions"><button class="secondary" id="example" disabled>Fill training example</button><button class="secondary" id="clear" disabled>Clear inputs</button></div>
+        <form id="inputs">
+          <fieldset><legend>Measurements</legend><div class="fields" id="numbers"></div></fieldset>
+          <fieldset><legend>Categories</legend><div class="fields" id="categories"></div></fieldset>
+          <button class="primary" id="submit" type="submit" disabled>Run prediction</button>
+        </form>
+      </section>
+      <aside>
+        <section class="panel results" aria-live="polite">
+          <div class="eyebrow">Model response</div>
+          <output id="prediction">Ready to explore</output>
+          <p id="result-note">Fill a training example or enter your own dataset values, then run a prediction.</p>
+          <div class="score-label"><span>Score for poisonous / unsafe</span><span id="score">—</span></div>
+          <div class="track"><div id="score-bar"></div></div>
+          <div class="small">Decision threshold: <span id="threshold">0.50</span>. The score is not calibrated confidence.</div>
+          <hr class="divider">
+          <h2>One consistent pipeline</h2>
+          <ol class="steps"><li><span class="step-number">1</span><span>Prepare missing values and categorical inputs.</span></li><li><span class="step-number">2</span><span>Apply the forest trained on 3,000 examples.</span></li><li><span class="step-number">3</span><span>Return the dataset label and model score.</span></li></ol>
+          <div class="notice"><strong>Classroom experiment only.</strong><br>The data is hypothetical and noisy. This model cannot determine whether a real mushroom is edible.</div>
+        </section>
+        <p class="small" style="padding:0 8px">The final test set is reserved. Tuning, cloud training and hosting remain project tasks.</p>
+      </aside>
+    </main>
+    <footer><span>The best DL group in the world ever</span><span>Viviana Pajic · Tomislav Novosel · Muneeb Shakoor</span></footer>
+  </div>
+  <script>
+    const form = document.querySelector('#inputs');
+    const submit = document.querySelector('#submit');
+    const example = document.querySelector('#example');
+    const clear = document.querySelector('#clear');
+    const prediction = document.querySelector('#prediction');
+    const note = document.querySelector('#result-note');
+    let schema;
+
+    async function getJSON(url) {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Could not load the saved model information.');
+      return response.json();
+    }
+
+    Promise.all([getJSON('/schema'), getJSON('/model-info')]).then(([fields, info]) => {
+      schema = fields;
+      for (const [name, specification] of Object.entries(schema)) {
+        const label = document.createElement('label');
+        label.textContent = name.replace(/[-_]/g, ' ').replace(/^./, character => character.toUpperCase());
+        const input = document.createElement(specification.type === 'number' ? 'input' : 'select');
+        input.name = name;
+        if (specification.type === 'number') {
+          input.type = 'number'; input.step = 'any'; input.min = '0'; input.placeholder = 'Unknown';
+          label.append(input); document.querySelector('#numbers').append(label);
+        } else {
+          for (const value of ['', ...specification.values]) {
+            const option = document.createElement('option');
+            option.value = value; option.textContent = value || 'Unknown'; input.append(option);
+          }
+          label.append(input); document.querySelector('#categories').append(label);
+        }
+      }
+      document.querySelector('#accuracy').textContent = (100 * info.metrics.accuracy).toFixed(1) + '%';
+      document.querySelector('#recall').textContent = (100 * info.metrics.poison_recall).toFixed(1) + '%';
+      document.querySelector('#threshold').textContent = info.threshold.toFixed(2);
+      document.querySelector('#feature-count').textContent = Object.keys(schema).length + ' inputs';
+      document.querySelector('#status').textContent = 'Local baseline ready';
+      submit.disabled = example.disabled = clear.disabled = false;
+    }).catch(error => {
+      document.querySelector('#status').textContent = 'Model unavailable';
+      prediction.textContent = 'Could not load baseline'; note.textContent = error.message;
+    });
+
+    example.addEventListener('click', () => {
+      for (const [name, specification] of Object.entries(schema)) {
+        form.elements.namedItem(name).value = specification.example ?? '';
+      }
+    });
+    clear.addEventListener('click', () => form.reset());
+    form.addEventListener('submit', async event => {
+      event.preventDefault(); submit.disabled = true; submit.textContent = 'Predicting…';
+      try {
+        const response = await fetch('/predict', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error);
+        prediction.textContent = result.prediction === 'p' ? 'Poisonous / unsafe' : 'Edible dataset label';
+        note.textContent = 'Predicted label: ' + result.prediction + '. This is a dataset classification, not an edibility assessment.';
+        document.querySelector('#score').textContent = (100 * result.poison_probability).toFixed(1) + '%';
+        document.querySelector('#score-bar').style.width = (100 * result.poison_probability) + '%';
+      } catch (error) {
+        prediction.textContent = 'Check the inputs'; note.textContent = error.message;
+        document.querySelector('#score').textContent = '—'; document.querySelector('#score-bar').style.width = '0';
+      } finally {
+        submit.disabled = false; submit.textContent = 'Run prediction';
+      }
+    });
+  </script>
+</body>
+</html>

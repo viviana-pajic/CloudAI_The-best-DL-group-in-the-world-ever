@@ -1,0 +1,17 @@
+.venv/
+.venv-pycaret/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+data/
+models/
+reports/*
+!reports/mushroom_validation_metrics.csv
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+{
+  "dataset_commit": "98938790e7dadb00c64eadda1ee9a05961286888",
+  "source": "https://raw.githubusercontent.com/mjochen/CloudAI/98938790e7dadb00c64eadda1ee9a05961286888/Discussion%20topics/mushroom_project_dataset.csv",
+  "sha256": "1f1a25f2f330458ed95ce9f6ffe3241582312a42cb21797a2b7bd5e5ad281114",
+  "verified_date": "2026-10-05",
+  "matches_current_course_file": true,
+  "dataset_rule": "Use only the teacher's replacement mushroom project CSV."
+}
