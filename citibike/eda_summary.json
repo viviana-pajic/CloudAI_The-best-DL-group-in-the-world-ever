@@ -1,0 +1,127 @@
+{
+  "exploration_start": "2023-01-01",
+  "exploration_end": "2023-09-30",
+  "days": 273,
+  "mean_daily_rides": 96559.65201465202,
+  "lowest_date": "2023-04-29",
+  "lowest_count": 17757,
+  "highest_date": "2023-09-14",
+  "highest_count": 156602,
+  "lag_1_autocorrelation": 0.7764217167031261,
+  "lag_7_autocorrelation": 0.6926304974416889,
+  "iqr_flagged_days": 0,
+  "monthly": [
+    {
+      "month": 1,
+      "days": 31,
+      "total": 1795329,
+      "mean_per_day": 57913.83870967742
+    },
+    {
+      "month": 2,
+      "days": 28,
+      "total": 1696101,
+      "mean_per_day": 60575.03571428572
+    },
+    {
+      "month": 3,
+      "days": 31,
+      "total": 2119314,
+      "mean_per_day": 68364.96774193548
+    },
+    {
+      "month": 4,
+      "days": 30,
+      "total": 2749360,
+      "mean_per_day": 91645.33333333333
+    },
+    {
+      "month": 5,
+      "days": 31,
+      "total": 3453576,
+      "mean_per_day": 111405.67741935483
+    },
+    {
+      "month": 6,
+      "days": 30,
+      "total": 3451869,
+      "mean_per_day": 115062.3
+    },
+    {
+      "month": 7,
+      "days": 31,
+      "total": 3659372,
+      "mean_per_day": 118044.25806451614
+    },
+    {
+      "month": 8,
+      "days": 31,
+      "total": 3964206,
+      "mean_per_day": 127877.6129032258
+    },
+    {
+      "month": 9,
+      "days": 30,
+      "total": 3471658,
+      "mean_per_day": 115721.93333333333
+    }
+  ],
+  "weekday": [
+    {
+      "weekday": 0,
+      "days": 39,
+      "mean": 90331.28205128205,
+      "median": 97169.0,
+      "std": 28213.358359909394,
+      "name": "Monday"
+    },
+    {
+      "weekday": 1,
+      "days": 39,
+      "mean": 101053.51282051283,
+      "median": 105667.0,
+      "std": 32215.079302508897,
+      "name": "Tuesday"
+    },
+    {
+      "weekday": 2,
+      "days": 39,
+      "mean": 107029.05128205128,
+      "median": 115683.0,
+      "std": 30848.11919196229,
+      "name": "Wednesday"
+    },
+    {
+      "weekday": 3,
+      "days": 39,
+      "mean": 104289.8717948718,
+      "median": 107534.0,
+      "std": 30855.406524609596,
+      "name": "Thursday"
+    },
+    {
+      "weekday": 4,
+      "days": 39,
+      "mean": 99119.02564102564,
+      "median": 107756.0,
+      "std": 29736.79639285059,
+      "name": "Friday"
+    },
+    {
+      "weekday": 5,
+      "days": 39,
+      "mean": 90210.35897435897,
+      "median": 106001.0,
+      "std": 37584.04945094267,
+      "name": "Saturday"
+    },
+    {
+      "weekday": 6,
+      "days": 39,
+      "mean": 83884.46153846153,
+      "median": 87659.0,
+      "std": 31272.527650055436,
+      "name": "Sunday"
+    }
+  ]
+}

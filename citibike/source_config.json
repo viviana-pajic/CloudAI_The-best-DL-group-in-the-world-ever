@@ -1,0 +1,18 @@
+{
+  "year": 2023,
+  "archives": [
+    {
+      "url": "https://s3.amazonaws.com/tripdata/2023-citibike-tripdata.zip",
+      "sha256": "f5ac8d2b9556a4f18925569681d60e960eae44ce7e2999c74726c8e1ff706c07"
+    },
+    {
+      "url": "https://s3.amazonaws.com/tripdata/202401-citibike-tripdata.zip",
+      "sha256": "0a2e81eacd7bf3890712de8f2a1b56bda985c17d9e61b08acf5e7c7ec9f20eb0"
+    }
+  ],
+  "scope": "Published NYC archive; Jersey City JC-* archives are excluded.",
+  "period_reason": "One complete historical calendar year with ride IDs and all seasons. Working analysis scope for team review.",
+  "boundary_policy": "Include the following January archive to capture late-finished December starts. Aggregate by actual start date. Extremely long rides ending after January 2024 remain a potential right-boundary limitation.",
+  "exploration_end": "2023-09-30",
+  "candidate_holdout_start": "2023-10-01"
+}
