@@ -32,3 +32,7 @@ Tomislav selected acquisition and exploration for this update and requested clea
 The update contains two executed Citi Bike notebooks, acquisition code, source and audit snapshots, three exploration figures and the walkthrough. Task 10 files are kept outside this checkout until their separate update. Viviana's tasks are marked assigned, with her contribution pending, rather than completed. No forecast training or final-test evaluation is included.
 
 Record substantive human reviews, changes and additional prompts here as development continues. Each member should be able to explain the submitted work and its limitations.
+
+## Mushroom tasks 8 and 11, 8 October 2026
+
+Viviana completed tasks 8 and 11 with AI assistance (Claude), which proposed the tests, experiments, evaluation rules and helper code in `src/mushrooms.py`; Viviana decided where the work belongs in the existing notebooks, removed redundant cells, chose the explanations, and ran and checked every result herself, without using the reserved test rows.

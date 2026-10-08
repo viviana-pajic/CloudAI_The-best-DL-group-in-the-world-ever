@@ -45,7 +45,30 @@ These are validation results, using 3,000 training rows and 1,000 validation row
 
 The forest does best so far, but it still misses many poisonous examples. We need to look at the errors and tune the models. See [the baseline notebook](mushrooms/02_baseline_models.ipynb).
 
+**Tasks 8 and 11 - Viviana.
+** We explored the 4,000 development rows and fixed how models are evaluated. The exploration is added to [the audit notebook](mushrooms/00_data_audit.ipynb) and the evaluation to [the baseline notebook](mushrooms/02_baseline_models.ipynb).
+
+What we found:
+
+- The two `jumbled_noise` columns are **shuffled copies of `cap-shape`**. Removing them raised the random forest's ROC-AUC from **0.821 to 0.831**, so they are dropped.
+- Only **6 of 4,000 rows** are complete, but the gaps are mostly random. We keep all rows and impute missing values inside the model.
+- Outliers are genuine mushrooms, not errors, and stay in the data.
+
+How models are now evaluated:
+
+- The same 1,000 test rows stay reserved. The other 4,000 rows use **stratified 5-fold cross-validation, repeated twice**.
+- Models are ranked by **average precision**, and each uses a threshold that catches **90% of poisonous mushrooms**.
+
+| Model (cross-validated) | Average precision | Edible mushrooms kept at 90% poison recall |
+|---|---:|---:|
+| Majority baseline | 0.379 | 0% |
+| Logistic regression | 0.631 | 23% |
+| Random forest | 0.783 | under 50% |
+
+The forest is still clearly the best, but to be safe it rejects more than half of the edible mushrooms. Tuning should improve that. More details are in [the tasks 8 and 11 notes](docs/MUSHROOM_TASKS_8_11.md).
+
 The AutoML notebook is still a template. Use a separate compatible environment, such as Python 3.11, following the lecturer's [PyCaret setup](https://github.com/mjochen/CloudAI/blob/master/Exercises/3%20model%20quality/5.1%20-%20Install%20PyCaret.ipynb).
+
 
 ## Citi Bike so far
 
@@ -86,10 +109,10 @@ We explored January-September and left October-December aside for possible final
 
 - [x] **06. Check the replacement mushroom dataset.**
 - [x] **07. Download and assemble Citi Bike data - Tomislav.**
-- [ ] **08. Explore mushroom data - Viviana.**
+- [x] **08. Explore mushroom data - Viviana.**
 - [x] **09. Explore and aggregate Citi Bike data - Tomislav.**
 - [ ] **10. Test the Citi Bike hypothesis - Tomislav.**
-- [ ] **11. Define mushroom evaluation - Viviana.**
+- [x] **11. Define mushroom evaluation - Viviana.**
 - [ ] **12. Define Citi Bike evaluation.**
 - [ ] **13. Finish mushroom preparation** - starter works; review cleaning choices.
 - [ ] **14. Finish Citi Bike preparation.**

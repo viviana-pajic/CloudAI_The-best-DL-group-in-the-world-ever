@@ -16,9 +16,11 @@ from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score, average_precision_score, confusion_matrix, f1_score,
-    precision_score, recall_score, roc_auc_score,
+    precision_recall_curve, precision_score, recall_score, roc_auc_score,
 )
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import (
+    RepeatedStratifiedKFold, StratifiedKFold, cross_val_predict, cross_validate,
+    train_test_split)
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
@@ -29,7 +31,11 @@ SOURCE = (
     "Discussion%20topics/mushroom_project_dataset.csv"
 )
 EXPECTED_SHA256 = "1f1a25f2f330458ed95ce9f6ffe3241582312a42cb21797a2b7bd5e5ad281114"
-
+# Task 8:shuffled copies of cap-shape with no relation to the label
+NOISE_COLUMNS = ["jumbled_noise_0","jumbled_noise_1"]
+# Task 11: missing a poisonous mushroom is the costly error, so every model is
+# operated at a threshold that catches at least 90% of poisonous mushrooms.
+TARGET_POISON_RECALL = 0.90
 
 def load_data():
     """Download once and reject a cached file with a different fingerprint."""
@@ -94,12 +100,68 @@ def make_split(frame):
     )
     return splits
 
+def clean(frame):
+    """Apply the cleaning chosen in task 8: drop the two noise columns, keep all rows."""
+    return frame.drop(columns=[c for c in NOISE_COLUMNS if c in frame])
 
-def preprocessor(features, scale=False):
+def development_data(frame):
+    """Cleaned development rows (train + validation) and the reserved test rows.
+
+    The 1,000 test rows are the same as in make_split, so the final test stays
+    untouched. The 4,000 development rows are used with cross-validation.
+    """
+    splits = make_split(frame)
+    cleaned = clean(frame)
+    features = cleaned.drop(columns="class")
+    labels = cleaned["class"].map({"e": 0, "p": 1})
+    development = splits["train"] + splits["validation"]
+    return (features.loc[development], labels.loc[development],
+            features.loc[splits["test"]], labels.loc[splits["test"]])
+
+def cv_splitter(repeats=2):
+    """The same stratified 5-fold folds for every model, repeated for stability."""
+    return RepeatedStratifiedKFold(n_splits=5, n_repeats=repeats, random_state=42)
+
+def threshold_for_recall(labels, probabilities, target=TARGET_POISON_RECALL):
+    """Highest-precision threshold that still reaches the target poison recall."""
+    precision, recall, thresholds = precision_recall_curve(labels, probabilities)
+    reaches_target = recall[:-1] >= target
+    best = int(np.argmax(np.where(reaches_target, precision[:-1], -1.0)))
+    return float(thresholds[best])
+
+
+def cross_validated_scores(name, pipeline, features, labels):
+    """Task 11: score one model the agreed way, so every model is comparable."""
+    folds = cross_validate(
+        pipeline, features, labels, cv=cv_splitter(),
+        scoring=["average_precision", "roc_auc"], return_train_score=True, n_jobs=1,
+    )
+    out_of_fold = cross_val_predict(
+        pipeline, features, labels, method="predict_proba",
+        cv=StratifiedKFold(n_splits=5, shuffle=True, random_state=42),
+    )[:, 1]
+    threshold = threshold_for_recall(labels, out_of_fold)
+    predictions = (out_of_fold >= threshold).astype(int)
+    tn, fp, fn, tp = confusion_matrix(labels, predictions, labels=[0, 1]).ravel()
+    return {
+        "model": name,
+        "cv_average_precision": folds["test_average_precision"].mean(),
+        "cv_average_precision_std": folds["test_average_precision"].std(),
+        "train_average_precision": folds["train_average_precision"].mean(),
+        "cv_roc_auc": folds["test_roc_auc"].mean(),
+        "cv_roc_auc_std": folds["test_roc_auc"].std(),
+        "threshold": threshold,
+        "poison_recall": tp / (tp + fn),
+        "specificity": tn / (tn + fp),
+        "poison_precision": tp / (tp + fp) if tp + fp else 0.0,
+        "tn": int(tn), "fp": int(fp), "fn": int(fn), "tp": int(tp),
+    }, out_of_fold
+
+def preprocessor(features, scale=False,missing_flags=False):
     """Describe transformations; fitting happens inside the training pipeline."""
     numeric = features.select_dtypes(include="number").columns.tolist()
     categorical = [column for column in features.columns if column not in numeric]
-    numeric_steps = [("impute", SimpleImputer(strategy="median", add_indicator=True))]
+    numeric_steps = [("impute", SimpleImputer(strategy="median", add_indicator=missing_flags))]
     if scale:
         numeric_steps.append(("scale", StandardScaler()))
     return ColumnTransformer([
@@ -164,7 +226,7 @@ def experiment(frame):
     rows, fitted = [], {}
     for name, estimator in candidates.items():
         pipeline = Pipeline([
-            ("prepare", preprocessor(features.loc[train], scale=name == "logistic_regression")),
+            ("prepare", preprocessor(features.loc[train], scale=name == "logistic_regression", missing_flags=True)),
             ("model", estimator),
         ])
         start = time.perf_counter()
