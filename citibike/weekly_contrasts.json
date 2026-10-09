@@ -1,0 +1,306 @@
+[
+  {
+    "week_start": "2023-01-02",
+    "weekday_mean": 64135.2,
+    "weekend_mean": 54306.0,
+    "week_mean": 61326.857142857145,
+    "difference_rides": 9829.199999999997,
+    "normalized_contrast": 0.16027561916475647
+  },
+  {
+    "week_start": "2023-01-09",
+    "weekday_mean": 62425.4,
+    "weekend_mean": 42309.0,
+    "week_mean": 56677.857142857145,
+    "difference_rides": 20116.4,
+    "normalized_contrast": 0.3549252038462993
+  },
+  {
+    "week_start": "2023-01-16",
+    "weekday_mean": 58069.0,
+    "weekend_mean": 48815.0,
+    "week_mean": 55425.0,
+    "difference_rides": 9254.0,
+    "normalized_contrast": 0.16696436626071268
+  },
+  {
+    "week_start": "2023-01-23",
+    "weekday_mean": 55597.0,
+    "weekend_mean": 62430.0,
+    "week_mean": 57549.28571428572,
+    "difference_rides": -6833.0,
+    "normalized_contrast": -0.11873301145601906
+  },
+  {
+    "week_start": "2023-01-30",
+    "weekday_mean": 57896.8,
+    "weekend_mean": 37326.0,
+    "week_mean": 52019.42857142857,
+    "difference_rides": 20570.800000000003,
+    "normalized_contrast": 0.39544455917569266
+  },
+  {
+    "week_start": "2023-02-06",
+    "weekday_mean": 73921.4,
+    "weekend_mean": 59731.0,
+    "week_mean": 69867.0,
+    "difference_rides": 14190.399999999994,
+    "normalized_contrast": 0.2031059012123033
+  },
+  {
+    "week_start": "2023-02-13",
+    "weekday_mean": 72698.8,
+    "weekend_mean": 51717.0,
+    "week_mean": 66704.0,
+    "difference_rides": 20981.800000000003,
+    "normalized_contrast": 0.3145508515231471
+  },
+  {
+    "week_start": "2023-02-20",
+    "weekday_mean": 61346.8,
+    "weekend_mean": 49001.0,
+    "week_mean": 57819.42857142857,
+    "difference_rides": 12345.800000000003,
+    "normalized_contrast": 0.21352338314358005
+  },
+  {
+    "week_start": "2023-02-27",
+    "weekday_mean": 61683.4,
+    "weekend_mean": 60807.5,
+    "week_mean": 61433.142857142855,
+    "difference_rides": 875.9000000000015,
+    "normalized_contrast": 0.014257776165494685
+  },
+  {
+    "week_start": "2023-03-06",
+    "weekday_mean": 69556.6,
+    "weekend_mean": 52868.0,
+    "week_mean": 64788.42857142857,
+    "difference_rides": 16688.600000000006,
+    "normalized_contrast": 0.2575861209783935
+  },
+  {
+    "week_start": "2023-03-13",
+    "weekday_mean": 60919.6,
+    "weekend_mean": 61714.0,
+    "week_mean": 61146.57142857143,
+    "difference_rides": -794.4000000000015,
+    "normalized_contrast": -0.012991734146991094
+  },
+  {
+    "week_start": "2023-03-20",
+    "weekday_mean": 79426.2,
+    "weekend_mean": 60516.5,
+    "week_mean": 74023.42857142857,
+    "difference_rides": 18909.699999999997,
+    "normalized_contrast": 0.25545560864899913
+  },
+  {
+    "week_start": "2023-03-27",
+    "weekday_mean": 77727.8,
+    "weekend_mean": 71188.0,
+    "week_mean": 75859.28571428571,
+    "difference_rides": 6539.800000000003,
+    "normalized_contrast": 0.08620961743076942
+  },
+  {
+    "week_start": "2023-04-03",
+    "weekday_mean": 87885.0,
+    "weekend_mean": 73474.5,
+    "week_mean": 83767.71428571429,
+    "difference_rides": 14410.5,
+    "normalized_contrast": 0.17202928506379886
+  },
+  {
+    "week_start": "2023-04-10",
+    "weekday_mean": 109823.4,
+    "weekend_mean": 102476.5,
+    "week_mean": 107724.28571428571,
+    "difference_rides": 7346.899999999994,
+    "normalized_contrast": 0.0682009627753391
+  },
+  {
+    "week_start": "2023-04-17",
+    "weekday_mean": 104208.8,
+    "weekend_mean": 100616.5,
+    "week_mean": 103182.42857142857,
+    "difference_rides": 3592.300000000003,
+    "normalized_contrast": 0.03481503633647482
+  },
+  {
+    "week_start": "2023-04-24",
+    "weekday_mean": 100331.2,
+    "weekend_mean": 21303.5,
+    "week_mean": 77751.85714285714,
+    "difference_rides": 79027.7,
+    "normalized_contrast": 1.0164091624821088
+  },
+  {
+    "week_start": "2023-05-01",
+    "weekday_mean": 99233.4,
+    "weekend_mean": 118179.0,
+    "week_mean": 104646.42857142857,
+    "difference_rides": -18945.600000000006,
+    "normalized_contrast": -0.18104392341558315
+  },
+  {
+    "week_start": "2023-05-08",
+    "weekday_mean": 122002.4,
+    "weekend_mean": 114247.0,
+    "week_mean": 119786.57142857143,
+    "difference_rides": 7755.399999999994,
+    "normalized_contrast": 0.06474348424459689
+  },
+  {
+    "week_start": "2023-05-15",
+    "weekday_mean": 117260.2,
+    "weekend_mean": 79606.5,
+    "week_mean": 106502.0,
+    "difference_rides": 37653.7,
+    "normalized_contrast": 0.3535492291224578
+  },
+  {
+    "week_start": "2023-05-22",
+    "weekday_mean": 119113.4,
+    "weekend_mean": 102600.0,
+    "week_mean": 114395.28571428571,
+    "difference_rides": 16513.399999999994,
+    "normalized_contrast": 0.14435385074559762
+  },
+  {
+    "week_start": "2023-05-29",
+    "weekday_mean": 114917.2,
+    "weekend_mean": 104729.0,
+    "week_mean": 112006.28571428571,
+    "difference_rides": 10188.199999999997,
+    "normalized_contrast": 0.0909609664763712
+  },
+  {
+    "week_start": "2023-06-05",
+    "weekday_mean": 105831.6,
+    "weekend_mean": 115451.5,
+    "week_mean": 108580.14285714286,
+    "difference_rides": -9619.899999999994,
+    "normalized_contrast": -0.08859723101172137
+  },
+  {
+    "week_start": "2023-06-12",
+    "weekday_mean": 117349.4,
+    "weekend_mean": 113760.5,
+    "week_mean": 116324.0,
+    "difference_rides": 3588.899999999994,
+    "normalized_contrast": 0.030852618548192927
+  },
+  {
+    "week_start": "2023-06-19",
+    "weekday_mean": 121145.6,
+    "weekend_mean": 113834.0,
+    "week_mean": 119056.57142857143,
+    "difference_rides": 7311.600000000006,
+    "normalized_contrast": 0.06141282175580401
+  },
+  {
+    "week_start": "2023-06-26",
+    "weekday_mean": 119272.8,
+    "weekend_mean": 95449.0,
+    "week_mean": 112466.0,
+    "difference_rides": 23823.800000000003,
+    "normalized_contrast": 0.2118311311863141
+  },
+  {
+    "week_start": "2023-07-03",
+    "weekday_mean": 108465.4,
+    "weekend_mean": 102508.5,
+    "week_mean": 106763.42857142857,
+    "difference_rides": 5956.899999999994,
+    "normalized_contrast": 0.05579532317112329
+  },
+  {
+    "week_start": "2023-07-10",
+    "weekday_mean": 125782.2,
+    "weekend_mean": 87790.5,
+    "week_mean": 114927.42857142857,
+    "difference_rides": 37991.7,
+    "normalized_contrast": 0.33057121761310243
+  },
+  {
+    "week_start": "2023-07-17",
+    "weekday_mean": 129009.4,
+    "weekend_mean": 128095.0,
+    "week_mean": 128748.14285714286,
+    "difference_rides": 914.3999999999942,
+    "normalized_contrast": 0.007102238367932031
+  },
+  {
+    "week_start": "2023-07-24",
+    "weekday_mean": 127067.2,
+    "weekend_mean": 124684.5,
+    "week_mean": 126386.42857142857,
+    "difference_rides": 2382.699999999997,
+    "normalized_contrast": 0.0188524988555507
+  },
+  {
+    "week_start": "2023-07-31",
+    "weekday_mean": 137546.4,
+    "weekend_mean": 131357.0,
+    "week_mean": 135778.0,
+    "difference_rides": 6189.399999999994,
+    "normalized_contrast": 0.04558470444401887
+  },
+  {
+    "week_start": "2023-08-07",
+    "weekday_mean": 120452.8,
+    "weekend_mean": 125579.5,
+    "week_mean": 121917.57142857143,
+    "difference_rides": -5126.699999999997,
+    "normalized_contrast": -0.04205054234535509
+  },
+  {
+    "week_start": "2023-08-14",
+    "weekday_mean": 130176.2,
+    "weekend_mean": 132253.5,
+    "week_mean": 130769.71428571429,
+    "difference_rides": -2077.300000000003,
+    "normalized_contrast": -0.015885176559011064
+  },
+  {
+    "week_start": "2023-08-21",
+    "weekday_mean": 119599.4,
+    "weekend_mean": 125842.0,
+    "week_mean": 121383.0,
+    "difference_rides": -6242.600000000006,
+    "normalized_contrast": -0.05142894804049995
+  },
+  {
+    "week_start": "2023-08-28",
+    "weekday_mean": 130793.6,
+    "weekend_mean": 115576.0,
+    "week_mean": 126445.71428571429,
+    "difference_rides": 15217.600000000006,
+    "normalized_contrast": 0.12034887924801162
+  },
+  {
+    "week_start": "2023-09-04",
+    "weekday_mean": 130218.2,
+    "weekend_mean": 105929.5,
+    "week_mean": 123278.57142857143,
+    "difference_rides": 24288.699999999997,
+    "normalized_contrast": 0.19702288660988465
+  },
+  {
+    "week_start": "2023-09-11",
+    "weekday_mean": 142755.8,
+    "weekend_mean": 134487.5,
+    "week_mean": 140393.42857142858,
+    "difference_rides": 8268.299999999988,
+    "normalized_contrast": 0.05889378216725642
+  },
+  {
+    "week_start": "2023-09-18",
+    "weekday_mean": 134130.8,
+    "weekend_mean": 35466.5,
+    "week_mean": 105941.0,
+    "difference_rides": 98664.29999999999,
+    "normalized_contrast": 0.9313136557140294
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "analysis_date": "2026-10-07",
+  "analysis_type": "Exploratory analysis plan recorded after task 9 EDA; not a prospective preregistration.",
+  "planned_start": "2023-01-01",
+  "planned_end": "2023-09-30",
+  "candidate_holdout_start": "2023-10-01",
+  "complete_weeks": 38,
+  "included_days": 266,
+  "first_included_date": "2023-01-02",
+  "last_included_date": "2023-09-24",
+  "excluded_incomplete_week_dates": [
+    "2023-01-01",
+    "2023-09-25",
+    "2023-09-26",
+    "2023-09-27",
+    "2023-09-28",
+    "2023-09-29",
+    "2023-09-30"
+  ],
+  "mean_weekday_rides": 100783.57368421053,
+  "mean_weekend_rides": 87316.48684210527,
+  "mean_paired_difference_rides": 13467.08684210526,
+  "positive_weeks": 31,
+  "negative_weeks": 7,
+  "primary": {
+    "expected_block_weeks": 4,
+    "estimate": 0.15595295198691927,
+    "ci_lower": 0.0894246788484793,
+    "ci_upper": 0.21879593146878096,
+    "bootstrap_standard_error": 0.033167469935006126,
+    "approximate_two_sided_p": 4.999750012499375e-05,
+    "null_extreme_replicates": 0,
+    "monte_carlo_resolution": 4.999750012499375e-05
+  },
+  "sensitivity": [
+    {
+      "expected_block_weeks": 2,
+      "estimate": 0.15595295198691927,
+      "ci_lower": 0.08331629323271719,
+      "ci_upper": 0.22058793548509223,
+      "bootstrap_standard_error": 0.034966527331984236,
+      "approximate_two_sided_p": 4.999750012499375e-05,
+      "null_extreme_replicates": 0,
+      "monte_carlo_resolution": 4.999750012499375e-05
+    },
+    {
+      "expected_block_weeks": 4,
+      "estimate": 0.15595295198691927,
+      "ci_lower": 0.0894246788484793,
+      "ci_upper": 0.21879593146878096,
+      "bootstrap_standard_error": 0.033167469935006126,
+      "approximate_two_sided_p": 4.999750012499375e-05,
+      "null_extreme_replicates": 0,
+      "monte_carlo_resolution": 4.999750012499375e-05
+    },
+    {
+      "expected_block_weeks": 6,
+      "estimate": 0.15595295198691927,
+      "ci_lower": 0.09393447570190797,
+      "ci_upper": 0.21697381381742004,
+      "bootstrap_standard_error": 0.03144711289594678,
+      "approximate_two_sided_p": 4.999750012499375e-05,
+      "null_extreme_replicates": 0,
+      "monte_carlo_resolution": 4.999750012499375e-05
+    }
+  ],
+  "quarter_descriptives": [
+    {
+      "quarter_by_week_start": 1,
+      "weeks": 13,
+      "mean_normalized_contrast": 0.17619802014977987
+    },
+    {
+      "quarter_by_week_start": 2,
+      "weeks": 13,
+      "mean_normalized_contrast": 0.15227056879305784
+    },
+    {
+      "quarter_by_week_start": 3,
+      "weeks": 12,
+      "mean_normalized_contrast": 0.13801004327050362
+    }
+  ],
+  "weekly_contrast_autocorrelations": {
+    "1": -0.2356887213748231,
+    "2": -0.0061601026767273675,
+    "3": 0.12481690016731237,
+    "4": -0.1286762925657664
+  },
+  "confidence_level": 0.95,
+  "replicates": 20000,
+  "seed": 42,
+  "primary_interval_excludes_zero": true,
+  "stable_direction_across_block_lengths": true,
+  "continue_forecast_candidate": true,
+  "forecast_accuracy_evaluated": false,
+  "candidate_final_test_used": false,
+  "decision": "Continue the proposed next-day recorded ride-count task; include calendar weekday as a candidate input. Chronological baseline/model evaluation and team scope agreement remain required."
+}

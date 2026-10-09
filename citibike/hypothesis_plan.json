@@ -1,0 +1,31 @@
+{
+  "task": 10,
+  "analysis_date": "2026-10-07",
+  "status": "Exploratory analysis plan recorded after task 9 EDA; not a prospective preregistration.",
+  "question": "Does average weekday usage differ from weekend usage when compared within the same week?",
+  "null_hypothesis": "The mean within-week weekday-minus-weekend contrast, divided by that week's overall mean, is zero.",
+  "alternative_hypothesis": "That mean normalized contrast is not zero (two-sided).",
+  "analysis_start": "2023-01-01",
+  "analysis_end": "2023-09-30",
+  "candidate_holdout_start": "2023-10-01",
+  "unit": "Complete Monday-Sunday week; incomplete edge weeks are excluded explicitly.",
+  "weekday_definition": "Monday-Friday",
+  "weekend_definition": "Saturday-Sunday",
+  "primary_statistic": "Mean across weeks of (weekday mean - weekend mean) / whole-week mean.",
+  "secondary_descriptive_statistic": "Mean paired difference in rides per day; no second hypothesis test.",
+  "uncertainty_method": "Stationary bootstrap of consecutive weekly contrasts with geometric run lengths and circular continuation.",
+  "primary_expected_block_weeks": 4,
+  "sensitivity_expected_block_weeks": [2, 4, 6],
+  "bootstrap_replicates": 20000,
+  "seed": 42,
+  "confidence_level": 0.95,
+  "alpha": 0.05,
+  "interval": "Basic (reverse-percentile) bootstrap confidence interval for the mean.",
+  "p_value": "Approximate two-sided centered-bootstrap tail probability under a zero-mean contrast, with a plus-one Monte Carlo correction.",
+  "forecast_decision_rule": "If the primary interval excludes zero and its direction survives block-length sensitivity checks, retain calendar weekday as a candidate feature and continue investigating next-day ride-count forecasting. Forecast accuracy must still be established by chronological evaluation.",
+  "limitations": "Assumes normalized weekly contrasts are approximately stationary with short-range dependence. Small sample, circular endpoint joins, weather/holiday confounding and earlier EDA limit inference; no causal or independent-confirmatory claim.",
+  "method_sources": [
+    "https://doi.org/10.1080/01621459.1994.10476870",
+    "https://bashtage.github.io/arch/bootstrap/generated/arch.bootstrap.StationaryBootstrap.html"
+  ]
+}

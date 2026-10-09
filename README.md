@@ -119,6 +119,10 @@ What we noticed:
 
 This makes the calendar and recent ride counts a reasonable starting point for predicting the next day's total. Seasons and people's routines might explain some of the patterns, but we haven't established why they happen or how well a model will predict them.
 
+**Task 10 - Tomislav.** We compared weekday and weekend averages within **38 complete weeks**. Weekdays were busier in **31 of those weeks**, with an average gap of about **13,467 rides per day**. The uncertainty checks support a weekly pattern in these data, so weekday information is worth trying in the forecast.
+
+This is exploratory because we had already looked at the data. It does not tell us how accurate a forecast will be. See [notebook 02](citibike/02_weekly_hypothesis.ipynb) and [the task 10 notes](docs/CITIBIKE_TASK_10.md) for the test, results and limits. Use the same Python 3.12 environment as notebooks 00 and 01.
+
 We explored January-September and left October-December aside for possible final testing. Task 12 will fix the evaluation split. More details are in [the tasks 7 and 9 notes](docs/CITIBIKE_TASKS_7_9.md).
 
 ## Tasks
@@ -137,7 +141,7 @@ We explored January-September and left October-December aside for possible final
 - [x] **07. Download and assemble Citi Bike data - Tomislav.**
 - [x] **08. Explore mushroom data - Viviana.**
 - [x] **09. Explore and aggregate Citi Bike data - Tomislav.**
-- [ ] **10. Test the Citi Bike hypothesis - Tomislav.**
+- [x] **10. Test the Citi Bike hypothesis - Tomislav.** Weekly contrast, uncertainty checks and exploratory conclusion; [notebook](citibike/02_weekly_hypothesis.ipynb).
 - [x] **11. Define mushroom evaluation - Viviana.**
 - [ ] **12. Define Citi Bike evaluation.**
 - [x] **13. Finish mushroom preparation - Muneeb Shakoor.** Frozen split, ten-feature contract and fold-safe preparation; [executed notebook](mushrooms/01_data_preparation.ipynb).

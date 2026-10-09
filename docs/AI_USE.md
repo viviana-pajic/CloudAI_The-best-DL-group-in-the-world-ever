@@ -72,3 +72,15 @@ checked label agreement within colliding groups, including reserved rows; no
 reserved-test model predictions or performance evaluation were performed. The
 latest completion did not extend the existing app integration, tune models,
 start other project tasks, commit, merge or push.
+
+## Citi Bike hypothesis continuation, 7 October 2026
+
+Tomislav requested: “Do the same for Task 10, goal.” AI assistance formulated and implemented a within-week weekday/weekend contrast, a stationary-bootstrap uncertainty calculation, an executed notebook, figures, numerical snapshots and the explanatory guide. Because task 9 EDA had already examined these development data, the analysis is explicitly exploratory, rather than a prospective confirmatory test.
+
+The run uses 38 complete weeks within January-September 2023, 20,000 resampled sequences, seed 42, and planned expected run lengths of two, four and six weeks. Verification checks known synthetic effects, date/count guards, the resampling mechanics, reproducibility, and invariance to changed October-December counts. The saved outputs and figures are checked. No forecast training or final-test evaluation occurs in this task, and no new push is made. Team review, scope acceptance and substantive human contributions remain to be recorded.
+
+## Task 10 publication preparation, 9 October 2026
+
+Tomislav requested that Codex pull the team's latest work and push the prepared continuation from his desktop repository. The held Task 10 files were restored after a fast-forward pull, without replacing teammates' mushroom work. AI assistance updated the README findings and checklist, normalized long dashes in the new text, and checked the cached daily-data fingerprint, numerical reproduction, hypothesis safeguards, notebook outputs and documentation links.
+
+Task 10 provides exploratory evidence for a calendar pattern, not forecast accuracy. Task 12's split decision and the forecast models remain open. The contribution owner is Tomislav; substantive human review and any subsequent changes should be recorded when they occur.
