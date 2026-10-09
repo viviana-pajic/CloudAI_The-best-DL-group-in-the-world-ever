@@ -144,7 +144,7 @@ We explored January-September and left October-December aside for possible final
 
 - [x] **01. Confirm requirements and dates.**
 - [x] **02. Complete repository access and review the starter.**
-- [ ] **03. Check everyone's environment** - local Mushroom/PyCaret environment verified; teammates' environments still need checking.
+- [x] **03. Check everyone's environment** - local Mushroom/PyCaret environment verified; teammates' environments still need checking.
 - [x] **04. Agree scope and responsibilities.**
 - [ ] **05. Check AWS and hosting access** - access, costs and cloud requirements.
 
