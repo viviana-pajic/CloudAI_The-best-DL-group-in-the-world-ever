@@ -1,0 +1,13 @@
+source_row,label,poison_probability,missing_feature_count,predicted,cap-diameter,stem-height,stem-width,spore-print-color,gill-color,habitat,season,ring-type,cap-shape,stem-surface,model,error_type
+642,1,0.0523015306286168,3,0,18.95,22.98,18.71,,w,m,,m,p,,random_forest,false_negative
+1420,1,0.0820437780890026,2,0,,6.44,10.03,,w,l,w,f,f,s,random_forest,false_negative
+2860,1,0.0900584688095549,1,0,6.05,7.91,10.66,,w,l,a,f,x,s,random_forest,false_negative
+2946,0,0.952839812498304,0,1,4.72,0.0,0.0,n,w,d,a,f,o,f,random_forest,false_positive
+4538,0,0.9357721243328484,1,1,4.61,0.0,0.0,,w,d,u,f,o,f,random_forest,false_positive
+4962,0,0.9334746134951052,2,1,6.69,8.07,9.61,,n,d,a,z,x,,random_forest,false_positive
+642,1,0.0199711770183591,3,0,18.95,22.98,18.71,,w,m,,m,p,,hist_gradient_boosting,false_negative
+59,1,0.0401647362864495,2,0,9.06,7.03,35.75,,w,m,s,f,f,,hist_gradient_boosting,false_negative
+4319,1,0.0567872798597888,2,0,5.11,12.3,10.39,,w,,u,f,x,s,hist_gradient_boosting,false_negative
+2946,0,0.970057265757308,0,1,4.72,0.0,0.0,n,w,d,a,f,o,f,hist_gradient_boosting,false_positive
+786,0,0.967351190107651,1,1,2.89,3.05,13.32,,f,d,a,f,o,g,hist_gradient_boosting,false_positive
+4556,0,0.9667587586153528,4,1,3.11,,,,,d,u,f,o,g,hist_gradient_boosting,false_positive

@@ -8,24 +8,31 @@ Viviana Pajic · Tomislav Novosel · Muneeb Shakoor
 
 ## Running the project
 
-Use Python 3.12. Open PowerShell in this folder:
+For the current **Mushroom tasks 13, 15, 18 and 24**, use the separate Python 3.11
+environment. In this checkout it is already installed. From PowerShell:
 
 ```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe src/mushrooms.py
-.\.venv\Scripts\python.exe app/server.py
+.\.venv-pycaret\Scripts\python.exe scripts/run_mushroom_notebooks.py
+.\.venv-pycaret\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Open **http://127.0.0.1:8765**. Stop it with **Ctrl+C**.
+For a fresh checkout, first install Python 3.11, run `py -3.11 -m venv .venv-pycaret`,
+then `.\.venv-pycaret\Scripts\python.exe -m pip install -r requirements-pycaret.lock.txt`.
+The runner executes notebooks 01-04 with this exact interpreter. For interactive
+use, choose `.venv-pycaret\Scripts\python.exe` as the notebook kernel.
 
-For notebooks, choose `.venv\Scripts\python.exe` as the kernel in VS Code and run them in order. Keep raw data, models and `.venv` out of Git; the scripts recreate them.
+See [the Mushroom workflow](docs/MUSHROOM_WORKFLOW.md) for commands, results,
+provenance and the distinction between historical and current experiments.
+Data and models stay out of Git and are recreated by the notebooks. The original
+Python 3.12 `.venv` / `requirements.txt` environment remains separate for Citi Bike.
+The existing local Mushroom demo uses the Python 3.11 environment and
+`app/server.py`; its threshold remains the provisional reference value 0.5.
 
 ## What's in the folders?
 
 | Folder | What's there |
 |---|---|
-| `mushrooms/` | Data checks, preparation, baseline models and an AutoML template |
+| `mushrooms/` | Executed preparation, baselines, AutoML, error/threshold analysis and historical results |
 | `citibike/` | Data download and exploration notebooks, source records and plots |
 | `src/` | Python helpers used by the notebooks |
 | `app/` | The local mushroom prediction page and server |
@@ -35,39 +42,58 @@ For notebooks, choose `.venv\Scripts\python.exe` as the kernel in VS Code and ru
 
 We use the teacher's replacement dataset: **5,000 rows and 13 columns**. The source is recorded in [SOURCE_DATASET_VERSION.json](SOURCE_DATASET_VERSION.json).
 
-These are validation results, using 3,000 training rows and 1,000 validation rows. The remaining 1,000 rows are kept for the final test.
+**Tasks 13, 15, 18 and 24 - Muneeb Shakoor, with AI assistance.** The integration
+builds on **Viviana Pajic's tasks 8/11** and the shared starter maintained by
+**Tomislav Novosel**. Contributor responsibility does not imply independent
+authorship of AI-generated code; see [the assistance record](docs/AI_USE.md).
 
-| Model | Accuracy | Poison recall |
-|---|---:|---:|
-| Majority baseline | 62.1% | 0.0% |
-| Logistic regression | 69.2% | 35.4% |
-| Random forest | 75.1% | 42.0% |
+The current preparation keeps all rows, drops the two noise columns, and fits
+imputation/encoding within each training fold. Numeric missing indicators are
+omitted following the existing development experiment. Extreme values and zeros
+are retained because their validity cannot be settled from this dataset alone.
+Missingness tests do not establish that data are missing completely at random.
 
-The forest does best so far, but it still misses many poisonous examples. We need to look at the errors and tune the models. See [the baseline notebook](mushrooms/02_baseline_models.ipynb).
+The frozen [split manifest](mushrooms/split_manifest.json) preserves **4,000
+development rows and 1,000 reserved final-test rows**. The common comparison uses
+identical stratified five-fold splits repeated twice, with poisonous as class 1.
+AP is average precision, not trapezoidal PR-AUC; AP/ROC-AUC below are mean fold
+scores. Recall uses averaged held-out probabilities at the reference threshold 0.5.
 
-**Tasks 8 and 11 - Viviana.
-** We explored the 4,000 development rows and fixed how models are evaluated. The exploration is added to [the audit notebook](mushrooms/00_data_audit.ipynb) and the evaluation to [the baseline notebook](mushrooms/02_baseline_models.ipynb).
+| Model | Development AP | Development ROC-AUC | Poison recall at 0.5 |
+|---|---:|---:|---:|
+| Random forest | 0.783075 | 0.833420 | 0.520792 |
+| Histogram gradient boosting | 0.758460 | 0.812080 | 0.536634 |
+| Extra Trees | 0.754268 | 0.804034 | 0.482508 |
+| Logistic regression | 0.630651 | 0.689445 | 0.345875 |
+| Majority baseline | 0.378750 | 0.500000 | 0.000000 |
 
-What we found:
+[Actual PyCaret screening](mushrooms/03_automl.ipynb) compared four complete
+pipelines on 3,000 development training rows. RF ranked first (AP 0.763011).
+The two additional families were then evaluated on the common 4,000-row folds
+above. Screening scores and common-comparison scores are separate protocols;
+this bounded run is not hyperparameter tuning or an exhaustive AutoML search.
 
-- The two `jumbled_noise` columns are **shuffled copies of `cap-shape`**. Removing them raised the random forest's ROC-AUC from **0.821 to 0.831**, so they are dropped.
-- Only **6 of 4,000 rows** are complete, but the gaps are mostly random. We keep all rows and impute missing values inside the model.
-- Outliers are genuine mushrooms, not errors, and stay in the data.
+[Error and threshold analysis](mushrooms/04_model_comparison.ipynb) includes
+confusion matrices, identifiable poisonous-as-edible failures, missingness groups
+and precision/recall trade-offs. At 0.5, RF misses **726/1,515 poisonous rows**.
+Task 24 selects a provisional development policy maximizing specificity subject
+to 90% calibration recall, and evaluates that procedure with separate outer
+development folds. The target is a team modelling preference, not a safety
+guarantee. The outer-fold policy achieves **89.24% recall, 49.82% precision**, with
+**163 false negatives**. The single threshold selected afterwards from all
+development OOF scores is **0.24693**; its independent performance is not yet
+measured. See [threshold_run.json](reports/mushrooms/threshold_run.json).
 
-How models are now evaluated:
+Historical 3,000/1,000 validation results and Viviana's earlier threshold experiment
+remain in the [historical baseline notebook](mushrooms/history/02_baseline_models_before_integration.ipynb),
+[historical validation CSV](reports/mushroom_validation_metrics.csv) and
+[tasks 8/11 notes](docs/MUSHROOM_TASKS_8_11.md). Protocol differences prevent direct
+improvement claims. Four reduced-feature collision groups were retained;
+development fold purging changed RF AP by only **+0.001371**.
 
-- The same 1,000 test rows stay reserved. The other 4,000 rows use **stratified 5-fold cross-validation, repeated twice**.
-- Models are ranked by **average precision**, and each uses a threshold that catches **90% of poisonous mushrooms**.
-
-| Model (cross-validated) | Average precision | Edible mushrooms kept at 90% poison recall |
-|---|---:|---:|
-| Majority baseline | 0.379 | 0% |
-| Logistic regression | 0.631 | 23% |
-| Random forest | 0.783 | under 50% |
-
-The forest is still clearly the best, but to be safe it rejects more than half of the edible mushrooms. Tuning should improve that. More details are in [the tasks 8 and 11 notes](docs/MUSHROOM_TASKS_8_11.md).
-
-The AutoML notebook is still a template. Use a separate compatible environment, such as Python 3.11, following the lecturer's [PyCaret setup](https://github.com/mjochen/CloudAI/blob/master/Exercises/3%20model%20quality/5.1%20-%20Install%20PyCaret.ipynb).
+**The final test has not been evaluated.** Tasks 20/21, final model selection and
+the remaining project work are still pending. Development results do not establish
+real-world mushroom edibility.
 
 
 ## Citi Bike so far
@@ -101,7 +127,7 @@ We explored January-September and left October-December aside for possible final
 
 - [x] **01. Confirm requirements and dates.**
 - [x] **02. Complete repository access and review the starter.**
-- [ ] **03. Check everyone's environment** - local pilot works; team runs and AutoML setup still need checking.
+- [ ] **03. Check everyone's environment** - local Mushroom/PyCaret environment verified; teammates' environments still need checking.
 - [x] **04. Agree scope and responsibilities.**
 - [ ] **05. Check AWS and hosting access** - access, costs and cloud requirements.
 
@@ -114,21 +140,21 @@ We explored January-September and left October-December aside for possible final
 - [ ] **10. Test the Citi Bike hypothesis - Tomislav.**
 - [x] **11. Define mushroom evaluation - Viviana.**
 - [ ] **12. Define Citi Bike evaluation.**
-- [ ] **13. Finish mushroom preparation** - starter works; review cleaning choices.
+- [x] **13. Finish mushroom preparation - Muneeb Shakoor.** Frozen split, ten-feature contract and fold-safe preparation; [executed notebook](mushrooms/01_data_preparation.ipynb).
 - [ ] **14. Finish Citi Bike preparation.**
-- [ ] **15. Reproduce mushroom baselines** - starter results are ready to review.
+- [x] **15. Reproduce mushroom baselines - Muneeb Shakoor.** Consistent development folds, metrics and historical traceability; [executed notebook](mushrooms/02_baseline_models.ipynb).
 - [ ] **16. Build Citi Bike baselines** - compare with last week's count.
 - [ ] **17. Connect both models to the app** - mushroom part works; Citi Bike still needed.
 
 ### Sprint 2 - 9-11 October
 
-- [ ] **18. Run mushroom AutoML comparison.**
+- [x] **18. Run mushroom AutoML comparison - Muneeb Shakoor.** Executed bounded PyCaret screening and common-fold candidate comparison; [notebook](mushrooms/03_automl.ipynb).
 - [ ] **19. Run Citi Bike AutoML comparison.**
 - [ ] **20. Tune mushroom model 1 - Viviana.**
 - [ ] **21. Tune mushroom model 2 - Viviana.**
 - [ ] **22. Tune Citi Bike model 1.**
 - [ ] **23. Tune Citi Bike model 2.**
-- [ ] **24. Investigate mushroom errors and choose a threshold.**
+- [x] **24. Investigate mushroom errors and choose a threshold - Muneeb Shakoor.** Confusion matrices, missingness groups, false negatives and separately evaluated development threshold policy; [notebook](mushrooms/04_model_comparison.ipynb).
 - [ ] **25. Investigate Citi Bike errors and improve features.**
 - [ ] **26. Train and tune a mushroom model on AWS.**
 - [ ] **27. Confirm or complete Citi Bike AWS training.**

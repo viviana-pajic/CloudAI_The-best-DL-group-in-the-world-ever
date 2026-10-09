@@ -1,0 +1,4 @@
+model,policy,missing_features,n,poisonous_n,edible_n,false_negatives,false_positives,false_negative_rate,false_positive_rate
+random_forest,nested recall policy,0-2,1279,501,778,48,379,0.09580838323353294,0.487146529562982
+random_forest,nested recall policy,3-4,2243,853,1390,92,796,0.10785463071512309,0.5726618705035971
+random_forest,nested recall policy,5-10,478,161,317,23,187,0.14285714285714285,0.5899053627760252

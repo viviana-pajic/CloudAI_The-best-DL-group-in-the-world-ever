@@ -1,0 +1,3 @@
+model,threshold,tn,fp,fn,tp,rows
+random_forest,0.5,2350,135,726,789,4000
+hist_gradient_boosting,0.5,2301,184,702,813,4000

@@ -1,5 +1,7 @@
 .venv/
 .venv-pycaret/
+.tools/
+logs.log
 venv/
 __pycache__/
 *.py[cod]
@@ -13,5 +15,9 @@ data/
 models/
 reports/*
 !reports/mushroom_validation_metrics.csv
+!reports/mushrooms/
+reports/mushrooms/*
+!reports/mushrooms/*.csv
+!reports/mushrooms/*.json
 .DS_Store
 Thumbs.db

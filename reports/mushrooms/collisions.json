@@ -1,0 +1,154 @@
+{
+  "raw_feature_duplicate_extra_rows": 0,
+  "retained_feature_duplicate_extra_rows": 5,
+  "groups": [
+    {
+      "rows": [
+        {
+          "source_row": 232,
+          "partition": "train"
+        },
+        {
+          "source_row": 3164,
+          "partition": "test"
+        },
+        {
+          "source_row": 4244,
+          "partition": "test"
+        }
+      ],
+      "labels_agree": true,
+      "label_counts": {
+        "p": 3
+      },
+      "missingness_identical": true,
+      "missing_features": [
+        "cap-diameter",
+        "spore-print-color"
+      ],
+      "retained_values": {
+        "cap-diameter": null,
+        "stem-height": 0.0,
+        "stem-width": 0.0,
+        "spore-print-color": null,
+        "gill-color": "f",
+        "habitat": "d",
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": "f"
+      }
+    },
+    {
+      "rows": [
+        {
+          "source_row": 316,
+          "partition": "train"
+        },
+        {
+          "source_row": 3608,
+          "partition": "train"
+        }
+      ],
+      "labels_agree": true,
+      "label_counts": {
+        "e": 2
+      },
+      "missingness_identical": true,
+      "missing_features": [
+        "cap-diameter",
+        "stem-height",
+        "stem-width",
+        "spore-print-color",
+        "gill-color",
+        "stem-surface"
+      ],
+      "retained_values": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": null,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      }
+    },
+    {
+      "rows": [
+        {
+          "source_row": 580,
+          "partition": "train"
+        },
+        {
+          "source_row": 4082,
+          "partition": "validation"
+        }
+      ],
+      "labels_agree": true,
+      "label_counts": {
+        "p": 2
+      },
+      "missingness_identical": true,
+      "missing_features": [
+        "cap-diameter",
+        "spore-print-color",
+        "gill-color"
+      ],
+      "retained_values": {
+        "cap-diameter": null,
+        "stem-height": 0.0,
+        "stem-width": 0.0,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": "f"
+      }
+    },
+    {
+      "rows": [
+        {
+          "source_row": 1770,
+          "partition": "validation"
+        },
+        {
+          "source_row": 3851,
+          "partition": "train"
+        }
+      ],
+      "labels_agree": true,
+      "label_counts": {
+        "e": 2
+      },
+      "missingness_identical": true,
+      "missing_features": [
+        "cap-diameter",
+        "stem-height",
+        "stem-width",
+        "spore-print-color",
+        "season",
+        "stem-surface"
+      ],
+      "retained_values": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": null,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      }
+    }
+  ],
+  "interpretation": "Identical retained predictors, not proven duplicate source observations. There is no source observation ID; removed noise values distinguish the raw rows.",
+  "policy": "Keep all rows and the original test membership. Measure development sensitivity by excluding matching training predictors within each CV fold only.",
+  "test_access": "Label agreement inspected only for collision integrity, as requested. No test model predictions or performance metrics computed."
+}

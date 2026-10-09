@@ -1,120 +1,100 @@
-# Mushrooms: exploration and evaluation
+# Mushrooms: exploration and evaluation foundation
 
-**Owner: Viviana 
-** Tasks 8 and 11 were implemented and executed on
-8 October. The work extends the existing notebooks: task 8 is added to
-`mushrooms/00_data_audit.ipynb` and task 11 to `mushrooms/02_baseline_models.ipynb`.
-The code and initial explanations were prepared with AI assistance; the
-[assistance record](AI_USE.md) describes that work.
+**Owner: Viviana Pajic.** Tasks 8 and 11 were implemented and executed on
+8 October 2026 with AI assistance. Task 8 is in
+[`00_data_audit.ipynb`](../mushrooms/00_data_audit.ipynb); the original task-11
+code and outputs are preserved in the
+[historical baseline notebook](../mushrooms/history/02_baseline_models_before_integration.ipynb).
+The [AI assistance record](AI_USE.md) preserves Viviana's contribution and review.
 
-## What these tasks achieve
+Muneeb Shakoor's later integration builds on these decisions, with Codex assistance.
+This note preserves the historical evidence while correcting interpretations and
+distinguishing it from the [current workflow](MUSHROOM_WORKFLOW.md). No original
+EDA experiment has been rerun or erased for this documentation update.
 
-**Task 8 decides what to clean.** The starter audit listed open questions:
-noise columns, heavily missing columns, outliers and missing rows. Task 8
-answers each with a statistical test or an experiment, so every cleaning
-decision has evidence behind it.
+## Task 8: what the development data showed
 
-**Task 11 decides how models are judged.** Before tuning, we fix the split, the
-metrics and the decision threshold, so every model (ours, PyCaret's and the AWS
-one) is compared the same way.
-
-Both tasks use only the 4,000 development rows. The 1,000 reserved test rows
-stay unseen to avoid snoop bias.
-
-## Task 8: what the data shows
-
-| Check | Result |
+| Check | Historical result |
 |---|---:|
 | Development rows | 4,000 |
-| Edible / poisonous | 2,485 / 1,515 (62% / 38%) |
+| Edible / poisonous | 2,485 / 1,515 |
 | Rows without any missing value | 6 |
-| Columns where missingness carries signal | 2 (`spore-print-color`, `stem-surface`) |
+| Columns with detected missingness/class association | 2 (`spore-print-color`, `stem-surface`) |
 | Outliers by the IQR rule (cap, stem height, stem width) | 4.6% / 5.7% / 3.5% |
 | Stems with height and width both 0 | 38 |
 | Spearman correlation, cap diameter and stem width | 0.85 |
-| Strongest category (Cramér's V) | `stem-surface`, 0.23 |
-| Noise columns matching `cap-shape` row by row | 28% (pure chance: 28%) |
+| Strongest reported categorical association (Cramer's V) | `stem-surface`, 0.23 |
+| Noise columns matching `cap-shape` row by row | About 28%, similar to chance |
 
-**Missing values:** almost every row has one, so deleting rows is impossible.
-For most columns the gaps are random (chi-square p > 0.05). We impute inside the
-model: the median for numbers and a `__MISSING__` category for text.
+**Missing values:** almost every row has a missing entry, so complete-case deletion
+would discard almost all development data. Non-significant missingness/class
+tests do not prove MCAR or explain the missingness mechanism. Median numeric
+imputation and categorical `__MISSING__` encoding are learned inside training folds.
 
-**Outliers:** sizes are right-skewed, and the largest caps form a group of
-mostly edible mushrooms (22 of 25 above 40 cm), not typos. We keep them. Zeros
-mean "no stem", not a missing value.
+**Unusual values:** sizes are right-skewed; 22 of the 25 caps above 40 in the supplied
+measurement column were edible-labelled. This does not prove measurement validity.
+Likewise, zeros cannot be confidently interpreted as "no stem" without source
+documentation. The current policy retains these observations rather than asserting
+their biological meaning or deleting them automatically.
 
-**Categories:** all codes are nominal (season is cyclic), so they are one-hot
-encoded. Every real feature is related to the class, but weakly, so a model has
-to combine many of them.
+**Categories and noise:** categorical codes are treated as nominal. Sparse expected
+cell counts limit asymptotic chi-square interpretations. The two noise columns have
+category proportions similar to `cap-shape` and chance-like row agreement; this is
+consistent with shuffled/noise-like columns but does not establish their exact
+generation process. Their removal is supported by the development ablation below.
 
-**Noise columns:** `jumbled_noise_0` and `jumbled_noise_1` have the same code
-shares as `cap-shape`, but match it row by row only as often as chance. They are
-shuffled copies with no information about the mushroom.
+### Historical cleaning experiment
 
-### The cleaning experiment
+Two baseline models were compared across five preparation variants on matched
+development folds. Preserve these rounded RF ROC-AUC results as historical evidence:
 
-Two baseline models were trained on five versions of the data, on the same
-cross-validation folds:
-
-| Data version | Random forest ROC-AUC |
+| Data version | RF ROC-AUC |
 |---|---:|
 | All columns | 0.821 |
 | Without noise columns | 0.831 |
 | Also without `spore-print-color` | 0.827 |
-| `spore-print-color` as a "recorded" flag | 0.829 |
-| Without noise columns and "was missing" flags | at least as good as version 2 |
+| `spore-print-color` reduced to a recorded flag | 0.829 |
+| Without noise columns and numeric missing indicators | At least as good as version 2 in that experiment |
 
-Removing the noise columns gave the largest improvement, so they are dropped.
-`spore-print-color` is kept, and the extra "was missing" columns for numbers are
-dropped because they did not help.
+These results motivate dropping the noise columns, retaining `spore-print-color`
+and omitting numeric missing indicators in task 13. They do not prove a universal
+optimal preparation. Overlapping OOF scores and confident model/label
+contradictions do not establish label corruption; no labels are rewritten.
 
-**Separability:** out-of-fold probabilities overlap heavily between the classes,
-and only 11 mushrooms are confident contradictions. There is no separate group
-of obviously flipped labels; the data is simply noisy, so the threshold must be
-chosen on purpose.
+## Task 11: historical evaluation and later clarification
 
-## Task 11: how models are evaluated
+Viviana fixed the existing 1,000-row final-test membership, combined the other 4,000
+rows for development, and used stratified five-fold CV repeated twice with shared
+folds. Poisonous is the positive class. Average precision is the primary ranking
+metric; ROC-AUC is secondary. AP is a recall-weighted precision summary, not
+trapezoidal PR-AUC. Accuracy alone hides the majority baseline's zero poison recall.
 
-**Split:** the same 1,000 test rows stay locked away until the final models are
-chosen. The other 4,000 rows use stratified 5-fold cross-validation, repeated
-twice, with the same folds for every model (`cv_splitter()`).
+The historical table reported AP approximately 0.379 / 0.631 / 0.783 for dummy /
+LR / RF. Its threshold helper chose maximum precision subject to at least 90%
+recall on development OOF predictions. Specificity was then reported using those
+same predictions (roughly 0 / 0.23 / below 0.5). This is a **selection estimate**:
+the target was not independently validated, and maximizing precision is not
+identical to maximizing specificity.
 
-**Metrics:** poisonous is the positive class. Models are ranked by average
-precision (area under the precision-recall curve), with ROC-AUC as a second
-score. Accuracy is not used, because "always edible" already scores 62%.
+The integrated task-15 comparison reproduces AP/ROC-AUC with a fixed 0.5 reference
+threshold for error metrics. Task 24 separately evaluates a maximum-specificity
+recall-constrained policy, choosing thresholds inside outer training folds and
+evaluating on held-out outer development folds. The measured policy recall is
+89.24%, demonstrating that a 90% calibration constraint is not a guarantee.
+No tuning improvement is presumed; tasks 20/21 remain unstarted.
 
-**Threshold:** every model uses the threshold that catches at least 90% of
-poisonous mushrooms, chosen on out-of-fold predictions. At that threshold we
-compare specificity: how many edible mushrooms are kept.
+## Reading and reproducing the work
 
-| Model | Average precision | Specificity at 90% sensitivity |
-|---|---:|---:|
-| Majority baseline | 0.379 | 0.00 |
-| Logistic regression | 0.631 | 0.23 |
-| Random forest | 0.783 | below 0.5 |
+Use the historical notebooks to inspect the original evidence. For the current
+reproducible implementation, follow [MUSHROOM_WORKFLOW.md](MUSHROOM_WORKFLOW.md)
+and run notebooks 01-04 in the pinned Python 3.11 environment. Do not compare the
+old 3,000/1,000 validation result directly with the integrated 4,000-row repeated-CV
+result as though only the model changed.
 
-The random forest is clearly the best, but it overfits and still rejects more
-than half of the edible mushrooms at 90% sensitivity. Tuning (tasks 20 and 21)
-should raise average precision so that more edible mushrooms are kept.
+Useful oral explanations:
 
-## Run the work
-
-From PowerShell in the repository root:
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-Then open `mushrooms/00_data_audit.ipynb` and `mushrooms/02_baseline_models.ipynb`,
-select the `.venv` kernel and click Run All. The cleaning experiment in
-notebook 00 takes one to two minutes.
-
-Useful explanations for the oral:
-
-- "The noise columns are shuffled `cap-shape` values; removing them improved ROC-AUC."
-- "Missing values are mostly random, so we impute instead of deleting rows."
-- "We use cross-validation because 5,000 rows is too few to waste 1,000 on validation."
-- "We rank by average precision because the poisonous class is what matters."
-- "The threshold catches 90% of poisonous mushrooms; specificity shows the cost."
-
-Next: task 13 applies these decisions in `mushrooms/01_data_preparation.ipynb`.
+- Removing the two noise columns helped in a matched development ablation; their exact origin is not proven.
+- Imputation preserves rows without claiming that missingness is random.
+- Shared folds and fold-fitted preprocessing make candidate comparisons consistent.
+- AP measures ranking quality; a threshold controls the precision/recall trade-off.
+- Development threshold targets and reserved-test performance are different claims.

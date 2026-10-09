@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CloudAI | Mushroom baseline</title>
+  <title>CloudAI | Mushroom development reference</title>
   <style>
     :root { --ink:#193d2d; --muted:#63766a; --line:#d7e0d5; --green:#285c40; --paper:#f5f6ef; }
     * { box-sizing:border-box; }
@@ -59,8 +59,8 @@
   <div class="shell">
     <nav><div class="brand">Cloud<span>AI</span></div><span class="pill" id="status">Loading baseline</span></nav>
     <header>
-      <div><div class="eyebrow">Going green / First experiment</div><h1>Explore the mushroom<br>classification baseline.</h1><p>Enter features from the coursework dataset and see how the saved random forest responds. Unknown values can stay blank.</p></div>
-      <div class="facts"><div class="fact"><strong id="accuracy">—</strong><span>Validation accuracy</span></div><div class="fact"><strong id="recall">—</strong><span>Poisonous-class recall</span></div></div>
+      <div><div class="eyebrow">Going green / Development reference</div><h1>Explore the mushroom<br>classification baseline.</h1><p>Enter features from the coursework dataset and see how the saved random forest responds. Unknown values can stay blank.</p></div>
+      <div class="facts"><div class="fact"><strong id="accuracy">—</strong><span>Development OOF accuracy</span></div><div class="fact"><strong id="recall">—</strong><span>Development OOF poison recall</span></div></div>
     </header>
     <main>
       <section class="panel">
@@ -83,10 +83,10 @@
           <div class="small">Decision threshold: <span id="threshold">0.50</span>. The score is not calibrated confidence.</div>
           <hr class="divider">
           <h2>One consistent pipeline</h2>
-          <ol class="steps"><li><span class="step-number">1</span><span>Prepare missing values and categorical inputs.</span></li><li><span class="step-number">2</span><span>Apply the forest trained on 3,000 examples.</span></li><li><span class="step-number">3</span><span>Return the dataset label and model score.</span></li></ol>
+          <ol class="steps"><li><span class="step-number">1</span><span>Prepare missing values and categorical inputs.</span></li><li><span class="step-number">2</span><span id="training-summary">Apply the saved development reference model.</span></li><li><span class="step-number">3</span><span>Return the dataset label and model score.</span></li></ol>
           <div class="notice"><strong>Classroom experiment only.</strong><br>The data is hypothetical and noisy. This model cannot determine whether a real mushroom is edible.</div>
         </section>
-        <p class="small" style="padding:0 8px">The final test set is reserved. Tuning, cloud training and hosting remain project tasks.</p>
+        <p class="small" style="padding:0 8px">This is a provisional reference at threshold 0.50. Final model selection, threshold selection and test evaluation remain open. The displayed metrics average two held-out development predictions per row.</p>
       </aside>
     </main>
     <footer><span>The best DL group in the world ever</span><span>Viviana Pajic · Tomislav Novosel · Muneeb Shakoor</span></footer>
@@ -128,7 +128,8 @@
       document.querySelector('#recall').textContent = (100 * info.metrics.poison_recall).toFixed(1) + '%';
       document.querySelector('#threshold').textContent = info.threshold.toFixed(2);
       document.querySelector('#feature-count').textContent = Object.keys(schema).length + ' inputs';
-      document.querySelector('#status').textContent = 'Local baseline ready';
+      document.querySelector('#status').textContent = 'Development reference ready';
+      document.querySelector('#training-summary').textContent = 'Apply the forest fitted on ' + info.training_rows.toLocaleString() + ' development examples.';
       submit.disabled = example.disabled = clear.disabled = false;
     }).catch(error => {
       document.querySelector('#status').textContent = 'Model unavailable';

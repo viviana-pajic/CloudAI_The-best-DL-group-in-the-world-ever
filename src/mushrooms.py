@@ -1,4 +1,8 @@
-"""Reproduce the mushroom audit, development baselines and saved demo model."""
+"""Shared mushroom preparation and historical experiment helpers.
+
+The current integrated workflow is in mushroom_workflow.py. Historical pilot
+experiments remain available explicitly; their results use a different protocol.
+"""
 
 import hashlib
 import json
@@ -31,11 +35,14 @@ SOURCE = (
     "Discussion%20topics/mushroom_project_dataset.csv"
 )
 EXPECTED_SHA256 = "1f1a25f2f330458ed95ce9f6ffe3241582312a42cb21797a2b7bd5e5ad281114"
-# Task 8:shuffled copies of cap-shape with no relation to the label
+# Task 8: development ablation supports removing these apparent shuffled copies.
 NOISE_COLUMNS = ["jumbled_noise_0","jumbled_noise_1"]
-# Task 11: missing a poisonous mushroom is the costly error, so every model is
-# operated at a threshold that catches at least 90% of poisonous mushrooms.
+# A development operating-policy proposal, not a lecturer requirement or guarantee.
 TARGET_POISON_RECALL = 0.90
+FEATURE_COLUMNS = [
+    "cap-diameter", "stem-height", "stem-width", "spore-print-color",
+    "gill-color", "habitat", "season", "ring-type", "cap-shape", "stem-surface",
+]
 
 def load_data():
     """Download once and reject a cached file with a different fingerprint."""
@@ -94,6 +101,11 @@ def make_split(frame):
         "validation": sorted(map(int, validation)),
         "test": sorted(map(int, test)),
     }
+    manifest_path = ROOT / "mushrooms/split_manifest.json"
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if manifest["dataset_sha256"] != EXPECTED_SHA256 or manifest["splits"] != splits:
+            raise ValueError("Split differs from the frozen manifest; do not change test membership.")
     (ROOT / "reports").mkdir(exist_ok=True)
     (ROOT / "reports/split_indices.json").write_text(
         json.dumps(splits, indent=2), encoding="utf-8"
@@ -123,7 +135,11 @@ def cv_splitter(repeats=2):
     return RepeatedStratifiedKFold(n_splits=5, n_repeats=repeats, random_state=42)
 
 def threshold_for_recall(labels, probabilities, target=TARGET_POISON_RECALL):
-    """Highest-precision threshold that still reaches the target poison recall."""
+    """Historical policy: maximize precision subject to DEVELOPMENT recall.
+
+    This does not maximize specificity or guarantee recall on future observations.
+    Performance on these same predictions is a selection estimate, not a test.
+    """
     precision, recall, thresholds = precision_recall_curve(labels, probabilities)
     reaches_target = recall[:-1] >= target
     best = int(np.argmax(np.where(reaches_target, precision[:-1], -1.0)))
@@ -157,7 +173,7 @@ def cross_validated_scores(name, pipeline, features, labels):
         "tn": int(tn), "fp": int(fp), "fn": int(fn), "tp": int(tp),
     }, out_of_fold
 
-def preprocessor(features, scale=False,missing_flags=False):
+def preprocessor(features, scale=False, missing_flags=False, dense=False):
     """Describe transformations; fitting happens inside the training pipeline."""
     numeric = features.select_dtypes(include="number").columns.tolist()
     categorical = [column for column in features.columns if column not in numeric]
@@ -170,7 +186,7 @@ def preprocessor(features, scale=False,missing_flags=False):
             ("impute", SimpleImputer(strategy="constant", fill_value="__MISSING__")),
             ("encode", OneHotEncoder(handle_unknown="ignore")),
         ]), categorical),
-    ])
+    ], sparse_threshold=0.0 if dense else 0.3)
 
 
 def scores(labels, predictions, probabilities):
@@ -210,7 +226,7 @@ def input_schema(training_features):
 
 
 def experiment(frame):
-    """Fit three baselines and compare validation results; leave the test unused."""
+    """HISTORICAL 60/20/20 pilot, retained for reproduction, not final selection."""
     audit(frame)
     splits = make_split(frame)
     features = frame.drop(columns="class")
@@ -279,4 +295,12 @@ def experiment(frame):
 
 
 if __name__ == "__main__":
-    experiment(load_data())
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--historical", action="store_true", help="Reproduce the original pilot")
+    args = parser.parse_args()
+    if args.historical:
+        experiment(load_data())
+    else:
+        from mushroom_workflow import run_baselines
+        run_baselines()

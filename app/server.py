@@ -2,6 +2,7 @@
 
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
+import importlib.metadata
 import math
 from pathlib import Path
 import sys
@@ -10,6 +11,19 @@ import joblib
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_bundle(path):
+    """Load the current model, schema and threshold together, or fail clearly."""
+    bundle = joblib.load(path)
+    model, schema, info = bundle["pipeline"], bundle["schema"], bundle["metadata"]
+    if info["environment"]["packages"]["scikit-learn"] != importlib.metadata.version("scikit-learn"):
+        raise ValueError("Use the same scikit-learn version as the recorded training environment.")
+    if list(schema) != list(model.feature_names_in_) or list(schema) != info["feature_columns"]:
+        raise ValueError("Model/schema feature contract mismatch.")
+    if list(model.classes_) != [0, 1] or not 0 <= info["threshold"] <= 1:
+        raise ValueError("Invalid positive-class interpretation or threshold.")
+    return model, schema, info
 
 
 def handler_for(model, schema, model_info):
@@ -65,22 +79,16 @@ def handler_for(model, schema, model_info):
                     "threshold": threshold,
                     "note": "Hypothetical coursework data. Never use this for real edibility decisions.",
                 })
-            except (ValueError, TypeError, UnicodeDecodeError) as error:
+            except (ValueError, TypeError, UnicodeDecodeError, OverflowError) as error:
                 self.send(400, {"error": str(error)})
     return Handler
 
 
 if __name__ == "__main__":
-    model_paths = [
-        ROOT / "models/mushroom_random_forest_pilot.joblib",
-        ROOT / "models/input_schema.json",
-        ROOT / "models/model_info.json",
-    ]
-    if not all(path.exists() for path in model_paths):
-        sys.exit("Run python src/mushrooms.py before starting the local interface.")
-    model = joblib.load(model_paths[0])
-    schema = json.loads(model_paths[1].read_text(encoding="utf-8"))
-    model_info = json.loads(model_paths[2].read_text(encoding="utf-8"))
+    bundle_path = ROOT / "models/mushroom_candidate.joblib"
+    if not bundle_path.exists():
+        sys.exit("Run src/mushroom_workflow.py baseline in the documented mushroom environment first.")
+    model, schema, model_info = load_bundle(bundle_path)
     server = ThreadingHTTPServer(("127.0.0.1", 8765), handler_for(model, schema, model_info))
     print("CloudAI local demo: http://127.0.0.1:8765 (Ctrl+C to stop)", flush=True)
     try:

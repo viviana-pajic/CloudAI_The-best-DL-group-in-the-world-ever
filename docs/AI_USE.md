@@ -17,7 +17,7 @@ These are shortened summaries of actual requests in the development conversation
 
 ## Verification and limits
 
-The replacement CSV fingerprint, mushroom notebook execution, development metrics, split separation and local inference were checked. The reserved mushroom final test has not been evaluated. PyCaret remains a template. AWS, public hosting and automatic deployment remain future work.
+The replacement CSV fingerprint, mushroom notebook execution, development metrics, split separation and local inference were checked. The reserved mushroom final test has not been evaluated. PyCaret was a template in the original starter; the executed Mushroom continuation is recorded below. AWS, public hosting and automatic deployment remain future work.
 
 ## Citi Bike continuation, 6 October 2026
 
@@ -36,3 +36,39 @@ Record substantive human reviews, changes and additional prompts here as develop
 ## Mushroom tasks 8 and 11, 8 October 2026
 
 Viviana completed tasks 8 and 11 with AI assistance (Claude), which proposed the tests, experiments, evaluation rules and helper code in `src/mushrooms.py`; Viviana decided where the work belongs in the existing notebooks, removed redundant cells, chose the explanations, and ran and checked every result herself, without using the reserved test rows.
+
+## Mushroom integration and tasks 13, 15, 18, 24, 8-9 October 2026
+
+**Contribution owner: Muneeb Shakoor.** Muneeb requested the repository review,
+authorized integration on `main`, required preservation of teammates' work and
+historical evidence, and selected the final four-task scope. After an interruption,
+he explicitly requested completion of preparation, reproduced baselines, actual
+AutoML and meaningful development-only error/threshold analysis before stopping.
+
+Codex generated/edited the implementation, installed the local Python environments,
+ran the experiments and tests, investigated reduced-feature collisions, corrected
+unsupported statistical wording, and prepared the notebooks/documentation.
+The decisions and evidence are in [MUSHROOM_WORKFLOW.md](MUSHROOM_WORKFLOW.md).
+This attribution identifies Muneeb's integration responsibility; it does not claim
+he independently authored the generated code or has already completed a detailed
+human code review. Those reviews should be recorded when they actually occur.
+
+The work uses Viviana Pajic's tasks 8/11 as its EDA/evaluation foundation and the
+shared AI-assisted starter maintained by Tomislav Novosel. The original baseline
+notebook is retained as a historical snapshot, including Viviana's experiment
+outputs. Contributor credit is retained in the current notebooks. Historical
+results are distinguished from the common integrated protocol.
+
+Actual work includes a frozen ten-feature preparation contract; repeated-CV dummy,
+LR and RF reproduction; PyCaret screening of four complete pipelines; shared-fold
+Extra Trees/boosting evaluation; development collision sensitivity; confusion
+matrices and missingness groups; and a threshold procedure chosen on inner OOF
+scores and evaluated on outer development folds. No model hyperparameter search
+was run. The 90% recall target is an explicitly provisional team preference.
+
+Saved notebook outputs, CSV/JSON reports, source/version records and nine tests
+verify the implemented checkpoint. The earlier authorized collision investigation
+checked label agreement within colliding groups, including reserved rows; no
+reserved-test model predictions or performance evaluation were performed. The
+latest completion did not extend the existing app integration, tune models,
+start other project tasks, commit, merge or push.

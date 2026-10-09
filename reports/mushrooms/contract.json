@@ -1,0 +1,42 @@
+{
+  "version": "mushroom-development-v1",
+  "dataset_sha256": "1f1a25f2f330458ed95ce9f6ffe3241582312a42cb21797a2b7bd5e5ad281114",
+  "features": [
+    "cap-diameter",
+    "stem-height",
+    "stem-width",
+    "spore-print-color",
+    "gill-color",
+    "habitat",
+    "season",
+    "ring-type",
+    "cap-shape",
+    "stem-surface"
+  ],
+  "development_rows": 4000,
+  "positive_class": "p",
+  "target_mapping": {
+    "e": 0,
+    "p": 1
+  },
+  "cleaning": "Drop two jumbled_noise columns; retain every row and observed value.",
+  "preprocessing": "Fold-fitted median numeric imputation; no numeric missing flags; categorical __MISSING__ and one-hot encoding; numeric scaling only for LR.",
+  "cv": "RepeatedStratifiedKFold: 5 folds, 2 repeats, random_state=42",
+  "fold_fingerprint": "2f607146ef2d173af2bd97bb34d3f74954eaaae3a4143d7023e6fec28a71a0b5",
+  "ranking_metric": "mean fold average precision (not trapezoidal PR-AUC)",
+  "secondary_metric": "mean fold ROC-AUC",
+  "operating_metrics": "Development OOF scores averaged across 2 repeats; fixed threshold 0.5.",
+  "threshold_status": "No operating threshold selected in this checkpoint.",
+  "test_model_predictions_computed": false,
+  "environment": {
+    "python": "3.11.13",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.1.4",
+      "scikit-learn": "1.4.2",
+      "scipy": "1.11.4",
+      "joblib": "1.3.2",
+      "pycaret": "3.3.2"
+    }
+  }
+}
