@@ -84,3 +84,8 @@ The run uses 38 complete weeks within January-September 2023, 20,000 resampled s
 Tomislav requested that Codex pull the team's latest work and push the prepared continuation from his desktop repository. The held Task 10 files were restored after a fast-forward pull, without replacing teammates' mushroom work. AI assistance updated the README findings and checklist, normalized long dashes in the new text, and checked the cached daily-data fingerprint, numerical reproduction, hypothesis safeguards, notebook outputs and documentation links.
 
 Task 10 provides exploratory evidence for a calendar pattern, not forecast accuracy. Task 12's split decision and the forecast models remain open. The contribution owner is Tomislav; substantive human review and any subsequent changes should be recorded when they occur.
+
+
+## Mushroom tasks 20 and 21, 9 October 2026
+
+Viviana completed tasks 20 and 21 with AI assistance (Claude), which proposed the nested cross-validation design, the parameter grids and the notebook code built on Muneeb's `mushroom_workflow.py`; Viviana set up the pinned Python 3.11 environment, ran both notebooks, added a fold-by-fold comparison to check whether the forest's gain is consistent, and checked every result herself, without using the reserved test rows.

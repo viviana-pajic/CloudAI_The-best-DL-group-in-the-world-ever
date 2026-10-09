@@ -91,8 +91,21 @@ remain in the [historical baseline notebook](mushrooms/history/02_baseline_model
 improvement claims. Four reduced-feature collision groups were retained;
 development fold purging changed RF AP by only **+0.001371**.
 
-**The final test has not been evaluated.** Tasks 20/21, final model selection and
-the remaining project work are still pending. Development results do not establish
+**Tasks 20 and 21 - Viviana Pajic, with AI assistance.** Both models were tuned
+with nested cross-validation on the same 4,000 development rows and folds as the
+table above; see [the tuning notes](docs/MUSHROOM_TASKS_20_21.md).
+
+| Model | Baseline AP | Tuned AP | Tuned ROC-AUC |
+|---|---:|---:|---:|
+| Logistic regression ([notebook 05](mushrooms/05_tune_logistic_regression.ipynb)) | 0.6307 | 0.6306 | 0.6896 |
+| Random forest ([notebook 06](mushrooms/06_tune_random_forest.ipynb)) | 0.7831 | 0.7885 | 0.8412 |
+
+Tuning does not help logistic regression, which underfits. The random forest
+improves slightly with `max_features = 0.3`, ahead in 7 of 10 folds, and is the
+leading candidate for task 28.
+
+**The final test has not been evaluated.** Final model selection and the
+remaining project work are still pending. Development results do not establish
 real-world mushroom edibility.
 
 
@@ -154,8 +167,8 @@ We explored January-September and left October-December aside for possible final
 
 - [x] **18. Run mushroom AutoML comparison - Muneeb Shakoor.** Executed bounded PyCaret screening and common-fold candidate comparison; [notebook](mushrooms/03_automl.ipynb).
 - [ ] **19. Run Citi Bike AutoML comparison.**
-- [ ] **20. Tune mushroom model 1 - Viviana.**
-- [ ] **21. Tune mushroom model 2 - Viviana.**
+- [x] **20. Tune mushroom model 1 - Viviana.**
+- [x] **21. Tune mushroom model 2 - Viviana.**
 - [ ] **22. Tune Citi Bike model 1.**
 - [ ] **23. Tune Citi Bike model 2.**
 - [x] **24. Investigate mushroom errors and choose a threshold - Muneeb Shakoor.** Confusion matrices, missingness groups, false negatives and separately evaluated development threshold policy; [notebook](mushrooms/04_model_comparison.ipynb).
