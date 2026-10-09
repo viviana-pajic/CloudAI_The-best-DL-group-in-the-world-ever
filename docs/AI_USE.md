@@ -89,3 +89,13 @@ Task 10 provides exploratory evidence for a calendar pattern, not forecast accur
 ## Mushroom tasks 20 and 21, 9 October 2026
 
 Viviana completed tasks 20 and 21 with AI assistance (Claude), which proposed the nested cross-validation design, the parameter grids and the notebook code built on Muneeb's `mushroom_workflow.py`; Viviana set up the pinned Python 3.11 environment, ran both notebooks, added a fold-by-fold comparison to check whether the forest's gain is consistent, and checked every result herself, without using the reserved test rows.
+
+## Citi Bike forecasting continuation, 9 October 2026
+
+Tomislav requested completion of the remaining Citi Bike work and explicitly suggested using BESTIJA's GPU and GridSearch. AI assistance implemented chronological evaluation, features, actual FLAML screening, tuned Ridge/random forest/seasonal/XGBoost experiments, error analysis, saved candidate rebuilding, notebooks, app integration, a GitHub rebuild workflow and AWS/hosting preparation. XGBoost used the RTX 5080; the saved configuration confirms CUDA execution. The owner is Tomislav, and this does not imply independent human authorship or completed teammate review.
+
+The implementation was checked for past-only features, training-fold preprocessing, saved-model/API agreement, invalid inputs, notebook execution, development-source fingerprints and CPU rebuilding without the raw archives. Both existing mushroom and new Citi Bike model paths were exercised through the local HTTP gateway. Browser automation was unavailable in the remote session. The mushroom experiment source and results were preserved; its existing provisional reference bundle was recreated in its separate Python 3.11 environment.
+
+Model searches use January-June 2023 folds. July-September is development validation already seen during earlier EDA, and is used for local selection. The local candidate is refitted on eligible January-September dates for the demo, with its earlier validation scores clearly labelled. No final-test model predictions or scores were computed. The app example uses made-up counts for a January 2024 scenario.
+
+The eight new local notebooks review the saved actual experiment runs by default and provide an explicit training mode. The AWS notebook is prepared without execution outputs; AWS access, the actual cloud run, public hosting, deployment wiring, frozen release choices and reserved-test evaluation remain unfinished. Record substantive human reviews, explanations and later changes here as they occur.

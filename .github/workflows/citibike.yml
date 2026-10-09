@@ -1,0 +1,44 @@
+name: Citi Bike model update
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/citibike*.py'
+      - 'citibike/evaluation_plan.json'
+      - 'citibike/development_daily*'
+      - 'citibike/selected_configuration.json'
+      - 'scripts/rebuild_citibike_candidate.py'
+      - 'app/citibike_server.py'
+      - 'tests/test_citibike*.py'
+      - 'requirements*.txt'
+      - '.github/workflows/citibike.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+          cache: pip
+          cache-dependency-path: requirements-citibike.lock.txt
+      - name: Install the recorded Citi Bike environment
+        run: python -m pip install -r requirements-citibike.lock.txt
+      - name: Rebuild the selected model on CPU
+        run: python scripts/rebuild_citibike_candidate.py
+      - name: Verify forecast boundaries and API agreement
+        run: python -m unittest discover -s tests -p 'test_citibike*.py' -v
+      - uses: actions/upload-artifact@v4
+        with:
+          name: citibike-candidate-${{ github.sha }}
+          path: |
+            models/citibike_candidate.joblib
+            models/citibike_candidate.metadata.json
+          retention-days: 14
+          if-no-files-found: error

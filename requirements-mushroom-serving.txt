@@ -1,0 +1,7 @@
+# Python 3.11, numerical versions matching the recorded mushroom experiment.
+numpy==1.26.4
+pandas==2.1.4
+scikit-learn==1.4.2
+scipy==1.11.4
+joblib==1.3.2
+threadpoolctl==3.7.0

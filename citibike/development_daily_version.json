@@ -1,0 +1,10 @@
+{
+  "source": "Code-generated development-only snapshot of audited daily aggregation",
+  "rows": 273,
+  "start": "2023-01-01",
+  "end": "2023-09-30",
+  "sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+  "original_annual_daily_sha256": "5a129beca835f620c98c583d1367802aef57d3c6cf46e7385a55e2a553e6cd57",
+  "purpose": "Small reproducible development input for clean clones and CI; raw trip archives are still downloaded and assembled by notebook 00.",
+  "reserved_test_targets_included": false
+}

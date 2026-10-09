@@ -9,7 +9,7 @@ Viviana Pajic · Tomislav Novosel · Muneeb Shakoor
 ## Running the project
 
 For the current **Mushroom tasks 13, 15, 18 and 24**, use the separate Python 3.11
-environment. In this checkout it is already installed. From PowerShell:
+environment. From PowerShell:
 
 ```powershell
 .\.venv-pycaret\Scripts\python.exe scripts/run_mushroom_notebooks.py
@@ -23,8 +23,8 @@ use, choose `.venv-pycaret\Scripts\python.exe` as the notebook kernel.
 
 See [the Mushroom workflow](docs/MUSHROOM_WORKFLOW.md) for commands, results,
 provenance and the distinction between historical and current experiments.
-Data and models stay out of Git and are recreated by the notebooks. The original
-Python 3.12 `.venv` / `requirements.txt` environment remains separate for Citi Bike.
+Data and models stay out of Git and are recreated by the notebooks. The Python 3.12 `.venv` remains separate for Citi Bike. Install
+`requirements-citibike.lock.txt` there for the new forecasting notebooks.
 The existing local Mushroom demo uses the Python 3.11 environment and
 `app/server.py`; its threshold remains the provisional reference value 0.5.
 
@@ -33,9 +33,9 @@ The existing local Mushroom demo uses the Python 3.11 environment and
 | Folder | What's there |
 |---|---|
 | `mushrooms/` | Executed preparation, baselines, AutoML, error/threshold analysis and historical results |
-| `citibike/` | Data download and exploration notebooks, source records and plots |
+| `citibike/` | Data, hypothesis, forecasting and model comparison notebooks |
 | `src/` | Python helpers used by the notebooks |
-| `app/` | The local mushroom prediction page and server |
+| `app/` | Shared home page, mushroom classifier and Citi Bike forecast |
 | `docs/` | More detailed explanations and the [AI assistance record](docs/AI_USE.md) |
 
 ## Mushrooms so far
@@ -136,7 +136,21 @@ This makes the calendar and recent ride counts a reasonable starting point for p
 
 This is exploratory because we had already looked at the data. It does not tell us how accurate a forecast will be. See [notebook 02](citibike/02_weekly_hypothesis.ipynb) and [the task 10 notes](docs/CITIBIKE_TASK_10.md) for the test, results and limits. Use the same Python 3.12 environment as notebooks 00 and 01.
 
-We explored January-September and left October-December aside for possible final testing. Task 12 will fix the evaluation split. More details are in [the tasks 7 and 9 notes](docs/CITIBIKE_TASKS_7_9.md).
+**9 October update - Tomislav.** The forecast predicts tomorrow's citywide rides from the previous 28 daily totals and calendar information. We train and tune on January-June, compare on July-September, and keep October-December for the final test.
+
+We tried simple guesses, FLAML AutoML, Ridge, random forest and XGBoost. The XGBoost search ran **192 configurations on BESTIJA's RTX 5080**. Its validation MAE was about **14,693 rides/day**, compared with **18,477** for last week's count - **20.5% less error**. It still makes big mistakes on sudden quiet days, so this is our local candidate rather than the final model.
+
+![Citi Bike model comparison](citibike/figures/forecast_comparison.png)
+
+Notebooks **03-10** explain preparation, baselines, model searches and errors. The actual experiment results are saved; notebook 11 is an **unrun AWS preparation**. See [the forecasting notes](docs/CITIBIKE_WORKFLOW.md) for the results and commands.
+
+Both prediction pages now share one local app. On BESTIJA, run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/run_local_app.py
+```
+
+Open **http://127.0.0.1:8780** on the desktop. A fresh clone needs the two environments and model rebuilds described in [the app setup notes](docs/DEPLOYMENT.md). A GitHub workflow rebuilds and checks the Citi Bike candidate on CPU. AWS training, public hosting, automatic deployment and final-test scoring still need finishing.
 
 ## Tasks
 
@@ -144,7 +158,7 @@ We explored January-September and left October-December aside for possible final
 
 - [x] **01. Confirm requirements and dates.**
 - [x] **02. Complete repository access and review the starter.**
-- [x] **03. Check everyone's environment** - local Mushroom/PyCaret environment verified; teammates' environments still need checking.
+- [x] **03. Check everyone's environment** - local Mushroom/PyCaret and Citi Bike environments verified; the fresh release check remains in task 33.
 - [x] **04. Agree scope and responsibilities.**
 - [ ] **05. Check AWS and hosting access** - access, costs and cloud requirements.
 
@@ -156,34 +170,34 @@ We explored January-September and left October-December aside for possible final
 - [x] **09. Explore and aggregate Citi Bike data - Tomislav.**
 - [x] **10. Test the Citi Bike hypothesis - Tomislav.** Weekly contrast, uncertainty checks and exploratory conclusion; [notebook](citibike/02_weekly_hypothesis.ipynb).
 - [x] **11. Define mushroom evaluation - Viviana.**
-- [ ] **12. Define Citi Bike evaluation.**
+- [x] **12. Define Citi Bike evaluation - Tomislav.** Fixed chronological splits and one-day horizon.
 - [x] **13. Finish mushroom preparation - Muneeb Shakoor.** Frozen split, ten-feature contract and fold-safe preparation; [executed notebook](mushrooms/01_data_preparation.ipynb).
-- [ ] **14. Finish Citi Bike preparation.**
+- [x] **14. Finish Citi Bike preparation - Tomislav.** Features use only earlier ride counts.
 - [x] **15. Reproduce mushroom baselines - Muneeb Shakoor.** Consistent development folds, metrics and historical traceability; [executed notebook](mushrooms/02_baseline_models.ipynb).
-- [ ] **16. Build Citi Bike baselines** - compare with last week's count.
-- [ ] **17. Connect both models to the app** - mushroom part works; Citi Bike still needed.
+- [x] **16. Build Citi Bike baselines - Tomislav.** Weekly, recent average and stronger seasonal comparisons.
+- [x] **17. Connect both models to the local app - Tomislav.** Two isolated runtimes behind one home page.
 
 ### Sprint 2 - 9-11 October
 
 - [x] **18. Run mushroom AutoML comparison - Muneeb Shakoor.** Executed bounded PyCaret screening and common-fold candidate comparison; [notebook](mushrooms/03_automl.ipynb).
-- [ ] **19. Run Citi Bike AutoML comparison.**
+- [x] **19. Run Citi Bike AutoML comparison - Tomislav.** FLAML, four families, 80 trials.
 - [x] **20. Tune mushroom model 1 - Viviana.**
 - [x] **21. Tune mushroom model 2 - Viviana.**
-- [ ] **22. Tune Citi Bike model 1.**
-- [ ] **23. Tune Citi Bike model 2.**
+- [x] **22. Tune Citi Bike model 1 - Tomislav.** Ridge, 28 configurations.
+- [x] **23. Tune Citi Bike model 2 - Tomislav.** GPU XGBoost, 192 configurations; extra forest comparison.
 - [x] **24. Investigate mushroom errors and choose a threshold - Muneeb Shakoor.** Confusion matrices, missingness groups, false negatives and separately evaluated development threshold policy; [notebook](mushrooms/04_model_comparison.ipynb).
-- [ ] **25. Investigate Citi Bike errors and improve features.**
+- [x] **25. Investigate Citi Bike errors and improve features - Tomislav.** Largest errors, groups and compact/full feature check.
 - [ ] **26. Train and tune a mushroom model on AWS.**
-- [ ] **27. Confirm or complete Citi Bike AWS training.**
-- [ ] **28. Choose the final models.**
+- [ ] **27. Confirm or complete Citi Bike AWS training - Tomislav.** Notebook/script prepared; access and actual cloud run pending.
+- [ ] **28. Choose the final models.** Citi Bike local candidate chosen; AWS comparison and mushroom choice remain open.
 - [ ] **29. Host the app** - start once both prediction paths work.
 
 ### Sprint 3 - 12-14 October
 
-- [ ] **30. Automate model updates and deployment.**
-- [ ] **31. Evaluate the final models on the reserved test sets.**
-- [ ] **32. Finish notebooks and documentation.**
-- [ ] **33. Check the complete project from a fresh environment.**
+- [ ] **30. Automate model updates and deployment.** Citi Bike CPU rebuild/check workflow added; hosting deployment still missing.
+- [ ] **31. Evaluate the final models on the reserved test sets.** Keep them unscored until final choices are frozen.
+- [ ] **32. Finish notebooks and documentation.** Local Citi Bike notebooks complete; AWS and final release notes pending.
+- [ ] **33. Check the complete project from a fresh environment.** Local Citi Bike CPU rebuild checked; team and hosted release review remain.
 - [ ] **34. Prepare the presentation and demo.**
 - [ ] **35. Submit the repository link through Canvas.**
 

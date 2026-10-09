@@ -1,0 +1,6 @@
+{
+  "initial_selected_model": "xgboost_tuned",
+  "scope": "Development validation; diagnostics and ablation may influence development selection.",
+  "test_model_predictions_computed": false,
+  "limitations": "No observed same-day weather or target is added after inspecting errors. Errors are not proof of weather causation. Final-test performance remains unknown."
+}

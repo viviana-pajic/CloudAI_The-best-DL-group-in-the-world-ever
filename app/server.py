@@ -1,5 +1,6 @@
 """Serve the local browser interface and saved mushroom inference pipeline."""
 
+import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import importlib.metadata
@@ -85,12 +86,15 @@ def handler_for(model, schema, model_info):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--port', type=int, default=8765)
+    args = parser.parse_args()
     bundle_path = ROOT / "models/mushroom_candidate.joblib"
     if not bundle_path.exists():
         sys.exit("Run src/mushroom_workflow.py baseline in the documented mushroom environment first.")
     model, schema, model_info = load_bundle(bundle_path)
-    server = ThreadingHTTPServer(("127.0.0.1", 8765), handler_for(model, schema, model_info))
-    print("CloudAI local demo: http://127.0.0.1:8765 (Ctrl+C to stop)", flush=True)
+    server = ThreadingHTTPServer(("127.0.0.1", args.port), handler_for(model, schema, model_info))
+    print(f"CloudAI local demo: http://127.0.0.1:{args.port} (Ctrl+C to stop)", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

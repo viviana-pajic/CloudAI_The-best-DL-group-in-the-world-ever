@@ -1,0 +1,14 @@
+{
+  "scope": "Clean source copy using the recorded installed Python environment, development snapshot only; not a teammate or hosted release review",
+  "raw_archives_or_existing_models_copied": false,
+  "cpu_rebuild_validation_mae": 14761.370650249979,
+  "cpu_rebuild_improvement_over_lag_7": 0.20109060970777382,
+  "citibike_tests_passed": 8,
+  "mushroom_tests_passed": 9,
+  "reserved_test_evaluated": false,
+  "new_local_notebooks_executed": 8,
+  "aws_notebook_executed": false,
+  "browser_ui_check": "Unavailable in the remote session",
+  "docker_image_built": false,
+  "http_gateway_check": "Both pages, both actual prediction paths, health and bad-input responses passed"
+}

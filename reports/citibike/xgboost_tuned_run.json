@@ -1,0 +1,165 @@
+{
+  "model": "xgboost_tuned",
+  "validation": {
+    "mae": 14692.65230129076,
+    "rmse": 23426.39386322501,
+    "wape": 0.12182922577931195,
+    "bias": 3763.6239358653193,
+    "days": 92
+  },
+  "cv_mean_mae": 14058.179381355409,
+  "cv_folds": [
+    {
+      "fold": 0,
+      "mae": 20453.776960100447,
+      "rmse": 31620.78872754537,
+      "wape": 0.195246011894925,
+      "bias": -1760.1664457775298,
+      "days": 21
+    },
+    {
+      "fold": 1,
+      "mae": 10758.854108537946,
+      "rmse": 17742.215606289446,
+      "wape": 0.09939192562641129,
+      "bias": 2325.003127325149,
+      "days": 21
+    },
+    {
+      "fold": 2,
+      "mae": 10961.907075427827,
+      "rmse": 12737.194019146766,
+      "wape": 0.09301271372170956,
+      "bias": -1131.8980073474702,
+      "days": 21
+    }
+  ],
+  "parameters": {
+    "feature_set": "full",
+    "model": "XGBRegressor(base_score=None, booster=None, callbacks=None,\n             colsample_bylevel=None, colsample_bynode=None,\n             colsample_bytree=0.9, device='cuda', early_stopping_rounds=None,\n             enable_categorical=True, eval_metric=None, feature_types=None,\n             feature_weights=None, gamma=None, grow_policy=None,\n             importance_type=None, interaction_constraints=None,\n             learning_rate=0.03, max_bin=None, max_cat_threshold=None,\n             max_cat_to_onehot=None, max_delta_step=None, max_depth=2,\n             max_leaves=None, min_child_weight=10, missing=nan,\n             monotone_constraints=None, multi_strategy=None, n_estimators=100,\n             n_jobs=2, num_parallel_tree=None, ...)",
+    "seasonal_residual": true
+  },
+  "search": {
+    "method": "GridSearchCV",
+    "configurations": 192,
+    "cv_fits": 576,
+    "best_parameters": {
+      "model__learning_rate": 0.03,
+      "model__max_depth": 2,
+      "model__min_child_weight": 10,
+      "model__n_estimators": 100,
+      "model__reg_lambda": 1.0,
+      "model__subsample": 1.0,
+      "seasonal_residual": true
+    },
+    "best_cv_mae": 14058.179381355409,
+    "elapsed_seconds": 111.17865180002991,
+    "actual_fitted_device": "cuda:0",
+    "validation_used_for_search": false
+  },
+  "contract": {
+    "version": "citibike-next-day-v1",
+    "daily_sha256": "5a129beca835f620c98c583d1367802aef57d3c6cf46e7385a55e2a553e6cd57",
+    "development_snapshot_sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+    "plan": {
+      "version": "citibike-next-day-v1",
+      "owner": "Tomislav Novosel",
+      "defined_on": "2026-10-09",
+      "target": "Recorded NYC rides starting on the next local calendar day",
+      "forecast_horizon_days": 1,
+      "information_cutoff": "After the previous calendar day has finished and its daily total is available",
+      "history_days": 28,
+      "training_start": "2023-01-29",
+      "training_end": "2023-06-30",
+      "validation_start": "2023-07-01",
+      "validation_end": "2023-09-30",
+      "reserved_test_start": "2023-10-01",
+      "reserved_test_end": "2023-12-31",
+      "search_cv": {
+        "type": "TimeSeriesSplit",
+        "n_splits": 3,
+        "test_size": 21,
+        "gap": 0
+      },
+      "primary_metric": "MAE in rides/day; lower is better",
+      "secondary_metrics": [
+        "RMSE in rides/day",
+        "WAPE",
+        "bias in rides/day"
+      ],
+      "baseline": "Same count as seven days earlier",
+      "validation_protocol": "Fit through June once; issue rolling one-day forecasts for July-September using each day's actually observed prior history, without refitting during that validation period",
+      "selection": "Tune on chronological training folds; compare selected configurations on the common July-September development validation period; refit the chosen local candidate on January-September development data",
+      "test_policy": "No test model predictions or metrics until AWS candidates and all final choices are frozen; evaluate the final test once",
+      "limitations": "Earlier EDA and hypothesis work examined January-September, so this is development validation, not independent confirmation. Only one year is available. No future weather, same-day rides or test target is a feature. Counts describe recorded trips, not unmet demand."
+    },
+    "feature_columns": [
+      "weekday_sin",
+      "weekday_cos",
+      "year_sin",
+      "year_cos",
+      "weekend",
+      "lag_1",
+      "lag_2",
+      "lag_3",
+      "lag_7",
+      "lag_14",
+      "lag_21",
+      "lag_28",
+      "mean_3",
+      "mean_7",
+      "mean_14",
+      "mean_28",
+      "std_7",
+      "weekly_change",
+      "recent_change",
+      "holiday",
+      "before_holiday",
+      "after_holiday"
+    ],
+    "folds": [
+      {
+        "training_start": "2023-01-29",
+        "training_end": "2023-04-28",
+        "validation_start": "2023-04-29",
+        "validation_end": "2023-05-19",
+        "training_rows": 90,
+        "validation_rows": 21
+      },
+      {
+        "training_start": "2023-01-29",
+        "training_end": "2023-05-19",
+        "validation_start": "2023-05-20",
+        "validation_end": "2023-06-09",
+        "training_rows": 111,
+        "validation_rows": 21
+      },
+      {
+        "training_start": "2023-01-29",
+        "training_end": "2023-06-09",
+        "validation_start": "2023-06-10",
+        "validation_end": "2023-06-30",
+        "training_rows": 132,
+        "validation_rows": 21
+      }
+    ],
+    "environment": {
+      "python": "3.12.10",
+      "packages": {
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "scikit-learn": "1.9.1",
+        "scipy": "1.18.1",
+        "joblib": "1.6.0",
+        "xgboost": "3.4.1",
+        "flaml": "2.7.0",
+        "lightgbm": "4.7.0"
+      }
+    },
+    "test_model_predictions_computed": false
+  },
+  "source_sha256": {
+    "citibike_forecast.py": "bac83d7723685715f65de6e1dfda7e19cbc3d713bba05ef45319065796204d25"
+  },
+  "extra": {}
+}

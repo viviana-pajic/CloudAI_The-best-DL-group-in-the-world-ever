@@ -1,0 +1,12 @@
+.git
+.venv
+.venv-pycaret
+.tools
+data
+reports
+*.ipynb
+__pycache__
+**/__pycache__
+models/*
+!models/mushroom_candidate.joblib
+!models/citibike_candidate.joblib

@@ -1,0 +1,148 @@
+{
+  "model": "ridge_reference",
+  "validation": {
+    "mae": 17850.33448668906,
+    "rmse": 23119.476403458822,
+    "wape": 0.1480122435228411,
+    "bias": -6392.47560892943,
+    "days": 92
+  },
+  "cv_mean_mae": 11604.782035820805,
+  "cv_folds": [
+    {
+      "fold": 0,
+      "mae": 12373.91656480853,
+      "rmse": 20823.32235407107,
+      "wape": 0.11811793320677488,
+      "bias": 3295.9579823382383,
+      "days": 21
+    },
+    {
+      "fold": 1,
+      "mae": 11322.916281429647,
+      "rmse": 17990.033085099432,
+      "wape": 0.10460281750868279,
+      "bias": 5728.203698699341,
+      "days": 21
+    },
+    {
+      "fold": 2,
+      "mae": 11117.513261224238,
+      "rmse": 12443.65669172015,
+      "wape": 0.09433304544074521,
+      "bias": -2153.377192629599,
+      "days": 21
+    }
+  ],
+  "parameters": {
+    "feature_set": "compact",
+    "model": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('ridge', Ridge(alpha=10.0))])",
+    "seasonal_residual": false
+  },
+  "search": null,
+  "contract": {
+    "version": "citibike-next-day-v1",
+    "daily_sha256": "5a129beca835f620c98c583d1367802aef57d3c6cf46e7385a55e2a553e6cd57",
+    "development_snapshot_sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+    "plan": {
+      "version": "citibike-next-day-v1",
+      "owner": "Tomislav Novosel",
+      "defined_on": "2026-10-09",
+      "target": "Recorded NYC rides starting on the next local calendar day",
+      "forecast_horizon_days": 1,
+      "information_cutoff": "After the previous calendar day has finished and its daily total is available",
+      "history_days": 28,
+      "training_start": "2023-01-29",
+      "training_end": "2023-06-30",
+      "validation_start": "2023-07-01",
+      "validation_end": "2023-09-30",
+      "reserved_test_start": "2023-10-01",
+      "reserved_test_end": "2023-12-31",
+      "search_cv": {
+        "type": "TimeSeriesSplit",
+        "n_splits": 3,
+        "test_size": 21,
+        "gap": 0
+      },
+      "primary_metric": "MAE in rides/day; lower is better",
+      "secondary_metrics": [
+        "RMSE in rides/day",
+        "WAPE",
+        "bias in rides/day"
+      ],
+      "baseline": "Same count as seven days earlier",
+      "validation_protocol": "Fit through June once; issue rolling one-day forecasts for July-September using each day's actually observed prior history, without refitting during that validation period",
+      "selection": "Tune on chronological training folds; compare selected configurations on the common July-September development validation period; refit the chosen local candidate on January-September development data",
+      "test_policy": "No test model predictions or metrics until AWS candidates and all final choices are frozen; evaluate the final test once",
+      "limitations": "Earlier EDA and hypothesis work examined January-September, so this is development validation, not independent confirmation. Only one year is available. No future weather, same-day rides or test target is a feature. Counts describe recorded trips, not unmet demand."
+    },
+    "feature_columns": [
+      "weekday_sin",
+      "weekday_cos",
+      "year_sin",
+      "year_cos",
+      "weekend",
+      "lag_1",
+      "lag_2",
+      "lag_3",
+      "lag_7",
+      "lag_14",
+      "lag_21",
+      "lag_28",
+      "mean_3",
+      "mean_7",
+      "mean_14",
+      "mean_28",
+      "std_7",
+      "weekly_change",
+      "recent_change",
+      "holiday",
+      "before_holiday",
+      "after_holiday"
+    ],
+    "folds": [
+      {
+        "training_start": "2023-01-29",
+        "training_end": "2023-04-28",
+        "validation_start": "2023-04-29",
+        "validation_end": "2023-05-19",
+        "training_rows": 90,
+        "validation_rows": 21
+      },
+      {
+        "training_start": "2023-01-29",
+        "training_end": "2023-05-19",
+        "validation_start": "2023-05-20",
+        "validation_end": "2023-06-09",
+        "training_rows": 111,
+        "validation_rows": 21
+      },
+      {
+        "training_start": "2023-01-29",
+        "training_end": "2023-06-09",
+        "validation_start": "2023-06-10",
+        "validation_end": "2023-06-30",
+        "training_rows": 132,
+        "validation_rows": 21
+      }
+    ],
+    "environment": {
+      "python": "3.12.10",
+      "packages": {
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "scikit-learn": "1.9.1",
+        "scipy": "1.18.1",
+        "joblib": "1.6.0",
+        "xgboost": "3.4.1",
+        "flaml": "2.7.0",
+        "lightgbm": "4.7.0"
+      }
+    },
+    "test_model_predictions_computed": false
+  },
+  "source_sha256": {
+    "citibike_forecast.py": "bac83d7723685715f65de6e1dfda7e19cbc3d713bba05ef45319065796204d25"
+  },
+  "extra": {}
+}

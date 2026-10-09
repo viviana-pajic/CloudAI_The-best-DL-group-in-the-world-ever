@@ -19,5 +19,11 @@ reports/*
 reports/mushrooms/*
 !reports/mushrooms/*.csv
 !reports/mushrooms/*.json
+!reports/citibike/
+reports/citibike/*
+!reports/citibike/*.csv
+!reports/citibike/*.json
+!reports/citibike/*.jsonl
+reports/citibike/audit.json
 .DS_Store
 Thumbs.db

@@ -1,0 +1,59 @@
+{
+  "name": "xgboost_tuned",
+  "status": "Local development candidate; AWS comparison and final-test evaluation pending",
+  "contract_version": "citibike-next-day-v1",
+  "daily_sha256": "5a129beca835f620c98c583d1367802aef57d3c6cf46e7385a55e2a553e6cd57",
+  "training_start": "2023-01-29",
+  "training_end": "2023-09-30",
+  "training_rows": 245,
+  "forecast_horizon_days": 1,
+  "history_days": 28,
+  "feature_columns": [
+    "weekday_sin",
+    "weekday_cos",
+    "year_sin",
+    "year_cos",
+    "weekend",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "lag_21",
+    "lag_28",
+    "mean_3",
+    "mean_7",
+    "mean_14",
+    "mean_28",
+    "std_7",
+    "weekly_change",
+    "recent_change",
+    "holiday",
+    "before_holiday",
+    "after_holiday"
+  ],
+  "environment": {
+    "python": "3.12.10",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "joblib": "1.6.0",
+      "xgboost": "3.4.1",
+      "flaml": "2.7.0",
+      "lightgbm": "4.7.0"
+    }
+  },
+  "metric_scope": "July-September rolling one-day development validation before all-development refit",
+  "metrics": {
+    "mae": 14692.65230129076,
+    "rmse": 23426.39386322501,
+    "wape": 0.12182922577931195,
+    "bias": 3763.6239358653193,
+    "mae_improvement_over_lag_7": 0.20480975853003902
+  },
+  "final_test_evaluated": false,
+  "test_dates_reserved": 92,
+  "limitations": "Historical 2023 citywide recorded trips; no live feed or future weather. Development selection is optimistic. This is not a final release."
+}
