@@ -26,3 +26,5 @@ logs.log
 .DS_Store
 Thumbs.db
 PACKAGE_MANIFEST.json
+
+reports/hosting_build.json

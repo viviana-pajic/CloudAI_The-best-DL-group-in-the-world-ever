@@ -17,7 +17,7 @@
     "start": "2023-09-24",
     "end": "2023-12-31"
   },
-  "boundary_padding_policy": "Request one extra end date because the API uses a fixed current UTC offset. Trim to the explicitly permitted Jan-Sep local dates after Unix timestamp conversion.",
+  "boundary_padding_policy": "Request one extra end date for the API fixed UTC offset; convert Unix instants to New York time and trim to requested 2023-09-24 through 2023-12-31 local dates.",
   "documentation": "https://open-meteo.com/en/docs/previous-runs-api",
   "timezone_documentation": "https://open-meteo.com/en/docs",
   "license_page": "https://open-meteo.com/en/licence",

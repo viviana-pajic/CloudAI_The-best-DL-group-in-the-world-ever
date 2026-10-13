@@ -1,0 +1,9 @@
+{
+  "clean_git_archive": true,
+  "commit": "d8d44dede9373151f828a626b2fc86fd95740e0a",
+  "uses_existing_pinned_interpreter": true,
+  "all_notebooks_valid_no_saved_errors": 31,
+  "final_notebooks_executed": 2,
+  "readme_and_doc_links_exist": true,
+  "reserved_tests_rerun": false
+}

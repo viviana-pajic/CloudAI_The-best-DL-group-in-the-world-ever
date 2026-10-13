@@ -31,7 +31,7 @@ Task 3 is checked locally; fresh teammate reproduction belongs to task 33. Contr
 | 30 | Verify a GitHub-triggered model update | Done: Tomislav; passing workflow triggered Render and the new commit passed public checks |
 | 31 | Score the reserved final tests once | Done: Tomislav, with Codex assistance; 1,000 mushroom rows and 92 bike days |
 | 32 | Save final outputs and explanations | Done: final notebooks, predictions, graphs and README |
-| 33 | Reproduce the release from a clean environment | Automated Linux check and public parity check; teammate review pending |
+| 33 | Reproduce the release from a clean environment | Done: clean checkout, fresh Linux/Docker build and public parity checks; teammate explanation/reproduction pending |
 | 34, 36-38 | Cross-review, prepare the demo, rehearse and check assessment hosting | Team; pending |
 | 35 | Submit the repository link in Canvas | Team; pending |
 

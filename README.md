@@ -82,8 +82,8 @@ The GRU blend ran on 89 dates (MAE 15,367); XGBoost handled the 3 dates with mis
 
 Follow [the notebook map](docs/NOTEBOOKS.md). Each notebook covers one step.
 
-[Data sources](docs/DATA.md) Â· [Tasks](docs/TASKS.md) Â· [Run and release](docs/RELEASE.md) Â· [Work and AI use](docs/AI_USE.md)
+[Data sources](docs/DATA.md) Ã‚Â· [Tasks](docs/TASKS.md) Ã‚Â· [Run and release](docs/RELEASE.md) Ã‚Â· [Work and AI use](docs/AI_USE.md)
 
 Both CPU AWS notebooks ran on 13 October. Extra Trees kept 600 trees and recalibrated its cutoff. The bike blend selected 200 boosting iterations; training-fold MAE was 9,711 rides. These cloud scores use different rows from the local checks above. See the executed notebooks and [saved runs](reports/aws/).
 
-Both prediction paths are hosted and passed public checks. A pushed commit also passed GitHub checks, deployed automatically and passed the public checks again. The release is frozen and the final test is complete. Deployment checks compare model hashes, saved results and example predictions. Next: teammate review, demo rehearsal and Canvas submission.
+Both prediction paths are hosted and passed public checks. A pushed commit also passed GitHub checks, deployed automatically and passed the public checks again. The release is frozen and the final test is complete. The public app matches the frozen files, saved scores and local example predictions: [verification](reports/hosting_final_verification.json). Fresh Linux and Docker checks passed. Next: teammate review, demo rehearsal and Canvas submission.

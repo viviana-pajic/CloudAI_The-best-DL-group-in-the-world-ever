@@ -1,0 +1,61 @@
+{
+  "commit": "d8d44dede9373151f828a626b2fc86fd95740e0a",
+  "run_id": 38452685016,
+  "url": "https://github.com/viviana-pajic/CloudAI_The-best-DL-group-in-the-world-ever/actions/runs/38452685016",
+  "fresh_linux_environment": true,
+  "training_only_cpu_candidate_build_passed": true,
+  "frozen_app_check_passed": true,
+  "docker_build_passed": true,
+  "deployment_hook_step_passed": true,
+  "artifact_model_hashes_match_repository": true,
+  "linux_app_verification": {
+    "utc": "2026-10-13T19:12:08.516888+00:00",
+    "mode": "frozen",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "torch": "2.11.0+cpu"
+    },
+    "final_tests_scored": false,
+    "confirmation_rescored": false,
+    "summer_rescored": false,
+    "bike_parity": {
+      "counts": {
+        "prediction": 119336.5478515625,
+        "feature_parity": true,
+        "prediction_difference": 0.0
+      },
+      "weather_cpu": {
+        "prediction": 124882.36263096887,
+        "feature_parity": true,
+        "prediction_difference": -8.731149137020111e-11
+      },
+      "weather_gru": {
+        "prediction": 122094.28098957065,
+        "feature_parity": true,
+        "prediction_difference": 0.0
+      }
+    },
+    "mushroom_parity": {
+      "training_side_unlabelled_examples": 5,
+      "max_score_difference": 8.326672684688674e-17,
+      "flags_match": true
+    },
+    "http_checks": {
+      "/": 200,
+      "/api/models": 200,
+      "/docs/NOTEBOOKS.md": 200,
+      "bike_counts": 200,
+      "bike_weather_cpu": 200,
+      "bike_weather_gru": 200,
+      "mushroom_cautious": 200,
+      "mushroom_default": 200,
+      "missing_weather_fallback": 200
+    },
+    "invalid_inputs_rejected": 5,
+    "passed": true
+  },
+  "reserved_targets_scored_by_this_check": false
+}

@@ -1,0 +1,93 @@
+{
+  "utc": "2026-10-13T19:15:53.538202+00:00",
+  "url": "https://cloudai-team.onrender.com",
+  "health": {
+    "ready": true,
+    "models": [
+      "counts",
+      "weather_cpu",
+      "weather_gru"
+    ],
+    "release": "d8d44dede9373151f828a626b2fc86fd95740e0a",
+    "model_origin": "Frozen local research on 10 October 2026. Copied without refitting.",
+    "model_sha256": {
+      "citibike_counts_xgboost.joblib": "39709c535cb397c7d87a8a9250f3141343fd7542249e1c57b92ef00ead026878",
+      "citibike_weather_cpu.joblib": "fe6403522e8908770a52fc0e53e08798e9770b3a2316e1c5ad011a2736b1a7b2",
+      "citibike_weather_gru.joblib": "7ca73661dd100e1114ee4c4fe519c2df15f338c4c923978888d4ce6d1146ea34",
+      "mushroom_extra_trees.joblib": "a80255f02d07f1be6e42ec614e8430a2cb70477c47cf9db727358dfaafab1bc5"
+    },
+    "mushroom_cautious_threshold": 0.0398015873015873,
+    "frozen_release": {
+      "frozen": true,
+      "decision_sha256": "7e799f3271e6b9801cde52f5233b67704c9abc3b8639de9cfc80bbfbe8cfe7b3",
+      "bike_model": "weather_gru",
+      "mushroom_policy": "cautious",
+      "mushroom_threshold": 0.0398015873015873
+    },
+    "final_tests_complete": true
+  },
+  "checks": {
+    "page": 200,
+    "health": 200,
+    "saved_final_results_match": true,
+    "counts": 200,
+    "weather_cpu": 200,
+    "weather_gru": 200,
+    "mushroom_default": 200,
+    "mushroom_cautious": 200,
+    "missing_weather_fallback": 200,
+    "invalid_input": 400
+  },
+  "predictions": {
+    "counts": {
+      "model": "Counts-only XGBoost",
+      "prediction_date": "2023-06-30",
+      "predicted_rides": 119337,
+      "unrounded_prediction": 119336.5478515625,
+      "missing_forecast_fallback": false,
+      "note": "One-day forecast using completed prior counts. Historical example; no live feed is connected."
+    },
+    "weather_cpu": {
+      "model": "75% SVR / 25% histogram boosting",
+      "prediction_date": "2023-06-30",
+      "predicted_rides": 124882,
+      "unrounded_prediction": 124882.36263096887,
+      "missing_forecast_fallback": false,
+      "note": "One-day forecast using completed prior counts. Historical example; no live feed is connected."
+    },
+    "weather_gru": {
+      "model": "75% GRU / 25% CatBoost",
+      "prediction_date": "2023-06-30",
+      "predicted_rides": 122094,
+      "unrounded_prediction": 122094.28098957065,
+      "missing_forecast_fallback": false,
+      "note": "One-day forecast using completed prior counts. Historical example; no live feed is connected."
+    },
+    "mushroom_default": {
+      "model": "Extra Trees",
+      "research_score": 0.9692579365079363,
+      "threshold": 0.5,
+      "flag_as_potentially_poisonous": true,
+      "decision": "Flagged as potentially poisonous",
+      "note": "Coursework prediction. This does not establish whether a mushroom is safe to eat."
+    },
+    "mushroom_cautious": {
+      "model": "Extra Trees",
+      "research_score": 0.9692579365079363,
+      "threshold": 0.0398015873015873,
+      "flag_as_potentially_poisonous": true,
+      "decision": "Flagged as potentially poisonous",
+      "note": "Coursework prediction. This does not establish whether a mushroom is safe to eat."
+    },
+    "missing_weather_fallback": {
+      "model": "Counts-only XGBoost",
+      "prediction_date": "2023-06-30",
+      "predicted_rides": 119337,
+      "unrounded_prediction": 119336.5478515625,
+      "missing_forecast_fallback": true,
+      "note": "Temperature forecasts unavailable: counts-only XGBoost fallback. One-day forecast using completed prior counts. Historical example; no live feed is connected."
+    }
+  },
+  "reserved_targets_scored_by_this_check": false,
+  "passed": true
+}

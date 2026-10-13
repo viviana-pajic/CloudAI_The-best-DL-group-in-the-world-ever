@@ -42,7 +42,7 @@ docker build -t cloudai .
 docker run --rm -p 8780:8780 cloudai
 ```
 
-A code push runs a training-only CPU candidate build, release checks and a Docker build. The candidates remain separate build artifacts. While `release_decision.json` exists, Docker packages the exact frozen files from `models/`; it does not replace them with a fresh fit. This protects the tested release. Promoting a future candidate needs a new evaluation plan, not reuse of this final set.
+A code push runs a training-only CPU candidate build, release checks and a Docker build. Candidate tuning records remain separate build artifacts. While `release_decision.json` exists, Docker packages the exact frozen files from `models/`; it does not replace them with a fresh fit. This protects the tested release. Promoting a future candidate needs a new evaluation plan, not reuse of this final set.
 
 After checks pass on main, GitHub requests deployment of that exact commit using the private `DEPLOY_WEBHOOK` secret. Render's native auto-deploy is off. No secret is committed. The earlier model rebuild and automatic update passed: [run 38448457190](https://github.com/viviana-pajic/CloudAI_The-best-DL-group-in-the-world-ever/actions/runs/38448457190), [evidence](../reports/hosting_update_verification.json).
 
@@ -53,6 +53,10 @@ python scripts/verify_hosted.py --url https://cloudai-team.onrender.com --expect
 ```
 
 Later documentation-only commits may be newer than the serving code commit. The final verification report records the checked version.
+
+Verified 13 October: serving commit `d8d44dede9373151f828a626b2fc86fd95740e0a`. [GitHub run 38452685016](https://github.com/viviana-pajic/CloudAI_The-best-DL-group-in-the-world-ever/actions/runs/38452685016) passed its fresh Linux environment, CPU candidate training, frozen app checks and Docker build, then triggered Render deployment `dep-db785oavcj2c73cjo45g`.
+
+[Public verification](../reports/hosting_final_verification.json) passed: all four model hashes match GitHub, decision hashes and saved final scores match, all prediction choices match local example outputs, missing-weather fallback works and invalid inputs are rejected. Both browser buttons and the final score section worked. [CI evidence](../reports/release_ci_verification.json) and [clean checkout checks](../reports/clean_checkout_verification.json) are saved. The clean Windows checkout used an existing pinned environment; CI installed its Linux environment from scratch. Teammate explanation and reproduction remain separate human checks.
 
 ## Before submission
 
