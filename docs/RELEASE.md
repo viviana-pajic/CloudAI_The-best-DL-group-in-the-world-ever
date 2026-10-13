@@ -12,7 +12,7 @@ Use the environments listed in [the notebook map](NOTEBOOKS.md). Run `scripts/ve
 
 ## AWS evidence - completed 13 October
 
-Tomislav ran notebooks 10 and 16 on the university `MyNotebook` in `us-east-1` (`ml.m4.xlarge`). Codex assisted. Each notebook contains actual outputs. [Saved runs](../reports/aws/) include tuning results, redacted provenance and trained models. Evidence ZIPs were downloaded before stopping compute.
+Tomislav ran notebooks 10 and 16 on the university `MyNotebook` in `us-east-1` (`ml.m4.xlarge`). Codex assisted. Each notebook contains actual outputs. [Saved runs](../reports/aws/) include tuning results, redacted provenance and trained models. Evidence ZIPs were downloaded. The sandbox denied the normal Stop action; the lab remains open at Tomislav's request. End Lab deletes its temporary resources.
 
 Extra Trees selected 600 trees. Mean fold average precision: 0.7776. Its calibrated cutoff is 0.0398: 242/242 poisonous labels caught, 380/398 edible labels flagged. These rows chose the cutoff; this is not an independent test.
 
@@ -25,6 +25,8 @@ Keep cloud results separate from the local reports. If adopting an AWS model, up
 ## Freeze and final tests - pending
 
 Agree release models, required inputs and fit boundaries. Run `scripts/freeze_release.py` to record their hashes before opening reserved test targets.
+
+The same saved fits must be tested and hosted. The repository's `models/` keeps the original local fits; Docker rebuilds the CPU fits. Align the chosen release artifacts with `/health` before freezing and scoring. Do not treat those copies as automatically identical.
 
 Bring the exact teacher mushroom CSV and audited annual bike table. For a weather model, use `scripts/download_final_test_forecasts.py` after freezing; do not substitute observed weather. Then run `scripts/evaluate_final_tests.py` once. Its marker blocks repeat scoring.
 
@@ -46,7 +48,7 @@ docker run --rm -p 8780:8780 cloudai
 
 [Public app](https://cloudai-team.onrender.com). Render service: `cloudai-team`, Free, Frankfurt. No payment method added. The first public checks passed for all three bike models, both mushroom rules and invalid-input rejection: [evidence](../reports/hosting_initial_verification.json). First serving commit: `216d84ede004c8ebaa07d118bc41494040f3fafc`.
 
-The server uses the host's `PORT` value (10000 on Render); locally it defaults to 8780. `render.yaml` records the free service setup. To restart manually: Render dashboard > `cloudai-team` > Manual Deploy > Deploy latest commit. Cold-start and automatic-update checks are being completed.
+The server uses the host's `PORT` value (10000 on Render); locally it defaults to 8780. `render.yaml` records the free service setup. To restart manually: Render dashboard > `cloudai-team` > Manual Deploy > Deploy latest commit. Initial startup and a later redeployment passed public checks. Idle wake-up timing was not measured separately.
 
 The free service sleeps after 15 idle minutes and usually takes about a minute to wake. Open it before the demonstration. Linux checks loaded all model paths at about 437 MB; the free limit is 512 MB. Check the deployed service too. [Render free limits](https://render.com/docs/free).
 
@@ -56,6 +58,14 @@ The GitHub workflow passed its CPU model rebuild, app checks and Docker build. T
 
 The Docker build repeats the CPU training-only search and packages the resulting models and recalibrated cutoff. `reports/hosting_build.json` records the build. The GRU artifact stays frozen. These are hosting builds, not additional AWS runs.
 
-`/health` shows the deployed commit, model hashes and cutoff. This service uses the public repository connection. Its deployment link is stored privately as GitHub repository secret `DEPLOY_WEBHOOK`. After all checks pass on `main`, the workflow requests that exact commit. Render's native auto-deploy is off; the workflow controls updates. A real automatic update is being verified.
+`/health` shows the deployed commit, model hashes and cutoff. This service uses the public repository connection. Its deployment link is stored privately as GitHub repository secret `DEPLOY_WEBHOOK`. After all checks pass on `main`, the workflow requests that exact commit. Render's native auto-deploy is off; the workflow controls updates.
 
-Save the public URL, exact release commit and restart instructions here. A teammate must reproduce the release and verify an actual update. Then save the final notebook outputs and submit the repository link in Canvas before 15 October, 23:59.
+Verified on 13 October: [GitHub run 38448457190](https://github.com/viviana-pajic/CloudAI_The-best-DL-group-in-the-world-ever/actions/runs/38448457190) triggered Render via Deploy Hook. The public API served commit `3b8a78c3c7017cf5ac86e68521534f8b8a3a8f78`, and all checks passed again: [evidence](../reports/hosting_update_verification.json). The CPU fits were rebuilt; unchanged data and settings produced unchanged model hashes. The GRU stayed frozen. Later documentation commits do not change this serving code version.
+
+To check that version again:
+
+```bash
+python scripts/verify_hosted.py --url https://cloudai-team.onrender.com --expected-commit 3b8a78c3c7017cf5ac86e68521534f8b8a3a8f78 --output reports/hosting_recheck.json
+```
+
+A teammate must review the cloud outputs and reproduce the release. Agree the final artifacts, save final-test outputs and submit the repository link in Canvas before 15 October, 23:59.

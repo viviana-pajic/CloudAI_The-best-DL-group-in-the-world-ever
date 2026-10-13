@@ -1,0 +1,72 @@
+{
+  "utc": "2026-10-13T18:47:38.235934+00:00",
+  "url": "https://cloudai-team.onrender.com",
+  "health": {
+    "ready": true,
+    "models": [
+      "counts",
+      "weather_cpu",
+      "weather_gru"
+    ],
+    "release": "3b8a78c3c7017cf5ac86e68521534f8b8a3a8f78",
+    "model_origin": "Automated CPU rebuild. GRU artifact remains the frozen GPU-trained candidate.",
+    "model_sha256": {
+      "citibike_counts_xgboost.joblib": "fddc40aff9938f704aa286fcf3e0b630f5e3dcd681218bf8dcbaa348b07a4619",
+      "citibike_weather_cpu.joblib": "b6425773bfb294534760e334197e47174a593bce3157f87c869e89f8bbcb06cb",
+      "citibike_weather_gru.joblib": "7ca73661dd100e1114ee4c4fe519c2df15f338c4c923978888d4ce6d1146ea34",
+      "mushroom_extra_trees.joblib": "53eae0e2569e8ba30f403892dd90bf999fe21508c507b0015db0262e4b51ebc9"
+    },
+    "mushroom_cautious_threshold": 0.0398015873015873
+  },
+  "checks": {
+    "page": 200,
+    "health": 200,
+    "counts": 200,
+    "weather_cpu": 200,
+    "weather_gru": 200,
+    "mushroom_default": 200,
+    "mushroom_cautious": 200,
+    "invalid_input": 400
+  },
+  "predictions": {
+    "counts": {
+      "model": "Counts-only XGBoost",
+      "prediction_date": "2023-06-30",
+      "predicted_rides": 119221,
+      "unrounded_prediction": 119221.05859375,
+      "note": "One-day forecast using completed prior counts. Historical example; no live feed is connected."
+    },
+    "weather_cpu": {
+      "model": "75% SVR / 25% histogram boosting",
+      "prediction_date": "2023-06-30",
+      "predicted_rides": 124885,
+      "unrounded_prediction": 124884.84811727727,
+      "note": "One-day forecast using completed prior counts. Historical example; no live feed is connected."
+    },
+    "weather_gru": {
+      "model": "75% GRU / 25% CatBoost",
+      "prediction_date": "2023-06-30",
+      "predicted_rides": 122094,
+      "unrounded_prediction": 122094.28098957065,
+      "note": "One-day forecast using completed prior counts. Historical example; no live feed is connected."
+    },
+    "mushroom_default": {
+      "model": "Extra Trees",
+      "research_score": 0.9692579365079363,
+      "threshold": 0.5,
+      "flag_as_potentially_poisonous": true,
+      "decision": "Flagged as potentially poisonous",
+      "note": "Coursework prediction. This does not establish whether a mushroom is safe to eat."
+    },
+    "mushroom_cautious": {
+      "model": "Extra Trees",
+      "research_score": 0.9692579365079363,
+      "threshold": 0.0398015873015873,
+      "flag_as_potentially_poisonous": true,
+      "decision": "Flagged as potentially poisonous",
+      "note": "Coursework prediction. This does not establish whether a mushroom is safe to eat."
+    }
+  },
+  "final_tests_scored": false,
+  "passed": true
+}

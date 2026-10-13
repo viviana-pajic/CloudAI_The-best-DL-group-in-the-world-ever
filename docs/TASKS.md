@@ -1,6 +1,6 @@
 # Tasks
 
-All six handoff commits are complete. Local checks and GitHub builds passed. Both CPU AWS notebooks ran on 13 October. The public app passed checks. Automatic updates and final tests remain pending.
+All six handoff commits are complete. Local checks and GitHub builds passed. Both CPU AWS notebooks ran on 13 October. The public app and an actual automatic update passed checks. Release selection and final tests remain pending.
 
 ## Completed work
 
@@ -28,7 +28,7 @@ Task 3 is checked locally; fresh teammate reproduction belongs to task 33. Contr
 | 27 | Run bike AWS CPU notebook 16; GPU 17 optional | Done: Tomislav, with Codex assistance; GPU run optional |
 | 28 | Choose and freeze release models and threshold | Team; pending |
 | 29 | Host both prediction paths | Done: Tomislav; public app and all prediction options checked |
-| 30 | Verify a GitHub-triggered model update | Tomislav; connection being completed |
+| 30 | Verify a GitHub-triggered model update | Done: Tomislav; passing workflow triggered Render and the new commit passed public checks |
 | 31 | Score the reserved final tests once | Team; not run |
 | 32-33 | Save final outputs and reproduce the hosted release | Team; pending |
 | 34, 36-38 | Cross-review, prepare the demo, rehearse and check assessment hosting | Team; pending |

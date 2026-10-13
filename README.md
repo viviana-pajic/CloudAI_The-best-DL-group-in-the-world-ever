@@ -56,4 +56,4 @@ Follow [the notebook map](docs/NOTEBOOKS.md). Each notebook covers one step.
 
 Both CPU AWS notebooks ran on 13 October. Extra Trees kept 600 trees and recalibrated its cutoff. The bike blend selected 200 boosting iterations; training-fold MAE was 9,711 rides. These cloud scores use different rows from the local checks above. See the executed notebooks and [saved runs](reports/aws/).
 
-Both prediction paths are hosted and passed public checks. Next: verify automatic updates, choose and freeze release models, score the final tests once and submit.
+Both prediction paths are hosted and passed public checks. A pushed commit also passed GitHub checks, deployed automatically and passed the public checks again. Next: choose and freeze release models, score the final tests once and submit.
