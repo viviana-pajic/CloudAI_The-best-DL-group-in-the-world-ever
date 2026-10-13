@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: cloudai-team
+    runtime: docker
+    plan: free
+    region: frankfurt
+    branch: main
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass

@@ -44,12 +44,16 @@ docker build -t cloudai .
 docker run --rm -p 8780:8780 cloudai
 ```
 
-The Docker build passed on GitHub. Choose a host, connect its public HTTPS address to port 8780 and test both prediction paths. Public hosting and restart behaviour remain unverified.
+`render.yaml` selects a free Docker service in Frankfurt. Connect the repository on Render and keep the free plan with no payment method. The app listens on port 8780. Public hosting and restart behaviour remain unverified until its first deploy passes.
+
+The free service sleeps after 15 idle minutes and usually takes about a minute to wake. Open it before the demonstration. Linux checks loaded all model paths at about 437 MB; the free limit is 512 MB. Check the deployed service too. [Render free limits](https://render.com/docs/free).
 
 ## Automatic updates
 
 The GitHub workflow passed its CPU model rebuild, app checks and Docker build. The GPU-trained GRU artifact stays frozen. A new mushroom fit and its recalibrated threshold travel together in `model_manifest.json`.
 
-The host must retrieve the rebuilt artifact for the pushed commit and restart the app with it. Configure its hook as repository secret `DEPLOY_WEBHOOK`. A hook alone does not install the artifact. Test an actual update before marking deployment done. CI is not AWS training evidence.
+On Render, use automatic deploys after CI passes. The Docker build repeats the CPU training-only search and packages the resulting models and recalibrated cutoff. `reports/hosting_build.json` records the build. The GRU artifact stays frozen. These are hosting builds, not additional AWS runs.
+
+`/health` shows the deployed commit, model hashes and cutoff. Check those after a pushed change and test both prediction paths before marking updates done. Render's native integration needs no `DEPLOY_WEBHOOK`. For another host, that optional workflow hook must actually install the built models; a hook alone does not do so.
 
 Save the public URL, exact release commit and restart instructions here. A teammate must reproduce the release and verify an actual update. Then save the final notebook outputs and submit the repository link in Canvas before 15 October, 23:59.

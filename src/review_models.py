@@ -23,6 +23,7 @@ NUMERIC = ['cap-diameter', 'stem-height', 'stem-width']
 CATEGORICAL = ['spore-print-color', 'gill-color', 'habitat', 'season', 'ring-type', 'cap-shape', 'stem-surface']
 THRESHOLD = 0.0398015873015873
 PREDICTION_LOCK = RLock()
+MODEL_LOAD_LOCK = RLock()
 BIKES = {
     'counts': {'file': 'citibike_counts_xgboost.joblib', 'name': 'Counts-only XGBoost', 'weather_days': 0, 'mae': 14761.370650249979},
     'weather_cpu': {'file': 'citibike_weather_cpu.joblib', 'name': '75% SVR / 25% histogram boosting', 'weather_days': 8, 'mae': 13494.129871783016},
@@ -32,8 +33,12 @@ BIKES = {
 def read_json(path):
     return json.loads(Path(path).read_text(encoding='utf-8'))
 
-@lru_cache(maxsize=4)
 def load_model(filename):
+    with MODEL_LOAD_LOCK:
+        return cached_model(filename)
+
+@lru_cache(maxsize=4)
+def cached_model(filename):
     for package, wanted in {'numpy': '2.5.3', 'pandas': '3.0.6', 'scikit-learn': '1.9.1', 'joblib': '1.6.0'}.items():
         if importlib.metadata.version(package) != wanted:
             raise RuntimeError(f'Install requirements-review.txt: {package} must be {wanted}.')

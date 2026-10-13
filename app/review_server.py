@@ -2,6 +2,7 @@
 import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
+import os
 from pathlib import Path
 import sys
 from urllib.parse import parse_qs, urlparse
@@ -25,7 +26,11 @@ class Handler(BaseHTTPRequestHandler):
         if path.path == '/':
             return self.respond(200, (ROOT/'app/review.html').read_bytes(), 'text/html')
         if path.path == '/health':
-            return self.respond(200, {'ready': True, 'models': list(BIKES), 'release': 'team-review-2026-10-11'})
+            manifest = json.loads((ROOT/'models/model_manifest.json').read_text())
+            return self.respond(200, {'ready': True, 'models': list(BIKES),
+                'release': os.environ.get('RENDER_GIT_COMMIT', 'local-review'),
+                'model_origin': manifest['origin'], 'model_sha256': manifest['sha256'],
+                'mushroom_cautious_threshold': manifest['mushroom_cautious_threshold']})
         if path.path == '/api/mushroom/example':
             return self.respond(200, mushroom_example())
         if path.path == '/api/bike/example':
