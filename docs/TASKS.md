@@ -1,6 +1,6 @@
 # Tasks
 
-Historical completion comes from the shared repository. New review and commit assignments are proposals, not claims of completed work.
+All six handoff commits are on main. AWS, final tests and hosting remain pending. Commit ownership does not imply independent authorship or completion of every member's cross-review.
 
 | # | Task | Owner | Status |
 |---:|---|---|---|
@@ -27,16 +27,16 @@ Historical completion comes from the shared repository. New review and commit as
 | 21 | Tune forest | Viviana | done |
 | 22 | Tune bike Ridge | Tomislav | done |
 | 23 | Tune bike XGBoost | Tomislav | done |
-| 24 | Mushroom errors and thresholds | Muneeb | done; research extension reviewed next |
+| 24 | Mushroom errors and thresholds | Muneeb | done; research extension committed |
 | 25 | Bike errors | Tomislav | done |
 | 26 | Mushroom AWS training | Muneeb proposed | prepared, not run |
 | 27 | Bike AWS training | Tomislav | prepared, not run |
 | 28 | Choose release models | Team | review candidates prepared; not frozen for final test |
 | 29 | Public hosting | Tomislav proposed | pending |
-| 30 | Automatic updates and deployment | Tomislav proposed | workflow prepared; host/secrets/deployment unverified |
+| 30 | Automatic updates and deployment | Tomislav proposed | GitHub CPU rebuild, app checks and Docker build passed; hosting update pending |
 | 31 | Reserved final tests | Team | not run |
-| 32 | Final notebooks and documentation | Team | review copy prepared; AWS/release evidence pending |
-| 33 | Clean release reproduction | Team | local check only; team/cloud review pending |
+| 32 | Final notebooks and documentation | Team | current project committed; AWS/release evidence pending |
+| 33 | Clean release reproduction | Team | local app and GitHub CPU/Docker checks passed; teammate/host check pending |
 | 34 | Presentation and demo | Team | meeting demo prepared; oral rehearsal pending |
 | 35 | Canvas submission | Team | pending |
 | 36 | Cross-review notebooks | Team | pending |

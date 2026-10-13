@@ -19,7 +19,7 @@ Choose a host, connect its public HTTPS address to port 8780 and test both predi
 
 ## Automatic updates
 
-The prepared GitHub workflow rebuilds CPU models and checks the app. The GPU-trained GRU artifact stays frozen. A new mushroom fit and its recalibrated threshold travel together in `model_manifest.json`.
+The GitHub workflow passed its CPU model rebuild, app checks and Docker build. The GPU-trained GRU artifact stays frozen. A new mushroom fit and its recalibrated threshold travel together in `model_manifest.json`.
 
 The host must retrieve the rebuilt artifact for the pushed commit and restart the app with it. Configure its hook as repository secret `DEPLOY_WEBHOOK`. A hook alone does not install the artifact. Test an actual update before marking deployment done. CI is not AWS training evidence.
 

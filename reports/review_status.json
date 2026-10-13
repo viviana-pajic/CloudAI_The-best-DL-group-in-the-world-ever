@@ -1,4 +1,5 @@
 {
+  "scope": "Historical checks of the prepared handoff on 12 October 2026. Current repository and release status is in README.md and docs/TASKS.md.",
   "checked_utc": "2026-10-12T19:21:54.357165+00:00",
   "original_repository_unchanged": true,
   "repository_base": "6d41fcd8585a07d6f0a1dc1d5f34fe4f9a707a18",

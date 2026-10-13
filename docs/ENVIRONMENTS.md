@@ -12,4 +12,4 @@ Read saved notebook outputs first. Use the matching environment when rerunning.
 
 Do not run the PyCaret notebooks in the review environment. The recorded library versions differ. The small review requirements replace the older starter requirements for the current app.
 
-Local model/API checks passed. Linux requirements were resolved. Actual AWS installation, GitHub workflow execution and Docker hosting still need verification.
+Local model/API checks passed. The GitHub workflow installed the Linux CPU environment, rebuilt models, checked the app and built Docker successfully. Actual AWS installation and public Docker hosting remain unverified.

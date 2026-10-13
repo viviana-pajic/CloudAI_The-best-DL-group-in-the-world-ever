@@ -65,8 +65,8 @@ September was hard. On 23 September, 36,069 rides were recorded, but the weather
 |---|---|---|---|
 | Class mushroom workflow | 4,000 development rows, repeated folds | Development predictions | 1,000 rows |
 | Mushroom research | 2,559 search rows; 640 calibration rows | 800 frozen confirmation rows | Same 1,000 rows |
-| Bike class/CPU weather | 153 targets through June | July-September, 92 days | October-December |
-| Expanded GRU weather | 518 earlier targets, including 2022 | Same 92 days | Same October-December |
+| Bike class/CPU weather | 153 targets through June | July-September, 92 days | Oct-Dec |
+| Expanded GRU weather | 518 earlier targets, including 2022 | Same 92 days | Same Oct-Dec |
 
 One mushroom row was quarantined to avoid an identical-input collision. Finalists were chosen before the later checks. The original class work had already used development data, so these later checks are development evidence. Different splits cannot be compared as one leaderboard. The final tests are untouched.
 
@@ -74,6 +74,6 @@ Preparation learns inside training folds. Mushroom duplicate groups stay togethe
 
 ## What remains
 
-Review and push the three packages. Then run AWS training, choose and freeze release models, evaluate the untouched final tests once, finish public hosting and automatic deployment, check the release and submit. AWS alone does not finish the project.
+All six handoff commits are on main. The local app checks and GitHub CPU rebuild, app checks and Docker build passed. Next: run AWS training, choose and freeze release models, evaluate the untouched final tests once, finish public hosting and automatic deployment, check the release and submit. AWS alone does not finish the project.
 
 Weather attribution: Open-Meteo, NOAA GFS and JMA GSM, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). We aggregated in New York time, corrected rain intervals and floored tiny negative rain forecasts. Raw records and flags are retained.

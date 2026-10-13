@@ -1,6 +1,6 @@
 # CloudAI AWS step-by-step guide
 
-Updated 12 October 2026 for the separate team review project.
+Updated 13 October 2026 after all six handoff commits were pushed.
 
 ## 1. What changes after the model trials?
 
@@ -30,28 +30,24 @@ Final tests remain unused. Cloud runs use training CV and mushroom calibration. 
 6. Name it `cloudai-training`. Select an allowed small CPU type, such as `ml.t3.medium` if permitted. Use the course's existing IAM execution role. Select `notebook-al2023-v1` / JupyterLab 4. Use the course's storage allowance; package installation may need more than the default 5 GB.
 7. Wait for **InService**, then open **JupyterLab**.
 
-AWS documents this notebook route and AL2023. Its standard Python kernel is 3.10, so we register a separate 3.12.10 kernel. [Create a notebook](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-setup-working-env.html) Â· [AL2023 kernels](https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2023.html)
+AWS documents this notebook route and AL2023. Its standard Python kernel is 3.10, so we register a separate 3.12.10 kernel. [Create a notebook](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-setup-working-env.html) - [AL2023 kernels](https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-al2023.html)
 
 If the account denies the notebook, role or region, keep the error and ask Jochen for the permitted route. Our provenance check expects a notebook instance. Studio and SageMaker Canvas need different setup. The Sandbox and SageMaker Canvas are different products.
 
-## 3. Upload this review copy
+## 3. Get the shared project
 
-Before the team pushes this version, use the prepared ZIP. After all six handoff commits are pushed, clone that exact GitHub commit instead.
-
-1. In the local review folder, find `CloudAI_clean_project.zip`.
-2. In the AWS JupyterLab file browser, open `/home/ec2-user/SageMaker` and upload that ZIP.
-3. Open **File > New > Terminal**. Run:
+All six handoff commits are on GitHub. In AWS JupyterLab, open **File > New > Terminal**. Run:
 
 ```bash
 cd /home/ec2-user/SageMaker
-python3 -m zipfile -e CloudAI_clean_project.zip .
-cd CloudAI_clean_project
+git clone \
+  https://github.com/viviana-pajic/CloudAI_The-best-DL-group-in-the-world-ever.git
+cd CloudAI_The-best-DL-group-in-the-world-ever
+git rev-parse HEAD
 python3 scripts/check_package.py
 ```
 
-The ZIP expands into `CloudAI_clean_project/`. The package check verifies its recorded source, model and small data files. Do not continue after a mismatch. Raw trip ZIPs and environments are not included. Small daily tables are enough for this cloud run.
-
-After the team later pushes this version, cloning that exact commit can replace the ZIP step. Record the package manifest or actual commit used. Keep results before pulling any later changes.
+Record the commit printed above. The check verifies the saved model hashes. Do not continue after a mismatch. Raw trip ZIPs and environments stay out of GitHub; the small daily tables are enough for this cloud run. Keep your results before pulling later changes.
 
 ## 4. Install the CPU environment
 
@@ -70,9 +66,9 @@ python3 -m uv pip install --python .venv-review/bin/python \
 .venv-review/bin/python --version
 ```
 
-The last line must say Python 3.12.10. Refresh JupyterLab if the kernel is missing. Select **CloudAI review** for both CPU notebooks. [uv Python installation](https://docs.astral.sh/uv/guides/install-python/) Â· [uv Jupyter kernels](https://docs.astral.sh/uv/guides/integration/jupyter/)
+The last line must say Python 3.12.10. Refresh JupyterLab if the kernel is missing. Select **CloudAI review** for both CPU notebooks. [uv Python installation](https://docs.astral.sh/uv/guides/install-python/) - [uv Jupyter kernels](https://docs.astral.sh/uv/guides/integration/jupyter/)
 
-This Linux lock was resolved locally. Actual AWS installation is still unverified. The fresh Windows CPU environment was checked separately. Neither means the Sandbox supports all resources.
+This Linux CPU environment passed the GitHub rebuild and app checks. Actual AWS installation is still unverified. The fresh Windows CPU environment was checked separately. These checks do not establish the Sandbox's allowed resources.
 
 PyTorch is optional for the CPU AWS runs. To display the saved GRU predictions on a CPU, add:
 

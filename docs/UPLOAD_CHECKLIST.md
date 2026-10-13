@@ -1,6 +1,6 @@
 # Before submission
 
-- Team reviews and pushes the agreed files.
+- Agreed files are pushed. Complete the remaining team cross-review.
 - Actual AWS training and tuning runs are saved for both datasets unless the lecturer confirms a different minimum.
 - Release models and thresholds are frozen before final testing.
 - Reserved final tests are scored once and their results are kept.
