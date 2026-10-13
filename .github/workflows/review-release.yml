@@ -3,6 +3,7 @@ name: Review model build
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - 'mushrooms/**'
       - 'citibike/**'
@@ -50,15 +51,15 @@ jobs:
             reports/review_verification.json
           if-no-files-found: error
           retention-days: 14
-      - name: Request hosting update if configured
+      - name: Deploy the checked commit if configured
+        if: github.ref == 'refs/heads/main'
         env:
           DEPLOY_WEBHOOK: ${{ secrets.DEPLOY_WEBHOOK }}
           RELEASE_COMMIT: ${{ github.sha }}
         run: |
           if [ -n "$DEPLOY_WEBHOOK" ]; then
-            curl --fail --silent --show-error --retry 2 \
-              -X POST -H 'Content-Type: application/json' \
-              --data "{\"commit\":\"$RELEASE_COMMIT\"}" "$DEPLOY_WEBHOOK"
+            curl --fail --silent --show-error --retry 2 --output /dev/null \
+              -X POST "${DEPLOY_WEBHOOK}&ref=${RELEASE_COMMIT}"
           else
-            echo 'Build passed. Render can deploy after checks pass; no optional webhook configured.'
+            echo 'Build passed. Configure DEPLOY_WEBHOOK for this Render service.'
           fi

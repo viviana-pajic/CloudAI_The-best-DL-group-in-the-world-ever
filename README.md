@@ -8,6 +8,8 @@ Deadline: 15 October 2026. Oral: 23 October.
 
 ## Run the app
 
+Try the [public app](https://cloudai-team.onrender.com). The free host may take about a minute to wake up.
+
 Python 3.12.10. On Windows, run `scripts/setup_review.ps1` once, then:
 
 ```powershell
@@ -54,4 +56,4 @@ Follow [the notebook map](docs/NOTEBOOKS.md). Each notebook covers one step.
 
 Both CPU AWS notebooks ran on 13 October. Extra Trees kept 600 trees and recalibrated its cutoff. The bike blend selected 200 boosting iterations; training-fold MAE was 9,711 rides. These cloud scores use different rows from the local checks above. See the executed notebooks and [saved runs](reports/aws/).
 
-Next: release-model selection, one final-test evaluation, public hosting and a verified automatic update.
+Both prediction paths are hosted and passed public checks. Next: verify automatic updates, choose and freeze release models, score the final tests once and submit.

@@ -44,7 +44,9 @@ docker build -t cloudai .
 docker run --rm -p 8780:8780 cloudai
 ```
 
-`render.yaml` selects a free Docker service in Frankfurt. Connect the repository on Render and keep the free plan with no payment method. The server uses the host's `PORT` value (10000 on Render); locally it defaults to 8780. Public hosting and restart behaviour remain unverified until its first deploy passes.
+[Public app](https://cloudai-team.onrender.com). Render service: `cloudai-team`, Free, Frankfurt. No payment method added. The first public checks passed for all three bike models, both mushroom rules and invalid-input rejection: [evidence](../reports/hosting_initial_verification.json). First serving commit: `216d84ede004c8ebaa07d118bc41494040f3fafc`.
+
+The server uses the host's `PORT` value (10000 on Render); locally it defaults to 8780. `render.yaml` records the free service setup. To restart manually: Render dashboard > `cloudai-team` > Manual Deploy > Deploy latest commit. Cold-start and automatic-update checks are being completed.
 
 The free service sleeps after 15 idle minutes and usually takes about a minute to wake. Open it before the demonstration. Linux checks loaded all model paths at about 437 MB; the free limit is 512 MB. Check the deployed service too. [Render free limits](https://render.com/docs/free).
 
@@ -52,8 +54,8 @@ The free service sleeps after 15 idle minutes and usually takes about a minute t
 
 The GitHub workflow passed its CPU model rebuild, app checks and Docker build. The GPU-trained GRU artifact stays frozen. A new mushroom fit and its recalibrated threshold travel together in `model_manifest.json`.
 
-On Render, use automatic deploys after CI passes. The Docker build repeats the CPU training-only search and packages the resulting models and recalibrated cutoff. `reports/hosting_build.json` records the build. The GRU artifact stays frozen. These are hosting builds, not additional AWS runs.
+The Docker build repeats the CPU training-only search and packages the resulting models and recalibrated cutoff. `reports/hosting_build.json` records the build. The GRU artifact stays frozen. These are hosting builds, not additional AWS runs.
 
-`/health` shows the deployed commit, model hashes and cutoff. Check those after a pushed change and test both prediction paths before marking updates done. Render's native integration needs no `DEPLOY_WEBHOOK`. For another host, that optional workflow hook must actually install the built models; a hook alone does not do so.
+`/health` shows the deployed commit, model hashes and cutoff. This service uses the public repository connection. Its deployment link is stored privately as GitHub repository secret `DEPLOY_WEBHOOK`. After all checks pass on `main`, the workflow requests that exact commit. Render's native auto-deploy is off; the workflow controls updates. A real automatic update is being verified.
 
 Save the public URL, exact release commit and restart instructions here. A teammate must reproduce the release and verify an actual update. Then save the final notebook outputs and submit the repository link in Canvas before 15 October, 23:59.

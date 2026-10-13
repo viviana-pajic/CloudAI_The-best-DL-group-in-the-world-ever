@@ -6,4 +6,4 @@ services:
     region: frankfurt
     branch: main
     healthCheckPath: /health
-    autoDeployTrigger: checksPass
+    autoDeployTrigger: off
