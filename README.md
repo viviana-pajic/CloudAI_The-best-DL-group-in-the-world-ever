@@ -28,7 +28,7 @@ Its default alarm cutoff missed 122 of 303 poisonous examples. A lower cutoff, c
 
 ![Mushroom rules: poisonous examples missed and edible examples flagged](reports/research/readme_mushroom_tradeoff.png)
 
-**AWS plan:** train and tune Extra Trees, then choose a cutoff for that new fit. We did not find a useful zero-miss classifier. An unflagged mushroom is not proven safe to eat.
+**AWS choice:** Extra Trees, tuned and recalibrated on the cloud. We did not find a useful zero-miss classifier. An unflagged mushroom is not proven safe to eat.
 
 ### Citi Bike: weekly patterns and difficult days
 
@@ -40,7 +40,7 @@ We trained through June and checked July-September. Inputs use earlier ride coun
 
 ![Bike development errors compared with last week's count](reports/research/readme_bike_errors.png)
 
-**AWS plan:** start with the CPU SVR/histogram-boosting blend. Its MAE is 13,494, close to the GRU/CatBoost blend's 13,263, and it handles large errors better by RMSE. The GRU blend also uses 2022 training history and needs a GPU for our training code, so it is the optional route. Counts-only XGBoost remains our reference at 14,761.
+**AWS choice:** the CPU SVR/histogram-boosting blend. Its local MAE was 13,494, close to the GRU/CatBoost blend's 13,263, and it handled large errors better by RMSE. The GRU blend also uses 2022 training history and needs a GPU for our training code, so it is the optional route. Counts-only XGBoost remains our reference at 14,761.
 
 Weather helped the recorded scores, but uncertainty checks do not establish a dependable improvement over XGBoost. Sudden quiet days still caused large mistakes, and we kept those days in the results.
 
@@ -52,4 +52,6 @@ Follow [the notebook map](docs/NOTEBOOKS.md). Each notebook covers one step.
 
 [Data sources](docs/DATA.md) · [Tasks](docs/TASKS.md) · [Run and release](docs/RELEASE.md) · [Work and AI use](docs/AI_USE.md)
 
-All six handoff commits are on `main`. Next: actual AWS runs, release-model selection, one final-test evaluation, public hosting and a verified automatic update.
+Both CPU AWS notebooks ran on 13 October. Extra Trees kept 600 trees and recalibrated its cutoff. The bike blend selected 200 boosting iterations; training-fold MAE was 9,711 rides. These cloud scores use different rows from the local checks above. See the executed notebooks and [saved runs](reports/aws/).
+
+Next: release-model selection, one final-test evaluation, public hosting and a verified automatic update.

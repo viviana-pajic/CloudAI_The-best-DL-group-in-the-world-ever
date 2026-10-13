@@ -10,9 +10,15 @@ Open http://127.0.0.1:8780. The page sends inputs to the Python API. Saved pipel
 
 Use the environments listed in [the notebook map](NOTEBOOKS.md). Run `scripts/verify_review.py` with the review interpreter to check saved predictions, API paths and invalid inputs.
 
-## AWS evidence - pending
+## AWS evidence - completed 13 October
 
-Run [mushroom notebook 10](../mushrooms/10_aws_extra_trees.ipynb) and [bike CPU notebook 16](../citibike/16_aws_cpu.ipynb) on an allowed SageMaker notebook instance. [Bike GPU notebook 17](../citibike/17_aws_gru_optional.ipynb) is optional. Enter the actual operator, save executed notebooks and export each evidence ZIP. Uploading a local saved model is not cloud training.
+Tomislav ran notebooks 10 and 16 on the university `MyNotebook` in `us-east-1` (`ml.m4.xlarge`). Codex assisted. Each notebook contains actual outputs. [Saved runs](../reports/aws/) include tuning results, redacted provenance and trained models. Evidence ZIPs were downloaded before stopping compute.
+
+Extra Trees selected 600 trees. Mean fold average precision: 0.7776. Its calibrated cutoff is 0.0398: 242/242 poisonous labels caught, 380/398 edible labels flagged. These rows chose the cutoff; this is not an independent test.
+
+The CPU bike blend selected 200 histogram-boosting iterations. Mean chronological fold MAE: 9,710.58 rides. This is training-period CV, not a new summer result. No reserved final test was opened. The app's original local candidates and their historical comparisons remain separate from these AWS runs.
+
+To repeat: run [mushroom notebook 10](../mushrooms/10_aws_extra_trees.ipynb) and [bike CPU notebook 16](../citibike/16_aws_cpu.ipynb) with the review kernel on an allowed SageMaker notebook instance. Enter the actual operator, save outputs and export each evidence ZIP. [Bike GPU notebook 17](../citibike/17_aws_gru_optional.ipynb) is optional. Uploading a local saved model is not cloud training.
 
 Keep cloud results separate from the local reports. If adopting an AWS model, update its artifact and manifest together. A refitted mushroom model needs its own calibrated cutoff. Confirm the AWS permissions and minimum run requirement before starting.
 

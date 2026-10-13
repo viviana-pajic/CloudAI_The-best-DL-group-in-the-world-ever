@@ -1,6 +1,6 @@
 # Tasks
 
-All six handoff commits are complete. Local app checks and GitHub CPU rebuild, app checks and Docker build passed. AWS training, public hosting and final tests remain pending.
+All six handoff commits are complete. Local checks and GitHub builds passed. Both CPU AWS notebooks ran on 13 October. Public hosting and final tests remain pending.
 
 ## Completed work
 
@@ -25,8 +25,8 @@ Task 3 is checked locally; fresh teammate reproduction belongs to task 33. Contr
 | Tasks | Work | Owner/status |
 |---|---|---|
 | 5 | Confirm AWS and hosting access | Team; pending |
-| 26 | Run mushroom AWS notebook 10 and save evidence | Muneeb proposed; not run |
-| 27 | Run bike AWS CPU notebook 16; GPU 17 optional | Tomislav; not run |
+| 26 | Run mushroom AWS notebook 10 and save evidence | Done: Tomislav, with Codex assistance; Muneeb review pending |
+| 27 | Run bike AWS CPU notebook 16; GPU 17 optional | Done: Tomislav, with Codex assistance; GPU run optional |
 | 28 | Choose and freeze release models and threshold | Team; pending |
 | 29-30 | Host both prediction paths and verify a GitHub-triggered update | Tomislav proposed; build works, hosting/update pending |
 | 31 | Score the reserved final tests once | Team; not run |

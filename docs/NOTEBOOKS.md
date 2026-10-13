@@ -1,6 +1,6 @@
 # Notebook order
 
-Read saved outputs in this order. The original class comparisons and later research use different splits; compare scores within their own protocol. AWS notebooks are prepared and still need actual cloud outputs.
+Read saved outputs in this order. The original class comparisons and later research use different splits; compare scores within their own protocol. AWS notebooks 10 and 16 have saved cloud outputs from 13 October.
 
 ## Mushrooms
 
@@ -16,7 +16,7 @@ Read saved outputs in this order. The original class comparisons and later resea
 | [07](../mushrooms/07_selected_preparation.ipynb) | Selected preprocessing |
 | [08](../mushrooms/08_extra_trees.ipynb) | Extra Trees training and calibration |
 | [09](../mushrooms/09_model_comparison.ipynb) | Frozen research comparison |
-| [10](../mushrooms/10_aws_extra_trees.ipynb) | AWS training and tuning - pending |
+| [10](../mushrooms/10_aws_extra_trees.ipynb) | AWS Extra Trees training, tuning and cutoff - executed |
 
 ## Citi Bike
 
@@ -38,7 +38,7 @@ Read saved outputs in this order. The original class comparisons and later resea
 | [13](../citibike/13_weather_svr_hist.ipynb) | CPU weather blend |
 | [14](../citibike/14_weather_gru_catboost.ipynb) | GRU weather blend |
 | [15](../citibike/15_model_comparison.ipynb) | Frozen research comparison |
-| [16](../citibike/16_aws_cpu.ipynb) | AWS CPU training and tuning - pending |
+| [16](../citibike/16_aws_cpu.ipynb) | AWS CPU blend training and tuning - executed |
 | [17](../citibike/17_aws_gru_optional.ipynb) | Optional AWS GPU training - pending |
 
 The app uses bike research candidates trained through June. Citi Bike 10 retains the earlier September-fitted class pilot.

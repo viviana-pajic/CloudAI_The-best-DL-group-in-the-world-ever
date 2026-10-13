@@ -1,0 +1,33 @@
+{
+  "git_commit": "9bc3f25b3b23f4807444e7602983c7813bfa8bc5",
+  "source_sha256": {
+    "mushrooms/search.py": "f6caff11d6bd48596e6858149d2920aac11b9f59823314d10f81b4f48c90b8c0",
+    "mushrooms/folds.py": "15693f28b353aea80de9f2c1e895c43dd3ae71964791f130fcdafde5aa811b25",
+    "citibike/research_models.py": "3d11db848feeafa5e04f4a5cedb8c4d143d4bffbde12989983571e9ad84524e4",
+    "citibike/weather_search.py": "80af4031b319b25a7b602a8d9bc6845146cb64661bfa68a5c3a683914b79643d",
+    "citibike/expanded_search.py": "e108b51d0ae2904343264485f0b5000bf0ec0ed8c0e862fe9ff9c2c772e8723f",
+    "citibike/selection.py": "bd4396a5f4f739b7d137c2bdad7f79738db634f046a74a75248b2c028b84c6fa",
+    "citibike/sequence_search.py": "d8a9ec3ac2e0017500e6a9ac687cf88c3dfbe667342546dc94c20749daaa1784",
+    "common/protocol.py": "6aae8b02924b2beec73fc2e091dd3c597d6f2f0a866b7f4625158494befb2d3d",
+    "common/hardware.py": "2ad42b2460e7b9a20a407706071917872ebcc6d7e2c3fc588052db6d5e9eba12"
+  },
+  "operator": "Tomislav Novosel",
+  "started_utc": "2026-10-13T18:06:17.746194+00:00",
+  "execution": "AWS notebook instance",
+  "resource_arn_redacted": "arn:aws:sagemaker:us-east-1:<account>:notebook-instance/MyNotebook",
+  "python": "3.12.10",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "optuna": "5.0.0"
+  },
+  "runner_sha256": "7a0fed94fd18f10a43c94738207daad9645f74d66fe1284d93e392d742e1c3fa",
+  "reserved_final_test_scored": false,
+  "development_confirmation_rescored": false,
+  "summer_validation_rescored": false
+}
