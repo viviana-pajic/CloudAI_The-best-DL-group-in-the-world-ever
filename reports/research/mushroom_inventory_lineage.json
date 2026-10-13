@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "status": "no_incompatibilities_found_with_recorded_metadata_gaps",
+  "all_screening_records_have_exact_fold_lineage": false,
+  "current_cached_recheck_and_stability_lineage_verified": true,
+  "started_utc": "2026-10-10T11:38:04.832410+00:00",
+  "completed_utc": "2026-10-10T11:38:09.325661+00:00",
+  "expected_search_rows": 2559,
+  "search_source_ids_sha256": "baf2f47f76163e0e3d7b61eaa2f97a5cab278c02563db4d61343116e60504751",
+  "partition_manifest_sha256": "90089407511ec4bde55e395a091fda8d0681c423d33f89f24b7ee37fae9f2eb0",
+  "inventory_source_sha256": "0768668a370f3536e96a175bffb7aace186266e9f33c117c337aac8b6d435c7d",
+  "trial_record_snapshot_manifest_sha256": "511f00741bea0bc508c2e991c9e581c02dc912f7c9d834e57a740a4a7d6cfe68",
+  "expected_group_fold_fingerprints": {
+    "3_fold_seed_20261010": "0b7111ebfade7771beff289453a0187d1238c5424d86c8bc526cb09c87913d22",
+    "5_fold_seed_20261010": "bf2c02d8ca3b8612f843343484a74cd992f136977c5ed016078f5976d5788f21",
+    "5_fold_seed_20261047": "67f4d8bb9b647aea9a81a4a3283bb7e26a781c984bae41f94d1c26079f9b46c2",
+    "5_fold_seed_20261091": "0fcf6434ffa4e95a3b7a31f991a6fadf8eeeb315b4800b33b67408c63ce2b572"
+  },
+  "exported_three_and_five_fold_exact_membership_verified": true,
+  "review_counts": {
+    "trials_records": 1518,
+    "trials_eligible": 1254,
+    "recorded_fold_fingerprints_exactly_verified": 840,
+    "oof_tables_without_fold_tags": 1796,
+    "oof_id_tables": 1796,
+    "records_using_top_level_or_declared_seed": 957,
+    "high_recall_trials_records": 480,
+    "high_recall_trials_eligible": 480,
+    "explicit_encoding_exclusions": 7,
+    "five_fold_rechecks": 32,
+    "additional_seed_stability_rechecks": 30
+  },
+  "exclusion_counts": {
+    "trials:superseded_boundary_protocol": 249,
+    "trials:interrupted": 7,
+    "trials:encoding_bug": 7,
+    "trials:failed": 1
+  },
+  "leaderboard_checks": {
+    "leaderboard.csv": {
+      "rows": 1254,
+      "ineligible_ids": []
+    },
+    "high_recall_leaderboard.csv": {
+      "rows": 480,
+      "ineligible_ids": []
+    }
+  },
+  "completed_during_snapshot_and_independently_verified": [],
+  "metadata_gap_count": 957,
+  "metadata_gaps_by_family": {
+    "extra_trees": 100,
+    "hist_gradient_boosting": 113,
+    "knn": 15,
+    "lightgbm": 130,
+    "logistic_regression": 50,
+    "mlp": 60,
+    "random_forest": 96,
+    "svm": 80,
+    "xgboost": 313
+  },
+  "metadata_gap_examples": [
+    {
+      "record": "mushrooms\\trials\\extra_trees\\v3_extra_trees_0000.json",
+      "family": "extra_trees",
+      "gap": "Fold fingerprint absent. Source IDs and recorded fold row/class counts checked; exact prediction-to-fold membership is not recoverable from these fields."
+    },
+    {
+      "record": "mushrooms\\trials\\extra_trees\\v3_extra_trees_0001.json",
+      "family": "extra_trees",
+      "gap": "Fold fingerprint absent. Source IDs and recorded fold row/class counts checked; exact prediction-to-fold membership is not recoverable from these fields."
+    },
+    {
+      "record": "mushrooms\\trials\\extra_trees\\v3_extra_trees_0002.json",
+      "family": "extra_trees",
+      "gap": "Fold fingerprint absent. Source IDs and recorded fold row/class counts checked; exact prediction-to-fold membership is not recoverable from these fields."
+    },
+    {
+      "record": "mushrooms\\trials\\extra_trees\\v3_extra_trees_0003.json",
+      "family": "extra_trees",
+      "gap": "Fold fingerprint absent. Source IDs and recorded fold row/class counts checked; exact prediction-to-fold membership is not recoverable from these fields."
+    },
+    {
+      "record": "mushrooms\\trials\\extra_trees\\v3_extra_trees_0004.json",
+      "family": "extra_trees",
+      "gap": "Fold fingerprint absent. Source IDs and recorded fold row/class counts checked; exact prediction-to-fold membership is not recoverable from these fields."
+    }
+  ],
+  "exceptions": [],
+  "eligibility_rule_limitation": "Inventory code itself checks complete status, protocol string and encoding fix flag. Actual row IDs were checked independently for every eligible OOF table; fingerprints were independently verified where recorded. A v3 name alone does not prove exact fold lineage.",
+  "evidence_limitation": "OOF files do not store individual fold IDs. Exact source-ID sets and recorded fingerprints/row counts match independently rebuilt group folds; earlier source reviews establish how fold predictions are generated. This check does not infer hidden training operations from probabilities.",
+  "ongoing_worker_caveat": "Counts are a snapshot. Running/failed/interrupted cases were excluded; new records completed after snapshot need equivalent checks before the final freeze.",
+  "protected_access": {
+    "calibration_performance_read": false,
+    "confirmation_labels_read": false,
+    "model_fits_run": 0
+  }
+}

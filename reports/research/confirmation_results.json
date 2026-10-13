@@ -1,0 +1,1650 @@
+{
+  "completed_utc": "2026-10-10T11:34:14.844892+00:00",
+  "approved_freeze_sha256": "c85084ae65b25e9f15f6794414660b8e6ddd49ac927c8fc1b168cd695e172ede",
+  "opening_marker_sha256": "da336b8a932e0858a1c2c04dcf48584194e1a5148eaf3256e175d8dfebb915ce",
+  "lineage": {
+    "opened_utc": "2026-10-10T11:34:13.680798+00:00",
+    "approved_freeze_sha256": "c85084ae65b25e9f15f6794414660b8e6ddd49ac927c8fc1b168cd695e172ede",
+    "development_data_sha256": "aa2802a482c3788f558a8d2dbedefd31e81663cc7c9b083e10ea816f0e4c37b9",
+    "partition_manifest_sha256": "90089407511ec4bde55e395a091fda8d0681c423d33f89f24b7ee37fae9f2eb0",
+    "confirmation_scorer_sha256": "5b546ea7ac5d39dcfe83089a6f6bc02e3fdb2afffc5874fe718558d2cf253bc8",
+    "candidate_artifact_sha256": {
+      "v3_extra_trees_0094": "a80255f02d07f1be6e42ec614e8430a2cb70477c47cf9db727358dfaafab1bc5",
+      "v3_random_forest_0085": "05224f09087990c840eed7cf436b6ccec375b21f7967554121388c624cc0e4bb",
+      "v3_high_recall_random_forest_0048": "85978f68967ad245fb8f36c7289b2501333e5ab4609ea927f74570159f54e57d",
+      "reference_random_forest": "fa55f64092ac9e087a1a9d2cad7a8cbc6c07d4f9206bd21250a1323d6487b783",
+      "frozen_weighted_average": "3f09b90925f819eef8863d29cf2e3a96bf2e24f473ecedf7a5301a4d0de286cb",
+      "frozen_max_risk": "4e3454bd8a37b3f9e9ec93c4eb7277289398c3fa603764ed6035d032153d67e2"
+    },
+    "calibration_prediction_sha256": {
+      "v3_extra_trees_0094": "bfe30ff22fa8dfb39f827586104f4c22255048cd795314540534d4cd43495e6f",
+      "v3_random_forest_0085": "e7104b8dd279abe1e07935de4bb2022bd2b27f1ba47681984bdc020ccd83dae4",
+      "v3_high_recall_random_forest_0048": "5c0cdb272ea19be9d78f02d80e1f83f75733de9a96eba17cc0884029f7ba18bf",
+      "reference_random_forest": "dd9e19a8a2b01adfefd2caf856a8dbe80d3d7f3c94ad795a9d654ce6c3818ae8",
+      "frozen_weighted_average": "57d2add184330ce55b889ef11f7d2e223b6643262c0d9414667fe5315060d622",
+      "frozen_max_risk": "4231b61f5a396752ecb5fb566bf26c8c2b355384bd8a0ca5fc36abe43c391e61"
+    },
+    "source_sha256": {
+      "search.py": "fbb3b804132e70425053c2904a42ed609c3609090bbb69b2b01bc4fcbb777480",
+      "folds.py": "15693f28b353aea80de9f2c1e895c43dd3ae71964791f130fcdafde5aa811b25",
+      "finalize.py": "2e1f1712ab3f36d5737045ec760ca18c0a945b26c91fc51d522465e9ccd8a1f3",
+      "high_recall.py": "c9be72f8dbddf7d0b4d7f51bda8d869351df07ecb0dd48eb6176e85c1cbe5509",
+      "confirm.py": "5b546ea7ac5d39dcfe83089a6f6bc02e3fdb2afffc5874fe718558d2cf253bc8",
+      "../common/hardware.py": "2ad42b2460e7b9a20a407706071917872ebcc6d7e2c3fc588052db6d5e9eba12",
+      "../common/protocol.py": "6aae8b02924b2beec73fc2e091dd3c597d6f2f0a866b7f4625158494befb2d3d",
+      "../common/uncertainty.py": "cc4eda454051f6dab5b634f609c82a4290596c1a49982887ff82ac2382b63245"
+    }
+  },
+  "confirmation_rows": 800,
+  "poisonous_rows": 303,
+  "edible_rows": 497,
+  "positive_class": "p",
+  "predeclared_primary": {
+    "declared_utc": "2026-10-10T11:30:42.889071+00:00",
+    "selection_data": "Search-only CV and repeated-seed stability",
+    "primary_ranking_model": "v3_extra_trees_0094",
+    "primary_high_recall_model": "v3_extra_trees_0094",
+    "primary_high_recall_policy_target": 1.0,
+    "secondary_high_recall_targets": [
+      0.9,
+      0.95,
+      0.98,
+      0.995
+    ],
+    "candidate_names": [
+      "v3_extra_trees_0094",
+      "v3_random_forest_0085",
+      "v3_high_recall_random_forest_0048",
+      "reference_random_forest"
+    ],
+    "candidate_configurations": {
+      "v3_extra_trees_0094": {
+        "config": {
+          "family": "extra_trees",
+          "features": {
+            "include_noise": false,
+            "engineered": true,
+            "missing_counts": false,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "iterative",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": 3
+          },
+          "params": {
+            "n_estimators": 600,
+            "max_depth": null,
+            "min_samples_leaf": 2,
+            "max_features": 0.7007270656907509,
+            "criterion": "log_loss",
+            "class_weight": null,
+            "bootstrap": true,
+            "max_samples": 0.9576950747515476
+          }
+        },
+        "config_sha256": "5b8edd9f6e5afa5896df742978821808240a7930745789937439a0f36c3a4e0a"
+      },
+      "v3_random_forest_0085": {
+        "config": {
+          "family": "random_forest",
+          "features": {
+            "include_noise": false,
+            "engineered": false,
+            "missing_counts": true,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "median",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": 3
+          },
+          "params": {
+            "n_estimators": 600,
+            "max_depth": null,
+            "min_samples_leaf": 1,
+            "max_features": 0.34117402306616995,
+            "criterion": "log_loss",
+            "class_weight": null,
+            "bootstrap": true,
+            "max_samples": 0.9323795430463285
+          }
+        },
+        "config_sha256": "6f5d86b2e71376d97b9ffe03f6a8583dc6647e910f5ac1b58462d2c764ce534b"
+      },
+      "v3_high_recall_random_forest_0048": {
+        "config": {
+          "family": "random_forest",
+          "features": {
+            "include_noise": false,
+            "engineered": false,
+            "missing_counts": true,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "knn",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": null
+          },
+          "params": {
+            "n_estimators": 600,
+            "max_depth": null,
+            "min_samples_leaf": 1,
+            "max_features": 0.7592713888130099,
+            "criterion": "log_loss",
+            "class_weight": {
+              "0": 1.0,
+              "1": 5.0
+            },
+            "bootstrap": true,
+            "max_samples": 0.9696628025929537
+          }
+        },
+        "config_sha256": "f6602e46bad094a5842f070d85e50838aed668fd1aa88a5cd4105bdbbc7cfebb"
+      },
+      "reference_random_forest": {
+        "config": {
+          "family": "random_forest",
+          "features": {
+            "include_noise": false,
+            "engineered": false,
+            "missing_counts": false,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "median",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": null
+          },
+          "params": {
+            "n_estimators": 150,
+            "min_samples_leaf": 3
+          }
+        },
+        "config_sha256": "5becaefb88bf006a53675836093f34e7d5905d8a69a7aa0fca97d7761cd8ea03"
+      }
+    },
+    "candidate_search_summary": {
+      "v3_extra_trees_0094": {
+        "family": "extra_trees",
+        "five_fold_ap": 0.7775568016339804,
+        "five_fold_high_recall_objective": 0.0727319543836329,
+        "stability_ap_mean": 0.779592019584412,
+        "stability_ap_std_across_seeds": 0.0042343861066355,
+        "stability_specificity95_mean": 0.2760646108663729,
+        "stability_objective": 0.7933952501277307,
+        "stability_high_recall_objective": 0.0660651626420637
+      },
+      "v3_random_forest_0085": {
+        "family": "random_forest",
+        "five_fold_ap": 0.7684598354832792,
+        "five_fold_high_recall_objective": 0.0586168441517721,
+        "stability_ap_mean": 0.7743722926299919,
+        "stability_ap_std_across_seeds": 0.006677703233195,
+        "stability_specificity95_mean": 0.2710299979022446,
+        "stability_objective": 0.787923792525104,
+        "stability_high_recall_objective": 0.0606005591436824
+      },
+      "v3_high_recall_random_forest_0048": {
+        "family": "random_forest",
+        "five_fold_ap": 0.7361557389957551,
+        "five_fold_high_recall_objective": 0.0620135323716353,
+        "stability_ap_mean": 0.7370514306352106,
+        "stability_ap_std_across_seeds": 0.0082455867586812,
+        "stability_specificity95_mean": 0.2787916928886092,
+        "stability_objective": 0.750991015279641,
+        "stability_high_recall_objective": 0.0584491395719899
+      },
+      "reference_random_forest": {
+        "family": "random_forest",
+        "five_fold_ap": 0.7506775119038,
+        "five_fold_high_recall_objective": 0.0578890202220454,
+        "stability_ap_mean": 0.7542407487544655,
+        "stability_ap_std_across_seeds": 0.004500023869713,
+        "stability_specificity95_mean": 0.2401929934969582,
+        "stability_objective": 0.7662503984293134,
+        "stability_high_recall_objective": 0.0545607156070117
+      }
+    },
+    "frozen_mixtures": [
+      {
+        "name": "frozen_weighted_average",
+        "selection_goal": "ranking_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_random_forest_0085"
+        ],
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "mode": "mean",
+        "ap": 0.777271819819702,
+        "cv_ap_mean": 0.7812554701540889,
+        "tuning_specificity_at_recall_0.95": 0.28319697923222154,
+        "tuning_specificity_at_recall_0.98": 0.11327879169288857,
+        "tuning_specificity_at_recall_0.995": 0.03587161736941469,
+        "tuning_specificity_at_recall_1.0": 0.017621145374449365,
+        "ranking_objective": 0.7954153191157,
+        "high_recall_objective": 0.06852286336321567
+      },
+      {
+        "name": "frozen_max_risk",
+        "selection_goal": "high_recall_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_high_recall_random_forest_0048"
+        ],
+        "weights": [
+          1.0,
+          1.0
+        ],
+        "mode": "max",
+        "ap": 0.7467692245740598,
+        "cv_ap_mean": 0.7493505055656857,
+        "tuning_specificity_at_recall_0.95": 0.289490245437382,
+        "tuning_specificity_at_recall_0.98": 0.1258653241032096,
+        "tuning_specificity_at_recall_0.995": 0.03901825047199492,
+        "tuning_specificity_at_recall_1.0": 0.015103838892385202,
+        "ranking_objective": 0.7638250178375549,
+        "high_recall_objective": 0.07097635991610307
+      }
+    ],
+    "confirmation_accessed": false,
+    "calibration_used_for_model_selection": false
+  },
+  "candidates": [
+    {
+      "name": "v3_extra_trees_0094",
+      "family": "extra_trees",
+      "selection_goal": "ranking",
+      "score_interpretation": "Model probability estimate; no real-world safety guarantee",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7804786425391046,
+            "roc_auc": 0.8265400986778759,
+            "log_loss": 0.4958492714441452,
+            "accuracy": 0.6275,
+            "poison_recall": 0.8943894389438944,
+            "edible_specificity": 0.4647887323943662,
+            "poison_precision": 0.5046554934823091,
+            "threshold": 0.20515476190476195,
+            "tn": 231,
+            "fp": 266,
+            "fn": 32,
+            "tp": 271,
+            "poison_recall_interval": {
+              "estimate": 0.8943894389438944,
+              "lower": 0.8541875911643559,
+              "upper": 0.9266331802332912,
+              "confidence": 0.95,
+              "successes": 271,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.4647887323943662,
+              "lower": 0.420256411167041,
+              "upper": 0.5097422568055894,
+              "confidence": 0.95,
+              "successes": 231,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7804786425391046,
+            "roc_auc": 0.8265400986778759,
+            "log_loss": 0.4958492714441452,
+            "accuracy": 0.53625,
+            "poison_recall": 0.9240924092409241,
+            "edible_specificity": 0.29979879275653926,
+            "poison_precision": 0.445859872611465,
+            "threshold": 0.14672023809523813,
+            "tn": 149,
+            "fp": 348,
+            "fn": 23,
+            "tp": 280,
+            "poison_recall_interval": {
+              "estimate": 0.9240924092409241,
+              "lower": 0.8882770080752926,
+              "upper": 0.9512747745712674,
+              "confidence": 0.95,
+              "successes": 280,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.29979879275653926,
+              "lower": 0.2598063751933788,
+              "upper": 0.34219212748930977,
+              "confidence": 0.95,
+              "successes": 149,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7804786425391046,
+            "roc_auc": 0.8265400986778759,
+            "log_loss": 0.4958492714441452,
+            "accuracy": 0.43875,
+            "poison_recall": 0.966996699669967,
+            "edible_specificity": 0.11670020120724346,
+            "poison_precision": 0.40027322404371585,
+            "threshold": 0.08377777777777777,
+            "tn": 58,
+            "fp": 439,
+            "fn": 10,
+            "tp": 293,
+            "poison_recall_interval": {
+              "estimate": 0.966996699669967,
+              "lower": 0.9401447691154003,
+              "upper": 0.9840623482961826,
+              "confidence": 0.95,
+              "successes": 293,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.11670020120724346,
+              "lower": 0.08981834147049415,
+              "upper": 0.1482392388423726,
+              "confidence": 0.95,
+              "successes": 58,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7804786425391046,
+            "roc_auc": 0.8265400986778759,
+            "log_loss": 0.4958492714441452,
+            "accuracy": 0.4125,
+            "poison_recall": 0.9702970297029703,
+            "edible_specificity": 0.07243460764587525,
+            "poison_precision": 0.3894039735099338,
+            "threshold": 0.0600873015873016,
+            "tn": 36,
+            "fp": 461,
+            "fn": 9,
+            "tp": 294,
+            "poison_recall_interval": {
+              "estimate": 0.9702970297029703,
+              "lower": 0.9443652324014982,
+              "upper": 0.9863297836955253,
+              "confidence": 0.95,
+              "successes": 294,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.07243460764587525,
+              "lower": 0.051244941236138986,
+              "upper": 0.09887220174838812,
+              "confidence": 0.95,
+              "successes": 36,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7804786425391046,
+            "roc_auc": 0.8265400986778759,
+            "log_loss": 0.4958492714441452,
+            "accuracy": 0.40375,
+            "poison_recall": 0.9900990099009901,
+            "edible_specificity": 0.04627766599597585,
+            "poison_precision": 0.3875968992248062,
+            "threshold": 0.0398015873015873,
+            "tn": 23,
+            "fp": 474,
+            "fn": 3,
+            "tp": 300,
+            "poison_recall_interval": {
+              "estimate": 0.9900990099009901,
+              "lower": 0.9713393372188863,
+              "upper": 0.9979535050984113,
+              "confidence": 0.95,
+              "successes": 300,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.04627766599597585,
+              "lower": 0.029558880745108446,
+              "upper": 0.06863239384309504,
+              "confidence": 0.95,
+              "successes": 23,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "confirmation": {
+            "ap": 0.7804786425391046,
+            "roc_auc": 0.8265400986778759,
+            "log_loss": 0.4958492714441452,
+            "accuracy": 0.795,
+            "poison_recall": 0.5973597359735974,
+            "edible_specificity": 0.9154929577464789,
+            "poison_precision": 0.8116591928251121,
+            "threshold": 0.5,
+            "tn": 455,
+            "fp": 42,
+            "fn": 122,
+            "tp": 181,
+            "poison_recall_interval": {
+              "estimate": 0.5973597359735974,
+              "lower": 0.5397581538986267,
+              "upper": 0.6530381012504956,
+              "confidence": 0.95,
+              "successes": 181,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.9154929577464789,
+              "lower": 0.8874869694362311,
+              "upper": 0.938417280491617,
+              "confidence": 0.95,
+              "successes": 455,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "v3_random_forest_0085",
+      "family": "random_forest",
+      "selection_goal": "ranking",
+      "score_interpretation": "Model probability estimate; no real-world safety guarantee",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7686268335012618,
+            "roc_auc": 0.8120804032113473,
+            "log_loss": 0.5079849008178141,
+            "accuracy": 0.6275,
+            "poison_recall": 0.8514851485148515,
+            "edible_specificity": 0.4909456740442656,
+            "poison_precision": 0.5048923679060665,
+            "threshold": 0.22166666666666668,
+            "tn": 244,
+            "fp": 253,
+            "fn": 45,
+            "tp": 258,
+            "poison_recall_interval": {
+              "estimate": 0.8514851485148515,
+              "lower": 0.8063673027456812,
+              "upper": 0.8895643432298661,
+              "confidence": 0.95,
+              "successes": 258,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.4909456740442656,
+              "lower": 0.4461554863115379,
+              "upper": 0.5358441639620084,
+              "confidence": 0.95,
+              "successes": 244,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7686268335012618,
+            "roc_auc": 0.8120804032113473,
+            "log_loss": 0.5079849008178141,
+            "accuracy": 0.54625,
+            "poison_recall": 0.9207920792079208,
+            "edible_specificity": 0.317907444668008,
+            "poison_precision": 0.45145631067961167,
+            "threshold": 0.155,
+            "tn": 158,
+            "fp": 339,
+            "fn": 24,
+            "tp": 279,
+            "poison_recall_interval": {
+              "estimate": 0.9207920792079208,
+              "lower": 0.8844364202649929,
+              "upper": 0.9485922865099622,
+              "confidence": 0.95,
+              "successes": 279,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.317907444668008,
+              "lower": 0.2771505483735748,
+              "upper": 0.36084699822758587,
+              "confidence": 0.95,
+              "successes": 158,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7686268335012618,
+            "roc_auc": 0.8120804032113473,
+            "log_loss": 0.5079849008178141,
+            "accuracy": 0.44125,
+            "poison_recall": 0.9603960396039604,
+            "edible_specificity": 0.12474849094567404,
+            "poison_precision": 0.40082644628099173,
+            "threshold": 0.09166666666666666,
+            "tn": 62,
+            "fp": 435,
+            "fn": 12,
+            "tp": 291,
+            "poison_recall_interval": {
+              "estimate": 0.9603960396039604,
+              "lower": 0.9318422682089637,
+              "upper": 0.979371399660654,
+              "confidence": 0.95,
+              "successes": 291,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.12474849094567404,
+              "lower": 0.09699669338838417,
+              "upper": 0.15705411356165905,
+              "confidence": 0.95,
+              "successes": 62,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7686268335012618,
+            "roc_auc": 0.8120804032113473,
+            "log_loss": 0.5079849008178141,
+            "accuracy": 0.4275,
+            "poison_recall": 0.9702970297029703,
+            "edible_specificity": 0.096579476861167,
+            "poison_precision": 0.39569313593539707,
+            "threshold": 0.07333333333333333,
+            "tn": 48,
+            "fp": 449,
+            "fn": 9,
+            "tp": 294,
+            "poison_recall_interval": {
+              "estimate": 0.9702970297029703,
+              "lower": 0.9443652324014982,
+              "upper": 0.9863297836955253,
+              "confidence": 0.95,
+              "successes": 294,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.096579476861167,
+              "lower": 0.07207042684745453,
+              "upper": 0.1260084494167941,
+              "confidence": 0.95,
+              "successes": 48,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7686268335012618,
+            "roc_auc": 0.8120804032113473,
+            "log_loss": 0.5079849008178141,
+            "accuracy": 0.4225,
+            "poison_recall": 0.976897689768977,
+            "edible_specificity": 0.08450704225352113,
+            "poison_precision": 0.3941411451398136,
+            "threshold": 0.06666666666666667,
+            "tn": 42,
+            "fp": 455,
+            "fn": 7,
+            "tp": 296,
+            "poison_recall_interval": {
+              "estimate": 0.976897689768977,
+              "lower": 0.9529817626446534,
+              "upper": 0.9906623769046771,
+              "confidence": 0.95,
+              "successes": 296,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.08450704225352113,
+              "lower": 0.061582719508382996,
+              "upper": 0.11251303056376892,
+              "confidence": 0.95,
+              "successes": 42,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "confirmation": {
+            "ap": 0.7686268335012618,
+            "roc_auc": 0.8120804032113473,
+            "log_loss": 0.5079849008178141,
+            "accuracy": 0.78875,
+            "poison_recall": 0.5775577557755776,
+            "edible_specificity": 0.9175050301810865,
+            "poison_precision": 0.8101851851851852,
+            "threshold": 0.5,
+            "tn": 456,
+            "fp": 41,
+            "fn": 128,
+            "tp": 175,
+            "poison_recall_interval": {
+              "estimate": 0.5775577557755776,
+              "lower": 0.5197590510241247,
+              "upper": 0.6338248062662145,
+              "confidence": 0.95,
+              "successes": 175,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.9175050301810865,
+              "lower": 0.8897495815309335,
+              "upper": 0.9401514598828248,
+              "confidence": 0.95,
+              "successes": 456,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "v3_high_recall_random_forest_0048",
+      "family": "random_forest",
+      "selection_goal": "high_recall",
+      "score_interpretation": "Model probability estimate; no real-world safety guarantee",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7407488872185051,
+            "roc_auc": 0.7969998207064166,
+            "log_loss": 0.5542844748168607,
+            "accuracy": 0.60875,
+            "poison_recall": 0.8448844884488449,
+            "edible_specificity": 0.4647887323943662,
+            "poison_precision": 0.4904214559386973,
+            "threshold": 0.2866666666666667,
+            "tn": 231,
+            "fp": 266,
+            "fn": 47,
+            "tp": 256,
+            "poison_recall_interval": {
+              "estimate": 0.8448844884488449,
+              "lower": 0.799121887573008,
+              "upper": 0.8837465965807366,
+              "confidence": 0.95,
+              "successes": 256,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.4647887323943662,
+              "lower": 0.420256411167041,
+              "upper": 0.5097422568055894,
+              "confidence": 0.95,
+              "successes": 231,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7407488872185051,
+            "roc_auc": 0.7969998207064166,
+            "log_loss": 0.5542844748168607,
+            "accuracy": 0.52875,
+            "poison_recall": 0.9306930693069307,
+            "edible_specificity": 0.2837022132796781,
+            "poison_precision": 0.44200626959247646,
+            "threshold": 0.19166666666666668,
+            "tn": 141,
+            "fp": 356,
+            "fn": 21,
+            "tp": 282,
+            "poison_recall_interval": {
+              "estimate": 0.9306930693069307,
+              "lower": 0.8960061592504426,
+              "upper": 0.9565890448402546,
+              "confidence": 0.95,
+              "successes": 282,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.2837022132796781,
+              "lower": 0.2444519768266162,
+              "upper": 0.3255477229075528,
+              "confidence": 0.95,
+              "successes": 141,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7407488872185051,
+            "roc_auc": 0.7969998207064166,
+            "log_loss": 0.5542844748168607,
+            "accuracy": 0.47875,
+            "poison_recall": 0.9537953795379538,
+            "edible_specificity": 0.1891348088531187,
+            "poison_precision": 0.41763005780346824,
+            "threshold": 0.13166666666666665,
+            "tn": 94,
+            "fp": 403,
+            "fn": 14,
+            "tp": 289,
+            "poison_recall_interval": {
+              "estimate": 0.9537953795379538,
+              "lower": 0.9236909791675648,
+              "upper": 0.9745125599359994,
+              "confidence": 0.95,
+              "successes": 289,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.1891348088531187,
+              "lower": 0.15563454708664587,
+              "upper": 0.2263827374368301,
+              "confidence": 0.95,
+              "successes": 94,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7407488872185051,
+            "roc_auc": 0.7969998207064166,
+            "log_loss": 0.5542844748168607,
+            "accuracy": 0.4025,
+            "poison_recall": 0.9867986798679867,
+            "edible_specificity": 0.04627766599597585,
+            "poison_precision": 0.3868046571798189,
+            "threshold": 0.04833333333333333,
+            "tn": 23,
+            "fp": 474,
+            "fn": 4,
+            "tp": 299,
+            "poison_recall_interval": {
+              "estimate": 0.9867986798679867,
+              "lower": 0.9665461535591601,
+              "upper": 0.9963916848737938,
+              "confidence": 0.95,
+              "successes": 299,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.04627766599597585,
+              "lower": 0.029558880745108446,
+              "upper": 0.06863239384309504,
+              "confidence": 0.95,
+              "successes": 23,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7407488872185051,
+            "roc_auc": 0.7969998207064166,
+            "log_loss": 0.5542844748168607,
+            "accuracy": 0.395,
+            "poison_recall": 0.9933993399339934,
+            "edible_specificity": 0.030181086519114688,
+            "poison_precision": 0.384418901660281,
+            "threshold": 0.035,
+            "tn": 15,
+            "fp": 482,
+            "fn": 2,
+            "tp": 301,
+            "poison_recall_interval": {
+              "estimate": 0.9933993399339934,
+              "lower": 0.9763608356830773,
+              "upper": 0.9991996274571382,
+              "confidence": 0.95,
+              "successes": 301,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.030181086519114688,
+              "lower": 0.01698849672992155,
+              "upper": 0.04929105959068679,
+              "confidence": 0.95,
+              "successes": 15,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "confirmation": {
+            "ap": 0.7407488872185051,
+            "roc_auc": 0.7969998207064166,
+            "log_loss": 0.5542844748168607,
+            "accuracy": 0.73125,
+            "poison_recall": 0.6798679867986799,
+            "edible_specificity": 0.7625754527162978,
+            "poison_precision": 0.6358024691358025,
+            "threshold": 0.5,
+            "tn": 379,
+            "fp": 118,
+            "fn": 97,
+            "tp": 206,
+            "poison_recall_interval": {
+              "estimate": 0.6798679867986799,
+              "lower": 0.6241168051866512,
+              "upper": 0.7320594475377658,
+              "confidence": 0.95,
+              "successes": 206,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.7625754527162978,
+              "lower": 0.7226606642782025,
+              "upper": 0.7993338041787613,
+              "confidence": 0.95,
+              "successes": 379,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "reference_random_forest",
+      "family": "random_forest",
+      "selection_goal": "ranking",
+      "score_interpretation": "Model probability estimate; no real-world safety guarantee",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7644691683200893,
+            "roc_auc": 0.8099554422243029,
+            "log_loss": 0.521737895454712,
+            "accuracy": 0.62125,
+            "poison_recall": 0.8679867986798679,
+            "edible_specificity": 0.4708249496981891,
+            "poison_precision": 0.5,
+            "threshold": 0.26398731472856213,
+            "tn": 234,
+            "fp": 263,
+            "fn": 40,
+            "tp": 263,
+            "poison_recall_interval": {
+              "estimate": 0.8679867986798679,
+              "lower": 0.824600337735818,
+              "upper": 0.9039859881891882,
+              "confidence": 0.95,
+              "successes": 263,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.4708249496981891,
+              "lower": 0.4262224535032358,
+              "upper": 0.5157764350061431,
+              "confidence": 0.95,
+              "successes": 234,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7644691683200893,
+            "roc_auc": 0.8099554422243029,
+            "log_loss": 0.521737895454712,
+            "accuracy": 0.535,
+            "poison_recall": 0.9141914191419142,
+            "edible_specificity": 0.3038229376257545,
+            "poison_precision": 0.4446227929373997,
+            "threshold": 0.22143971079471977,
+            "tn": 151,
+            "fp": 346,
+            "fn": 26,
+            "tp": 277,
+            "poison_recall_interval": {
+              "estimate": 0.9141914191419142,
+              "lower": 0.8767989065818352,
+              "upper": 0.9431813456130648,
+              "confidence": 0.95,
+              "successes": 277,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.3038229376257545,
+              "lower": 0.2636543099174907,
+              "upper": 0.3463439468660859,
+              "confidence": 0.95,
+              "successes": 151,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7644691683200893,
+            "roc_auc": 0.8099554422243029,
+            "log_loss": 0.521737895454712,
+            "accuracy": 0.5,
+            "poison_recall": 0.9504950495049505,
+            "edible_specificity": 0.22535211267605634,
+            "poison_precision": 0.4279346210995542,
+            "threshold": 0.1863062288820383,
+            "tn": 112,
+            "fp": 385,
+            "fn": 15,
+            "tp": 288,
+            "poison_recall_interval": {
+              "estimate": 0.9504950495049505,
+              "lower": 0.9196627332760366,
+              "upper": 0.9720311777837789,
+              "confidence": 0.95,
+              "successes": 288,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.22535211267605634,
+              "lower": 0.18933970329983776,
+              "upper": 0.2646681029323535,
+              "confidence": 0.95,
+              "successes": 112,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7644691683200893,
+            "roc_auc": 0.8099554422243029,
+            "log_loss": 0.521737895454712,
+            "accuracy": 0.42,
+            "poison_recall": 0.9735973597359736,
+            "edible_specificity": 0.08249496981891348,
+            "poison_precision": 0.39280958721704395,
+            "threshold": 0.14106969138956538,
+            "tn": 41,
+            "fp": 456,
+            "fn": 8,
+            "tp": 295,
+            "poison_recall_interval": {
+              "estimate": 0.9735973597359736,
+              "lower": 0.9486410792448008,
+              "upper": 0.9885337829993701,
+              "confidence": 0.95,
+              "successes": 295,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.08249496981891348,
+              "lower": 0.059848540117175254,
+              "upper": 0.11025041846906646,
+              "confidence": 0.95,
+              "successes": 41,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7644691683200893,
+            "roc_auc": 0.8099554422243029,
+            "log_loss": 0.521737895454712,
+            "accuracy": 0.39,
+            "poison_recall": 0.9900990099009901,
+            "edible_specificity": 0.02414486921529175,
+            "poison_precision": 0.3821656050955414,
+            "threshold": 0.09112219290864826,
+            "tn": 12,
+            "fp": 485,
+            "fn": 3,
+            "tp": 300,
+            "poison_recall_interval": {
+              "estimate": 0.9900990099009901,
+              "lower": 0.9713393372188863,
+              "upper": 0.9979535050984113,
+              "confidence": 0.95,
+              "successes": 300,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.02414486921529175,
+              "lower": 0.012536826235055441,
+              "upper": 0.04179612948855193,
+              "confidence": 0.95,
+              "successes": 12,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "confirmation": {
+            "ap": 0.7644691683200893,
+            "roc_auc": 0.8099554422243029,
+            "log_loss": 0.521737895454712,
+            "accuracy": 0.78,
+            "poison_recall": 0.5115511551155115,
+            "edible_specificity": 0.9436619718309859,
+            "poison_precision": 0.8469945355191257,
+            "threshold": 0.5,
+            "tn": 469,
+            "fp": 28,
+            "fn": 148,
+            "tp": 155,
+            "poison_recall_interval": {
+              "estimate": 0.5115511551155115,
+              "lower": 0.45374338005146686,
+              "upper": 0.5691309097661861,
+              "confidence": 0.95,
+              "successes": 155,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.9436619718309859,
+              "lower": 0.9196024696750311,
+              "upper": 0.9622410364794178,
+              "confidence": 0.95,
+              "successes": 469,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "frozen_weighted_average",
+      "family": "positive_weight_mixture",
+      "selection_goal": "ranking_comparator",
+      "score_interpretation": "Mean of model probability estimates",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.781851027344836,
+            "roc_auc": 0.8268090390527987,
+            "log_loss": 0.4952463289653345,
+            "accuracy": 0.635,
+            "poison_recall": 0.8877887788778878,
+            "edible_specificity": 0.48088531187122735,
+            "poison_precision": 0.5104364326375711,
+            "threshold": 0.21012380952380957,
+            "tn": 239,
+            "fp": 258,
+            "fn": 34,
+            "tp": 269,
+            "poison_recall_interval": {
+              "estimate": 0.8877887788778878,
+              "lower": 0.8467368421987583,
+              "upper": 0.9210272083328964,
+              "confidence": 0.95,
+              "successes": 269,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.48088531187122735,
+              "lower": 0.4361800942811066,
+              "upper": 0.5258191711207487,
+              "confidence": 0.95,
+              "successes": 239,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.781851027344836,
+            "roc_auc": 0.8268090390527987,
+            "log_loss": 0.4952463289653345,
+            "accuracy": 0.53125,
+            "poison_recall": 0.9273927392739274,
+            "edible_specificity": 0.289738430583501,
+            "poison_precision": 0.443217665615142,
+            "threshold": 0.14870952380952385,
+            "tn": 144,
+            "fp": 353,
+            "fn": 22,
+            "tp": 281,
+            "poison_recall_interval": {
+              "estimate": 0.9273927392739274,
+              "lower": 0.8921332695193033,
+              "upper": 0.9539407117272759,
+              "confidence": 0.95,
+              "successes": 281,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.289738430583501,
+              "lower": 0.2502027763568953,
+              "upper": 0.33179643260030245,
+              "confidence": 0.95,
+              "successes": 144,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.781851027344836,
+            "roc_auc": 0.8268090390527987,
+            "log_loss": 0.4952463289653345,
+            "accuracy": 0.46125,
+            "poison_recall": 0.9636963696369637,
+            "edible_specificity": 0.15492957746478872,
+            "poison_precision": 0.4101123595505618,
+            "threshold": 0.09302222222222223,
+            "tn": 77,
+            "fp": 420,
+            "fn": 11,
+            "tp": 292,
+            "poison_recall_interval": {
+              "estimate": 0.9636963696369637,
+              "lower": 0.9359723788485328,
+              "upper": 0.9817405363631466,
+              "confidence": 0.95,
+              "successes": 292,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.15492957746478872,
+              "lower": 0.12424386401656351,
+              "upper": 0.18978759037284879,
+              "confidence": 0.95,
+              "successes": 77,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.781851027344836,
+            "roc_auc": 0.8268090390527987,
+            "log_loss": 0.4952463289653345,
+            "accuracy": 0.41625,
+            "poison_recall": 0.9735973597359736,
+            "edible_specificity": 0.07645875251509054,
+            "poison_precision": 0.3912466843501326,
+            "threshold": 0.06784126984126984,
+            "tn": 38,
+            "fp": 459,
+            "fn": 8,
+            "tp": 295,
+            "poison_recall_interval": {
+              "estimate": 0.9735973597359736,
+              "lower": 0.9486410792448008,
+              "upper": 0.9885337829993701,
+              "confidence": 0.95,
+              "successes": 295,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.07645875251509054,
+              "lower": 0.05467228187273745,
+              "upper": 0.10343712283881847,
+              "confidence": 0.95,
+              "successes": 38,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.781851027344836,
+            "roc_auc": 0.8268090390527987,
+            "log_loss": 0.4952463289653345,
+            "accuracy": 0.41375,
+            "poison_recall": 0.9735973597359736,
+            "edible_specificity": 0.07243460764587525,
+            "poison_precision": 0.39021164021164023,
+            "threshold": 0.06640317460317462,
+            "tn": 36,
+            "fp": 461,
+            "fn": 8,
+            "tp": 295,
+            "poison_recall_interval": {
+              "estimate": 0.9735973597359736,
+              "lower": 0.9486410792448008,
+              "upper": 0.9885337829993701,
+              "confidence": 0.95,
+              "successes": 295,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.07243460764587525,
+              "lower": 0.051244941236138986,
+              "upper": 0.09887220174838812,
+              "confidence": 0.95,
+              "successes": 36,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "confirmation": {
+            "ap": 0.781851027344836,
+            "roc_auc": 0.8268090390527987,
+            "log_loss": 0.4952463289653345,
+            "accuracy": 0.80625,
+            "poison_recall": 0.6171617161716172,
+            "edible_specificity": 0.9215291750503019,
+            "poison_precision": 0.827433628318584,
+            "threshold": 0.5,
+            "tn": 458,
+            "fp": 39,
+            "fn": 116,
+            "tp": 187,
+            "poison_recall_interval": {
+              "estimate": 0.6171617161716172,
+              "lower": 0.5598499024632577,
+              "upper": 0.6721583918827083,
+              "confidence": 0.95,
+              "successes": 187,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.9215291750503019,
+              "lower": 0.8942873916259054,
+              "upper": 0.9436068309134175,
+              "confidence": 0.95,
+              "successes": 458,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "frozen_max_risk",
+      "family": "max_risk_mixture",
+      "selection_goal": "high_recall_comparator",
+      "score_interpretation": "Uncalibrated ensemble risk score, not poison probability",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7594216245819302,
+            "roc_auc": 0.8114528756698607,
+            "log_loss": 0.5420929196330406,
+            "accuracy": 0.625,
+            "poison_recall": 0.8547854785478548,
+            "edible_specificity": 0.48490945674044267,
+            "poison_precision": 0.5029126213592233,
+            "threshold": 0.31,
+            "tn": 241,
+            "fp": 256,
+            "fn": 44,
+            "tp": 259,
+            "poison_recall_interval": {
+              "estimate": 0.8547854785478548,
+              "lower": 0.8099998743345336,
+              "upper": 0.8924630965655349,
+              "confidence": 0.95,
+              "successes": 259,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.48490945674044267,
+              "lower": 0.4401681232311515,
+              "upper": 0.529831295398448,
+              "confidence": 0.95,
+              "successes": 241,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7594216245819302,
+            "roc_auc": 0.8114528756698607,
+            "log_loss": 0.5420929196330406,
+            "accuracy": 0.5325,
+            "poison_recall": 0.9372937293729373,
+            "edible_specificity": 0.2857142857142857,
+            "poison_precision": 0.4444444444444444,
+            "threshold": 0.20166666666666666,
+            "tn": 142,
+            "fp": 355,
+            "fn": 19,
+            "tp": 284,
+            "poison_recall_interval": {
+              "estimate": 0.9372937293729373,
+              "lower": 0.9038062094459838,
+              "upper": 0.9618280338323932,
+              "confidence": 0.95,
+              "successes": 284,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.2857142857142857,
+              "lower": 0.24636794962705671,
+              "upper": 0.3276315806700489,
+              "confidence": 0.95,
+              "successes": 142,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7594216245819302,
+            "roc_auc": 0.8114528756698607,
+            "log_loss": 0.5420929196330406,
+            "accuracy": 0.46,
+            "poison_recall": 0.9570957095709571,
+            "edible_specificity": 0.15694164989939638,
+            "poison_precision": 0.4090267983074753,
+            "threshold": 0.13666666666666666,
+            "tn": 78,
+            "fp": 419,
+            "fn": 13,
+            "tp": 290,
+            "poison_recall_interval": {
+              "estimate": 0.9570957095709571,
+              "lower": 0.9277497525742286,
+              "upper": 0.9769605544266773,
+              "confidence": 0.95,
+              "successes": 290,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.15694164989939638,
+              "lower": 0.12607662820247614,
+              "upper": 0.19195380284642563,
+              "confidence": 0.95,
+              "successes": 78,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7594216245819302,
+            "roc_auc": 0.8114528756698607,
+            "log_loss": 0.5420929196330406,
+            "accuracy": 0.43125,
+            "poison_recall": 0.9702970297029703,
+            "edible_specificity": 0.10261569416498995,
+            "poison_precision": 0.3972972972972973,
+            "threshold": 0.10729563492063492,
+            "tn": 51,
+            "fp": 446,
+            "fn": 9,
+            "tp": 294,
+            "poison_recall_interval": {
+              "estimate": 0.9702970297029703,
+              "lower": 0.9443652324014982,
+              "upper": 0.9863297836955253,
+              "confidence": 0.95,
+              "successes": 294,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.10261569416498995,
+              "lower": 0.07736239443631313,
+              "upper": 0.13270932572061175,
+              "confidence": 0.95,
+              "successes": 51,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "policy": "calibration_selected_threshold",
+          "confirmation": {
+            "ap": 0.7594216245819302,
+            "roc_auc": 0.8114528756698607,
+            "log_loss": 0.5420929196330406,
+            "accuracy": 0.4125,
+            "poison_recall": 0.9867986798679867,
+            "edible_specificity": 0.06237424547283702,
+            "poison_precision": 0.3908496732026144,
+            "threshold": 0.08377777777777777,
+            "tn": 31,
+            "fp": 466,
+            "fn": 4,
+            "tp": 299,
+            "poison_recall_interval": {
+              "estimate": 0.9867986798679867,
+              "lower": 0.9665461535591601,
+              "upper": 0.9963916848737938,
+              "confidence": 0.95,
+              "successes": 299,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.06237424547283702,
+              "lower": 0.042770059942616595,
+              "upper": 0.08736982011412643,
+              "confidence": 0.95,
+              "successes": 31,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "confirmation": {
+            "ap": 0.7594216245819302,
+            "roc_auc": 0.8114528756698607,
+            "log_loss": 0.5420929196330406,
+            "accuracy": 0.7425,
+            "poison_recall": 0.7194719471947195,
+            "edible_specificity": 0.7565392354124748,
+            "poison_precision": 0.6430678466076696,
+            "threshold": 0.5,
+            "tn": 376,
+            "fp": 121,
+            "fn": 85,
+            "tp": 218,
+            "poison_recall_interval": {
+              "estimate": 0.7194719471947195,
+              "lower": 0.6652534008103944,
+              "upper": 0.7693405862247014,
+              "confidence": 0.95,
+              "successes": 218,
+              "total": 303,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            },
+            "edible_specificity_interval": {
+              "estimate": 0.7565392354124748,
+              "lower": 0.7163406141692339,
+              "upper": 0.793654857787199,
+              "confidence": 0.95,
+              "successes": 376,
+              "total": 497,
+              "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "always_poisonous_baseline": {
+    "ap": 0.37875,
+    "roc_auc": 0.5,
+    "log_loss": 10.013366961359859,
+    "accuracy": 0.37875,
+    "poison_recall": 1.0,
+    "edible_specificity": 0.0,
+    "poison_precision": 0.37875,
+    "threshold": 0.0,
+    "tn": 0,
+    "fp": 497,
+    "fn": 0,
+    "tp": 303,
+    "poison_recall_interval": {
+      "estimate": 1.0,
+      "lower": 0.9878992899779208,
+      "upper": 1.0,
+      "confidence": 0.95,
+      "successes": 303,
+      "total": 303,
+      "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+    },
+    "edible_specificity_interval": {
+      "estimate": 0.0,
+      "lower": 0.0,
+      "upper": 0.007394815473294639,
+      "confidence": 0.95,
+      "successes": 0,
+      "total": 497,
+      "method": "Clopper-Pearson descriptive interval; no distribution-shift guarantee"
+    }
+  },
+  "prediction_path": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\confirmation_predictions.csv",
+  "prediction_sha256": "3820fd0e49a7d302fc3eedbea036a7ab205de1be3f30d20359f0c4108b277d29",
+  "final_test_accessed": false,
+  "interpretation": "One frozen development confirmation check. These rows have prior project exposure and are not the untouched original 1,000-row final test. Do not pick a new winner or adjust thresholds from these results."
+}

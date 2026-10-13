@@ -1,0 +1,15 @@
+{
+  "approved_utc": "2026-10-10T11:33:59.121425+00:00",
+  "core_freeze_sha256": "c85084ae65b25e9f15f6794414660b8e6ddd49ac927c8fc1b168cd695e172ede",
+  "neural_freeze_sha256": "4af3da5b89f4ba2cf0a8b2d3805c4a3e8bc56e0e24512956e73ec8e2fede1423",
+  "neural_calibration_sha256": "2fca57739e53a06f409ec9bb6e542eccbeceac69c3732411c5dc414a02901a6c",
+  "neural_authorization_sha256": "9c2c58d034480b3b1461385830777d10756e8be8a410e752408137fb847501a0",
+  "preflight_sha256": {
+    "audit/classic_saved_artifact_preflight.json": "8b37ace313855df082254250774b071a4b8a8836afb5843f3b433bbc0c123e30",
+    "audit/neural_authorization_preflight.json": "7911a82fe727b3259fd928cd2ef12120f4249bfa98cdc4d7bdd2592bd983648b"
+  },
+  "root_approved": true,
+  "scope": "One controlled comparison of the predeclared models and thresholds on the same 800 development rows. No model selection or threshold changes after seeing results.",
+  "reserved_original_final_test_authorized": false,
+  "basis": "User authorized extensive local model research outside GitHub. Exact candidates, preprocessing, artifacts and thresholds passed preflight."
+}

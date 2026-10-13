@@ -1,0 +1,33 @@
+{
+  "opened_utc": "2026-10-10T11:34:13.680798+00:00",
+  "approved_freeze_sha256": "c85084ae65b25e9f15f6794414660b8e6ddd49ac927c8fc1b168cd695e172ede",
+  "development_data_sha256": "aa2802a482c3788f558a8d2dbedefd31e81663cc7c9b083e10ea816f0e4c37b9",
+  "partition_manifest_sha256": "90089407511ec4bde55e395a091fda8d0681c423d33f89f24b7ee37fae9f2eb0",
+  "confirmation_scorer_sha256": "5b546ea7ac5d39dcfe83089a6f6bc02e3fdb2afffc5874fe718558d2cf253bc8",
+  "candidate_artifact_sha256": {
+    "v3_extra_trees_0094": "a80255f02d07f1be6e42ec614e8430a2cb70477c47cf9db727358dfaafab1bc5",
+    "v3_random_forest_0085": "05224f09087990c840eed7cf436b6ccec375b21f7967554121388c624cc0e4bb",
+    "v3_high_recall_random_forest_0048": "85978f68967ad245fb8f36c7289b2501333e5ab4609ea927f74570159f54e57d",
+    "reference_random_forest": "fa55f64092ac9e087a1a9d2cad7a8cbc6c07d4f9206bd21250a1323d6487b783",
+    "frozen_weighted_average": "3f09b90925f819eef8863d29cf2e3a96bf2e24f473ecedf7a5301a4d0de286cb",
+    "frozen_max_risk": "4e3454bd8a37b3f9e9ec93c4eb7277289398c3fa603764ed6035d032153d67e2"
+  },
+  "calibration_prediction_sha256": {
+    "v3_extra_trees_0094": "bfe30ff22fa8dfb39f827586104f4c22255048cd795314540534d4cd43495e6f",
+    "v3_random_forest_0085": "e7104b8dd279abe1e07935de4bb2022bd2b27f1ba47681984bdc020ccd83dae4",
+    "v3_high_recall_random_forest_0048": "5c0cdb272ea19be9d78f02d80e1f83f75733de9a96eba17cc0884029f7ba18bf",
+    "reference_random_forest": "dd9e19a8a2b01adfefd2caf856a8dbe80d3d7f3c94ad795a9d654ce6c3818ae8",
+    "frozen_weighted_average": "57d2add184330ce55b889ef11f7d2e223b6643262c0d9414667fe5315060d622",
+    "frozen_max_risk": "4231b61f5a396752ecb5fb566bf26c8c2b355384bd8a0ca5fc36abe43c391e61"
+  },
+  "source_sha256": {
+    "search.py": "fbb3b804132e70425053c2904a42ed609c3609090bbb69b2b01bc4fcbb777480",
+    "folds.py": "15693f28b353aea80de9f2c1e895c43dd3ae71964791f130fcdafde5aa811b25",
+    "finalize.py": "2e1f1712ab3f36d5737045ec760ca18c0a945b26c91fc51d522465e9ccd8a1f3",
+    "high_recall.py": "c9be72f8dbddf7d0b4d7f51bda8d869351df07ecb0dd48eb6176e85c1cbe5509",
+    "confirm.py": "5b546ea7ac5d39dcfe83089a6f6bc02e3fdb2afffc5874fe718558d2cf253bc8",
+    "../common/hardware.py": "2ad42b2460e7b9a20a407706071917872ebcc6d7e2c3fc588052db6d5e9eba12",
+    "../common/protocol.py": "6aae8b02924b2beec73fc2e091dd3c597d6f2f0a866b7f4625158494befb2d3d",
+    "../common/uncertainty.py": "cc4eda454051f6dab5b634f609c82a4290596c1a49982887ff82ac2382b63245"
+  }
+}
