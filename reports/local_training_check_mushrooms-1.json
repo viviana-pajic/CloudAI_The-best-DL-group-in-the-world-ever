@@ -1,0 +1,132 @@
+{
+  "operator": "Local integration check",
+  "started_utc": "2026-10-11T10:20:00.750708+00:00",
+  "execution": "local verification",
+  "resource_arn_redacted": null,
+  "python": "3.12.10",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "optuna": "5.0.0"
+  },
+  "runner_sha256": "9d6d6b640350cc319eb1fbdd336b29c523e5e86bb50c950804161ce883c71226",
+  "reserved_final_test_scored": false,
+  "development_confirmation_rescored": false,
+  "summer_validation_rescored": false,
+  "dataset": "mushrooms",
+  "training_rows": 2559,
+  "calibration_rows": 640,
+  "chosen_configuration": {
+    "family": "extra_trees",
+    "features": {
+      "include_noise": false,
+      "engineered": true,
+      "missing_counts": false,
+      "drop_spore": false
+    },
+    "preprocessing": {
+      "numeric_missing": "iterative",
+      "missing_flags": false,
+      "categorical_missing": "constant",
+      "scale": null,
+      "encoding": "onehot",
+      "min_frequency": 3
+    },
+    "params": {
+      "n_estimators": 600,
+      "max_depth": null,
+      "min_samples_leaf": 2,
+      "max_features": 0.7007270656907509,
+      "criterion": "log_loss",
+      "class_weight": null,
+      "bootstrap": true,
+      "max_samples": 0.9576950747515476
+    }
+  },
+  "chosen_trial": 0,
+  "trials": [
+    {
+      "candidate": 0,
+      "n_estimators": 600,
+      "max_features": 0.7007270656907509,
+      "mean_fold_ap": 0.7775568016339804,
+      "fold_ap": [
+        0.8108709181113505,
+        0.8018979794762051,
+        0.7100411531565707,
+        0.7663969298576349,
+        0.7985770275681414
+      ]
+    },
+    {
+      "candidate": 1,
+      "n_estimators": 600,
+      "max_features": 0.6666395149213417,
+      "mean_fold_ap": 0.7768671007440229,
+      "fold_ap": [
+        0.8121961289051988,
+        0.8050400956995593,
+        0.707165431070035,
+        0.76364312709618,
+        0.7962907209491414
+      ]
+    },
+    {
+      "candidate": 2,
+      "n_estimators": 150,
+      "max_features": 0.7007270656907509,
+      "mean_fold_ap": 0.7755779172349212,
+      "fold_ap": [
+        0.8115597911045699,
+        0.796185923868533,
+        0.7057155049140043,
+        0.768031746031447,
+        0.7963966202560521
+      ]
+    },
+    {
+      "candidate": 3,
+      "n_estimators": 150,
+      "max_features": 0.6666395149213417,
+      "mean_fold_ap": 0.7749171353084027,
+      "fold_ap": [
+        0.8127850302557043,
+        0.8006045457183522,
+        0.7033272579578239,
+        0.7614796422387596,
+        0.7963892003713731
+      ]
+    }
+  ],
+  "search_data_sha256": "aa2802a482c3788f558a8d2dbedefd31e81663cc7c9b083e10ea816f0e4c37b9",
+  "partition_sha256": "90089407511ec4bde55e395a091fda8d0681c423d33f89f24b7ee37fae9f2eb0",
+  "fold_fingerprint": "bf2c02d8ca3b8612f843343484a74cd992f136977c5ed016078f5976d5788f21",
+  "cautious_threshold": 0.0398015873015873,
+  "calibration_metrics": {
+    "ap": 0.8099185659449056,
+    "roc_auc": 0.8529735454130154,
+    "log_loss": 0.45530599411889405,
+    "accuracy": 0.40625,
+    "poison_recall": 1.0,
+    "edible_specificity": 0.04522613065326633,
+    "poison_precision": 0.3890675241157556,
+    "threshold": 0.0398015873015873,
+    "tn": 18,
+    "fp": 380,
+    "fn": 0,
+    "tp": 242
+  },
+  "metric_note": "Calibration chooses the threshold. Its performance is not an independent test.",
+  "inference_threads": 1,
+  "artifact_sha256": "206ca3fd2747c2f78703b3b8b7f1763d11218c94a863637fb78a33635fc52f19",
+  "status": "complete",
+  "finished_utc": "2026-10-11T10:20:18.009390+00:00",
+  "warnings": [
+    "ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached."
+  ]
+}

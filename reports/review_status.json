@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-12T19:21:54.357165+00:00",
+  "original_repository_unchanged": true,
+  "repository_base": "6d41fcd8585a07d6f0a1dc1d5f34fe4f9a707a18",
+  "original_research_frozen_files_unchanged": true,
+  "frozen_model_bytes_unchanged": true,
+  "curated_runtime_prediction_parity_passed": true,
+  "local_prediction_api_checks_passed": true,
+  "local_cpu_training_checks_passed": true,
+  "handoff_replay_passed": true,
+  "notebooks": 29,
+  "notebooks_with_saved_local_outputs": 26,
+  "aws_notebooks_prepared_not_run": [
+    "16_aws_cpu.ipynb",
+    "17_aws_gru_optional.ipynb",
+    "10_aws_extra_trees.ipynb"
+  ],
+  "local_document_links_checked": 19,
+  "reserved_final_tests_scored": false,
+  "public_hosting_complete": false,
+  "automatic_deployment_verified": false,
+  "actual_aws_training_complete": false,
+  "shared_repository_commit_or_push_performed": false,
+  "pdf_visual_qa": "Three-page push guide, three-page project guide and four-page AWS guide inspected."
+}

@@ -1,0 +1,82 @@
+{
+  "created_utc": "2026-10-10T11:23:04.935783+00:00",
+  "records": 7581,
+  "counts": [
+    {
+      "dataset": "citibike",
+      "stage": "history",
+      "status": "complete",
+      "records": 1409
+    },
+    {
+      "dataset": "citibike",
+      "stage": "history_weather",
+      "status": "complete",
+      "records": 1090
+    },
+    {
+      "dataset": "citibike",
+      "stage": "interrupted_attempt",
+      "status": "interrupted",
+      "records": 1
+    },
+    {
+      "dataset": "citibike",
+      "stage": "neural_sequence",
+      "status": "complete",
+      "records": 60
+    },
+    {
+      "dataset": "citibike",
+      "stage": "normalization",
+      "status": "complete",
+      "records": 300
+    },
+    {
+      "dataset": "citibike",
+      "stage": "original_history",
+      "status": "complete",
+      "records": 1811
+    },
+    {
+      "dataset": "citibike",
+      "stage": "weather",
+      "status": "complete",
+      "records": 840
+    },
+    {
+      "dataset": "mushrooms",
+      "stage": "broad",
+      "status": "complete",
+      "records": 1510
+    },
+    {
+      "dataset": "mushrooms",
+      "stage": "broad",
+      "status": "failed",
+      "records": 1
+    },
+    {
+      "dataset": "mushrooms",
+      "stage": "broad",
+      "status": "interrupted",
+      "records": 7
+    },
+    {
+      "dataset": "mushrooms",
+      "stage": "high_recall",
+      "status": "complete",
+      "records": 480
+    },
+    {
+      "dataset": "mushrooms",
+      "stage": "neural",
+      "status": "complete",
+      "records": 72
+    }
+  ],
+  "duplicate_run_ids": [],
+  "unreadable_logs": [],
+  "eligible_completed_records": 7316,
+  "scope": "Logged configurations, not independent algorithms or external-test results; rechecks are logged separately."
+}

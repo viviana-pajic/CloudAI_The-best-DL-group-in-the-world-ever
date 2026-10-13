@@ -1,0 +1,59 @@
+{
+  "source": "https://raw.githubusercontent.com/mjochen/CloudAI/98938790e7dadb00c64eadda1ee9a05961286888/Discussion%20topics/mushroom_project_dataset.csv",
+  "sha256": "1f1a25f2f330458ed95ce9f6ffe3241582312a42cb21797a2b7bd5e5ad281114",
+  "rows": 5000,
+  "columns": 13,
+  "class_counts": {
+    "e": 3107,
+    "p": 1893
+  },
+  "missing_percent": {
+    "cap-diameter": 40.64,
+    "stem-height": 20.26,
+    "stem-width": 7.9,
+    "spore-print-color": 94.8,
+    "gill-color": 19.78,
+    "habitat": 20.08,
+    "season": 19.46,
+    "ring-type": 11.54,
+    "cap-shape": 8.12,
+    "stem-surface": 67.18,
+    "jumbled_noise_0": 8.12,
+    "jumbled_noise_1": 8.12,
+    "class": 0.0
+  },
+  "exact_duplicates": 0,
+  "feature_duplicates": 0,
+  "numeric_summary": {
+    "cap-diameter": {
+      "count": 2968.0,
+      "mean": 7.161,
+      "std": 5.985,
+      "min": 0.5,
+      "25%": 3.83,
+      "50%": 6.14,
+      "75%": 8.785,
+      "max": 57.4
+    },
+    "stem-height": {
+      "count": 3987.0,
+      "mean": 6.694,
+      "std": 3.455,
+      "min": 0.0,
+      "25%": 4.8,
+      "50%": 6.01,
+      "75%": 7.74,
+      "max": 32.43
+    },
+    "stem-width": {
+      "count": 4605.0,
+      "mean": 12.885,
+      "std": 10.611,
+      "min": 0.0,
+      "25%": 5.94,
+      "50%": 11.28,
+      "75%": 17.05,
+      "max": 102.48
+    }
+  }
+}

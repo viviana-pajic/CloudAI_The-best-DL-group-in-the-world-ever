@@ -1,0 +1,271 @@
+{
+  "scope": "Descriptive uncertainty for the same fixed 92-day development predictions. No model selection or retuning.",
+  "method": "Circular paired moving-block bootstrap; the candidate and control use the same sampled dates.",
+  "independent_final_test": false,
+  "comparisons": [
+    {
+      "name": "control_lag7",
+      "input_contract": "2023_history_counts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": 3715.5315236630654,
+      "95_percent_interval": [
+        1009.7289443803872,
+        6562.646516385285
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_lag7",
+      "input_contract": "2023_history_counts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": 3715.5315236630654,
+      "95_percent_interval": [
+        1209.5749296022504,
+        6294.788018782241
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_lag7",
+      "input_contract": "2023_history_counts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": 3715.5315236630654,
+      "95_percent_interval": [
+        1740.5783611463476,
+        5853.057726992732
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_lag1",
+      "input_contract": "2023_history_counts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": 3153.607610619587,
+      "95_percent_interval": [
+        41.2475753867116,
+        6172.577610530024
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_lag1",
+      "input_contract": "2023_history_counts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": 3153.607610619587,
+      "95_percent_interval": [
+        470.5948269056238,
+        5841.557145425547
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_lag1",
+      "input_contract": "2023_history_counts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": 3153.607610619587,
+      "95_percent_interval": [
+        1020.9858717545221,
+        5501.19040233778
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_training_cv_seasonal_average",
+      "input_contract": "2023_history_counts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": 1302.010366830768,
+      "95_percent_interval": [
+        -752.671475204327,
+        3269.370366788357
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_training_cv_seasonal_average",
+      "input_contract": "2023_history_counts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": 1302.010366830768,
+      "95_percent_interval": [
+        -582.3310946825875,
+        3301.1960524718984
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_training_cv_seasonal_average",
+      "input_contract": "2023_history_counts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": 1302.010366830768,
+      "95_percent_interval": [
+        -554.8205374759169,
+        3346.8296082917236
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_existing_xgboost_cpu_seed42",
+      "input_contract": "2023_history_counts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": 0.0,
+      "95_percent_interval": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_existing_xgboost_cpu_seed42",
+      "input_contract": "2023_history_counts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": 0.0,
+      "95_percent_interval": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "control_existing_xgboost_cpu_seed42",
+      "input_contract": "2023_history_counts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": 0.0,
+      "95_percent_interval": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_2023_history_counts",
+      "input_contract": "2023_history_counts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": 780.8204545980226,
+      "95_percent_interval": [
+        -1782.1690690998803,
+        3284.063371893056
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_2023_history_counts",
+      "input_contract": "2023_history_counts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": 780.8204545980226,
+      "95_percent_interval": [
+        -1650.1065413044614,
+        3218.6131581741047
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_2023_history_counts",
+      "input_contract": "2023_history_counts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": 780.8204545980226,
+      "95_percent_interval": [
+        -1126.401912408119,
+        2820.960406476292
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_2023_history_and_forecasts",
+      "input_contract": "2023_history_and_forecasts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": -1267.2407784669645,
+      "95_percent_interval": [
+        -3584.7222179803316,
+        1045.6284250535261
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_2023_history_and_forecasts",
+      "input_contract": "2023_history_and_forecasts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": -1267.2407784669645,
+      "95_percent_interval": [
+        -3644.048476656086,
+        1235.1518255875576
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_2023_history_and_forecasts",
+      "input_contract": "2023_history_and_forecasts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": -1267.2407784669645,
+      "95_percent_interval": [
+        -3411.3799794070374,
+        1184.2054825250686
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_expanded_history_counts",
+      "input_contract": "expanded_history_counts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": 72.4945374971435,
+      "95_percent_interval": [
+        -1353.8808730631865,
+        1481.7550586974255
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_expanded_history_counts",
+      "input_contract": "expanded_history_counts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": 72.4945374971435,
+      "95_percent_interval": [
+        -1398.9706518115174,
+        1649.3197416314472
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_expanded_history_counts",
+      "input_contract": "expanded_history_counts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": 72.4945374971435,
+      "95_percent_interval": [
+        -1429.1649814115822,
+        1767.8824554360217
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_expanded_history_and_forecasts",
+      "input_contract": "expanded_history_and_forecasts",
+      "block_days": 3,
+      "candidate_minus_existing_xgboost_mae": -1497.9536140274615,
+      "95_percent_interval": [
+        -3604.1650872800187,
+        424.57057399655173
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_expanded_history_and_forecasts",
+      "input_contract": "expanded_history_and_forecasts",
+      "block_days": 7,
+      "candidate_minus_existing_xgboost_mae": -1497.9536140274615,
+      "95_percent_interval": [
+        -3647.7572390396676,
+        609.3923766452111
+      ],
+      "repetitions": 10000
+    },
+    {
+      "name": "blend_expanded_history_and_forecasts",
+      "input_contract": "expanded_history_and_forecasts",
+      "block_days": 14,
+      "candidate_minus_existing_xgboost_mae": -1497.9536140274615,
+      "95_percent_interval": [
+        -3837.463407180378,
+        750.6791273666323
+      ],
+      "repetitions": 10000
+    }
+  ]
+}

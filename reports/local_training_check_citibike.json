@@ -1,0 +1,316 @@
+{
+  "git_commit": null,
+  "source_sha256": {
+    "mushrooms/search.py": "f6caff11d6bd48596e6858149d2920aac11b9f59823314d10f81b4f48c90b8c0",
+    "mushrooms/folds.py": "15693f28b353aea80de9f2c1e895c43dd3ae71964791f130fcdafde5aa811b25",
+    "citibike/research_models.py": "3d11db848feeafa5e04f4a5cedb8c4d143d4bffbde12989983571e9ad84524e4",
+    "citibike/weather_search.py": "80af4031b319b25a7b602a8d9bc6845146cb64661bfa68a5c3a683914b79643d",
+    "citibike/expanded_search.py": "e108b51d0ae2904343264485f0b5000bf0ec0ed8c0e862fe9ff9c2c772e8723f",
+    "citibike/selection.py": "bd4396a5f4f739b7d137c2bdad7f79738db634f046a74a75248b2c028b84c6fa",
+    "citibike/sequence_search.py": "d8a9ec3ac2e0017500e6a9ac687cf88c3dfbe667342546dc94c20749daaa1784",
+    "common/protocol.py": "6aae8b02924b2beec73fc2e091dd3c597d6f2f0a866b7f4625158494befb2d3d",
+    "common/hardware.py": "2ad42b2460e7b9a20a407706071917872ebcc6d7e2c3fc588052db6d5e9eba12"
+  },
+  "operator": "Local curated-source check",
+  "started_utc": "2026-10-12T18:38:44.331764+00:00",
+  "execution": "local verification",
+  "resource_arn_redacted": null,
+  "python": "3.12.10",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "optuna": "5.0.0"
+  },
+  "runner_sha256": "2f45f9465e9291c9ff1b5634c365aa2e4af1518dc9a84e5af77b3cf1e8e679c1",
+  "reserved_final_test_scored": false,
+  "development_confirmation_rescored": false,
+  "summer_validation_rescored": false,
+  "dataset": "citibike",
+  "candidate": "blend_2023_history_and_forecasts",
+  "training_rows": 153,
+  "training_end": "2023-06-30",
+  "input_contract": "2023_history_and_forecasts",
+  "chosen_trial": 1,
+  "chosen_configuration": {
+    "members": [
+      {
+        "run_id": "weather_svr_v1_0103",
+        "family": "weather_svr",
+        "configuration": {
+          "feature_set": "weather_full",
+          "target": "direct",
+          "half_life": 120,
+          "C": 198.159771179179,
+          "epsilon": 427.5249146876602,
+          "gamma": 0.00015907747306522294,
+          "kernel": "linear"
+        },
+        "created_utc": "2026-10-10T08:56:14.791526+00:00",
+        "cv_mae": 10129.125688223781,
+        "cv_std": 1291.4273084904178,
+        "worst_fold_mae": 11672.867849641769,
+        "folds": [
+          {
+            "mae": 10202.430236581074,
+            "rmse": 17462.309106110944,
+            "wape": 0.09738953442263742,
+            "bias": 2844.0292662065476,
+            "days": 21,
+            "fold": 0,
+            "training_rows": 90,
+            "validation_start": "2023-04-29",
+            "validation_end": "2023-05-19"
+          },
+          {
+            "mae": 11672.867849641769,
+            "rmse": 17788.657978916177,
+            "wape": 0.10783572315920026,
+            "bias": 8119.740817633203,
+            "days": 21,
+            "fold": 1,
+            "training_rows": 111,
+            "validation_start": "2023-05-20",
+            "validation_end": "2023-06-09"
+          },
+          {
+            "mae": 8512.078978448499,
+            "rmse": 10480.835862391114,
+            "wape": 0.07222571398855906,
+            "bias": -2664.6184047106563,
+            "days": 21,
+            "fold": 2,
+            "training_rows": 132,
+            "validation_start": "2023-06-10",
+            "validation_end": "2023-06-30"
+          }
+        ],
+        "status": "complete",
+        "warnings": [],
+        "seconds": 0.07486849999986589
+      },
+      {
+        "run_id": "weather_hist_v1_0068",
+        "family": "weather_hist",
+        "configuration": {
+          "feature_set": "weather_derived_full",
+          "target": "residualblend",
+          "half_life": 30,
+          "max_iter": 200,
+          "learning_rate": 0.2892438696013222,
+          "max_leaf_nodes": 4,
+          "min_samples_leaf": 23,
+          "l2_regularization": 0.007814351329811293,
+          "loss": "absolute_error",
+          "early_stopping": false
+        },
+        "created_utc": "2026-10-10T08:57:01.894275+00:00",
+        "cv_mae": 11198.516359153791,
+        "cv_std": 3137.096718798665,
+        "worst_fold_mae": 15220.4740838104,
+        "folds": [
+          {
+            "mae": 15220.4740838104,
+            "rmse": 24909.315751510163,
+            "wape": 0.14529037203305112,
+            "bias": -1442.8075246849503,
+            "days": 21,
+            "fold": 0,
+            "training_rows": 90,
+            "validation_start": "2023-04-29",
+            "validation_end": "2023-05-19"
+          },
+          {
+            "mae": 10809.251337320256,
+            "rmse": 17305.47819813405,
+            "wape": 0.0998575028676654,
+            "bias": 6707.1992608278915,
+            "days": 21,
+            "fold": 1,
+            "training_rows": 111,
+            "validation_start": "2023-05-20",
+            "validation_end": "2023-06-09"
+          },
+          {
+            "mae": 7565.823656330716,
+            "rmse": 10212.348628460333,
+            "wape": 0.06419665711203466,
+            "bias": 389.8675164581461,
+            "days": 21,
+            "fold": 2,
+            "training_rows": 132,
+            "validation_start": "2023-06-10",
+            "validation_end": "2023-06-30"
+          }
+        ],
+        "status": "complete",
+        "warnings": [],
+        "seconds": 0.5317679999861866
+      }
+    ],
+    "weights": [
+      0.75,
+      0.25
+    ]
+  },
+  "trials": [
+    {
+      "candidate": 0,
+      "mean_fold_mae": 9713.943664511271,
+      "folds": [
+        {
+          "fold": 0,
+          "start": "2023-04-29",
+          "end": "2023-05-19",
+          "mae": 10901.925093048147,
+          "rmse": 18718.272667013232,
+          "wape": 0.10406671591985554,
+          "bias": 1772.3200684836734,
+          "days": 21
+        },
+        {
+          "fold": 1,
+          "start": "2023-05-20",
+          "end": "2023-06-09",
+          "mae": 10486.132323839725,
+          "rmse": 17180.06594637666,
+          "wape": 0.09687248042639535,
+          "bias": 7766.605428431874,
+          "days": 21
+        },
+        {
+          "fold": 2,
+          "start": "2023-06-10",
+          "end": "2023-06-30",
+          "mae": 7753.773576645937,
+          "rmse": 9626.538207529495,
+          "wape": 0.06579142816893266,
+          "bias": -1900.9969244184545,
+          "days": 21
+        }
+      ]
+    },
+    {
+      "candidate": 1,
+      "mean_fold_mae": 9710.577068816412,
+      "folds": [
+        {
+          "fold": 0,
+          "start": "2023-04-29",
+          "end": "2023-05-19",
+          "mae": 10901.82568822481,
+          "rmse": 18721.200217867747,
+          "wape": 0.10406576702932263,
+          "bias": 1778.5658879244493,
+          "days": 21
+        },
+        {
+          "fold": 1,
+          "start": "2023-05-20",
+          "end": "2023-06-09",
+          "mae": 10488.56140345427,
+          "rmse": 17183.448143422065,
+          "wape": 0.09689492063219737,
+          "bias": 7773.79589099551,
+          "days": 21
+        },
+        {
+          "fold": 2,
+          "start": "2023-06-10",
+          "end": "2023-06-30",
+          "mae": 7741.344114770158,
+          "rmse": 9602.96472443831,
+          "wape": 0.06568596312793097,
+          "bias": -1838.517658068944,
+          "days": 21
+        }
+      ]
+    },
+    {
+      "candidate": 2,
+      "mean_fold_mae": 9841.218732888627,
+      "folds": [
+        {
+          "fold": 0,
+          "start": "2023-04-29",
+          "end": "2023-05-19",
+          "mae": 11476.021550882197,
+          "rmse": 19399.82394799005,
+          "wape": 0.10954687951280745,
+          "bias": 1153.9213441795132,
+          "days": 21
+        },
+        {
+          "fold": 1,
+          "start": "2023-05-20",
+          "end": "2023-06-09",
+          "mae": 10352.01507713753,
+          "rmse": 17239.348216226936,
+          "wape": 0.09563348496507897,
+          "bias": 7938.7821134939195,
+          "days": 21
+        },
+        {
+          "fold": 2,
+          "start": "2023-06-10",
+          "end": "2023-06-30",
+          "mae": 7695.619570646151,
+          "rmse": 9500.695480211185,
+          "wape": 0.0652979864826814,
+          "bias": -1661.2267890418887,
+          "days": 21
+        }
+      ]
+    },
+    {
+      "candidate": 3,
+      "mean_fold_mae": 9837.307450062883,
+      "folds": [
+        {
+          "fold": 0,
+          "start": "2023-04-29",
+          "end": "2023-05-19",
+          "mae": 11474.288084666197,
+          "rmse": 19402.52136707173,
+          "wape": 0.10953033233102834,
+          "bias": 1160.1671636202877,
+          "days": 21
+        },
+        {
+          "fold": 1,
+          "start": "2023-05-20",
+          "end": "2023-06-09",
+          "mae": 10354.444156752077,
+          "rmse": 17242.874366336204,
+          "wape": 0.095655925170881,
+          "bias": 7945.972576057557,
+          "days": 21
+        },
+        {
+          "fold": 2,
+          "start": "2023-06-10",
+          "end": "2023-06-30",
+          "mae": 7683.190108770373,
+          "rmse": 9479.197345649687,
+          "wape": 0.06519252144167972,
+          "bias": -1598.7475226923748,
+          "days": 21
+        }
+      ]
+    }
+  ],
+  "data_hashes": {
+    "counts_sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+    "temperature_sha256": "540aec85e6ddfa86880aed6a5f78392869ef7240faceaab56ffc7f2e91f38b8e",
+    "rain_wind_sha256": "2aa261757ac895655a0b6d032b6b62625817c1b7ad3b22e009b0e8402c766bdc"
+  },
+  "artifact_sha256": "fd577fb3dfb2e4edafb6a3c3f2cd9d186211c6969a60dc13fadad371c1be0b05",
+  "metric_note": "Training chronological CV. No new July-September score or final-test score.",
+  "status": "complete",
+  "finished_utc": "2026-10-12T18:38:46.088909+00:00",
+  "warnings": []
+}

@@ -1,0 +1,45 @@
+{
+  "model": "weather_gru",
+  "prediction_date": "2023-06-30",
+  "prior_counts": [
+    111697,
+    106088,
+    103370,
+    115089,
+    112238,
+    92204,
+    96648,
+    112979,
+    122366,
+    108537,
+    97169,
+    131625,
+    117194,
+    134699,
+    106060,
+    116722,
+    110799,
+    120446,
+    128543,
+    132181,
+    116802,
+    107756,
+    111105,
+    116563,
+    102260,
+    119027,
+    131118,
+    130450
+  ],
+  "forecasts": [
+    {
+      "date": "2023-06-30",
+      "forecast_temp_day2_mean": 24.041667,
+      "forecast_temp_day2_min": 20.8,
+      "forecast_temp_day2_max": 26.9,
+      "forecast_jma_day2_precip_sum": 0.0,
+      "forecast_jma_day2_wind_mean": 12.5375,
+      "forecast_jma_day2_wind_max": 19.1
+    }
+  ]
+}

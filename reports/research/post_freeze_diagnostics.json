@@ -1,0 +1,1895 @@
+{
+  "created_utc": "2026-10-10T10:07:14.337355+00:00",
+  "scope": "Descriptive development diagnostics only. No model settings, thresholds, blend weights or finalists changed after scoring.",
+  "reserved_test_read": false,
+  "successful_configurations": 5510,
+  "failed_configurations": 0,
+  "interrupted_attempts": 1,
+  "fits_in_primary_search": 16530,
+  "diagnostics": [
+    {
+      "name": "control_lag7",
+      "input_contract": "2023_history_counts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 14608.0,
+            "rmse": 19917.9380491313,
+            "wape": 0.12375019538871697,
+            "bias": -2114.0
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 13556.483870967742,
+            "rmse": 19127.834056935913,
+            "wape": 0.10601139294981139,
+            "bias": 407.38709677419354
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 27559.2,
+            "rmse": 40692.39616029838,
+            "wape": 0.2381501864526978,
+            "bias": 10562.066666666668
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 19842.846153846152,
+            "rmse": 31865.738242966076,
+            "wape": 0.16461050045466874,
+            "bias": 4948.076923076923
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 13472.153846153846,
+            "rmse": 20291.196802857827,
+            "wape": 0.12549279808999986,
+            "bias": 4534.923076923077
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 22459.14285714286,
+            "rmse": 36084.211654327235,
+            "wape": 0.1894505219065798,
+            "bias": 578.7142857142857
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 24166.846153846152,
+            "rmse": 34697.3280538563,
+            "wape": 0.23562256769942333,
+            "bias": 6284.538461538462
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 21092.30769230769,
+            "rmse": 26696.57117136379,
+            "wape": 0.16243017338917487,
+            "bias": 1762.7692307692307
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 19727.846153846152,
+            "rmse": 28085.495865303856,
+            "wape": 0.1548968862018669,
+            "bias": 2692.6153846153848
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 8270.846153846154,
+            "rmse": 10244.537001964285,
+            "wape": 0.05987649474052925,
+            "bias": -541.7692307692307
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 16481.2,
+            "rmse": 24631.7294161569,
+            "wape": 0.13222071302900015,
+            "bias": 2679.3230769230768
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 23281.37037037037,
+            "rmse": 35423.23159704345,
+            "wape": 0.21001950858675172,
+            "bias": 3325.962962962963
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 144020.0,
+          "error": 107951.0,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 107951.0,
+          "relative_absolute_error": 2.992902492445036
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 149025.0,
+          "error": 99841.0,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 99841.0,
+          "relative_absolute_error": 2.0299487638256344
+        },
+        {
+          "date": "2023-09-24",
+          "actual": 34864,
+          "predicted": 124955.0,
+          "error": 90091.0,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 90091.0,
+          "relative_absolute_error": 2.5840695273061036
+        },
+        {
+          "date": "2023-09-26",
+          "actual": 84023,
+          "predicted": 152304.0,
+          "error": 68281.0,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 68281.0,
+          "relative_absolute_error": 0.8126465372576557
+        },
+        {
+          "date": "2023-09-30",
+          "actual": 103003,
+          "predicted": 36069.0,
+          "error": -66934.0,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 66934.0,
+          "relative_absolute_error": 0.649825733231071
+        },
+        {
+          "date": "2023-07-23",
+          "actual": 122644,
+          "predicted": 65329.0,
+          "error": -57315.0,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 57315.0,
+          "relative_absolute_error": 0.4673282019503604
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 111357.0,
+          "error": 51394.0,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 51394.0,
+          "relative_absolute_error": 0.857095208712039
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 140384.0,
+          "error": 49931.0,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 49931.0,
+          "relative_absolute_error": 0.5520104363592142
+        },
+        {
+          "date": "2023-07-11",
+          "actual": 133639,
+          "predicted": 83861.0,
+          "error": -49778.0,
+          "month": 7,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 49778.0,
+          "relative_absolute_error": 0.37248108710780536
+        },
+        {
+          "date": "2023-09-28",
+          "actual": 107534,
+          "predicted": 153216.0,
+          "error": 45682.0,
+          "month": 9,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 45682.0,
+          "relative_absolute_error": 0.42481447728160393
+        }
+      ],
+      "days_within_10_percent": 54,
+      "days_over_25_percent_error": 21
+    },
+    {
+      "name": "control_lag1",
+      "input_contract": "2023_history_counts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 14387.0,
+            "rmse": 20103.102401402884,
+            "wape": 0.12187801622792108,
+            "bias": -554.4193548387096
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 13466.90322580645,
+            "rmse": 18817.03238403802,
+            "wape": 0.10531087435920333,
+            "bias": -234.6451612903226
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 26156.9,
+            "rmse": 38248.99944704436,
+            "wape": 0.22603234535199032,
+            "bias": 1165.5666666666666
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 16473.0,
+            "rmse": 23794.169274457523,
+            "wape": 0.13665523347638114,
+            "bias": 9310.384615384615
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 19260.384615384617,
+            "rmse": 28554.450531464376,
+            "wape": 0.17941003237312644,
+            "bias": -4788.076923076923
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 19125.714285714286,
+            "rmse": 34865.65156425447,
+            "wape": 0.16133191619609516,
+            "bias": 1492.857142857143
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 18483.23076923077,
+            "rmse": 22776.02619489996,
+            "wape": 0.1802083013026519,
+            "bias": 17178.76923076923
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 14145.615384615385,
+            "rmse": 20459.90755487048,
+            "wape": 0.10893425191486336,
+            "bias": 8277.153846153846
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 24513.0,
+            "rmse": 33809.949294663136,
+            "wape": 0.19246841960626807,
+            "bias": -20007.153846153848
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 13310.76923076923,
+            "rmse": 20323.981779774735,
+            "wape": 0.09636283749129176,
+            "bias": -10770.615384615385
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 17540.553846153845,
+            "rmse": 25908.700702511265,
+            "wape": 0.14071939764471234,
+            "bias": -3595.6615384615384
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 18816.37037037037,
+            "rmse": 29666.234095473046,
+            "wape": 0.16974107604940927,
+            "bias": 9045.333333333334
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 149025.0,
+          "error": 112956.0,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 112956.0,
+          "relative_absolute_error": 3.1316643100723613
+        },
+        {
+          "date": "2023-09-19",
+          "actual": 152304,
+          "predicted": 59963.0,
+          "error": -92341.0,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 92341.0,
+          "relative_absolute_error": 0.6062939909654376
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 124955.0,
+          "error": 64992.0,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 64992.0,
+          "relative_absolute_error": 1.0838683855043945
+        },
+        {
+          "date": "2023-07-17",
+          "actual": 124908,
+          "predicted": 65329.0,
+          "error": -59579.0,
+          "month": 7,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 59579.0,
+          "relative_absolute_error": 0.4769830595318154
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 107534.0,
+          "error": 58350.0,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 58350.0,
+          "relative_absolute_error": 1.18636141834743
+        },
+        {
+          "date": "2023-09-27",
+          "actual": 138161,
+          "predicted": 84023.0,
+          "error": -54138.0,
+          "month": 9,
+          "weekday": "Wednesday",
+          "weekend": false,
+          "absolute_error": 54138.0,
+          "relative_absolute_error": 0.3918471927678578
+        },
+        {
+          "date": "2023-09-30",
+          "actual": 103003,
+          "predicted": 49184.0,
+          "error": -53819.0,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 53819.0,
+          "relative_absolute_error": 0.5224993446792812
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 141670.0,
+          "error": 51217.0,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 51217.0,
+          "relative_absolute_error": 0.5662277646954772
+        },
+        {
+          "date": "2023-08-11",
+          "actual": 136765,
+          "predicted": 90453.0,
+          "error": -46312.0,
+          "month": 8,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 46312.0,
+          "relative_absolute_error": 0.3386246481190363
+        },
+        {
+          "date": "2023-07-16",
+          "actual": 65329,
+          "predicted": 110252.0,
+          "error": 44923.0,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 44923.0,
+          "relative_absolute_error": 0.6876425477200019
+        }
+      ],
+      "days_within_10_percent": 53,
+      "days_over_25_percent_error": 20
+    },
+    {
+      "name": "control_training_cv_seasonal_average",
+      "input_contract": "2023_history_counts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 13561.215437788016,
+            "rmse": 17179.162643358217,
+            "wape": 0.11488246578140417,
+            "bias": -1724.15783410138
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 10462.244815668202,
+            "rmse": 14919.603863477258,
+            "wape": 0.08181451450447183,
+            "bias": -33.57430875576158
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 24436.792857142864,
+            "rmse": 33990.6460827672,
+            "wape": 0.21116820427423608,
+            "bias": 9972.34404761905
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 15708.505494505498,
+            "rmse": 22390.91965289335,
+            "wape": 0.1303132086393896,
+            "bias": 1424.1346153846166
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 19032.813186813186,
+            "rmse": 27721.870652629354,
+            "wape": 0.17729020983673813,
+            "bias": 11222.728021978022
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 15875.368622448983,
+            "rmse": 27057.559096189405,
+            "wape": 0.1339141431225979,
+            "bias": 2904.8125000000064
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 23264.579670329673,
+            "rmse": 31113.018388216853,
+            "wape": 0.22682562563085937,
+            "bias": 11396.052197802202
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 16696.56868131868,
+            "rmse": 20323.13532444535,
+            "wape": 0.12857893908403056,
+            "bias": -1882.5879120879108
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 14326.557692307688,
+            "rmse": 19435.26457105534,
+            "wape": 0.1124876562410347,
+            "bias": -93.51373626373915
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 7553.736263736261,
+            "rmse": 9149.92067786409,
+            "wape": 0.05468500335441766,
+            "bias": -6373.486263736268
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 14663.636263736262,
+            "rmse": 20709.108054946646,
+            "wape": 0.11763927641125116,
+            "bias": 859.4549450549442
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 19433.136904761912,
+            "rmse": 29080.870593815594,
+            "wape": 0.17530488103189085,
+            "bias": 6993.187169312174
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 128483.98214285716,
+          "error": 92414.98214285716,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 92414.98214285716,
+          "relative_absolute_error": 2.5621720076203154
+        },
+        {
+          "date": "2023-09-24",
+          "actual": 34864,
+          "predicted": 114549.01785714286,
+          "error": 79685.01785714286,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 79685.01785714286,
+          "relative_absolute_error": 2.2855959688258047
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 126949.32142857143,
+          "error": 66986.32142857143,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 66986.32142857143,
+          "relative_absolute_error": 1.11712758582078
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 111608.01785714288,
+          "error": 62424.01785714287,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 62424.01785714287,
+          "relative_absolute_error": 1.2691935966400225
+        },
+        {
+          "date": "2023-09-25",
+          "actual": 43306,
+          "predicted": 101345.64285714286,
+          "error": 58039.642857142855,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 58039.642857142855,
+          "relative_absolute_error": 1.340221744265064
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 133674.10714285716,
+          "error": 43221.10714285716,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 43221.10714285716,
+          "relative_absolute_error": 0.47782944891664353
+        },
+        {
+          "date": "2023-09-26",
+          "actual": 84023,
+          "predicted": 126312.35714285712,
+          "error": 42289.35714285713,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 42289.35714285713,
+          "relative_absolute_error": 0.5033069176637007
+        },
+        {
+          "date": "2023-07-16",
+          "actual": 65329,
+          "predicted": 107314.82142857142,
+          "error": 41985.82142857142,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 41985.82142857142,
+          "relative_absolute_error": 0.6426827508238518
+        },
+        {
+          "date": "2023-07-04",
+          "actual": 83861,
+          "predicted": 119578.82142857142,
+          "error": 35717.82142857142,
+          "month": 7,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 35717.82142857142,
+          "relative_absolute_error": 0.4259169510090676
+        },
+        {
+          "date": "2023-09-10",
+          "actual": 85813,
+          "predicted": 120484.51785714286,
+          "error": 34671.517857142855,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 34671.517857142855,
+          "relative_absolute_error": 0.40403572718752234
+        }
+      ],
+      "days_within_10_percent": 50,
+      "days_over_25_percent_error": 14
+    },
+    {
+      "name": "control_existing_xgboost_cpu_seed42",
+      "input_contract": "2023_history_counts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 12337.946139427924,
+            "rmse": 15604.293394025613,
+            "wape": 0.1045196635713083,
+            "bias": 181.70088048135128
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 10329.021279611896,
+            "rmse": 15257.367835150406,
+            "wape": 0.08077270950802475,
+            "bias": -758.264081401212
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 21845.670327758788,
+            "rmse": 34519.101590178616,
+            "wape": 0.18877726718264404,
+            "bias": 11290.588548787435
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 15071.72066791241,
+            "rmse": 25179.477416035228,
+            "wape": 0.12503062628327383,
+            "bias": 6929.374007004957
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 14433.202866774336,
+            "rmse": 21325.669783378842,
+            "wape": 0.13444494724718536,
+            "bias": 4195.964472844048
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 18563.78145926339,
+            "rmse": 32076.91075609662,
+            "wape": 0.15659182135255115,
+            "bias": -2991.5951102120525
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 20226.668738731973,
+            "rmse": 27893.987764664485,
+            "wape": 0.1972065197869105,
+            "bias": 14463.467754657451
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 13572.326171875,
+            "rmse": 20437.316344157218,
+            "wape": 0.10451939757147045,
+            "bias": 7450.507943960335
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 16107.169508713947,
+            "rmse": 20766.672036252785,
+            "wape": 0.12646846406692133,
+            "bias": -456.2825646033665
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 5062.231999323917,
+            "rmse": 7851.167802713641,
+            "wape": 0.036647847396110024,
+            "bias": -4680.990938626804
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 12849.330242919921,
+            "rmse": 19996.848138309957,
+            "wape": 0.1030839748722161,
+            "bias": 2687.714584115834
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 19364.430890118634,
+            "rmse": 30135.4743865484,
+            "wape": 0.17468508918962458,
+            "bias": 5412.694417317708
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 142275.17907714844,
+          "error": 106206.17907714844,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 106206.17907714844,
+          "relative_absolute_error": 2.94452796243723
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 128954.7578125,
+          "error": 79770.7578125,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 79770.7578125,
+          "relative_absolute_error": 1.6218843081591574
+        },
+        {
+          "date": "2023-09-24",
+          "actual": 34864,
+          "predicted": 105748.66796875,
+          "error": 70884.66796875,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 70884.66796875,
+          "relative_absolute_error": 2.0331765709255967
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 120298.3193359375,
+          "error": 60335.3193359375,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 60335.3193359375,
+          "relative_absolute_error": 1.0062091512422244
+        },
+        {
+          "date": "2023-09-26",
+          "actual": 84023,
+          "predicted": 134545.134765625,
+          "error": 50522.134765625,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 50522.134765625,
+          "relative_absolute_error": 0.6012893465554074
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 137460.35180664062,
+          "error": 47007.35180664063,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 47007.35180664063,
+          "relative_absolute_error": 0.5196881452980071
+        },
+        {
+          "date": "2023-09-28",
+          "actual": 107534,
+          "predicted": 148823.6416015625,
+          "error": 41289.6416015625,
+          "month": 9,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 41289.6416015625,
+          "relative_absolute_error": 0.38396824819650066
+        },
+        {
+          "date": "2023-09-30",
+          "actual": 103003,
+          "predicted": 65366.2734375,
+          "error": -37636.7265625,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 37636.7265625,
+          "relative_absolute_error": 0.36539446969991163
+        },
+        {
+          "date": "2023-07-16",
+          "actual": 65329,
+          "predicted": 102389.4501953125,
+          "error": 37060.4501953125,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 37060.4501953125,
+          "relative_absolute_error": 0.5672894150425156
+        },
+        {
+          "date": "2023-07-09",
+          "actual": 88395,
+          "predicted": 124356.6953125,
+          "error": 35961.6953125,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 35961.6953125,
+          "relative_absolute_error": 0.4068295187793427
+        }
+      ],
+      "days_within_10_percent": 61,
+      "days_over_25_percent_error": 15
+    },
+    {
+      "name": "blend_2023_history_counts",
+      "input_contract": "2023_history_counts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 12532.39981534761,
+            "rmse": 16938.094906271486,
+            "wape": 0.1061669582310232,
+            "bias": 241.27240176934697
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 11480.338008258119,
+            "rmse": 16212.93996355056,
+            "wape": 0.08977597992031737,
+            "bias": -2057.4671416803594
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 22849.55697047462,
+            "rmse": 32683.639605891043,
+            "wape": 0.19745225742692357,
+            "bias": -206.9724010725627
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 12953.679495407881,
+            "rmse": 20746.12614600932,
+            "wape": 0.10745997060785378,
+            "bias": 4280.350226674727
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 15636.649862855838,
+            "rmse": 23532.523710651534,
+            "wape": 0.14565502787838217,
+            "bias": 3200.673368503646
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 18973.527422449166,
+            "rmse": 30851.498742183583,
+            "wape": 0.16004816815387043,
+            "bias": -5169.455608282345
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 15588.736216819407,
+            "rmse": 20753.522999081077,
+            "wape": 0.15198748033621323,
+            "bias": 11263.145450615839
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 15392.621445162316,
+            "rmse": 20821.702985067015,
+            "wape": 0.11853734578144202,
+            "bias": 3706.8609039278795
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 19861.041198486437,
+            "rmse": 26527.97808906751,
+            "wape": 0.15594269209022416,
+            "bias": -11597.060920804159
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 10125.133145247182,
+            "rmse": 14102.755395677797,
+            "wape": 0.07330053905507918,
+            "bias": -10095.417525338355
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 14793.82502943193,
+            "rmse": 21542.265752242598,
+            "wape": 0.1186837180434531,
+            "bias": -2100.918789407252
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 17343.813138257057,
+            "rmse": 26474.74195607426,
+            "wape": 0.15645724690471682,
+            "bias": 2742.5374941501145
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 132498.90192159262,
+          "error": 96429.90192159262,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 96429.90192159262,
+          "relative_absolute_error": 2.673484208644338
+        },
+        {
+          "date": "2023-09-19",
+          "actual": 152304,
+          "predicted": 79923.12341745791,
+          "error": -72380.87658254209,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 72380.87658254209,
+          "relative_absolute_error": 0.4752394985196849
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 126439.44876922238,
+          "error": 66476.44876922238,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 66476.44876922238,
+          "relative_absolute_error": 1.1086244645735266
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 110481.32429119934,
+          "error": 61297.324291199344,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 61297.324291199344,
+          "relative_absolute_error": 1.2462858712426672
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 138689.6343301086,
+          "error": 48236.63433010859,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 48236.63433010859,
+          "relative_absolute_error": 0.5332784355423102
+        },
+        {
+          "date": "2023-07-16",
+          "actual": 65329,
+          "predicted": 111001.5010290166,
+          "error": 45672.5010290166,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 45672.5010290166,
+          "relative_absolute_error": 0.6991152631911801
+        },
+        {
+          "date": "2023-09-30",
+          "actual": 103003,
+          "predicted": 59874.06503784112,
+          "error": -43128.93496215888,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 43128.93496215888,
+          "relative_absolute_error": 0.41871532831236835
+        },
+        {
+          "date": "2023-07-17",
+          "actual": 124908,
+          "predicted": 88209.38172270007,
+          "error": -36698.61827729993,
+          "month": 7,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 36698.61827729993,
+          "relative_absolute_error": 0.29380518683591067
+        },
+        {
+          "date": "2023-09-27",
+          "actual": 138161,
+          "predicted": 102222.11402132416,
+          "error": -35938.885978675855,
+          "month": 9,
+          "weekday": "Wednesday",
+          "weekend": false,
+          "absolute_error": 35938.885978675855,
+          "relative_absolute_error": 0.2601232328853718
+        },
+        {
+          "date": "2023-09-12",
+          "actual": 155945,
+          "predicted": 120356.91581733104,
+          "error": -35588.08418266896,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 35588.08418266896,
+          "relative_absolute_error": 0.2282092031335981
+        }
+      ],
+      "days_within_10_percent": 54,
+      "days_over_25_percent_error": 17
+    },
+    {
+      "name": "blend_2023_history_and_forecasts",
+      "input_contract": "2023_history_and_forecasts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 10046.339469585258,
+            "rmse": 14282.016291601005,
+            "wape": 0.08510654930877293,
+            "bias": 5925.672928278926
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 9267.333909072486,
+            "rmse": 12646.353330488459,
+            "wape": 0.07247033862045692,
+            "bias": -955.6077682884624
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 21424.535782188243,
+            "rmse": 27425.35702706755,
+            "wape": 0.18513807335447424,
+            "bias": 3312.5779931300617
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 11768.848555025614,
+            "rmse": 17214.834163201216,
+            "wape": 0.09763095653707256,
+            "bias": 2790.8544206154443
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 13888.97767768117,
+            "rmse": 20608.369985882884,
+            "wape": 0.12937550233508924,
+            "bias": 11466.278837271988
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 14301.111738283387,
+            "rmse": 21928.08058855744,
+            "wape": 0.12063474994997085,
+            "bias": -952.4372179960285
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 17317.20866452129,
+            "rmse": 24402.763950455887,
+            "wape": 0.1688397875728532,
+            "bias": 13390.122562177163
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 12764.894587587543,
+            "rmse": 17244.938487323663,
+            "wape": 0.09830143156467176,
+            "bias": 432.84676872879095
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 14652.86723008527,
+            "rmse": 17826.93779009823,
+            "wape": 0.11504973681209917,
+            "bias": -1586.682857185506
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 9702.925121104483,
+            "rmse": 12407.307321542252,
+            "wape": 0.07024397917393162,
+            "bias": -5971.613515796295
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 12555.702634296817,
+            "rmse": 17263.744194793686,
+            "wape": 0.10072834228616975,
+            "bias": 1426.3367307268848
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 15753.306554620154,
+            "rmse": 23152.636523456975,
+            "wape": 0.14210940544240597,
+            "bias": 5953.239713198471
+          }
+        ],
+        "archived_forecast_rain": [
+          {
+            "group": "dry_or_trace",
+            "days": 40,
+            "mae": 9632.096662953947,
+            "rmse": 12511.91620953403,
+            "wape": 0.07226494276109742,
+            "bias": -6403.001255787919
+          },
+          {
+            "group": "light",
+            "days": 28,
+            "mae": 10128.481980408693,
+            "rmse": 13861.626172163275,
+            "wape": 0.08064291265989558,
+            "bias": 1130.1616240718042
+          },
+          {
+            "group": "moderate",
+            "days": 16,
+            "mae": 17146.34821914977,
+            "rmse": 21030.61917371794,
+            "wape": 0.16920021777843888,
+            "bias": 14054.248271440756
+          },
+          {
+            "group": "heavy",
+            "days": 8,
+            "mae": 37279.62684100495,
+            "rmse": 43484.24387448356,
+            "wape": 0.4767360497330316,
+            "bias": 31632.114021007554
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 104232.8275438974,
+          "error": 68163.8275438974,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 68163.8275438974,
+          "relative_absolute_error": 1.8898175037815685,
+          "forecast_precip_mm": 22.2,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-24",
+          "actual": 34864,
+          "predicted": 92618.73192921566,
+          "error": 57754.73192921566,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 57754.73192921566,
+          "relative_absolute_error": 1.656572164100954,
+          "forecast_precip_mm": 24.6,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 110453.50336514678,
+          "error": 50490.50336514678,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 50490.50336514678,
+          "relative_absolute_error": 0.8420276397969878,
+          "forecast_precip_mm": 33.0,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 97763.53187014436,
+          "error": 48579.53187014435,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 48579.53187014435,
+          "relative_absolute_error": 0.987710065674698,
+          "forecast_precip_mm": 27.6,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-25",
+          "actual": 43306,
+          "predicted": 86173.42686704057,
+          "error": 42867.42686704057,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 42867.42686704057,
+          "relative_absolute_error": 0.9898726935537933,
+          "forecast_precip_mm": 10.2,
+          "forecast_rain_bin": "moderate"
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 133186.96920449904,
+          "error": 42733.96920449904,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 42733.96920449904,
+          "relative_absolute_error": 0.47244391235778843,
+          "forecast_precip_mm": 2.2,
+          "forecast_rain_bin": "light"
+        },
+        {
+          "date": "2023-07-16",
+          "actual": 65329,
+          "predicted": 107973.30887257772,
+          "error": 42644.30887257773,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 42644.30887257773,
+          "relative_absolute_error": 0.6527623088150397,
+          "forecast_precip_mm": 20.6,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-07-04",
+          "actual": 83861,
+          "predicted": 121585.64038570123,
+          "error": 37724.640385701234,
+          "month": 7,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 37724.640385701234,
+          "relative_absolute_error": 0.4498472518298283,
+          "forecast_precip_mm": 10.4,
+          "forecast_rain_bin": "moderate"
+        },
+        {
+          "date": "2023-09-10",
+          "actual": 85813,
+          "predicted": 119516.31262600684,
+          "error": 33703.31262600684,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 33703.31262600684,
+          "relative_absolute_error": 0.3927529934393022,
+          "forecast_precip_mm": 5.8,
+          "forecast_rain_bin": "moderate"
+        },
+        {
+          "date": "2023-09-14",
+          "actual": 156602,
+          "predicted": 129905.8715982801,
+          "error": -26696.128401719907,
+          "month": 9,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 26696.128401719907,
+          "relative_absolute_error": 0.17047118428704555,
+          "forecast_precip_mm": 0.0,
+          "forecast_rain_bin": "dry_or_trace"
+        }
+      ],
+      "days_within_10_percent": 61,
+      "days_over_25_percent_error": 11
+    },
+    {
+      "name": "blend_expanded_history_counts",
+      "input_contract": "expanded_history_counts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 10917.442735569679,
+            "rmse": 14595.532387149357,
+            "wape": 0.09248601257337599,
+            "bias": 828.1440951521166
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 10696.858391606946,
+            "rmse": 14572.452352579472,
+            "wape": 0.08364918728739508,
+            "bias": -2689.0485816599935
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 23155.74207767533,
+            "rmse": 33228.94128740691,
+            "wape": 0.2000981266963105,
+            "bias": 6591.232614624794
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 14355.157154220904,
+            "rmse": 22205.28245736259,
+            "wape": 0.1190862230619924,
+            "bias": 3922.3913787410543
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 17559.644408002627,
+            "rmse": 25721.030034217303,
+            "wape": 0.16356767710567494,
+            "bias": 6091.283069343868
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 16097.80316601356,
+            "rmse": 28786.659918309575,
+            "wape": 0.13579045428177283,
+            "bias": -741.6776837323226
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 18110.98980487123,
+            "rmse": 27055.590738128703,
+            "wape": 0.17657901631995482,
+            "bias": 13349.321364619487
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 14644.879335213822,
+            "rmse": 18776.830890798257,
+            "wape": 0.1127790436392058,
+            "bias": 717.8796863136869
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 15427.236840763993,
+            "rmse": 18161.6807047478,
+            "wape": 0.12112984512843966,
+            "bias": -4965.030743798555
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 7544.11960681553,
+            "rmse": 10048.2086006044,
+            "wape": 0.05461538391079303,
+            "bias": -7544.11960681553
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 13906.207469003375,
+            "rmse": 19687.704159888566,
+            "wape": 0.11156279076043213,
+            "bias": -355.5192432430949
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 17067.115251389478,
+            "rmse": 27966.56066857959,
+            "wape": 0.15396117587013206,
+            "bias": 6042.877413622254
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 134374.6893279473,
+          "error": 98305.6893279473,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 98305.6893279473,
+          "relative_absolute_error": 2.725489737113513
+        },
+        {
+          "date": "2023-09-24",
+          "actual": 34864,
+          "predicted": 104758.2404608264,
+          "error": 69894.24046082639,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 69894.24046082639,
+          "relative_absolute_error": 2.0047682555308164
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 116407.9060598607,
+          "error": 67223.9060598607,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 67223.9060598607,
+          "relative_absolute_error": 1.3667840366757624
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 125716.98226471318,
+          "error": 65753.98226471318,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 65753.98226471318,
+          "relative_absolute_error": 1.0965759262330634
+        },
+        {
+          "date": "2023-09-25",
+          "actual": 43306,
+          "predicted": 95211.53223551068,
+          "error": 51905.53223551068,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 51905.53223551068,
+          "relative_absolute_error": 1.198575999526871
+        },
+        {
+          "date": "2023-07-16",
+          "actual": 65329,
+          "predicted": 111526.54611639214,
+          "error": 46197.54611639214,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 46197.54611639214,
+          "relative_absolute_error": 0.7071522006519638
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 134080.4853621762,
+          "error": 43627.4853621762,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 43627.4853621762,
+          "relative_absolute_error": 0.48232214920650723
+        },
+        {
+          "date": "2023-09-12",
+          "actual": 155945,
+          "predicted": 124256.51563800604,
+          "error": -31688.484361993964,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 31688.484361993964,
+          "relative_absolute_error": 0.20320295207922
+        },
+        {
+          "date": "2023-09-19",
+          "actual": 152304,
+          "predicted": 121217.8667462122,
+          "error": -31086.13325378779,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 31086.13325378779,
+          "relative_absolute_error": 0.20410582291855625
+        },
+        {
+          "date": "2023-09-10",
+          "actual": 85813,
+          "predicted": 116545.96422666936,
+          "error": 30732.96422666937,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 30732.96422666937,
+          "relative_absolute_error": 0.358138792801433
+        }
+      ],
+      "days_within_10_percent": 58,
+      "days_over_25_percent_error": 12
+    },
+    {
+      "name": "blend_expanded_history_and_forecasts",
+      "input_contract": "expanded_history_and_forecasts",
+      "grouped_errors": {
+        "month": [
+          {
+            "group": "7",
+            "days": 31,
+            "mae": 9511.096009893805,
+            "rmse": 13138.027208454208,
+            "wape": 0.08057228844367502,
+            "bias": 1135.1734653541837
+          },
+          {
+            "group": "8",
+            "days": 31,
+            "mae": 9599.662853026844,
+            "rmse": 13471.371526763085,
+            "wape": 0.07506914334013727,
+            "bias": 2611.0102868081854
+          },
+          {
+            "group": "9",
+            "days": 30,
+            "mae": 20926.694752731044,
+            "rmse": 28574.928178228496,
+            "wape": 0.18083602779476873,
+            "bias": 9099.45551630867
+          }
+        ],
+        "weekday": [
+          {
+            "group": "Friday",
+            "days": 13,
+            "mae": 11319.829244410024,
+            "rmse": 17879.3670337356,
+            "wape": 0.09390602247967092,
+            "bias": 4621.260971717579
+          },
+          {
+            "group": "Monday",
+            "days": 13,
+            "mae": 17607.21517875803,
+            "rmse": 24998.586136908645,
+            "wape": 0.1640107977230288,
+            "bias": 12383.174039585843
+          },
+          {
+            "group": "Saturday",
+            "days": 14,
+            "mae": 12371.16189209901,
+            "rmse": 21403.778806601116,
+            "wape": 0.10435496545690995,
+            "bias": 1589.0361465900735
+          },
+          {
+            "group": "Sunday",
+            "days": 13,
+            "mae": 18897.256574479172,
+            "rmse": 25836.905036688586,
+            "wape": 0.1842449812527547,
+            "bias": 15501.4331120784
+          },
+          {
+            "group": "Thursday",
+            "days": 13,
+            "mae": 13091.88342831921,
+            "rmse": 18007.40547397508,
+            "wape": 0.10081954645618456,
+            "bias": 2817.682375678752
+          },
+          {
+            "group": "Tuesday",
+            "days": 13,
+            "mae": 11796.138240925075,
+            "rmse": 14750.014083473205,
+            "wape": 0.09261959306033174,
+            "bias": -2733.663029226678
+          },
+          {
+            "group": "Wednesday",
+            "days": 13,
+            "mae": 7829.069705653517,
+            "rmse": 9017.304329996736,
+            "wape": 0.05667826995377086,
+            "bias": -4369.2062579852445
+          }
+        ],
+        "weekend": [
+          {
+            "group": "False",
+            "days": 65,
+            "mae": 12328.82715961317,
+            "rmse": 17707.300297436963,
+            "wape": 0.09890822985312697,
+            "bias": 2543.849619954051
+          },
+          {
+            "group": "True",
+            "days": 27,
+            "mae": 15513.355628059828,
+            "rmse": 23642.23940104435,
+            "wape": 0.13994482600058447,
+            "bias": 8287.597648491863
+          }
+        ],
+        "archived_forecast_rain": [
+          {
+            "group": "dry_or_trace",
+            "days": 40,
+            "mae": 8682.388543578072,
+            "rmse": 10459.846346324695,
+            "wape": 0.0651397440335548,
+            "bias": -3824.8978614864363
+          },
+          {
+            "group": "light",
+            "days": 28,
+            "mae": 9519.990944487983,
+            "rmse": 13746.292366917973,
+            "wape": 0.0757981106886822,
+            "bias": 963.0470943806571
+          },
+          {
+            "group": "moderate",
+            "days": 16,
+            "mae": 18792.53491009312,
+            "rmse": 23645.902714675845,
+            "wape": 0.18544479318607596,
+            "bias": 14986.38503544248
+          },
+          {
+            "group": "heavy",
+            "days": 8,
+            "mae": 38212.3150727744,
+            "rmse": 45906.37093542286,
+            "wape": 0.4886633714614018,
+            "bias": 34420.47463200161
+          }
+        ]
+      },
+      "largest_errors": [
+        {
+          "date": "2023-09-23",
+          "actual": 36069,
+          "predicted": 108426.10071039826,
+          "error": 72357.10071039826,
+          "month": 9,
+          "weekday": "Saturday",
+          "weekend": true,
+          "absolute_error": 72357.10071039826,
+          "relative_absolute_error": 2.0060744880755843,
+          "forecast_precip_mm": 22.2,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-24",
+          "actual": 34864,
+          "predicted": 95885.38838278344,
+          "error": 61021.38838278344,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 61021.38838278344,
+          "relative_absolute_error": 1.750269285876074,
+          "forecast_precip_mm": 24.6,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-25",
+          "actual": 43306,
+          "predicted": 103929.52160318742,
+          "error": 60623.521603187415,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 60623.521603187415,
+          "relative_absolute_error": 1.3998873505562142,
+          "forecast_precip_mm": 10.2,
+          "forecast_rain_bin": "moderate"
+        },
+        {
+          "date": "2023-09-18",
+          "actual": 59963,
+          "predicted": 115677.22347912376,
+          "error": 55714.22347912377,
+          "month": 9,
+          "weekday": "Monday",
+          "weekend": false,
+          "absolute_error": 55714.22347912377,
+          "relative_absolute_error": 0.9291433630592828,
+          "forecast_precip_mm": 33.0,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-29",
+          "actual": 49184,
+          "predicted": 101682.56753480172,
+          "error": 52498.567534801725,
+          "month": 9,
+          "weekday": "Friday",
+          "weekend": false,
+          "absolute_error": 52498.567534801725,
+          "relative_absolute_error": 1.0673911746665934,
+          "forecast_precip_mm": 27.6,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-08-10",
+          "actual": 90453,
+          "predicted": 135278.5213397153,
+          "error": 44825.52133971531,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 44825.52133971531,
+          "relative_absolute_error": 0.4955669943475099,
+          "forecast_precip_mm": 2.2,
+          "forecast_rain_bin": "light"
+        },
+        {
+          "date": "2023-07-16",
+          "actual": 65329,
+          "predicted": 108520.7659719177,
+          "error": 43191.7659719177,
+          "month": 7,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 43191.7659719177,
+          "relative_absolute_error": 0.6611423100295076,
+          "forecast_precip_mm": 20.6,
+          "forecast_rain_bin": "heavy"
+        },
+        {
+          "date": "2023-09-10",
+          "actual": 85813,
+          "predicted": 123438.96827822042,
+          "error": 37625.96827822042,
+          "month": 9,
+          "weekday": "Sunday",
+          "weekend": true,
+          "absolute_error": 37625.96827822042,
+          "relative_absolute_error": 0.43846466477364054,
+          "forecast_precip_mm": 5.8,
+          "forecast_rain_bin": "moderate"
+        },
+        {
+          "date": "2023-08-24",
+          "actual": 101813,
+          "predicted": 135297.28383126963,
+          "error": 33484.283831269655,
+          "month": 8,
+          "weekday": "Thursday",
+          "weekend": false,
+          "absolute_error": 33484.283831269655,
+          "relative_absolute_error": 0.32888023956930507,
+          "forecast_precip_mm": 2.2,
+          "forecast_rain_bin": "light"
+        },
+        {
+          "date": "2023-09-19",
+          "actual": 152304,
+          "predicted": 126553.15116346104,
+          "error": -25750.84883653895,
+          "month": 9,
+          "weekday": "Tuesday",
+          "weekend": false,
+          "absolute_error": 25750.84883653895,
+          "relative_absolute_error": 0.16907532853069485,
+          "forecast_precip_mm": 0.0,
+          "forecast_rain_bin": "dry_or_trace"
+        }
+      ],
+      "days_within_10_percent": 60,
+      "days_over_25_percent_error": 13
+    }
+  ]
+}

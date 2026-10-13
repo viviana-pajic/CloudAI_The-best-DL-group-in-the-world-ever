@@ -1,0 +1,108 @@
+{
+  "model": "weather_cpu",
+  "prediction_date": "2023-06-30",
+  "prior_counts": [
+    111697,
+    106088,
+    103370,
+    115089,
+    112238,
+    92204,
+    96648,
+    112979,
+    122366,
+    108537,
+    97169,
+    131625,
+    117194,
+    134699,
+    106060,
+    116722,
+    110799,
+    120446,
+    128543,
+    132181,
+    116802,
+    107756,
+    111105,
+    116563,
+    102260,
+    119027,
+    131118,
+    130450
+  ],
+  "forecasts": [
+    {
+      "date": "2023-06-23",
+      "forecast_temp_day2_mean": 21.2125,
+      "forecast_temp_day2_min": 17.6,
+      "forecast_temp_day2_max": 25.5,
+      "forecast_jma_day2_precip_sum": 2.4,
+      "forecast_jma_day2_wind_mean": 16.354167,
+      "forecast_jma_day2_wind_max": 23.8
+    },
+    {
+      "date": "2023-06-24",
+      "forecast_temp_day2_mean": 23.133333,
+      "forecast_temp_day2_min": 20.7,
+      "forecast_temp_day2_max": 25.7,
+      "forecast_jma_day2_precip_sum": 8.6,
+      "forecast_jma_day2_wind_mean": 17.1875,
+      "forecast_jma_day2_wind_max": 22.9
+    },
+    {
+      "date": "2023-06-25",
+      "forecast_temp_day2_mean": 22.995833,
+      "forecast_temp_day2_min": 20.5,
+      "forecast_temp_day2_max": 26.6,
+      "forecast_jma_day2_precip_sum": 5.0,
+      "forecast_jma_day2_wind_mean": 12.804167,
+      "forecast_jma_day2_wind_max": 19.1
+    },
+    {
+      "date": "2023-06-26",
+      "forecast_temp_day2_mean": 22.0625,
+      "forecast_temp_day2_min": 20.3,
+      "forecast_temp_day2_max": 25.3,
+      "forecast_jma_day2_precip_sum": 3.8,
+      "forecast_jma_day2_wind_mean": 22.016667,
+      "forecast_jma_day2_wind_max": 29.1
+    },
+    {
+      "date": "2023-06-27",
+      "forecast_temp_day2_mean": 21.795833,
+      "forecast_temp_day2_min": 19.8,
+      "forecast_temp_day2_max": 25.3,
+      "forecast_jma_day2_precip_sum": 2.4,
+      "forecast_jma_day2_wind_mean": 22.641667,
+      "forecast_jma_day2_wind_max": 27.7
+    },
+    {
+      "date": "2023-06-28",
+      "forecast_temp_day2_mean": 22.258333,
+      "forecast_temp_day2_min": 19.0,
+      "forecast_temp_day2_max": 26.4,
+      "forecast_jma_day2_precip_sum": 7.2,
+      "forecast_jma_day2_wind_mean": 10.125,
+      "forecast_jma_day2_wind_max": 13.0
+    },
+    {
+      "date": "2023-06-29",
+      "forecast_temp_day2_mean": 22.908333,
+      "forecast_temp_day2_min": 18.1,
+      "forecast_temp_day2_max": 28.0,
+      "forecast_jma_day2_precip_sum": 0.2,
+      "forecast_jma_day2_wind_mean": 13.245833,
+      "forecast_jma_day2_wind_max": 18.1
+    },
+    {
+      "date": "2023-06-30",
+      "forecast_temp_day2_mean": 24.041667,
+      "forecast_temp_day2_min": 20.8,
+      "forecast_temp_day2_max": 26.9,
+      "forecast_jma_day2_precip_sum": 0.0,
+      "forecast_jma_day2_wind_mean": 12.5375,
+      "forecast_jma_day2_wind_max": 19.1
+    }
+  ]
+}

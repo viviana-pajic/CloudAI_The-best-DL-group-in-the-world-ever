@@ -1,0 +1,60 @@
+name: Review model build
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'mushrooms/**'
+      - 'citibike/**'
+      - 'common/**'
+      - 'src/**'
+      - 'app/**'
+      - 'data/*.csv'
+      - 'scripts/**'
+      - 'requirements-review*.txt'
+      - '.github/workflows/review-release.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+      - name: Install CPU requirements
+        run: |
+          python -m pip install -r requirements-review-linux.lock.txt
+          python -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
+      - name: Rebuild CPU models with training data only
+        run: python scripts/rebuild_review_models.py --output-root build
+      - name: Assemble the rebuilt app
+        run: |
+          cp build/models/* models/
+          python scripts/verify_review.py --mode rebuilt
+          docker build -t cloudai-review .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cloudai-review-${{ github.sha }}
+          path: |
+            models/
+            build/build_record.json
+            reports/review_verification.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Request hosting update if configured
+        env:
+          DEPLOY_WEBHOOK: ${{ secrets.DEPLOY_WEBHOOK }}
+          RELEASE_COMMIT: ${{ github.sha }}
+        run: |
+          if [ -n "$DEPLOY_WEBHOOK" ]; then
+            curl --fail --silent --show-error --retry 2 \
+              -X POST -H 'Content-Type: application/json' \
+              --data "{\"commit\":\"$RELEASE_COMMIT\"}" "$DEPLOY_WEBHOOK"
+          else
+            echo 'Build passed. Configure a host and DEPLOY_WEBHOOK to enable deployment.'
+          fi

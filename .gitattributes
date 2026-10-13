@@ -15,3 +15,4 @@ mushrooms/AWS_RANGES.json -text
 audit/** -text
 reports/research/** -text
 models/*.joblib -text
+*.pdf binary

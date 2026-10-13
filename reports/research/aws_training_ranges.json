@@ -1,0 +1,831 @@
+{
+  "created_utc": "2026-10-10T10:07:20.751320+00:00",
+  "derived_from": "Training CV only. Each range comes from at most ten strong existing configurations with the same input, feature, target and kernel contract.",
+  "aws_run_completed": false,
+  "recommended_compute": "Start with CPU. These experiments contain 153 or 518 daily training targets, not millions of raw trip rows. A GPU is useful only for a selected neural model, if any.",
+  "suggested_search_cap": 40,
+  "procedure": [
+    "Reproduce the exact selected configuration first.",
+    "Upload the small audited daily tables and preprocessing source; training does not require uploading every raw trip archive.",
+    "Keep the same chronological CV dates and fold-fitted transforms.",
+    "If further training-only tuning is justified, use a small bounded search inside these observed ranges.",
+    "Save code, configuration, metrics and the fitted prediction pipeline from the actual AWS run."
+  ],
+  "do_not_tune_against": "July-September development scores or the reserved October-December test targets.",
+  "candidates": [
+    {
+      "input_contract": "2023_history_counts",
+      "finalist": "blend_2023_history_counts",
+      "blend_weights": [
+        0.75,
+        0.25
+      ],
+      "members": [
+        {
+          "run_id": "hist_v1_0097",
+          "family": "hist",
+          "exact_configuration": {
+            "feature_set": "expanded",
+            "target": "delta1",
+            "half_life": 0,
+            "max_iter": 350,
+            "learning_rate": 0.21389833591128998,
+            "max_leaf_nodes": 20,
+            "min_samples_leaf": 24,
+            "l2_regularization": 4.419064140797315,
+            "loss": "absolute_error",
+            "early_stopping": false
+          },
+          "primary_training_cv_mae": 11287.705373740659,
+          "comparable_training_cv_run_ids": [
+            "hist_v1_0097",
+            "hist_v1_0095",
+            "hist_v1_0113",
+            "hist_v1_0099",
+            "hist_v1_0106",
+            "hist_v1_0094",
+            "hist_v1_0091",
+            "hist_v1_0101",
+            "hist_v1_0100",
+            "hist_v1_0093"
+          ],
+          "bounded_aws_ranges": {
+            "half_life": {
+              "observed_top_values": [
+                0
+              ],
+              "suggested_lower": 0,
+              "suggested_upper": 0
+            },
+            "max_iter": {
+              "observed_top_values": [
+                350,
+                400
+              ],
+              "suggested_lower": 350,
+              "suggested_upper": 400
+            },
+            "learning_rate": {
+              "observed_top_values": [
+                0.1470921605169748,
+                0.14799941932039717,
+                0.16047173532188455,
+                0.1610814672817499,
+                0.16193445366821882,
+                0.16265994064026262,
+                0.21389833591128998,
+                0.22947956897682828,
+                0.24967756849320635,
+                0.25186543974066367
+              ],
+              "suggested_lower": 0.1470921605169748,
+              "suggested_upper": 0.25186543974066367
+            },
+            "max_leaf_nodes": {
+              "observed_top_values": [
+                18,
+                19,
+                20
+              ],
+              "suggested_lower": 18,
+              "suggested_upper": 20
+            },
+            "min_samples_leaf": {
+              "observed_top_values": [
+                24,
+                25
+              ],
+              "suggested_lower": 24,
+              "suggested_upper": 25
+            },
+            "l2_regularization": {
+              "observed_top_values": [
+                2.0818488343543615,
+                2.4303488852549213,
+                2.5020598377692997,
+                2.8950247711679555,
+                4.419064140797315,
+                6.9142826844937675,
+                7.788316997701202,
+                8.411502599916753,
+                11.386544780276765,
+                33.98594813133004
+              ],
+              "suggested_lower": 2.0818488343543615,
+              "suggested_upper": 33.98594813133004
+            }
+          },
+          "fixed_for_comparison": [
+            "feature_set",
+            "target",
+            "early_stopping"
+          ],
+          "gamma_ignored_by_linear_svr": false
+        },
+        {
+          "run_id": "svr_v1_0137",
+          "family": "svr",
+          "exact_configuration": {
+            "feature_set": "compact",
+            "target": "residual7",
+            "half_life": 0,
+            "C": 1956.3388303236088,
+            "epsilon": 6.038695461167412,
+            "gamma": 0.03119816976540325,
+            "kernel": "linear"
+          },
+          "primary_training_cv_mae": 11469.516787043249,
+          "comparable_training_cv_run_ids": [
+            "svr_v1_0137",
+            "svr_v1_0117",
+            "svr_v1_0133",
+            "svr_v1_0139",
+            "svr_v1_0134",
+            "svr_v1_0136",
+            "svr_v1_0124",
+            "svr_v1_0132",
+            "svr_v1_0123",
+            "svr_v1_0125"
+          ],
+          "bounded_aws_ranges": {
+            "half_life": {
+              "observed_top_values": [
+                0
+              ],
+              "suggested_lower": 0,
+              "suggested_upper": 0
+            },
+            "C": {
+              "observed_top_values": [
+                1815.1220612886445,
+                1839.2472400026168,
+                1861.1746448961546,
+                1867.0269905045477,
+                1896.807316173915,
+                1927.0890330845173,
+                1956.3388303236088,
+                2115.87739189377,
+                2142.9071965230114,
+                2194.442617319434
+              ],
+              "suggested_lower": 1815.1220612886445,
+              "suggested_upper": 2194.442617319434
+            },
+            "epsilon": {
+              "observed_top_values": [
+                5.333616551335699,
+                6.038695461167412,
+                6.147318020213762,
+                7.176720812571543,
+                8.921638942390903,
+                9.12434791712743,
+                9.624473558407598,
+                14.290391820302196,
+                16.490788979569185,
+                19.510424478181697
+              ],
+              "suggested_lower": 5.333616551335699,
+              "suggested_upper": 19.510424478181697
+            }
+          },
+          "fixed_for_comparison": [
+            "feature_set",
+            "target",
+            "kernel"
+          ],
+          "gamma_ignored_by_linear_svr": true
+        }
+      ]
+    },
+    {
+      "input_contract": "2023_history_and_forecasts",
+      "finalist": "blend_2023_history_and_forecasts",
+      "blend_weights": [
+        0.75,
+        0.25
+      ],
+      "members": [
+        {
+          "run_id": "weather_svr_v1_0103",
+          "family": "weather_svr",
+          "exact_configuration": {
+            "feature_set": "weather_full",
+            "target": "direct",
+            "half_life": 120,
+            "C": 198.159771179179,
+            "epsilon": 427.5249146876602,
+            "gamma": 0.00015907747306522294,
+            "kernel": "linear"
+          },
+          "primary_training_cv_mae": 10129.125688223781,
+          "comparable_training_cv_run_ids": [
+            "weather_svr_v1_0103",
+            "weather_svr_v1_0094",
+            "weather_svr_v1_0104",
+            "weather_svr_v1_0105",
+            "weather_svr_v1_0052",
+            "weather_svr_v1_0106",
+            "weather_svr_v1_0096",
+            "weather_svr_v1_0116",
+            "weather_svr_v1_0090",
+            "weather_svr_v1_0077"
+          ],
+          "bounded_aws_ranges": {
+            "half_life": {
+              "observed_top_values": [
+                30,
+                60,
+                120
+              ],
+              "suggested_lower": 30,
+              "suggested_upper": 120
+            },
+            "C": {
+              "observed_top_values": [
+                188.3414654866458,
+                198.159771179179,
+                198.8369288749922,
+                227.12681297219228,
+                247.8448914700271,
+                251.03357864716173,
+                257.4177803939141,
+                286.53821784966414,
+                370.31344369025965,
+                408.11589256659687
+              ],
+              "suggested_lower": 188.3414654866458,
+              "suggested_upper": 408.11589256659687
+            },
+            "epsilon": {
+              "observed_top_values": [
+                174.1604227755121,
+                249.6743153155767,
+                278.5440458902754,
+                371.97283165954,
+                381.8385127969523,
+                389.71937579572466,
+                420.07795116967515,
+                427.5249146876602,
+                753.7082995333052,
+                1728.537046563073
+              ],
+              "suggested_lower": 174.1604227755121,
+              "suggested_upper": 1728.537046563073
+            }
+          },
+          "fixed_for_comparison": [
+            "feature_set",
+            "target",
+            "kernel"
+          ],
+          "gamma_ignored_by_linear_svr": true
+        },
+        {
+          "run_id": "weather_hist_v1_0068",
+          "family": "weather_hist",
+          "exact_configuration": {
+            "feature_set": "weather_derived_full",
+            "target": "residualblend",
+            "half_life": 30,
+            "max_iter": 250,
+            "learning_rate": 0.2892438696013222,
+            "max_leaf_nodes": 4,
+            "min_samples_leaf": 23,
+            "l2_regularization": 0.007814351329811293,
+            "loss": "absolute_error",
+            "early_stopping": false
+          },
+          "primary_training_cv_mae": 11198.516359153791,
+          "comparable_training_cv_run_ids": [
+            "weather_hist_v1_0068",
+            "weather_hist_v1_0061",
+            "weather_hist_v1_0059",
+            "weather_hist_v1_0070",
+            "weather_hist_v1_0083",
+            "weather_hist_v1_0066",
+            "weather_hist_v1_0094",
+            "weather_hist_v1_0091",
+            "weather_hist_v1_0071",
+            "weather_hist_v1_0054"
+          ],
+          "bounded_aws_ranges": {
+            "half_life": {
+              "observed_top_values": [
+                30
+              ],
+              "suggested_lower": 30,
+              "suggested_upper": 30
+            },
+            "max_iter": {
+              "observed_top_values": [
+                150,
+                200,
+                250,
+                300
+              ],
+              "suggested_lower": 150,
+              "suggested_upper": 300
+            },
+            "learning_rate": {
+              "observed_top_values": [
+                0.15468577174528805,
+                0.17655853369333185,
+                0.20530137251034905,
+                0.22406690549004812,
+                0.23316393615910777,
+                0.24523346584307895,
+                0.253574648895134,
+                0.25648549451271613,
+                0.2806330318939601,
+                0.2892438696013222
+              ],
+              "suggested_lower": 0.15468577174528805,
+              "suggested_upper": 0.2892438696013222
+            },
+            "max_leaf_nodes": {
+              "observed_top_values": [
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "suggested_lower": 3,
+              "suggested_upper": 7
+            },
+            "min_samples_leaf": {
+              "observed_top_values": [
+                21,
+                22,
+                23,
+                24
+              ],
+              "suggested_lower": 21,
+              "suggested_upper": 24
+            },
+            "l2_regularization": {
+              "observed_top_values": [
+                0.002886001044022812,
+                0.0072564698438093616,
+                0.007814351329811293,
+                0.019279090198639454,
+                0.02163401273120861,
+                0.028065728927109082,
+                0.032851644196616514,
+                0.036591930555752814,
+                0.03998847262827039,
+                0.11052089921800379
+              ],
+              "suggested_lower": 0.002886001044022812,
+              "suggested_upper": 0.11052089921800379
+            }
+          },
+          "fixed_for_comparison": [
+            "feature_set",
+            "target",
+            "early_stopping"
+          ],
+          "gamma_ignored_by_linear_svr": false
+        }
+      ]
+    },
+    {
+      "input_contract": "expanded_history_counts",
+      "finalist": "blend_expanded_history_counts",
+      "blend_weights": [
+        0.75,
+        0.25
+      ],
+      "members": [
+        {
+          "run_id": "history_svr_v1_0068",
+          "family": "history_svr",
+          "exact_configuration": {
+            "feature_set": "recent",
+            "target": "residualblend",
+            "half_life": 0,
+            "max_iter": 100000,
+            "C": 449476.5033368543,
+            "epsilon": 28.581095162345196,
+            "gamma": 0.0024282026185909306,
+            "kernel": "rbf"
+          },
+          "primary_training_cv_mae": 10920.838486805782,
+          "comparable_training_cv_run_ids": [
+            "history_svr_v1_0068",
+            "history_svr_v1_0085",
+            "history_svr_v1_0084",
+            "history_svr_v1_0091",
+            "history_svr_v1_0141",
+            "history_svr_v1_0089",
+            "history_svr_v1_0077",
+            "history_svr_v1_0055",
+            "history_svr_v1_0072",
+            "history_svr_v1_0087"
+          ],
+          "bounded_aws_ranges": {
+            "half_life": {
+              "observed_top_values": [
+                0,
+                30,
+                120
+              ],
+              "suggested_lower": 0,
+              "suggested_upper": 120
+            },
+            "C": {
+              "observed_top_values": [
+                30259.868098891548,
+                31100.05232743214,
+                61793.912036831556,
+                122574.33621949452,
+                168385.71456486042,
+                185624.8873930042,
+                196572.98867375866,
+                449476.5033368543,
+                492241.7014193941,
+                647537.4972245358
+              ],
+              "suggested_lower": 30259.868098891548,
+              "suggested_upper": 647537.4972245358
+            },
+            "epsilon": {
+              "observed_top_values": [
+                20.096376290278997,
+                28.581095162345196,
+                46.894627705559614,
+                68.5159860070695,
+                350.0325503162923,
+                776.4908805058717,
+                959.4123869914989,
+                2384.602605587708,
+                8383.263522039731,
+                9886.205824993918
+              ],
+              "suggested_lower": 20.096376290278997,
+              "suggested_upper": 9886.205824993918
+            },
+            "gamma": {
+              "observed_top_values": [
+                0.0010542890718363445,
+                0.0012969314959455666,
+                0.002057721305706266,
+                0.0024282026185909306,
+                0.003142494776138956,
+                0.0031584601967778077,
+                0.0036518361361191224,
+                0.0038779554488047856,
+                0.00798922112889217,
+                0.015179513143866535
+              ],
+              "suggested_lower": 0.0010542890718363445,
+              "suggested_upper": 0.015179513143866535
+            }
+          },
+          "fixed_for_comparison": [
+            "feature_set",
+            "target",
+            "max_iter",
+            "kernel"
+          ],
+          "gamma_ignored_by_linear_svr": false
+        },
+        {
+          "run_id": "history_catboost_v1_0091",
+          "family": "history_catboost",
+          "exact_configuration": {
+            "feature_set": "weekly",
+            "target": "log",
+            "half_life": 30,
+            "iterations": 100,
+            "learning_rate": 0.1313481290918999,
+            "depth": 2,
+            "l2_leaf_reg": 3.826916676244029,
+            "random_strength": 3.9762443683974324,
+            "loss_function": "MAE"
+          },
+          "primary_training_cv_mae": 11173.760877139763,
+          "comparable_training_cv_run_ids": [
+            "history_catboost_v1_0091",
+            "history_catboost_v1_0043",
+            "history_catboost_v1_0106",
+            "history_catboost_v1_0135",
+            "history_catboost_v1_0129",
+            "history_catboost_v1_0090",
+            "history_catboost_v1_0092",
+            "history_catboost_v1_0085",
+            "history_catboost_v1_0116",
+            "history_catboost_v1_0138"
+          ],
+          "bounded_aws_ranges": {
+            "half_life": {
+              "observed_top_values": [
+                30
+              ],
+              "suggested_lower": 30,
+              "suggested_upper": 30
+            },
+            "iterations": {
+              "observed_top_values": [
+                100,
+                200,
+                300
+              ],
+              "suggested_lower": 100,
+              "suggested_upper": 300
+            },
+            "learning_rate": {
+              "observed_top_values": [
+                0.09394156455298888,
+                0.09516005881040891,
+                0.10791739072995576,
+                0.11337419970073323,
+                0.12199931123877025,
+                0.12319785780248002,
+                0.1313481290918999,
+                0.13526626413841739,
+                0.16415529931800357,
+                0.19710344002704577
+              ],
+              "suggested_lower": 0.09394156455298888,
+              "suggested_upper": 0.19710344002704577
+            },
+            "depth": {
+              "observed_top_values": [
+                2
+              ],
+              "suggested_lower": 2,
+              "suggested_upper": 2
+            },
+            "l2_leaf_reg": {
+              "observed_top_values": [
+                0.0252886262962622,
+                0.030899692817273037,
+                0.08146063774217867,
+                1.2740735281205804,
+                1.4285753179645342,
+                1.6130176260802997,
+                2.1988169032209735,
+                2.4262266472134986,
+                3.6210498406298934,
+                3.826916676244029
+              ],
+              "suggested_lower": 0.0252886262962622,
+              "suggested_upper": 3.826916676244029
+            },
+            "random_strength": {
+              "observed_top_values": [
+                3.3375027345879418,
+                3.406781334790192,
+                3.511927488763391,
+                3.520083462513317,
+                3.59289257400463,
+                3.865710808752303,
+                3.9762443683974324,
+                4.685967581861225,
+                4.706485629128261,
+                4.952460296431772
+              ],
+              "suggested_lower": 3.3375027345879418,
+              "suggested_upper": 4.952460296431772
+            }
+          },
+          "fixed_for_comparison": [
+            "feature_set",
+            "target"
+          ],
+          "gamma_ignored_by_linear_svr": false
+        }
+      ]
+    },
+    {
+      "input_contract": "expanded_history_and_forecasts",
+      "finalist": "blend_expanded_history_and_forecasts",
+      "blend_weights": [
+        0.75,
+        0.25
+      ],
+      "members": [
+        {
+          "run_id": "sequence_history_weather_v1_0026",
+          "family": "sequence_history_weather_gru",
+          "exact_configuration": {
+            "architecture": "gru",
+            "hidden": 24,
+            "head": 16,
+            "dropout": 0.0,
+            "learning_rate": 0.0005519225086008019,
+            "weight_decay": 0.0007687308218525876,
+            "max_epochs": 180,
+            "patience": 20,
+            "target": "logratio_mean",
+            "weather": true,
+            "loss": "huber",
+            "batch_size": 64,
+            "seed": 20261010
+          },
+          "primary_training_cv_mae": 9292.373595611096,
+          "comparable_training_cv_run_ids": [
+            "sequence_history_weather_v1_0026",
+            "sequence_history_weather_v1_0010",
+            "sequence_history_weather_v1_0028",
+            "sequence_history_weather_v1_0020",
+            "sequence_history_weather_v1_0019",
+            "sequence_history_weather_v1_0029",
+            "sequence_history_weather_v1_0024",
+            "sequence_history_weather_v1_0017",
+            "sequence_history_weather_v1_0027",
+            "sequence_history_weather_v1_0001"
+          ],
+          "bounded_aws_ranges": {
+            "hidden": {
+              "observed_top_values": [
+                8,
+                16,
+                24
+              ],
+              "suggested_lower": 8,
+              "suggested_upper": 24
+            },
+            "head": {
+              "observed_top_values": [
+                8,
+                16
+              ],
+              "suggested_lower": 8,
+              "suggested_upper": 16
+            },
+            "dropout": {
+              "observed_top_values": [
+                0.0,
+                0.15,
+                0.3
+              ],
+              "suggested_lower": 0.0,
+              "suggested_upper": 0.3
+            },
+            "learning_rate": {
+              "observed_top_values": [
+                0.00035777365820589667,
+                0.0004179741020674363,
+                0.0004217151416795029,
+                0.0005519225086008019,
+                0.0007094588118233051,
+                0.0007288319885847126,
+                0.0009350822509541402,
+                0.0010139149311026957,
+                0.0010865650255125587,
+                0.0012444795672796494
+              ],
+              "suggested_lower": 0.00035777365820589667,
+              "suggested_upper": 0.0012444795672796494
+            },
+            "weight_decay": {
+              "observed_top_values": [
+                1.5313735258594423e-05,
+                1.9385200558688375e-05,
+                2.8707029972870104e-05,
+                0.00024023090295468202,
+                0.0007687308218525876,
+                0.0024269897289841036,
+                0.0028240612328198746,
+                0.02060504679625409,
+                0.02630005052094746,
+                0.0279517844762281
+              ],
+              "suggested_lower": 1.5313735258594423e-05,
+              "suggested_upper": 0.0279517844762281
+            },
+            "max_epochs": {
+              "observed_top_values": [
+                180
+              ],
+              "suggested_lower": 180,
+              "suggested_upper": 180
+            }
+          },
+          "fixed_for_comparison": [
+            "architecture",
+            "patience",
+            "target",
+            "weather",
+            "batch_size",
+            "seed"
+          ],
+          "gamma_ignored_by_linear_svr": false
+        },
+        {
+          "run_id": "history_weather_catboost_v1_0100",
+          "family": "history_weather_catboost",
+          "exact_configuration": {
+            "feature_set": "weather_full",
+            "target": "delta1",
+            "half_life": 0,
+            "iterations": 1000,
+            "learning_rate": 0.09693678848532651,
+            "depth": 2,
+            "l2_leaf_reg": 11.147239605470638,
+            "random_strength": 3.58133635592324,
+            "loss_function": "MAE"
+          },
+          "primary_training_cv_mae": 9991.798635747871,
+          "comparable_training_cv_run_ids": [
+            "history_weather_catboost_v1_0100",
+            "history_weather_catboost_v1_0131",
+            "history_weather_catboost_v1_0128",
+            "history_weather_catboost_v1_0085",
+            "history_weather_catboost_v1_0111",
+            "history_weather_catboost_v1_0143",
+            "history_weather_catboost_v1_0043",
+            "history_weather_catboost_v1_0135",
+            "history_weather_catboost_v1_0140",
+            "history_weather_catboost_v1_0123"
+          ],
+          "bounded_aws_ranges": {
+            "half_life": {
+              "observed_top_values": [
+                0
+              ],
+              "suggested_lower": 0,
+              "suggested_upper": 0
+            },
+            "iterations": {
+              "observed_top_values": [
+                500,
+                600,
+                700,
+                800,
+                900,
+                1000
+              ],
+              "suggested_lower": 500,
+              "suggested_upper": 1000
+            },
+            "learning_rate": {
+              "observed_top_values": [
+                0.07024280677320005,
+                0.07384754104815149,
+                0.07557100850775883,
+                0.08114115918267181,
+                0.08209890799777514,
+                0.08721930410465344,
+                0.08990113076479433,
+                0.09033454051181929,
+                0.09693678848532651,
+                0.17845372914567653
+              ],
+              "suggested_lower": 0.07024280677320005,
+              "suggested_upper": 0.17845372914567653
+            },
+            "depth": {
+              "observed_top_values": [
+                2,
+                3
+              ],
+              "suggested_lower": 2,
+              "suggested_upper": 3
+            },
+            "l2_leaf_reg": {
+              "observed_top_values": [
+                0.41815093791114366,
+                0.4434681282995732,
+                5.672371454018912,
+                7.072760159706878,
+                11.147239605470638,
+                11.416833791680046,
+                12.480708511316111,
+                13.416864278587003,
+                30.515779052572935,
+                31.45982567488318
+              ],
+              "suggested_lower": 0.41815093791114366,
+              "suggested_upper": 31.45982567488318
+            },
+            "random_strength": {
+              "observed_top_values": [
+                1.9051406240632782,
+                2.2917946950611396,
+                2.455459491943064,
+                2.626636308693425,
+                2.8631384830259687,
+                2.9893579859665174,
+                3.424487584850677,
+                3.58133635592324,
+                3.99128260646674,
+                4.041985600613403
+              ],
+              "suggested_lower": 1.9051406240632782,
+              "suggested_upper": 4.041985600613403
+            }
+          },
+          "fixed_for_comparison": [
+            "feature_set",
+            "target"
+          ],
+          "gamma_ignored_by_linear_svr": false
+        }
+      ]
+    }
+  ],
+  "compute_note": "The GRU research implementation requires CUDA for fitting. Use a GPU only if reproducing that exact neural fit; the preserved classical candidates can be trained on CPU."
+}

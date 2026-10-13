@@ -1,0 +1,40 @@
+{
+  "name": "control_existing_xgboost_cpu_seed42",
+  "input_contract": "2023_history_counts",
+  "configuration": {
+    "feature_set": "full",
+    "target": "residual7",
+    "half_life": 0,
+    "n_estimators": 100,
+    "learning_rate": 0.03,
+    "max_depth": 2,
+    "min_child_weight": 10,
+    "reg_lambda": 1.0,
+    "subsample": 1.0,
+    "colsample_bytree": 0.9,
+    "objective": "reg:squarederror",
+    "random_seed": 42
+  },
+  "data_hashes": {
+    "2023_development_sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e"
+  },
+  "training_rows": 153,
+  "training_end": "2023-06-30",
+  "fit_provenance": {
+    "estimator_class": "ResearchRegressor"
+  },
+  "validation": {
+    "mae": 14761.370650249979,
+    "rmse": 23431.623431596592,
+    "wape": 0.12239902781905658,
+    "bias": 3487.436926468559,
+    "days": 92
+  },
+  "validation_start": "2023-07-01",
+  "validation_end": "2023-09-30",
+  "reserved_test_read": false,
+  "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\control_existing_xgboost_cpu_seed42_trained_through_2023-06-30.joblib",
+  "artifact_sha256": "39709c535cb397c7d87a8a9250f3141343fd7542249e1c57b92ef00ead026878",
+  "serialization_prediction_reproduction": true,
+  "warnings": []
+}

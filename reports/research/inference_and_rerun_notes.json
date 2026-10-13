@@ -1,0 +1,366 @@
+{
+  "created_utc": "2026-10-10T10:07:20.753320+00:00",
+  "artifacts": [
+    {
+      "name": "blend_2023_history_counts",
+      "input_contract": "2023_history_counts",
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\blend_2023_history_counts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "22abce260d4ff5be7398c64358ad97ecc6c197d0068ffc3099e311fd27069e10"
+    },
+    {
+      "name": "blend_2023_history_and_forecasts",
+      "input_contract": "2023_history_and_forecasts",
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\blend_2023_history_and_forecasts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "fe6403522e8908770a52fc0e53e08798e9770b3a2316e1c5ad011a2736b1a7b2"
+    },
+    {
+      "name": "blend_expanded_history_counts",
+      "input_contract": "expanded_history_counts",
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\blend_expanded_history_counts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "751c8940350e3944ebd7c485e3102e5fc542628a47d65540deb5d0b2b7bc2888"
+    },
+    {
+      "name": "blend_expanded_history_and_forecasts",
+      "input_contract": "expanded_history_and_forecasts",
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\blend_expanded_history_and_forecasts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "7ca73661dd100e1114ee4c4fe519c2df15f338c4c923978888d4ce6d1146ea34"
+    }
+  ],
+  "successful_configurations": 5510,
+  "failed_configurations": 0,
+  "interrupted_attempts": 1,
+  "inference": [
+    "Use the saved pipeline, not only its underlying estimator. Scaling, target restoration and blend weights are included.",
+    "Keep the Python source modules in citibike and the common folder available on PYTHONPATH when loading joblib artifacts.",
+    "Provide 28 prior daily ride counts and the prediction date. Yesterday's actual count must be available before each next-day forecast.",
+    "Weather candidates additionally require the six documented archived forecast fields. The running app cannot silently switch to them.",
+    "Expanded history changes the training data, not the number of prior count days required for each prediction.",
+    "Importing a fitted model no longer reads real labels. The research feature loader intentionally refuses October-December test dates."
+  ],
+  "weather_caveat": "Nominal 48-hour forecast leads are a proxy for prior availability. Exact historical publication timestamps were not independently verified. Wind and rain forecasts are coarse experimental inputs.",
+  "environment": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "optuna": "5.0.0",
+    "joblib": "1.6.0",
+    "torch": "2.11.0+cu128"
+  },
+  "rerun": [
+    "Use the pinned research environment and preserve data hashes.",
+    "For a later manual rerun, set CLOUDAI_RESEARCH_DEADLINE_UTC to a new explicit UTC deadline. This does not extend today's worker budget.",
+    "Search scripts resume their saved Optuna studies. A new independent experiment should use a separate results directory.",
+    "The frozen validation runner requires the recorded finalist SHA and explicit coordination approval; do not reopen it to tune models."
+  ],
+  "limits": "July-September was already used in earlier class development. These scores are development comparisons; the October-December test targets remain untouched.",
+  "best_single_artifacts": [
+    {
+      "name": "hist_v1_0097",
+      "input_contract": "2023_history_counts",
+      "configuration": {
+        "feature_set": "expanded",
+        "target": "delta1",
+        "half_life": 0,
+        "max_iter": 350,
+        "learning_rate": 0.21389833591128998,
+        "max_leaf_nodes": 20,
+        "min_samples_leaf": 24,
+        "l2_regularization": 4.419064140797315,
+        "loss": "absolute_error",
+        "early_stopping": false
+      },
+      "training_rows": 153,
+      "training_end": "2023-06-30",
+      "primary_training_cv_mae": 11287.705373740659,
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\best_single_2023_history_counts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "45daf190018bcffd34f262baf12b78564125a1502e915b87b9881cf66f2d9836",
+      "also_nominated_for_summer_comparison": false,
+      "summer_scored_in_this_export": false,
+      "reserved_test_read": false,
+      "data_hashes": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+      "fit_provenance": {
+        "estimator_class": "ResearchRegressor"
+      },
+      "training_probe_predictions": [
+        130486.06641651987,
+        113481.3051075555
+      ],
+      "serialization_probe_parity": true,
+      "warnings": []
+    },
+    {
+      "name": "weather_svr_v1_0103",
+      "input_contract": "2023_history_and_forecasts",
+      "configuration": {
+        "feature_set": "weather_full",
+        "target": "direct",
+        "half_life": 120,
+        "C": 198.159771179179,
+        "epsilon": 427.5249146876602,
+        "gamma": 0.00015907747306522294,
+        "kernel": "linear"
+      },
+      "training_rows": 153,
+      "training_end": "2023-06-30",
+      "primary_training_cv_mae": 10129.125688223781,
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\best_single_2023_history_and_forecasts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "dc29579a2687c421248d96df699aa7a1e3518eace1cc9da6c908efeabdad04c8",
+      "also_nominated_for_summer_comparison": false,
+      "summer_scored_in_this_export": false,
+      "reserved_test_read": false,
+      "data_hashes": {
+        "2023_development_sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+        "temperature_sha256": "540aec85e6ddfa86880aed6a5f78392869ef7240faceaab56ffc7f2e91f38b8e",
+        "rain_wind_sha256": "2aa261757ac895655a0b6d032b6b62625817c1b7ad3b22e009b0e8402c766bdc"
+      },
+      "fit_provenance": {
+        "estimator_class": "ResearchRegressor"
+      },
+      "training_probe_predictions": [
+        130022.47642784403,
+        128673.72046557337
+      ],
+      "serialization_probe_parity": true,
+      "warnings": []
+    },
+    {
+      "name": "history_svr_v1_0068",
+      "input_contract": "expanded_history_counts",
+      "configuration": {
+        "feature_set": "recent",
+        "target": "residualblend",
+        "half_life": 0,
+        "max_iter": 100000,
+        "C": 449476.5033368543,
+        "epsilon": 28.581095162345196,
+        "gamma": 0.0024282026185909306,
+        "kernel": "rbf"
+      },
+      "training_rows": 518,
+      "training_end": "2023-06-30",
+      "primary_training_cv_mae": 10920.838486805782,
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\best_single_expanded_history_counts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "3de29643152fd238c29af8b4cd920344dc08854ba02bcadd0b8a59007980993d",
+      "also_nominated_for_summer_comparison": false,
+      "summer_scored_in_this_export": false,
+      "reserved_test_read": false,
+      "data_hashes": {
+        "2022_daily_sha256": "79ca554352e67a15016aae2e418641f6b0b347a4b7fb54d730d6e0f6c52faff4",
+        "2023_development_sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e"
+      },
+      "fit_provenance": {
+        "estimator_class": "ResearchRegressor"
+      },
+      "training_probe_predictions": [
+        124494.27094512356,
+        118938.54599611412
+      ],
+      "serialization_probe_parity": true,
+      "warnings": []
+    },
+    {
+      "name": "sequence_history_weather_v1_0026",
+      "input_contract": "expanded_history_and_forecasts",
+      "configuration": {
+        "architecture": "gru",
+        "hidden": 24,
+        "head": 16,
+        "dropout": 0.0,
+        "learning_rate": 0.0005519225086008019,
+        "weight_decay": 0.0007687308218525876,
+        "max_epochs": 180,
+        "patience": 20,
+        "target": "logratio_mean",
+        "weather": true,
+        "loss": "huber",
+        "batch_size": 64,
+        "seed": 20261010
+      },
+      "training_rows": 518,
+      "training_end": "2023-06-30",
+      "primary_training_cv_mae": 9292.373595611096,
+      "artifact": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\citibike\\models\\best_single_expanded_history_and_forecasts_trained_through_2023-06-30.joblib",
+      "artifact_sha256": "3779fa02a2f102a9893df5f43fa5d8cf7a55bca36423104f50a977546cfdffb1",
+      "also_nominated_for_summer_comparison": false,
+      "summer_scored_in_this_export": false,
+      "reserved_test_read": false,
+      "data_hashes": {
+        "2022_daily_sha256": "79ca554352e67a15016aae2e418641f6b0b347a4b7fb54d730d6e0f6c52faff4",
+        "2023_development_sha256": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+        "temperature_sha256": "633515f531d0e31eba4a2748076fb318490cb353b57e5585b778b18635d6b6e1",
+        "rain_wind_sha256": "f67fd4fc03425cb968488132393fec54ae012f09a1b2da36e0a7c9d374fc6124"
+      },
+      "fit_provenance": {
+        "architecture": "gru",
+        "frozen_epochs": 9,
+        "inner_split": {
+          "training_rows": 490,
+          "validation_rows": 28,
+          "training_end": "2023-06-02",
+          "validation_start": "2023-06-03",
+          "validation_end": "2023-06-30"
+        },
+        "inner_history": [
+          {
+            "epoch": 1,
+            "training_loss": 0.444535540804571,
+            "inner_mae": 11059.067676815157
+          },
+          {
+            "epoch": 2,
+            "training_loss": 0.4331013669773024,
+            "inner_mae": 10701.942738640808
+          },
+          {
+            "epoch": 3,
+            "training_loss": 0.4237216346117915,
+            "inner_mae": 10520.392090488784
+          },
+          {
+            "epoch": 4,
+            "training_loss": 0.4150160064502638,
+            "inner_mae": 10383.114967792628
+          },
+          {
+            "epoch": 5,
+            "training_loss": 0.407651155700489,
+            "inner_mae": 10231.637340843927
+          },
+          {
+            "epoch": 6,
+            "training_loss": 0.40099718595037653,
+            "inner_mae": 10070.523655776566
+          },
+          {
+            "epoch": 7,
+            "training_loss": 0.39356469986390097,
+            "inner_mae": 9979.223301822374
+          },
+          {
+            "epoch": 8,
+            "training_loss": 0.3861813897989234,
+            "inner_mae": 9894.531300495537
+          },
+          {
+            "epoch": 9,
+            "training_loss": 0.3784865483337519,
+            "inner_mae": 9881.439386345559
+          },
+          {
+            "epoch": 10,
+            "training_loss": 0.37042068656609983,
+            "inner_mae": 9935.671894844496
+          },
+          {
+            "epoch": 11,
+            "training_loss": 0.3619487954645741,
+            "inner_mae": 10060.856935784048
+          },
+          {
+            "epoch": 12,
+            "training_loss": 0.352913391225192,
+            "inner_mae": 10243.248985708316
+          },
+          {
+            "epoch": 13,
+            "training_loss": 0.3446017563343048,
+            "inner_mae": 10483.580190315548
+          },
+          {
+            "epoch": 14,
+            "training_loss": 0.3354573241301945,
+            "inner_mae": 10469.275228236627
+          },
+          {
+            "epoch": 15,
+            "training_loss": 0.3266484084786201,
+            "inner_mae": 10421.567452327103
+          },
+          {
+            "epoch": 16,
+            "training_loss": 0.3168226386819567,
+            "inner_mae": 10532.200671785948
+          },
+          {
+            "epoch": 17,
+            "training_loss": 0.30779683334486824,
+            "inner_mae": 10702.26939254909
+          },
+          {
+            "epoch": 18,
+            "training_loss": 0.29815307320380696,
+            "inner_mae": 10730.81812217375
+          },
+          {
+            "epoch": 19,
+            "training_loss": 0.2903612822902446,
+            "inner_mae": 10889.07700370755
+          },
+          {
+            "epoch": 20,
+            "training_loss": 0.2824455997165369,
+            "inner_mae": 11164.926476493914
+          },
+          {
+            "epoch": 21,
+            "training_loss": 0.27689034634706927,
+            "inner_mae": 11375.942169041838
+          },
+          {
+            "epoch": 22,
+            "training_loss": 0.26921344654900686,
+            "inner_mae": 11488.3200496935
+          },
+          {
+            "epoch": 23,
+            "training_loss": 0.2649910662855421,
+            "inner_mae": 11678.24836528084
+          },
+          {
+            "epoch": 24,
+            "training_loss": 0.26011810339227015,
+            "inner_mae": 11851.1546676196
+          },
+          {
+            "epoch": 25,
+            "training_loss": 0.25498623324900255,
+            "inner_mae": 11957.595760106678
+          },
+          {
+            "epoch": 26,
+            "training_loss": 0.25169255034047733,
+            "inner_mae": 12012.346305965184
+          },
+          {
+            "epoch": 27,
+            "training_loss": 0.24852043487587755,
+            "inner_mae": 12063.069837729681
+          },
+          {
+            "epoch": 28,
+            "training_loss": 0.24571348878802085,
+            "inner_mae": 12106.391183307136
+          },
+          {
+            "epoch": 29,
+            "training_loss": 0.24332691260746547,
+            "inner_mae": 12162.623720087844
+          }
+        ],
+        "inner_best_mae": 9881.439386345559,
+        "parameter_count": 2601,
+        "training_device": "NVIDIA GeForce RTX 5080"
+      },
+      "training_probe_predictions": [
+        127122.15711951927,
+        125080.64221510301
+      ],
+      "serialization_probe_parity": true,
+      "warnings": []
+    }
+  ],
+  "gpu_fitting_note": "The selected GRU research class requires CUDA to fit. Its exported network supports CPU inference, verified in a separate CUDA-hidden process. CPU AWS training can use the preserved classical candidates."
+}
