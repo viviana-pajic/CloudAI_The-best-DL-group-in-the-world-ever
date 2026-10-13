@@ -50,6 +50,6 @@ These are **development results**. The 1,000 reserved mushroom rows and October-
 
 Follow [the notebook map](docs/NOTEBOOKS.md). Each notebook covers one step.
 
-[Simple explanation](docs/TEAM_GUIDE.md) · [AWS steps](docs/AWS.md) · [Tasks](docs/TASKS.md) · [Run and host](docs/RELEASE.md) · [AI use](docs/AI_USE.md)
+[Data sources](docs/DATA.md) · [Tasks](docs/TASKS.md) · [Run and release](docs/RELEASE.md) · [Work and AI use](docs/AI_USE.md)
 
 All six handoff commits are on `main`. Next: actual AWS runs, release-model selection, one final-test evaluation, public hosting and a verified automatic update.

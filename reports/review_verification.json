@@ -1,5 +1,5 @@
 {
-  "utc": "2026-10-13T16:49:43.510680+00:00",
+  "utc": "2026-10-13T17:28:44.130353+00:00",
   "mode": "frozen",
   "packages": {
     "numpy": "2.5.3",
@@ -36,7 +36,7 @@
   "http_checks": {
     "/": 200,
     "/api/models": 200,
-    "/docs/TEAM_GUIDE.html": 200,
+    "/docs/NOTEBOOKS.md": 200,
     "bike_counts": 200,
     "bike_weather_cpu": 200,
     "bike_weather_gru": 200,

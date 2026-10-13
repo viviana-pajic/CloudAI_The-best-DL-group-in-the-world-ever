@@ -1,44 +1,54 @@
 # Notebook order
 
-Read saved outputs first. Original class notebooks and the later selected-model notebooks use different environments and splits. See [environments](ENVIRONMENTS.md).
+Read saved outputs in this order. The original class comparisons and later research use different splits; compare scores within their own protocol. AWS notebooks are prepared and still need actual cloud outputs.
 
 ## Mushrooms
 
-| Notebook | One job | Main reason |
-|---|---|---|
-| 00 | Explore the replacement file | Missing inputs need rules |
-| 01 | Prepare the class inputs | Keep filling inside folds |
-| 02 | Compare baselines | Start with simple references |
-| 03 | Run PyCaret comparison | Check other model families |
-| 04 | Inspect class-model errors | AP alone does not describe the alarm |
-| 05 | Tune logistic regression | Check whether tuning helps |
-| 06 | Tune random forest | Improve the class candidate |
-| 07 | Prepare the selected inputs | Add the useful logs and guarded ratios |
-| 08 | Train Extra Trees | Reproduce the selected settings and recalibrate |
-| 09 | Compare frozen research results | Explain misses and false alarms |
-| 10 | Train and tune on AWS | Prepared; actual cloud run still needed |
+| Notebook | Step |
+|---|---|
+| [00](../mushrooms/00_data_audit.ipynb) | Replacement dataset and EDA |
+| [01](../mushrooms/01_data_preparation.ipynb) | Class preprocessing |
+| [02](../mushrooms/02_baseline_models.ipynb) | Baselines |
+| [03](../mushrooms/03_automl.ipynb) | PyCaret comparison |
+| [04](../mushrooms/04_model_comparison.ipynb) | Class-model errors and thresholds |
+| [05](../mushrooms/05_tune_logistic_regression.ipynb) | Logistic-regression tuning |
+| [06](../mushrooms/06_tune_random_forest.ipynb) | Random-forest tuning |
+| [07](../mushrooms/07_selected_preparation.ipynb) | Selected preprocessing |
+| [08](../mushrooms/08_extra_trees.ipynb) | Extra Trees training and calibration |
+| [09](../mushrooms/09_model_comparison.ipynb) | Frozen research comparison |
+| [10](../mushrooms/10_aws_extra_trees.ipynb) | AWS training and tuning - pending |
 
 ## Citi Bike
 
-| Notebook | One job | Main reason |
-|---|---|---|
-| 00 | Download and assemble trips | Count by actual start date |
-| 01 | Explore daily counts | Check gaps and patterns |
-| 02 | Test the weekly pattern | Support the prediction question |
-| 03 | Prepare class features | Use only earlier counts |
-| 04 | Compare simple guesses | Models must earn their place |
-| 05 | Run FLAML comparison | Check other families |
-| 06 | Tune Ridge | Try a simple numeric relationship |
-| 07 | Tune XGBoost | Learn corrections with small trees |
-| 08 | Tune random forest | Compare a different tree method |
-| 09 | Inspect errors | Keep difficult days visible |
-| 10 | Compare class models | Explain the earlier XGBoost choice |
-| 11 | Check added history and forecasts | Weather adds a new input requirement |
-| 12 | Prepare selected features | Preserve chronological boundaries |
-| 13 | Train the CPU weather blend | Provide a practical AWS alternative |
-| 14 | Explain the GRU weather blend | Lowest recorded MAE; optional CUDA reproduction |
-| 15 | Compare frozen research results | Compare inputs, errors and uncertainty |
-| 16 | Train and tune on AWS CPU | Prepared; actual cloud run still needed |
-| 17 | Train and tune GRU on AWS | Optional, if the Sandbox permits a GPU |
+| Notebook | Step |
+|---|---|
+| [00](../citibike/00_data_acquisition.ipynb) | Trip acquisition |
+| [01](../citibike/01_data_audit.ipynb) | Daily counts and EDA |
+| [02](../citibike/02_weekly_hypothesis.ipynb) | Weekly-pattern hypothesis |
+| [03](../citibike/03_data_preparation.ipynb) | Class forecast features |
+| [04](../citibike/04_baselines.ipynb) | Simple baselines |
+| [05](../citibike/05_automl.ipynb) | FLAML comparison |
+| [06](../citibike/06_ridge.ipynb) | Ridge tuning |
+| [07](../citibike/07_xgboost.ipynb) | XGBoost tuning |
+| [08](../citibike/08_random_forest.ipynb) | Random-forest tuning |
+| [09](../citibike/09_error_analysis.ipynb) | Difficult dates and errors |
+| [10](../citibike/10_model_comparison.ipynb) | Class-model comparison |
+| [11](../citibike/11_forecast_data.ipynb) | Added history and forecast sources |
+| [12](../citibike/12_selected_preparation.ipynb) | Selected forecast features |
+| [13](../citibike/13_weather_svr_hist.ipynb) | CPU weather blend |
+| [14](../citibike/14_weather_gru_catboost.ipynb) | GRU weather blend |
+| [15](../citibike/15_model_comparison.ipynb) | Frozen research comparison |
+| [16](../citibike/16_aws_cpu.ipynb) | AWS CPU training and tuning - pending |
+| [17](../citibike/17_aws_gru_optional.ipynb) | Optional AWS GPU training - pending |
 
-The app uses saved research candidates trained through June. Notebook 10 retains the earlier September-fitted class pilot. Scores from different splits or fits must not be mixed.
+The app uses bike research candidates trained through June. Citi Bike 10 retains the earlier September-fitted class pilot.
+
+## Environments
+
+| Work | Python | Requirements |
+|---|---|---|
+| Mushrooms 00-06 | 3.11.13 | `requirements-pycaret.lock.txt` |
+| Citi Bike 00-10 | 3.12.10 | `requirements-citibike.lock.txt` |
+| Later notebooks and app | 3.12.10 | `requirements-review.txt` |
+
+Run `scripts/setup_review.ps1` for the current Windows app environment. PyCaret keeps its separate environment. Saved GRU inference works on CPU; our GRU training code requires CUDA.

@@ -76,7 +76,7 @@ def main():
             except OSError:time.sleep(.25)
         else:raise TimeoutError('Server did not start.')
         checks={}
-        for path in ['/','/api/models','/docs/TEAM_GUIDE.html']:
+        for path in ['/','/api/models','/docs/NOTEBOOKS.md']:
             status,_=request(path);assert status==200;checks[path]=status
         for key in predictions:
             status,body=request('/api/bike/predict',bike_example(key));assert status==200,(key,body)

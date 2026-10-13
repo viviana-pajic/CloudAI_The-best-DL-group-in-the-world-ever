@@ -1,44 +1,37 @@
 # Tasks
 
-All six handoff commits are on main. AWS, final tests and hosting remain pending. Commit ownership does not imply independent authorship or completion of every member's cross-review.
+All six handoff commits are complete. Local app checks and GitHub CPU rebuild, app checks and Docker build passed. AWS training, public hosting and final tests remain pending.
 
-| # | Task | Owner | Status |
-|---:|---|---|---|
-| 1 | Confirm requirements and dates | Team | done |
-| 2 | Repository access and starter review | Team | done |
-| 3 | Development environments | Team | done locally; fresh team reproduction pending |
-| 4 | Scope and responsibilities | Team | done; review new weather inputs |
-| 5 | AWS and hosting access | Unassigned | pending |
-| 6 | Replacement mushroom dataset | Team | done |
-| 7 | Download Citi Bike | Tomislav | done |
-| 8 | Mushroom EDA | Viviana | done |
-| 9 | Citi Bike EDA and aggregation | Tomislav | done |
-| 10 | Citi Bike hypothesis | Tomislav | done |
-| 11 | Mushroom evaluation | Viviana | done |
-| 12 | Bike evaluation | Tomislav | done |
-| 13 | Mushroom preparation | Muneeb | done |
-| 14 | Bike preparation | Tomislav | done |
-| 15 | Mushroom baselines | Muneeb | done |
-| 16 | Bike baselines | Tomislav | done |
-| 17 | Local app | Tomislav | done; new review app added |
-| 18 | Mushroom AutoML | Muneeb | done |
-| 19 | Bike AutoML | Tomislav | done |
-| 20 | Tune logistic regression | Viviana | done |
-| 21 | Tune forest | Viviana | done |
-| 22 | Tune bike Ridge | Tomislav | done |
-| 23 | Tune bike XGBoost | Tomislav | done |
-| 24 | Mushroom errors and thresholds | Muneeb | done; research extension committed |
-| 25 | Bike errors | Tomislav | done |
-| 26 | Mushroom AWS training | Muneeb proposed | prepared, not run |
-| 27 | Bike AWS training | Tomislav | prepared, not run |
-| 28 | Choose release models | Team | review candidates prepared; not frozen for final test |
-| 29 | Public hosting | Tomislav proposed | pending |
-| 30 | Automatic updates and deployment | Tomislav proposed | GitHub CPU rebuild, app checks and Docker build passed; hosting update pending |
-| 31 | Reserved final tests | Team | not run |
-| 32 | Final notebooks and documentation | Team | current project committed; AWS/release evidence pending |
-| 33 | Clean release reproduction | Team | local app and GitHub CPU/Docker checks passed; teammate/host check pending |
-| 34 | Presentation and demo | Team | meeting demo prepared; oral rehearsal pending |
-| 35 | Canvas submission | Team | pending |
-| 36 | Cross-review notebooks | Team | pending |
-| 37 | Rehearse demo and questions | Team | pending |
-| 38 | Assessment hosting availability | Team | pending |
+## Completed work
+
+| Owner | Work | Original task numbers |
+|---|---|---|
+| Team | Requirements, repository access, scope and replacement dataset | 1, 2, 4, 6 |
+| Viviana | Mushroom EDA, evaluation and two tuned models | 8, 11, 20, 21 |
+| Muneeb | Mushroom preparation, baselines, AutoML and errors | 13, 15, 18, 24 |
+| Tomislav | Citi Bike data, hypothesis, preparation, models, errors and local app | 7, 9, 10, 12, 14, 16, 17, 19, 22, 23, 25 |
+
+Task 3 is checked locally; fresh teammate reproduction belongs to task 33. Contributions and AI assistance are recorded in [AI use](AI_USE.md).
+
+## Before AWS
+
+- Everyone explains the results and the inputs their model needs.
+- Confirm the allowed AWS region, role, instance types and budget; clarify the lecturer's minimum cloud-training requirement.
+- Confirm the proposed AWS operators and hosting owner below.
+- Start with Extra Trees and the CPU weather blend. Treat GRU training as optional if a GPU is allowed.
+
+## Remaining work
+
+| Tasks | Work | Owner/status |
+|---|---|---|
+| 5 | Confirm AWS and hosting access | Team; pending |
+| 26 | Run mushroom AWS notebook 10 and save evidence | Muneeb proposed; not run |
+| 27 | Run bike AWS CPU notebook 16; GPU 17 optional | Tomislav; not run |
+| 28 | Choose and freeze release models and threshold | Team; pending |
+| 29-30 | Host both prediction paths and verify a GitHub-triggered update | Tomislav proposed; build works, hosting/update pending |
+| 31 | Score the reserved final tests once | Team; not run |
+| 32-33 | Save final outputs and reproduce the hosted release | Team; pending |
+| 34, 36-38 | Cross-review, prepare the demo, rehearse and check assessment hosting | Team; pending |
+| 35 | Submit the repository link in Canvas | Team; pending |
+
+Use the [release steps](RELEASE.md). Target: 14 October. Deadline: 15 October 2026, 23:59. Oral: 23 October.
