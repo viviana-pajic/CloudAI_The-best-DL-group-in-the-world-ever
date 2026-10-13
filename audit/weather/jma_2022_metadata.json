@@ -1,0 +1,81 @@
+{
+  "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=40.7128&longitude=-74.0060&start_date=2022-01-01&end_date=2023-01-01&models=jma_gsm&hourly=precipitation_previous_day2%2Cwind_speed_10m_previous_day2&timezone=America%2FNew_York&timeformat=unixtime&wind_speed_unit=kmh&precipitation_unit=mm",
+  "parameters": {
+    "latitude": "40.7128",
+    "longitude": "-74.0060",
+    "start_date": "2022-01-01",
+    "end_date": "2023-01-01",
+    "models": "jma_gsm",
+    "hourly": "precipitation_previous_day2,wind_speed_10m_previous_day2",
+    "timezone": "America/New_York",
+    "timeformat": "unixtime",
+    "wind_speed_unit": "kmh",
+    "precipitation_unit": "mm"
+  },
+  "requested_at_utc": "2026-10-10T08:59:35.889912+00:00",
+  "included_local_date_range": {
+    "start": "2022-01-01",
+    "end": "2022-12-31"
+  },
+  "documentation": "https://open-meteo.com/en/docs/previous-runs-api",
+  "model_documentation": "https://open-meteo.com/en/docs/jma-api",
+  "parameter_documentation": "https://open-meteo.com/en/docs",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_page": "https://open-meteo.com/en/licence",
+  "attribution": "Weather forecasts by Open-Meteo.com, sourced from JMA GSM; transformed into daily NYC precipitation/wind summaries.",
+  "no_paid_endpoint_or_key": true,
+  "forecasts_only_no_observations_or_reanalysis": true,
+  "forecast_lead_hours": 48,
+  "publication_latency_caveat": "Lead offset is an initialization proxy. Actual historical API publication timestamps are unavailable. The final precipitation hour ends at the next midnight: a48h lead leaves a24h initialization buffer on normal days and23h on a25h fall-DST day. Actual API publication availability still needs validation.",
+  "native_model_resolution": "JMA GSM global0.5degree(~55km), six-hourly fields interpolated to hourly values by Open-Meteo.",
+  "inference_contract": "New forecast-assisted input dependency, separate from counts-only app/model.",
+  "http_status": 200,
+  "response_headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Sat, 10 Oct 2026 08:59:34 GMT",
+    "ETag": null,
+    "Last-Modified": null
+  },
+  "download_success": true,
+  "raw_response_sha256": "8c356d59a414a33501d8b2d9c943f4e189d081b12bfa5fd9eb9f79cfdb61e62d",
+  "raw_response_bytes": 182819,
+  "daily_features_file": "forecast_daily_jma_precip_wind_2022.csv",
+  "daily_features_sha256": "fa73bf87b2f6b528bcf9d5d8b032ec1dceed0f3fe3ea068d02422f9423cfad83",
+  "hourly_features_file": "jma_2022_hourly.csv",
+  "hourly_features_sha256": "a4b9216776b2720b7b4086887a29ed60594b08928b5cd5b11f1aee48e86dea68",
+  "included_days": 365,
+  "actual_local_hours": 8760,
+  "hour_counts_distribution": {
+    "23": 1,
+    "24": 363,
+    "25": 1
+  },
+  "non24hour_days": {
+    "2022-03-13": 23,
+    "2022-11-06": 25
+  },
+  "hourly_units": {
+    "time": "unixtime",
+    "precipitation_previous_day2": "mm",
+    "wind_speed_10m_previous_day2": "km/h"
+  },
+  "response_coordinates": {
+    "latitude": 40.5,
+    "longitude": -74.0,
+    "elevation": 32.0,
+    "timezone": "America/New_York",
+    "utc_offset_seconds": -14400
+  },
+  "precipitation_aggregation": "Sum of preceding-hour forecasts with valid instants01:00 through next00:00 assigned by interval start date. Preserve real23h/25h DST days.",
+  "precipitation_cleanup_rule": "Negative forecast precipitation with magnitude<=0.1mm is physically invalid and floored to0. Raw response/hourly values/rawdaily sums are preserved; negative-hour count is a separate ablation feature. Larger negative values fail. Chosen before any bike validation labels.",
+  "negative_precipitation_hours": 6,
+  "negative_precipitation_original_sum_mm": -0.6,
+  "negative_precipitation_dates": {
+    "2022-02-26": 6
+  },
+  "wind_aggregation": "Mean/max of instantaneous forecasts from real00:00 through23:00 local hours, preserving23h/25h DST days.",
+  "dst_handling": "Convert Unix UTC to trueAmerica/New_York rules rather than API fixedutc_offset_seconds.",
+  "no_trip_targets_read": true,
+  "missing_forecast_values": 0
+}

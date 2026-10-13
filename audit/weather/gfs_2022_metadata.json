@@ -1,0 +1,80 @@
+{
+  "endpoint": "https://previous-runs-api.open-meteo.com/v1/forecast",
+  "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=40.7128&longitude=-74.0060&start_date=2022-01-01&end_date=2023-01-01&hourly=temperature_2m_previous_day1%2Ctemperature_2m_previous_day2&models=gfs_global&timezone=America%2FNew_York&timeformat=unixtime&temperature_unit=celsius",
+  "parameters": {
+    "latitude": "40.7128",
+    "longitude": "-74.0060",
+    "start_date": "2022-01-01",
+    "end_date": "2023-01-01",
+    "hourly": "temperature_2m_previous_day1,temperature_2m_previous_day2",
+    "models": "gfs_global",
+    "timezone": "America/New_York",
+    "timeformat": "unixtime",
+    "temperature_unit": "celsius"
+  },
+  "requested_at_utc": "2026-10-10T08:59:35.763706+00:00",
+  "included_local_date_range": {
+    "start": "2022-01-01",
+    "end": "2022-12-31"
+  },
+  "boundary_padding_policy": "Request one extra end date because the API uses a fixed current UTC offset. Trim to the explicitly permitted Jan-Sep local dates after Unix timestamp conversion.",
+  "documentation": "https://open-meteo.com/en/docs/previous-runs-api",
+  "timezone_documentation": "https://open-meteo.com/en/docs",
+  "license_page": "https://open-meteo.com/en/licence",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Weather forecasts by Open-Meteo.com, sourced from NOAA GFS; transformed into daily NYC temperature summaries.",
+  "no_paid_endpoint_or_key": true,
+  "forecast_leads": {
+    "previous_day1": "24h before each valid hour; optional research ablation",
+    "previous_day2": "48h before each valid hour; primary conservative research input"
+  },
+  "availability_assumption": "Archive is an initialization-time proxy, not historical API publication timestamps. 48h lead leaves at least24h before the midnight prediction cutoff even on a25h NYC fall-DST day. Actual publication availability cannot be proved from the response alone.",
+  "data_contract": "Forecast-assisted models require these forecast inputs at inference. This is separate from the existing counts-only API.",
+  "http_status": 200,
+  "response_headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Sat, 10 Oct 2026 08:59:34 GMT",
+    "ETag": null,
+    "Last-Modified": null
+  },
+  "download_success": true,
+  "raw_response_sha256": "30513be1eabbb83c972267b519df53003a54e6041b48dc1660fa49af31ce2912",
+  "raw_response_bytes": 180014,
+  "daily_features_file": "forecast_daily_temperature_2022.csv",
+  "hourly_features_file": "forecast_hourly_temperature_2022.csv",
+  "daily_features_sha256": "abbb8d1a2d3ae4fb2e0b44a3874b3c76dde5704afd7bf0a6832ae1aed9b54baa",
+  "hourly_features_sha256": "301d4acc27e76afda4d944e16a8b23ce1a82d401f7a7c3a8dad9c20b91a785a6",
+  "response_summary": {
+    "latitude": 40.709396,
+    "longitude": -74.0625,
+    "elevation": 32.0,
+    "timezone": "America/New_York",
+    "timezone_abbreviation": "GMT-4",
+    "utc_offset_seconds": -14400,
+    "hourly_units": {
+      "time": "unixtime",
+      "temperature_2m_previous_day1": "\u00c2\u00b0C",
+      "temperature_2m_previous_day2": "\u00c2\u00b0C"
+    }
+  },
+  "raw_hours": 8784,
+  "included_real_local_hours": 8760,
+  "included_days": 365,
+  "hour_counts_distribution": {
+    "23": 1,
+    "24": 363,
+    "25": 1
+  },
+  "non_24_hour_days": {
+    "2022-03-13": 23,
+    "2022-11-06": 25
+  },
+  "excluded_boundary_hours": 24,
+  "missing_hours": 0,
+  "missing_forecast_values": 0,
+  "dst_policy": "Request Unix UTC timestamps, convert each instant with America/New_York timezone rules, then aggregate by actual local date. Never reuse the response fixed UTC offset across the date range.",
+  "aggregation": "Mean/min/max of hourly temperature forecasts for each true local calendar date, preserving23h/25h DST days.",
+  "mushroom_or_bike_labels_read": false,
+  "reserved_original_test_targets_read": false
+}

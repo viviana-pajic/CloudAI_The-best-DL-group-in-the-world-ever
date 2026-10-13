@@ -1,0 +1,654 @@
+{
+  "created_at_utc": "2026-10-10T08:58:14.166340+00:00",
+  "year": 2022,
+  "annual_source": {
+    "source": "https://s3.amazonaws.com/tripdata/2022-citibike-tripdata.zip",
+    "discovery_url": "https://s3.amazonaws.com/tripdata?prefix=2022&max-keys=1000",
+    "downloaded_at_utc": "2026-10-10T08:56:11.007817+00:00",
+    "http_length": 1231367136,
+    "etag": "\"a0723feb52811fc7d024331d1f6fdbed-72\"",
+    "last_modified": "Wed, 31 Jul 2024 18:18:37 GMT",
+    "license_source": "https://citibikenyc.com/system-data",
+    "bytes": 1231367136,
+    "sha256": "6ef907ab1737aba619d09549a1ac62604da1b5190c7defb4ab109084b2bcc1c9"
+  },
+  "boundary_source": {
+    "path_read_only": "C:\\Users\\tomis\\OneDrive\\THOMAS MORE APPLIED COMPUTER SCIENCE\\YEAR 3\\DL\\CloudAI team repo\\data\\raw\\citibike\\2023-citibike-tripdata.zip",
+    "sha256": "f5ac8d2b9556a4f18925569681d60e960eae44ce7e2999c74726c8e1ff706c07",
+    "members_allowed": "January2023innerarchiveonly; retain starts in2022"
+  },
+  "daily_file": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\data\\citibike_2022_daily.csv",
+  "daily_sha256": "79ca554352e67a15016aae2e418641f6b0b347a4b7fb54d730d6e0f6c52faff4",
+  "days": 365,
+  "daily_min": 2848,
+  "daily_max": 135072,
+  "counted_rides": 29838442,
+  "boundary_carryover_rides_from_january2023": 276,
+  "files": [
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202201-citibike-tripdata.zip!/202201-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 194571711,
+      "crc32": "6371f690",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999392,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 608
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202201-citibike-tripdata.zip!/202201-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 4719069,
+      "crc32": "7728cadc",
+      "read_rows": 24555,
+      "scoped_2022_rides": 24548,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 7
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202202-citibike-tripdata.zip!/202202-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 194988061,
+      "crc32": "d37e5bf7",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999997,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 3
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202202-citibike-tripdata.zip!/202202-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 38628032,
+      "crc32": "a7ae80de",
+      "read_rows": 197312,
+      "scoped_2022_rides": 197311,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202203-citibike-tripdata.zip!/202203-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195314852,
+      "crc32": "23424743",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999996,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 4
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202203-citibike-tripdata.zip!/202203-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 165146157,
+      "crc32": "8d8dedb2",
+      "read_rows": 845965,
+      "scoped_2022_rides": 845964,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202204-citibike-tripdata.zip!/202204-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195466527,
+      "crc32": "33c92ada",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202204-citibike-tripdata.zip!/202204-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 195548723,
+      "crc32": "6b5883cd",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999998,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 2
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202204-citibike-tripdata.zip!/202204-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 51068235,
+      "crc32": "26513ee7",
+      "read_rows": 260790,
+      "scoped_2022_rides": 260790,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202205-citibike-tripdata.zip!/202205-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195910701,
+      "crc32": "958d657d",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202205-citibike-tripdata.zip!/202205-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 195841534,
+      "crc32": "42ad12f5",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202205-citibike-tripdata.zip!/202205-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 168857678,
+      "crc32": "400d0bbd",
+      "read_rows": 865425,
+      "scoped_2022_rides": 865424,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202206-citibike-tripdata.zip!/202206-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195841298,
+      "crc32": "1770c4b1",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202206-citibike-tripdata.zip!/202206-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 195810505,
+      "crc32": "f5f25b1f",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999998,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 2
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202206-citibike-tripdata.zip!/202206-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 195836098,
+      "crc32": "4acee968",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202206-citibike-tripdata.zip!/202206-citibike-tripdata_4.csv",
+      "bytes_uncompressed": 67513097,
+      "crc32": "b431d8c8",
+      "read_rows": 343914,
+      "scoped_2022_rides": 343914,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202207-citibike-tripdata.zip!/202207-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195663477,
+      "crc32": "c1a5e63f",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202207-citibike-tripdata.zip!/202207-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 195557716,
+      "crc32": "53a8569a",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202207-citibike-tripdata.zip!/202207-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 196741427,
+      "crc32": "08276203",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202207-citibike-tripdata.zip!/202207-citibike-tripdata_4.csv",
+      "bytes_uncompressed": 77853330,
+      "crc32": "95bf550e",
+      "read_rows": 397932,
+      "scoped_2022_rides": 397932,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202208-citibike-tripdata.zip!/202208-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 196820590,
+      "crc32": "9c14ebc4",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202208-citibike-tripdata.zip!/202208-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 196067062,
+      "crc32": "efdd87ae",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202208-citibike-tripdata.zip!/202208-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 194783052,
+      "crc32": "745c3980",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202208-citibike-tripdata.zip!/202208-citibike-tripdata_4.csv",
+      "bytes_uncompressed": 113174958,
+      "crc32": "0713b184",
+      "read_rows": 576020,
+      "scoped_2022_rides": 576020,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202209-citibike-tripdata.zip!/202209-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195501759,
+      "crc32": "d218bd99",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202209-citibike-tripdata.zip!/202209-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 195838414,
+      "crc32": "f0f8fc55",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202209-citibike-tripdata.zip!/202209-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 196480293,
+      "crc32": "990d96e6",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202209-citibike-tripdata.zip!/202209-citibike-tripdata_4.csv",
+      "bytes_uncompressed": 80508418,
+      "crc32": "c2ef337a",
+      "read_rows": 411866,
+      "scoped_2022_rides": 411866,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202210-citibike-tripdata.zip!/202210-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195359655,
+      "crc32": "7eb5e26b",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202210-citibike-tripdata.zip!/202210-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 196279373,
+      "crc32": "21b5f4cd",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202210-citibike-tripdata.zip!/202210-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 183987983,
+      "crc32": "1410e403",
+      "read_rows": 936584,
+      "scoped_2022_rides": 936584,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202211-citibike-tripdata.zip!/202211-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195900795,
+      "crc32": "35a287c7",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 1000000,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202211-citibike-tripdata.zip!/202211-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 195677707,
+      "crc32": "424b8747",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999998,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 2
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202211-citibike-tripdata.zip!/202211-citibike-tripdata_3.csv",
+      "bytes_uncompressed": 75725717,
+      "crc32": "9dda8cfb",
+      "read_rows": 386394,
+      "scoped_2022_rides": 386394,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 0
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202212-citibike-tripdata.zip!/202212-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195430495,
+      "crc32": "adc82ddd",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 999999,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "annual2022",
+      "member": "2022-citibike-tripdata.zip!/2022-citibike-tripdata/202212-citibike-tripdata.zip!/202212-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 116428817,
+      "crc32": "657fadc6",
+      "read_rows": 592049,
+      "scoped_2022_rides": 592048,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 1
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "boundaryJanuary2023",
+      "member": "2023-citibike-tripdata.zip!/2023-citibike-tripdata/202301-citibike-tripdata.zip!/202301-citibike-tripdata_1.csv",
+      "bytes_uncompressed": 195546500,
+      "crc32": "f90d52af",
+      "read_rows": 1000000,
+      "scoped_2022_rides": 276,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 999724
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    },
+    {
+      "origin": "boundaryJanuary2023",
+      "member": "2023-citibike-tripdata.zip!/2023-citibike-tripdata/202301-citibike-tripdata.zip!/202301-citibike-tripdata_2.csv",
+      "bytes_uncompressed": 155603759,
+      "crc32": "9956f402",
+      "read_rows": 795405,
+      "scoped_2022_rides": 0,
+      "issues": {
+        "unparsed_start": 0,
+        "excluded_other_year_rows": 795405
+      },
+      "read_schema": [
+        "ride_id",
+        "started_at"
+      ]
+    }
+  ],
+  "read_schemas": [
+    [
+      "ride_id",
+      "started_at"
+    ]
+  ],
+  "issues": {
+    "unparsed_start": 0,
+    "excluded_other_year_rows": 1795769,
+    "duplicate_scoped_ride_id_extra_rows": 0
+  },
+  "missing_dates": [],
+  "reserved2023OctDectargets_not_read": true,
+  "target_policy": "All recorded ride starts by printed NYC local calendar dates; no duration/station-null filtering.",
+  "scope": "Optional additional past-year training experiment. Base2023question and existing repository remain unchanged.",
+  "split_requirements": "Keep original2023April29-June30 chronological tuning windows and July-September frozen finalist comparison. All extra2022targets precede these windows.",
+  "null_policy": "No missing start/IDs permitted for scoped rides. Unused station fields are not needed for citywide ride starts."
+}

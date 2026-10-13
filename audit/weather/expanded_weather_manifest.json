@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-10-10T09:06:48.439399+00:00",
+  "derived_files": [
+    {
+      "file": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\audit\\weather\\forecast_daily_temperature_expanded.csv",
+      "days": 638,
+      "sha256": "633515f531d0e31eba4a2748076fb318490cb353b57e5585b778b18635d6b6e1",
+      "sources": [
+        {
+          "file": "forecast_daily_temperature_2022.csv",
+          "sha256": "abbb8d1a2d3ae4fb2e0b44a3874b3c76dde5704afd7bf0a6832ae1aed9b54baa"
+        },
+        {
+          "file": "forecast_daily_temperature.csv",
+          "sha256": "540aec85e6ddfa86880aed6a5f78392869ef7240faceaab56ffc7f2e91f38b8e"
+        }
+      ],
+      "forecast_lead_primary": 48
+    },
+    {
+      "file": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\audit\\weather\\forecast_daily_jma_precip_wind_expanded.csv",
+      "days": 638,
+      "sha256": "f67fd4fc03425cb968488132393fec54ae012f09a1b2da36e0a7c9d374fc6124",
+      "sources": [
+        {
+          "file": "forecast_daily_jma_precip_wind_2022.csv",
+          "sha256": "fa73bf87b2f6b528bcf9d5d8b032ec1dceed0f3fe3ea068d02422f9423cfad83"
+        },
+        {
+          "file": "forecast_daily_jma_precip_wind.csv",
+          "sha256": "2aa261757ac895655a0b6d032b6b62625817c1b7ad3b22e009b0e8402c766bdc"
+        }
+      ],
+      "forecast_lead_primary": 48
+    }
+  ],
+  "no_trip_labels_read": true,
+  "primary_day2_contract": true,
+  "code_sha256": "31572c8ff8dffb44178c9a3c6fe6290695df3a01215e9af2b350e84723d7dd4c"
+}
