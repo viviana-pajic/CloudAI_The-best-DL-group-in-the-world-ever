@@ -9,5 +9,5 @@ RUN python scripts/rebuild_review_models.py --output-root /tmp/cloudai-build \
     && cp /tmp/cloudai-build/models/* models/ \
     && cp /tmp/cloudai-build/build_record.json reports/hosting_build.json \
     && python scripts/verify_review.py --mode rebuilt
-EXPOSE 8780
-CMD ["python", "app/review_server.py", "--host", "0.0.0.0", "--port", "8780"]
+EXPOSE 10000
+CMD ["python", "app/review_server.py", "--host", "0.0.0.0"]

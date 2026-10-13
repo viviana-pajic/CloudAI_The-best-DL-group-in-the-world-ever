@@ -9,9 +9,13 @@ on:
       - 'common/**'
       - 'src/**'
       - 'app/**'
+      - 'models/**'
+      - 'examples/**'
       - 'data/*.csv'
       - 'scripts/**'
       - 'requirements-review*.txt'
+      - 'Dockerfile'
+      - 'render.yaml'
       - '.github/workflows/review-release.yml'
 
 permissions:
@@ -56,5 +60,5 @@ jobs:
               -X POST -H 'Content-Type: application/json' \
               --data "{\"commit\":\"$RELEASE_COMMIT\"}" "$DEPLOY_WEBHOOK"
           else
-            echo 'Build passed. Configure a host and DEPLOY_WEBHOOK to enable deployment.'
+            echo 'Build passed. Render can deploy after checks pass; no optional webhook configured.'
           fi

@@ -69,7 +69,7 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--host', default='127.0.0.1')
-    parser.add_argument('--port', type=int, default=8780)
+    parser.add_argument('--port', type=int, default=int(os.environ.get('PORT', '8780')))
     args = parser.parse_args()
     for filename in ('mushroom_extra_trees.joblib', 'citibike_counts_xgboost.joblib', 'citibike_weather_cpu.joblib'):
         load_model(filename)

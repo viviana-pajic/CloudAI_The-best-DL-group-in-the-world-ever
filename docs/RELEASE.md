@@ -44,7 +44,7 @@ docker build -t cloudai .
 docker run --rm -p 8780:8780 cloudai
 ```
 
-`render.yaml` selects a free Docker service in Frankfurt. Connect the repository on Render and keep the free plan with no payment method. The app listens on port 8780. Public hosting and restart behaviour remain unverified until its first deploy passes.
+`render.yaml` selects a free Docker service in Frankfurt. Connect the repository on Render and keep the free plan with no payment method. The server uses the host's `PORT` value (10000 on Render); locally it defaults to 8780. Public hosting and restart behaviour remain unverified until its first deploy passes.
 
 The free service sleeps after 15 idle minutes and usually takes about a minute to wake. Open it before the demonstration. Linux checks loaded all model paths at about 437 MB; the free limit is 512 MB. Check the deployed service too. [Render free limits](https://render.com/docs/free).
 
