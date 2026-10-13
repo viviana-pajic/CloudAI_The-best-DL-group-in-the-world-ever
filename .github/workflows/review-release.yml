@@ -17,6 +17,8 @@ on:
       - 'requirements-review*.txt'
       - 'Dockerfile'
       - 'render.yaml'
+      - 'release_decision.json'
+      - 'reports/final_test_results.json'
       - '.github/workflows/review-release.yml'
 
 permissions:
@@ -37,10 +39,14 @@ jobs:
           python -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
       - name: Rebuild CPU models with training data only
         run: python scripts/rebuild_review_models.py --output-root build
-      - name: Assemble the rebuilt app
+      - name: Check candidates and assemble the release
         run: |
-          cp build/models/* models/
-          python scripts/verify_review.py --mode rebuilt
+          python scripts/assemble_hosting.py --candidate-root build
+          if [ -f release_decision.json ]; then
+            python scripts/verify_review.py --mode frozen
+          else
+            python scripts/verify_review.py --mode rebuilt
+          fi
           docker build -t cloudai-review .
       - uses: actions/upload-artifact@v4
         with:
@@ -49,6 +55,8 @@ jobs:
             models/
             build/build_record.json
             reports/review_verification.json
+            release_decision.json
+            reports/final_test_results.json
           if-no-files-found: error
           retention-days: 14
       - name: Deploy the checked commit if configured

@@ -1,6 +1,6 @@
 # Tasks
 
-All six handoff commits are complete. Local checks and GitHub builds passed. Both CPU AWS notebooks ran on 13 October. The public app and an actual automatic update passed checks. Release selection and final tests remain pending.
+All six handoff commits are complete. Local checks and GitHub builds passed. Both CPU AWS notebooks ran on 13 October. The public app and an actual automatic update passed checks. Release models are frozen. The once-only final test is complete. Final outputs are saved. Teammate reproduction and submission remain pending.
 
 ## Completed work
 
@@ -17,7 +17,7 @@ Task 3 is checked locally; fresh teammate reproduction belongs to task 33. Contr
 
 - Everyone explains the results and the inputs their model needs.
 - Review both completed AWS notebooks. Tomislav used the supplied CPU notebook in `us-east-1`; no personal AWS account or GPU upgrade was used.
-- Review the public app and agree the release models before opening final tests.
+- Review the frozen release, final results and public app. Do not tune against the final scores.
 
 ## Remaining work
 
@@ -26,11 +26,12 @@ Task 3 is checked locally; fresh teammate reproduction belongs to task 33. Contr
 | 5 | Confirm AWS and hosting access | Done: university sandbox and free Render service |
 | 26 | Run mushroom AWS notebook 10 and save evidence | Done: Tomislav, with Codex assistance; Muneeb review pending |
 | 27 | Run bike AWS CPU notebook 16; GPU 17 optional | Done: Tomislav, with Codex assistance; GPU run optional |
-| 28 | Choose and freeze release models and threshold | Team; pending |
+| 28 | Choose and freeze release models and threshold | Done: Tomislav, with Codex assistance; frozen before scoring |
 | 29 | Host both prediction paths | Done: Tomislav; public app and all prediction options checked |
 | 30 | Verify a GitHub-triggered model update | Done: Tomislav; passing workflow triggered Render and the new commit passed public checks |
-| 31 | Score the reserved final tests once | Team; not run |
-| 32-33 | Save final outputs and reproduce the hosted release | Team; pending |
+| 31 | Score the reserved final tests once | Done: Tomislav, with Codex assistance; 1,000 mushroom rows and 92 bike days |
+| 32 | Save final outputs and explanations | Done: final notebooks, predictions, graphs and README |
+| 33 | Reproduce the release from a clean environment | Automated Linux check and public parity check; teammate review pending |
 | 34, 36-38 | Cross-review, prepare the demo, rehearse and check assessment hosting | Team; pending |
 | 35 | Submit the repository link in Canvas | Team; pending |
 

@@ -16,3 +16,4 @@ audit/** -text
 reports/research/** -text
 models/*.joblib -text
 *.pdf binary
+reports/final_input_weather/** -text

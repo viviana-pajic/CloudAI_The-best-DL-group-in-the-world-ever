@@ -1,0 +1,78 @@
+{
+  "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=40.7128&longitude=-74.0060&start_date=2023-09-24&end_date=2024-01-01&models=jma_gsm&hourly=precipitation_previous_day2%2Cwind_speed_10m_previous_day2&timezone=America%2FNew_York&timeformat=unixtime&wind_speed_unit=kmh&precipitation_unit=mm",
+  "parameters": {
+    "latitude": "40.7128",
+    "longitude": "-74.0060",
+    "start_date": "2023-09-24",
+    "end_date": "2024-01-01",
+    "models": "jma_gsm",
+    "hourly": "precipitation_previous_day2,wind_speed_10m_previous_day2",
+    "timezone": "America/New_York",
+    "timeformat": "unixtime",
+    "wind_speed_unit": "kmh",
+    "precipitation_unit": "mm"
+  },
+  "requested_at_utc": "2026-10-13T19:04:19.220585+00:00",
+  "included_local_date_range": {
+    "start": "2023-09-24",
+    "end": "2023-12-31"
+  },
+  "documentation": "https://open-meteo.com/en/docs/previous-runs-api",
+  "model_documentation": "https://open-meteo.com/en/docs/jma-api",
+  "parameter_documentation": "https://open-meteo.com/en/docs",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_page": "https://open-meteo.com/en/licence",
+  "attribution": "Weather forecasts by Open-Meteo.com, sourced from JMA GSM; transformed into daily NYC precipitation/wind summaries.",
+  "no_paid_endpoint_or_key": true,
+  "forecasts_only_no_observations_or_reanalysis": true,
+  "forecast_lead_hours": 48,
+  "publication_latency_caveat": "Lead offset is an initialization proxy. Actual historical API publication timestamps are unavailable. The final precipitation hour ends at the next midnight: a48h lead leaves a24h initialization buffer on normal days and23h on a25h fall-DST day. Actual API publication availability still needs validation.",
+  "native_model_resolution": "JMA GSM global0.5degree(~55km), six-hourly fields interpolated to hourly values by Open-Meteo.",
+  "inference_contract": "New forecast-assisted input dependency, separate from counts-only app/model.",
+  "http_status": 200,
+  "response_headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Tue, 13 Oct 2026 19:04:19 GMT",
+    "ETag": null,
+    "Last-Modified": null
+  },
+  "download_success": true,
+  "raw_response_sha256": "eb3dce96d52b2ea454025afc4df252d20884dfe47f700d00dd2278284955bc07",
+  "raw_response_bytes": 50292,
+  "daily_features_file": "jma_final_test_daily.csv",
+  "daily_features_sha256": "363e9eafa9d53b1506282e1cf226c1824cb59e2fd5d793ad5be5e3def6b5f10b",
+  "hourly_features_file": "jma_final_test_hourly.csv",
+  "hourly_features_sha256": "40ca523b2071b13a41c2143f400dd454de65c9ca603e50623f603afe50c7ffed",
+  "included_days": 99,
+  "actual_local_hours": 2377,
+  "hour_counts_distribution": {
+    "24": 98,
+    "25": 1
+  },
+  "non24hour_days": {
+    "2023-11-05": 25
+  },
+  "hourly_units": {
+    "time": "unixtime",
+    "precipitation_previous_day2": "mm",
+    "wind_speed_10m_previous_day2": "km/h"
+  },
+  "response_coordinates": {
+    "latitude": 40.5,
+    "longitude": -74.0,
+    "elevation": 32.0,
+    "timezone": "America/New_York",
+    "utc_offset_seconds": -14400
+  },
+  "precipitation_aggregation": "Sum of preceding-hour forecasts with valid instants01:00 through next00:00 assigned by interval start date. Preserve real23h/25h DST days.",
+  "precipitation_cleanup_rule": "Negative forecast precipitation with magnitude<=0.1mm is physically invalid and floored to0. Raw response/hourly values/rawdaily sums are preserved; negative-hour count is a separate ablation feature. Larger negative values fail. Chosen before any bike validation labels.",
+  "negative_precipitation_hours": 0,
+  "negative_precipitation_original_sum_mm": 0.0,
+  "negative_precipitation_dates": {},
+  "wind_aggregation": "Mean/max of instantaneous forecasts from real00:00 through23:00 local hours, preserving23h/25h DST days.",
+  "dst_handling": "Convert Unix UTC to trueAmerica/New_York rules rather than API fixedutc_offset_seconds.",
+  "no_trip_targets_read": true,
+  "missing_forecast_values": 0,
+  "cached_response_reused": true
+}

@@ -23,3 +23,7 @@ Use archived forecasts from Open-Meteo, NOAA GFS and JMA GSM, under [CC BY 4.0](
 Our modifications aggregate in New York time, correct rain intervals and floor tiny negative rain forecasts. Exact historical publication times were not verified. Observed target-day weather is not substituted for forecasts. The app has no live count or weather feed.
 
 All current results are development evidence. The reserved final tests remain unscored.
+
+## Final test inputs
+
+Final mushroom rows come from the original split manifest. Bike targets cover 1 October-31 December 2023. Archived GFS/JMA forecasts and request records are saved in `reports/final_input_weather/`. GFS has 53 unavailable required hours on 29-31 December; those three daily summaries stay missing. The release uses counts-only XGBoost on those dates. No observed weather, future ride totals or weather imputation was substituted. The 25-hour New York day on 5 November is retained. [Open-Meteo archive](https://open-meteo.com/en/docs/previous-runs-api).

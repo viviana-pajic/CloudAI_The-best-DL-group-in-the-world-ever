@@ -5,3 +5,5 @@ data/raw
 data/processed
 reports/local_check
 reports/aws
+
+models/mushroom_random_forest_pilot.joblib

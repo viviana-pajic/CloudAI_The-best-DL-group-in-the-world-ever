@@ -22,8 +22,8 @@ def main():
     models=out/'models'
     models.mkdir()
     manifest=json.loads((ROOT/'models/model_manifest.json').read_text())
-    for file in (ROOT/'models').glob('*.joblib'):
-        shutil.copy2(file,models/file.name)
+    for name in manifest['sha256']:
+        shutil.copy2(ROOT/'models'/name,models/name)
     records={}
     for dataset,name in [('mushrooms','mushroom_extra_trees.joblib'),('citibike','citibike_weather_cpu.joblib')]:
         run=out/dataset

@@ -1,71 +1,62 @@
 # Run and release
 
-## Local app
+## Frozen models and final results
+
+The release uses the original Extra Trees fit with cutoff 0.0398015873015873. Its default 0.5 rule remains a comparison. The bike release uses 75% GRU / 25% CatBoost, with counts-only XGBoost when weather forecasts are missing. Other bike choices remain development references.
+
+These fits were selected from existing development results. The first freeze failed weather preflight: GFS had 53 unavailable required hours on 29-31 December. Its decision is preserved in `reports/release_preflight_decision.json`. Before reading test targets, we recorded the fallback and froze again in `release_decision.json`. No model choice changed after scoring.
+
+Final tests completed once on 13 October: 1,000 mushroom rows and 92 October-December bike dates. The lower rule caught 373/378 poison labels and falsely flagged 598/622 edible labels. The bike release MAE was 15,005; last week's count had MAE 24,255. The GRU handled 89 dates; XGBoost handled 29-31 December. Notebooks 11 and 18 read saved results, not new test runs.
+
+`reports/final_test_started.json` prevents repeat scoring. Keep it and all predictions, even if results disappoint. Do not rerun the evaluator or tune against these results. Text fingerprints normalize Windows/Linux line endings; binary model hashes remain byte-exact.
+
+## Local app and checks
+
+Python 3.12.10. Run `scripts/setup_review.ps1` once on Windows, then:
 
 ```powershell
 .\.venv-review\Scripts\python.exe app/review_server.py
+.\.venv-review\Scripts\python.exe scripts/verify_review.py --mode frozen
 ```
 
-Open http://127.0.0.1:8780. The page sends inputs to the Python API. Saved pipelines return predictions. Missing weather inputs produce an error.
+Open http://127.0.0.1:8780. The page sends inputs to the Python API. Saved pipelines return predictions. An empty forecast list selects the GRU's counts-only fallback. Partial or invalid forecasts produce an error.
 
-Use the environments listed in [the notebook map](NOTEBOOKS.md). Run `scripts/verify_review.py` with the review interpreter to check saved predictions, API paths and invalid inputs.
+Use the environments in [NOTEBOOKS.md](NOTEBOOKS.md). Startup verifies frozen source and model hashes. The app reads final scores from `reports/final_test_results.json`; it never scores test targets on a browser request. The manifest's `final_tests_scored: false` describes the original artifact-copy stage. Current test status is in the final report and `/health`.
 
-## AWS evidence - completed 13 October
+## AWS evidence
 
-Tomislav ran notebooks 10 and 16 on the university `MyNotebook` in `us-east-1` (`ml.m4.xlarge`). Codex assisted. Each notebook contains actual outputs. [Saved runs](../reports/aws/) include tuning results, redacted provenance and trained models. Evidence ZIPs were downloaded. The sandbox denied the normal Stop action; the lab remains open at Tomislav's request. End Lab deletes its temporary resources.
+Tomislav ran notebooks 10 and 16 on the university `MyNotebook` in `us-east-1` (`ml.m4.xlarge`) on 13 October. Codex assisted. Executed notebooks and [saved runs](../reports/aws/) contain actual outputs, tuning records and trained models. Evidence ZIPs were downloaded. The sandbox denied the normal Stop action; the lab remains open at Tomislav's request. End Lab deletes temporary resources.
 
-Extra Trees selected 600 trees. Mean fold average precision: 0.7776. Its calibrated cutoff is 0.0398: 242/242 poisonous labels caught, 380/398 edible labels flagged. These rows chose the cutoff; this is not an independent test.
+AWS Extra Trees selected 600 trees; training-fold average precision was 0.7776. Its calibration caught 242/242 poison labels and flagged 380/398 edible labels. Calibration chose the cutoff; it is not an independent test.
 
-The CPU bike blend selected 200 histogram-boosting iterations. Mean chronological fold MAE: 9,710.58 rides. This is training-period CV, not a new summer result. No reserved final test was opened. The app's original local candidates and their historical comparisons remain separate from these AWS runs.
+The AWS CPU bike blend selected 200 boosting iterations; training-fold MAE was 9,710.58. These scores use different rows from the local development comparisons. AWS refits stay separate; their evidence does not establish better final performance. Optional GPU notebook 17 is not required to serve the saved GRU on CPU.
 
-To repeat: run [mushroom notebook 10](../mushrooms/10_aws_extra_trees.ipynb) and [bike CPU notebook 16](../citibike/16_aws_cpu.ipynb) with the review kernel on an allowed SageMaker notebook instance. Enter the actual operator, save outputs and export each evidence ZIP. [Bike GPU notebook 17](../citibike/17_aws_gru_optional.ipynb) is optional. Uploading a local saved model is not cloud training.
+## Hosting and automatic updates
 
-Keep cloud results separate from the local reports. If adopting an AWS model, update its artifact and manifest together. A refitted mushroom model needs its own calibrated cutoff. Confirm the AWS permissions and minimum run requirement before starting.
+[Public app](https://cloudai-team.onrender.com). Render service `cloudai-team`: Free, Frankfurt, no payment method. It sleeps after 15 idle minutes and usually needs about a minute to wake. Open it before the demo. [Render free limits](https://render.com/docs/free).
 
-## Freeze and final tests - pending
-
-Agree release models, required inputs and fit boundaries. Run `scripts/freeze_release.py` to record their hashes before opening reserved test targets.
-
-The same saved fits must be tested and hosted. The repository's `models/` keeps the original local fits; Docker rebuilds the CPU fits. Align the chosen release artifacts with `/health` before freezing and scoring. Do not treat those copies as automatically identical.
-
-Bring the exact teacher mushroom CSV and audited annual bike table. For a weather model, use `scripts/download_final_test_forecasts.py` after freezing; do not substitute observed weather. Then run `scripts/evaluate_final_tests.py` once. Its marker blocks repeat scoring.
-
-Example for a counts-only release, after the team makes that choice:
-
-```powershell
-.\.venv-review\Scripts\python.exe scripts/freeze_release.py --bike-model counts --operator "YOUR NAME" --reason "Team release decision"
-.\.venv-review\Scripts\python.exe scripts/evaluate_final_tests.py --mushroom-csv "PATH TO TEACHER CSV" --bike-daily "PATH TO ANNUAL DAILY CSV" --acknowledge-final-test
-```
-
-Use `weather_cpu` or `weather_gru` for a weather release, and add `--forecasts "PATH TO FORECAST DAILY CSV"` when scoring. Keep predictions and `reports/final_test_results.json`, even if results are worse than development. A failed run needs review before any retry.
-
-## Hosting
+The server uses `PORT` (10000 on Render); locally it defaults to 8780. Manual restart: Render dashboard > cloudai-team > Manual Deploy > Deploy latest commit. Hosting does not depend on BESTIJA or the AWS notebook remaining on.
 
 ```bash
 docker build -t cloudai .
 docker run --rm -p 8780:8780 cloudai
 ```
 
-[Public app](https://cloudai-team.onrender.com). Render service: `cloudai-team`, Free, Frankfurt. No payment method added. The first public checks passed for all three bike models, both mushroom rules and invalid-input rejection: [evidence](../reports/hosting_initial_verification.json). First serving commit: `216d84ede004c8ebaa07d118bc41494040f3fafc`.
+A code push runs a training-only CPU candidate build, release checks and a Docker build. The candidates remain separate build artifacts. While `release_decision.json` exists, Docker packages the exact frozen files from `models/`; it does not replace them with a fresh fit. This protects the tested release. Promoting a future candidate needs a new evaluation plan, not reuse of this final set.
 
-The server uses the host's `PORT` value (10000 on Render); locally it defaults to 8780. `render.yaml` records the free service setup. To restart manually: Render dashboard > `cloudai-team` > Manual Deploy > Deploy latest commit. Initial startup and a later redeployment passed public checks. Idle wake-up timing was not measured separately.
+After checks pass on main, GitHub requests deployment of that exact commit using the private `DEPLOY_WEBHOOK` secret. Render's native auto-deploy is off. No secret is committed. The earlier model rebuild and automatic update passed: [run 38448457190](https://github.com/viviana-pajic/CloudAI_The-best-DL-group-in-the-world-ever/actions/runs/38448457190), [evidence](../reports/hosting_update_verification.json).
 
-The free service sleeps after 15 idle minutes and usually takes about a minute to wake. Open it before the demonstration. Linux checks loaded all model paths at about 437 MB; the free limit is 512 MB. Check the deployed service too. [Render free limits](https://render.com/docs/free).
-
-## Automatic updates
-
-The GitHub workflow passed its CPU model rebuild, app checks and Docker build. The GPU-trained GRU artifact stays frozen. A new mushroom fit and its recalibrated threshold travel together in `model_manifest.json`.
-
-The Docker build repeats the CPU training-only search and packages the resulting models and recalibrated cutoff. `reports/hosting_build.json` records the build. The GRU artifact stays frozen. These are hosting builds, not additional AWS runs.
-
-`/health` shows the deployed commit, model hashes and cutoff. This service uses the public repository connection. Its deployment link is stored privately as GitHub repository secret `DEPLOY_WEBHOOK`. After all checks pass on `main`, the workflow requests that exact commit. Render's native auto-deploy is off; the workflow controls updates.
-
-Verified on 13 October: [GitHub run 38448457190](https://github.com/viviana-pajic/CloudAI_The-best-DL-group-in-the-world-ever/actions/runs/38448457190) triggered Render via Deploy Hook. The public API served commit `3b8a78c3c7017cf5ac86e68521534f8b8a3a8f78`, and all checks passed again: [evidence](../reports/hosting_update_verification.json). The CPU fits were rebuilt; unchanged data and settings produced unchanged model hashes. The GRU stayed frozen. Later documentation commits do not change this serving code version.
-
-To check that version again:
+`/health` shows the serving commit, all four model hashes, frozen decision hash and test completion. `/api/release` returns saved final scores. Public verification compares hashes, saved scores and training-side example predictions with the repository. It also checks invalid inputs and the missing-weather fallback. It does not rerun final tests.
 
 ```bash
-python scripts/verify_hosted.py --url https://cloudai-team.onrender.com --expected-commit 3b8a78c3c7017cf5ac86e68521534f8b8a3a8f78 --output reports/hosting_recheck.json
+python scripts/verify_hosted.py --url https://cloudai-team.onrender.com --expected-commit FULL_SERVING_COMMIT --output reports/hosting_final_verification.json
 ```
 
-A teammate must review the cloud outputs and reproduce the release. Agree the final artifacts, save final-test outputs and submit the repository link in Canvas before 15 October, 23:59.
+Later documentation-only commits may be newer than the serving code commit. The final verification report records the checked version.
+
+## Before submission
+
+- Each teammate reviews both final notebooks, AWS outputs and the demo.
+- Rehearse explaining the inputs, splits, missing values, thresholds and fallback.
+- Submit the repository link in Canvas by 15 October 2026, 23:59. Verify lecturer access and save the receipt.
+- Keep free hosting available for assessment and check it before the 23 October oral.

@@ -23,7 +23,7 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def download(start: str, end: str, name: str):
+def download(start: str, end: str, name: str, allow_missing=False):
     OUT.mkdir(parents=True, exist_ok=True)
     padded_end = (pd.Timestamp(end) + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
     params = {
@@ -90,16 +90,18 @@ def download(start: str, end: str, name: str):
     missing_hours = expected.difference(trimmed.index)
     if len(missing_hours):
         raise RuntimeError(f"Missing{len(missing_hours)} real NYC hours; do not silently fill.")
-    if trimmed.isna().any().any():
+    if trimmed.isna().any().any() and not allow_missing:
         nulls = trimmed.isna().sum().to_dict()
         raise RuntimeError(f"Archived forecasts contain unavailable values: {nulls}")
-    if not np.isfinite(trimmed.to_numpy()).all():
+    if np.isinf(trimmed.to_numpy()).any():
         raise RuntimeError("Nonfinite archived forecasts.")
     dates = trimmed.index.tz_localize(None).normalize()
     grouped = trimmed.groupby(dates)
     daily = grouped.agg(["mean", "min", "max"])
     daily.columns = [f"forecast_temp_day{1 if 'day1' in variable else 2}_{statistic}"
                      for variable, statistic in daily.columns]
+    incomplete = trimmed.isna().any(axis=1).groupby(dates).any()
+    daily.loc[incomplete, :] = np.nan
     daily.index.name = "date"
     daily_name = ("forecast_daily_temperature.csv" if name == "gfs_jan_sep_2023" else
                   "forecast_daily_temperature_2022.csv" if name == "gfs_2022" else f"{name}_daily_temperature.csv")
@@ -122,7 +124,9 @@ def download(start: str, end: str, name: str):
         "hour_counts_distribution": hour_counts.value_counts().sort_index().to_dict(),
         "non_24_hour_days": {date.strftime("%Y-%m-%d"): int(count) for date, count in hour_counts.items() if count != 24},
         "excluded_boundary_hours": len(frame) - len(trimmed),
-        "missing_hours": 0, "missing_forecast_values": 0,
+        "missing_hours": 0, "missing_forecast_values": int(trimmed.isna().sum().sum()),
+        "incomplete_dates": [str(d.date()) for d in incomplete.index[incomplete]],
+        "missing_policy": "Keep incomplete days null; use frozen counts-only fallback. No weather imputation." if allow_missing else "Reject unavailable values.",
         "dst_policy": "Request Unix UTC timestamps, convert each instant with America/New_York timezone rules, then aggregate by actual local date. Never reuse the response fixed UTC offset across the date range.",
         "aggregation": "Mean/min/max of hourly temperature forecasts for each true local calendar date, preserving23h/25h DST days.",
         "mushroom_or_bike_labels_read": False,

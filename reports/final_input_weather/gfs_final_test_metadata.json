@@ -1,0 +1,85 @@
+{
+  "endpoint": "https://previous-runs-api.open-meteo.com/v1/forecast",
+  "request_url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=40.7128&longitude=-74.0060&start_date=2023-09-24&end_date=2024-01-01&hourly=temperature_2m_previous_day1%2Ctemperature_2m_previous_day2&models=gfs_global&timezone=America%2FNew_York&timeformat=unixtime&temperature_unit=celsius",
+  "parameters": {
+    "latitude": "40.7128",
+    "longitude": "-74.0060",
+    "start_date": "2023-09-24",
+    "end_date": "2024-01-01",
+    "hourly": "temperature_2m_previous_day1,temperature_2m_previous_day2",
+    "models": "gfs_global",
+    "timezone": "America/New_York",
+    "timeformat": "unixtime",
+    "temperature_unit": "celsius"
+  },
+  "requested_at_utc": "2026-10-13T19:02:56.853850+00:00",
+  "included_local_date_range": {
+    "start": "2023-09-24",
+    "end": "2023-12-31"
+  },
+  "boundary_padding_policy": "Request one extra end date because the API uses a fixed current UTC offset. Trim to the explicitly permitted Jan-Sep local dates after Unix timestamp conversion.",
+  "documentation": "https://open-meteo.com/en/docs/previous-runs-api",
+  "timezone_documentation": "https://open-meteo.com/en/docs",
+  "license_page": "https://open-meteo.com/en/licence",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Weather forecasts by Open-Meteo.com, sourced from NOAA GFS; transformed into daily NYC temperature summaries.",
+  "no_paid_endpoint_or_key": true,
+  "forecast_leads": {
+    "previous_day1": "24h before each valid hour; optional research ablation",
+    "previous_day2": "48h before each valid hour; primary conservative research input"
+  },
+  "availability_assumption": "Archive is an initialization-time proxy, not historical API publication timestamps. 48h lead leaves at least24h before the midnight prediction cutoff even on a25h NYC fall-DST day. Actual publication availability cannot be proved from the response alone.",
+  "data_contract": "Forecast-assisted models require these forecast inputs at inference. This is separate from the existing counts-only API.",
+  "http_status": 200,
+  "response_headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "Date": "Tue, 13 Oct 2026 19:02:56 GMT",
+    "ETag": null,
+    "Last-Modified": null
+  },
+  "cached_response_reused": true,
+  "download_success": true,
+  "raw_response_sha256": "8783217d0ffcba851f3e466e61a4c5bad02f355a49c45925815ec3fc3c7563e1",
+  "raw_response_bytes": 48541,
+  "daily_features_file": "gfs_final_test_daily_temperature.csv",
+  "hourly_features_file": "gfs_final_test_hourly_temperature.csv",
+  "daily_features_sha256": "3e728b2180ea441abc14acb4795a35e7fa0fe75354817d0d707f017393c1b8a2",
+  "hourly_features_sha256": "3e541214da70fa611acfd2aa992a96577c7aebce34a1c286cc0b69a2409e9990",
+  "response_summary": {
+    "latitude": 40.709396,
+    "longitude": -74.0625,
+    "elevation": 32.0,
+    "timezone": "America/New_York",
+    "timezone_abbreviation": "GMT-4",
+    "utc_offset_seconds": -14400,
+    "hourly_units": {
+      "time": "unixtime",
+      "temperature_2m_previous_day1": "\u00c2\u00b0C",
+      "temperature_2m_previous_day2": "\u00c2\u00b0C"
+    }
+  },
+  "raw_hours": 2400,
+  "included_real_local_hours": 2377,
+  "included_days": 99,
+  "hour_counts_distribution": {
+    "24": 98,
+    "25": 1
+  },
+  "non_24_hour_days": {
+    "2023-11-05": 25
+  },
+  "excluded_boundary_hours": 23,
+  "missing_hours": 0,
+  "missing_forecast_values": 106,
+  "incomplete_dates": [
+    "2023-12-29",
+    "2023-12-30",
+    "2023-12-31"
+  ],
+  "missing_policy": "Keep incomplete days null; use frozen counts-only fallback. No weather imputation.",
+  "dst_policy": "Request Unix UTC timestamps, convert each instant with America/New_York timezone rules, then aggregate by actual local date. Never reuse the response fixed UTC offset across the date range.",
+  "aggregation": "Mean/min/max of hourly temperature forecasts for each true local calendar date, preserving23h/25h DST days.",
+  "mushroom_or_bike_labels_read": false,
+  "reserved_original_test_targets_read": false
+}

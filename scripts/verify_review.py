@@ -86,8 +86,13 @@ def main():
             payload=mushroom_example();payload['policy']=policy
             status,body=request('/api/mushroom/predict',payload);assert status==200,body
             checks['mushroom_'+policy]=status
+        sample=bike_example('weather_gru');sample['forecasts']=[]
+        status,body=request('/api/bike/predict',sample);assert status==200,body
+        fallback=json.loads(body);assert fallback['missing_forecast_fallback']
+        np.testing.assert_allclose(fallback['unrounded_prediction'],predictions['counts']['prediction'],rtol=1e-10,atol=1e-6)
+        checks['missing_weather_fallback']=status
         invalid=[]
-        sample=bike_example('weather_gru');sample['forecasts']=[];invalid.append(('/api/bike/predict',sample))
+        sample=bike_example('weather_cpu');sample['forecasts']=[];invalid.append(('/api/bike/predict',sample))
         sample=bike_example('counts');sample['prior_counts']=sample['prior_counts'][:-1];invalid.append(('/api/bike/predict',sample))
         sample=bike_example('counts');sample['prior_counts'][0]=-1;invalid.append(('/api/bike/predict',sample))
         sample=bike_example('counts');sample['prediction_date']='not-a-date';invalid.append(('/api/bike/predict',sample))

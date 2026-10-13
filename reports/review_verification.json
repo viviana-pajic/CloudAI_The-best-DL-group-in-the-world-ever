@@ -1,5 +1,5 @@
 {
-  "utc": "2026-10-13T18:16:04.898778+00:00",
+  "utc": "2026-10-13T19:09:01.105888+00:00",
   "mode": "frozen",
   "packages": {
     "numpy": "2.5.3",
@@ -41,7 +41,8 @@
     "bike_weather_cpu": 200,
     "bike_weather_gru": 200,
     "mushroom_cautious": 200,
-    "mushroom_default": 200
+    "mushroom_default": 200,
+    "missing_weather_fallback": 200
   },
   "invalid_inputs_rejected": 5,
   "passed": true

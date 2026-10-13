@@ -17,6 +17,7 @@ Read saved outputs in this order. The original class comparisons and later resea
 | [08](../mushrooms/08_extra_trees.ipynb) | Extra Trees training and calibration |
 | [09](../mushrooms/09_model_comparison.ipynb) | Frozen research comparison |
 | [10](../mushrooms/10_aws_extra_trees.ipynb) | AWS Extra Trees training, tuning and cutoff - executed |
+| [11](../mushrooms/11_final_test.ipynb) | Frozen release, final results and alarm tradeoff |
 
 ## Citi Bike
 
@@ -39,7 +40,8 @@ Read saved outputs in this order. The original class comparisons and later resea
 | [14](../citibike/14_weather_gru_catboost.ipynb) | GRU weather blend |
 | [15](../citibike/15_model_comparison.ipynb) | Frozen research comparison |
 | [16](../citibike/16_aws_cpu.ipynb) | AWS CPU blend training and tuning - executed |
-| [17](../citibike/17_aws_gru_optional.ipynb) | Optional AWS GPU training - pending |
+| [17](../citibike/17_aws_gru_optional.ipynb) | Optional AWS GPU training - not needed for release |
+| [18](../citibike/18_final_test.ipynb) | Frozen release, final forecasts, fallback and errors |
 
 The app uses bike research candidates trained through June. Citi Bike 10 retains the earlier September-fitted class pilot.
 

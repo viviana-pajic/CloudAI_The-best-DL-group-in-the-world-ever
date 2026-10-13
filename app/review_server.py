@@ -10,6 +10,7 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.review_models import BIKES, load_model, predict_mushroom, predict_bike, bike_example, mushroom_example
+from src.release_integrity import release_summary, verify_release
 
 class Handler(BaseHTTPRequestHandler):
     def respond(self, status, content, kind='application/json'):
@@ -30,7 +31,17 @@ class Handler(BaseHTTPRequestHandler):
             return self.respond(200, {'ready': True, 'models': list(BIKES),
                 'release': os.environ.get('RENDER_GIT_COMMIT', 'local-review'),
                 'model_origin': manifest['origin'], 'model_sha256': manifest['sha256'],
-                'mushroom_cautious_threshold': manifest['mushroom_cautious_threshold']})
+                'mushroom_cautious_threshold': manifest['mushroom_cautious_threshold'],
+                'frozen_release': release_summary(),
+                'final_tests_complete': (ROOT/'reports/final_test_results.json').is_file()})
+        if path.path == '/api/release':
+            file = ROOT/'reports/final_test_results.json'
+            if not file.is_file():
+                return self.respond(200, {'status': 'pending', 'release': release_summary()})
+            record = json.loads(file.read_text(encoding='utf-8'))
+            return self.respond(200, {n: record[n] for n in
+                ['status', 'decision_sha256', 'mushrooms', 'mushrooms_default', 'mushroom_test_rows',
+                 'citibike', 'citibike_lag_7', 'bike_test_days', 'bike_fallback_dates', 'citibike_weather_complete', 'citibike_lag_7_weather_complete', 'note', 'weather_limit']})
         if path.path == '/api/mushroom/example':
             return self.respond(200, mushroom_example())
         if path.path == '/api/bike/example':
@@ -71,6 +82,7 @@ def main():
     parser.add_argument('--host', default='127.0.0.1')
     parser.add_argument('--port', type=int, default=int(os.environ.get('PORT', '8780')))
     args = parser.parse_args()
+    verify_release()
     for filename in ('mushroom_extra_trees.joblib', 'citibike_counts_xgboost.joblib', 'citibike_weather_cpu.joblib'):
         load_model(filename)
     server = ThreadingHTTPServer((args.host, args.port), Handler)

@@ -153,6 +153,9 @@ def bike_frame(payload):
     return key, X
 
 def predict_bike(payload):
+    fallback = isinstance(payload, dict) and payload.get('model') == 'weather_gru' and payload.get('forecasts') == []
+    if fallback:
+        payload = {**payload, 'model': 'counts'}
     key, X = bike_frame(payload)
     try:
         model = load_model(BIKES[key]['file'])
@@ -164,7 +167,8 @@ def predict_bike(payload):
         raise RuntimeError('The model produced an invalid forecast.')
     return {'model': BIKES[key]['name'], 'prediction_date': payload['prediction_date'],
             'predicted_rides': round(count), 'unrounded_prediction': count,
-            'note': 'One-day forecast using completed prior counts. Historical example; no live feed is connected.'}
+            'missing_forecast_fallback': fallback,
+            'note': ('Temperature forecasts unavailable: counts-only XGBoost fallback. ' if fallback else '') + 'One-day forecast using completed prior counts. Historical example; no live feed is connected.'}
 
 def bike_example(key):
     if key not in BIKES:
