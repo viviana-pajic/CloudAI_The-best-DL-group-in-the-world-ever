@@ -1,0 +1,64 @@
+{
+  "selection_source": "Search-only CV, five-fold rechecks and repeated-seed stability. No calibration or confirmation scores used to choose ranges.",
+  "suggestions": [
+    {
+      "candidate": "v3_extra_trees_0094",
+      "family": "extra_trees",
+      "selection_goal": "ranking",
+      "selected_for_goals": [
+        "ranking",
+        "high_recall"
+      ],
+      "training_random_seed": 20261010,
+      "first_aws_run": {
+        "family": "extra_trees",
+        "features": {
+          "include_noise": false,
+          "engineered": true,
+          "missing_counts": false,
+          "drop_spore": false
+        },
+        "preprocessing": {
+          "numeric_missing": "iterative",
+          "missing_flags": false,
+          "categorical_missing": "constant",
+          "scale": null,
+          "encoding": "onehot",
+          "min_frequency": 3
+        },
+        "params": {
+          "n_estimators": 600,
+          "max_depth": null,
+          "min_samples_leaf": 2,
+          "max_features": 0.7007270656907509,
+          "criterion": "log_loss",
+          "class_weight": null,
+          "bootstrap": true,
+          "max_samples": 0.9576950747515476
+        }
+      },
+      "optional_parameter_grid": {
+        "n_estimators": [
+          600,
+          150
+        ],
+        "min_samples_leaf": [
+          2
+        ],
+        "max_features": [
+          0.7007270656907509,
+          0.6666395149213417
+        ]
+      },
+      "maximum_grid_combinations": 4,
+      "source_search_records": [
+        "v3_extra_trees_0095",
+        "v3_extra_trees_0094"
+      ],
+      "training_device_note": "Use CPU for tree ensembles. A GPU is not needed for this small dataset; XGBoost may be trained with device=cpu without changing the parameter grid."
+    }
+  ],
+  "evaluation_note": "Keep informative duplicate groups together in CV. Fit preprocessing inside each fold. Reserve separate data for threshold calibration and final testing.",
+  "threshold_note": "After training on AWS, choose a new threshold on the separate calibration set. Do not copy the old model's threshold onto a newly fitted model.",
+  "scope_note": "Reproduce the exact selected configuration before trying an optional small grid. More search is not required by these local results."
+}

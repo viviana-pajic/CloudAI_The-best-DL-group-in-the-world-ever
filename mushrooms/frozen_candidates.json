@@ -1,0 +1,1739 @@
+{
+  "frozen_utc": "2026-10-10T11:30:49.677278+00:00",
+  "confirmation_accessed": false,
+  "model_training_seed": 20261010,
+  "starter_forest_comparison_note": "Starter-settings forest (150 trees, minimum leaf size 3), freshly fitted on the 2,559 research search rows with seed 20261010. This is not the earlier repository artifact or its published split/results.",
+  "development_data_sha256": "aa2802a482c3788f558a8d2dbedefd31e81663cc7c9b083e10ea816f0e4c37b9",
+  "partition_manifest_sha256": "90089407511ec4bde55e395a091fda8d0681c423d33f89f24b7ee37fae9f2eb0",
+  "precalibration_selection_sha256": "311497224691749b32971f059e6f9286eb0f2190dbda6671f7b0c79a7d614bc8",
+  "source_sha256": {
+    "search.py": "fbb3b804132e70425053c2904a42ed609c3609090bbb69b2b01bc4fcbb777480",
+    "folds.py": "15693f28b353aea80de9f2c1e895c43dd3ae71964791f130fcdafde5aa811b25",
+    "finalize.py": "2e1f1712ab3f36d5737045ec760ca18c0a945b26c91fc51d522465e9ccd8a1f3",
+    "high_recall.py": "c9be72f8dbddf7d0b4d7f51bda8d869351df07ecb0dd48eb6176e85c1cbe5509",
+    "confirm.py": "5b546ea7ac5d39dcfe83089a6f6bc02e3fdb2afffc5874fe718558d2cf253bc8",
+    "../common/hardware.py": "2ad42b2460e7b9a20a407706071917872ebcc6d7e2c3fc588052db6d5e9eba12",
+    "../common/protocol.py": "6aae8b02924b2beec73fc2e091dd3c597d6f2f0a866b7f4625158494befb2d3d",
+    "../common/uncertainty.py": "cc4eda454051f6dab5b634f609c82a4290596c1a49982887ff82ac2382b63245"
+  },
+  "precalibration_selection": {
+    "declared_utc": "2026-10-10T11:30:42.889071+00:00",
+    "selection_data": "Search-only CV and repeated-seed stability",
+    "primary_ranking_model": "v3_extra_trees_0094",
+    "primary_high_recall_model": "v3_extra_trees_0094",
+    "primary_high_recall_policy_target": 1.0,
+    "secondary_high_recall_targets": [
+      0.9,
+      0.95,
+      0.98,
+      0.995
+    ],
+    "candidate_names": [
+      "v3_extra_trees_0094",
+      "v3_random_forest_0085",
+      "v3_high_recall_random_forest_0048",
+      "reference_random_forest"
+    ],
+    "candidate_configurations": {
+      "v3_extra_trees_0094": {
+        "config": {
+          "family": "extra_trees",
+          "features": {
+            "include_noise": false,
+            "engineered": true,
+            "missing_counts": false,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "iterative",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": 3
+          },
+          "params": {
+            "n_estimators": 600,
+            "max_depth": null,
+            "min_samples_leaf": 2,
+            "max_features": 0.7007270656907509,
+            "criterion": "log_loss",
+            "class_weight": null,
+            "bootstrap": true,
+            "max_samples": 0.9576950747515476
+          }
+        },
+        "config_sha256": "5b8edd9f6e5afa5896df742978821808240a7930745789937439a0f36c3a4e0a"
+      },
+      "v3_random_forest_0085": {
+        "config": {
+          "family": "random_forest",
+          "features": {
+            "include_noise": false,
+            "engineered": false,
+            "missing_counts": true,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "median",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": 3
+          },
+          "params": {
+            "n_estimators": 600,
+            "max_depth": null,
+            "min_samples_leaf": 1,
+            "max_features": 0.34117402306616995,
+            "criterion": "log_loss",
+            "class_weight": null,
+            "bootstrap": true,
+            "max_samples": 0.9323795430463285
+          }
+        },
+        "config_sha256": "6f5d86b2e71376d97b9ffe03f6a8583dc6647e910f5ac1b58462d2c764ce534b"
+      },
+      "v3_high_recall_random_forest_0048": {
+        "config": {
+          "family": "random_forest",
+          "features": {
+            "include_noise": false,
+            "engineered": false,
+            "missing_counts": true,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "knn",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": null
+          },
+          "params": {
+            "n_estimators": 600,
+            "max_depth": null,
+            "min_samples_leaf": 1,
+            "max_features": 0.7592713888130099,
+            "criterion": "log_loss",
+            "class_weight": {
+              "0": 1.0,
+              "1": 5.0
+            },
+            "bootstrap": true,
+            "max_samples": 0.9696628025929537
+          }
+        },
+        "config_sha256": "f6602e46bad094a5842f070d85e50838aed668fd1aa88a5cd4105bdbbc7cfebb"
+      },
+      "reference_random_forest": {
+        "config": {
+          "family": "random_forest",
+          "features": {
+            "include_noise": false,
+            "engineered": false,
+            "missing_counts": false,
+            "drop_spore": false
+          },
+          "preprocessing": {
+            "numeric_missing": "median",
+            "missing_flags": false,
+            "categorical_missing": "constant",
+            "scale": null,
+            "encoding": "onehot",
+            "min_frequency": null
+          },
+          "params": {
+            "n_estimators": 150,
+            "min_samples_leaf": 3
+          }
+        },
+        "config_sha256": "5becaefb88bf006a53675836093f34e7d5905d8a69a7aa0fca97d7761cd8ea03"
+      }
+    },
+    "candidate_search_summary": {
+      "v3_extra_trees_0094": {
+        "family": "extra_trees",
+        "five_fold_ap": 0.7775568016339804,
+        "five_fold_high_recall_objective": 0.0727319543836329,
+        "stability_ap_mean": 0.779592019584412,
+        "stability_ap_std_across_seeds": 0.0042343861066355,
+        "stability_specificity95_mean": 0.2760646108663729,
+        "stability_objective": 0.7933952501277307,
+        "stability_high_recall_objective": 0.0660651626420637
+      },
+      "v3_random_forest_0085": {
+        "family": "random_forest",
+        "five_fold_ap": 0.7684598354832792,
+        "five_fold_high_recall_objective": 0.0586168441517721,
+        "stability_ap_mean": 0.7743722926299919,
+        "stability_ap_std_across_seeds": 0.006677703233195,
+        "stability_specificity95_mean": 0.2710299979022446,
+        "stability_objective": 0.787923792525104,
+        "stability_high_recall_objective": 0.0606005591436824
+      },
+      "v3_high_recall_random_forest_0048": {
+        "family": "random_forest",
+        "five_fold_ap": 0.7361557389957551,
+        "five_fold_high_recall_objective": 0.0620135323716353,
+        "stability_ap_mean": 0.7370514306352106,
+        "stability_ap_std_across_seeds": 0.0082455867586812,
+        "stability_specificity95_mean": 0.2787916928886092,
+        "stability_objective": 0.750991015279641,
+        "stability_high_recall_objective": 0.0584491395719899
+      },
+      "reference_random_forest": {
+        "family": "random_forest",
+        "five_fold_ap": 0.7506775119038,
+        "five_fold_high_recall_objective": 0.0578890202220454,
+        "stability_ap_mean": 0.7542407487544655,
+        "stability_ap_std_across_seeds": 0.004500023869713,
+        "stability_specificity95_mean": 0.2401929934969582,
+        "stability_objective": 0.7662503984293134,
+        "stability_high_recall_objective": 0.0545607156070117
+      }
+    },
+    "frozen_mixtures": [
+      {
+        "name": "frozen_weighted_average",
+        "selection_goal": "ranking_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_random_forest_0085"
+        ],
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "mode": "mean",
+        "ap": 0.777271819819702,
+        "cv_ap_mean": 0.7812554701540889,
+        "tuning_specificity_at_recall_0.95": 0.28319697923222154,
+        "tuning_specificity_at_recall_0.98": 0.11327879169288857,
+        "tuning_specificity_at_recall_0.995": 0.03587161736941469,
+        "tuning_specificity_at_recall_1.0": 0.017621145374449365,
+        "ranking_objective": 0.7954153191157,
+        "high_recall_objective": 0.06852286336321567
+      },
+      {
+        "name": "frozen_max_risk",
+        "selection_goal": "high_recall_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_high_recall_random_forest_0048"
+        ],
+        "weights": [
+          1.0,
+          1.0
+        ],
+        "mode": "max",
+        "ap": 0.7467692245740598,
+        "cv_ap_mean": 0.7493505055656857,
+        "tuning_specificity_at_recall_0.95": 0.289490245437382,
+        "tuning_specificity_at_recall_0.98": 0.1258653241032096,
+        "tuning_specificity_at_recall_0.995": 0.03901825047199492,
+        "tuning_specificity_at_recall_1.0": 0.015103838892385202,
+        "ranking_objective": 0.7638250178375549,
+        "high_recall_objective": 0.07097635991610307
+      }
+    ],
+    "confirmation_accessed": false,
+    "calibration_used_for_model_selection": false
+  },
+  "final_test_accessed": false,
+  "positive_class": "p",
+  "candidates": [
+    {
+      "name": "v3_extra_trees_0094",
+      "family": "extra_trees",
+      "config": {
+        "family": "extra_trees",
+        "features": {
+          "include_noise": false,
+          "engineered": true,
+          "missing_counts": false,
+          "drop_spore": false
+        },
+        "preprocessing": {
+          "numeric_missing": "iterative",
+          "missing_flags": false,
+          "categorical_missing": "constant",
+          "scale": null,
+          "encoding": "onehot",
+          "min_frequency": 3
+        },
+        "params": {
+          "n_estimators": 600,
+          "max_depth": null,
+          "min_samples_leaf": 2,
+          "max_features": 0.7007270656907509,
+          "criterion": "log_loss",
+          "class_weight": null,
+          "bootstrap": true,
+          "max_samples": 0.9576950747515476
+        }
+      },
+      "selection_goal": "ranking",
+      "selected_for_goals": [
+        "ranking",
+        "high_recall"
+      ],
+      "artifact_path": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\v3_extra_trees_0094.joblib",
+      "artifact_sha256": "a80255f02d07f1be6e42ec614e8430a2cb70477c47cf9db727358dfaafab1bc5",
+      "calibration_predictions": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\v3_extra_trees_0094_calibration.csv",
+      "calibration_predictions_sha256": "bfe30ff22fa8dfb39f827586104f4c22255048cd795314540534d4cd43495e6f",
+      "inference_validation": {
+        "inference_device": "cpu",
+        "training_threads": 4,
+        "inference_threads": 1,
+        "reason": "Deterministic tree probability aggregation before threshold selection",
+        "reload_max_absolute_difference": 0.0,
+        "calibration_score_dtype": "float64",
+        "reloaded_score_dtype": "float64",
+        "calibration_score_rows": 640
+      },
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "calibration": {
+            "ap": 0.8099185659449056,
+            "roc_auc": 0.8529735454130154,
+            "log_loss": 0.45530599411889405,
+            "accuracy": 0.6390625,
+            "poison_recall": 0.9008264462809917,
+            "edible_specificity": 0.4798994974874372,
+            "poison_precision": 0.5129411764705882,
+            "threshold": 0.20515476190476195,
+            "tn": 191,
+            "fp": 207,
+            "fn": 24,
+            "tp": 218
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "calibration": {
+            "ap": 0.8099185659449056,
+            "roc_auc": 0.8529735454130154,
+            "log_loss": 0.45530599411889405,
+            "accuracy": 0.5578125,
+            "poison_recall": 0.9504132231404959,
+            "edible_specificity": 0.31909547738693467,
+            "poison_precision": 0.4590818363273453,
+            "threshold": 0.14672023809523813,
+            "tn": 127,
+            "fp": 271,
+            "fn": 12,
+            "tp": 230
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "calibration": {
+            "ap": 0.8099185659449056,
+            "roc_auc": 0.8529735454130154,
+            "log_loss": 0.45530599411889405,
+            "accuracy": 0.4609375,
+            "poison_recall": 0.9834710743801653,
+            "edible_specificity": 0.14321608040201006,
+            "poison_precision": 0.4110535405872193,
+            "threshold": 0.08377777777777777,
+            "tn": 57,
+            "fp": 341,
+            "fn": 4,
+            "tp": 238
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "calibration": {
+            "ap": 0.8099185659449056,
+            "roc_auc": 0.8529735454130154,
+            "log_loss": 0.45530599411889405,
+            "accuracy": 0.4234375,
+            "poison_recall": 0.9958677685950413,
+            "edible_specificity": 0.07537688442211055,
+            "poison_precision": 0.3957307060755337,
+            "threshold": 0.0600873015873016,
+            "tn": 30,
+            "fp": 368,
+            "fn": 1,
+            "tp": 241
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "calibration": {
+            "ap": 0.8099185659449056,
+            "roc_auc": 0.8529735454130154,
+            "log_loss": 0.45530599411889405,
+            "accuracy": 0.40625,
+            "poison_recall": 1.0,
+            "edible_specificity": 0.04522613065326633,
+            "poison_precision": 0.3890675241157556,
+            "threshold": 0.0398015873015873,
+            "tn": 18,
+            "fp": 380,
+            "fn": 0,
+            "tp": 242
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "calibration": {
+            "ap": 0.8099185659449056,
+            "roc_auc": 0.8529735454130154,
+            "log_loss": 0.45530599411889405,
+            "accuracy": 0.7984375,
+            "poison_recall": 0.628099173553719,
+            "edible_specificity": 0.9020100502512562,
+            "poison_precision": 0.7958115183246073,
+            "threshold": 0.5,
+            "tn": 359,
+            "fp": 39,
+            "fn": 90,
+            "tp": 152
+          }
+        }
+      ],
+      "search_metrics": {
+        "ap": 0.7736238398397319,
+        "roc_auc": 0.832287050793795,
+        "log_loss": 0.49010001421811256,
+        "accuracy": 0.7874169597499023,
+        "poison_recall": 0.5876288659793815,
+        "edible_specificity": 0.9093769666456891,
+        "poison_precision": 0.7983193277310925,
+        "threshold": 0.5,
+        "tn": 1445,
+        "fp": 144,
+        "fn": 400,
+        "tp": 570,
+        "cv_ap_mean": 0.7775568016339804,
+        "cv_ap_std": 0.03695153236640505,
+        "train_ap_mean": 0.9962268557805396,
+        "seconds": 6.00012629997218,
+        "folds": [
+          {
+            "fold": 0,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 0.9693825999856927,
+            "ap": 0.8108709181113505,
+            "roc_auc": 0.857177591908189,
+            "log_loss": 0.4696919119895837,
+            "accuracy": 0.783203125,
+            "poison_recall": 0.5773195876288659,
+            "edible_specificity": 0.9088050314465409,
+            "poison_precision": 0.7943262411347518,
+            "threshold": 0.5,
+            "tn": 289,
+            "fp": 29,
+            "fn": 82,
+            "tp": 112
+          },
+          {
+            "fold": 1,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.1386299000005238,
+            "ap": 0.8018979794762051,
+            "roc_auc": 0.8440316410555664,
+            "log_loss": 0.46899065378697585,
+            "accuracy": 0.81640625,
+            "poison_recall": 0.6288659793814433,
+            "edible_specificity": 0.9308176100628931,
+            "poison_precision": 0.8472222222222222,
+            "threshold": 0.5,
+            "tn": 296,
+            "fp": 22,
+            "fn": 72,
+            "tp": 122
+          },
+          {
+            "fold": 2,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.2103172999923117,
+            "ap": 0.7100411531565707,
+            "roc_auc": 0.7866335991700706,
+            "log_loss": 0.5430480879650591,
+            "accuracy": 0.7578125,
+            "poison_recall": 0.5309278350515464,
+            "edible_specificity": 0.8962264150943396,
+            "poison_precision": 0.7573529411764706,
+            "threshold": 0.5,
+            "tn": 285,
+            "fp": 33,
+            "fn": 91,
+            "tp": 103
+          },
+          {
+            "fold": 3,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.1953285000054166,
+            "ap": 0.7663969298576349,
+            "roc_auc": 0.8272547494002465,
+            "log_loss": 0.49709561243459033,
+            "accuracy": 0.7890625,
+            "poison_recall": 0.6030927835051546,
+            "edible_specificity": 0.9025157232704403,
+            "poison_precision": 0.7905405405405406,
+            "threshold": 0.5,
+            "tn": 287,
+            "fp": 31,
+            "fn": 77,
+            "tp": 117
+          },
+          {
+            "fold": 4,
+            "train_rows": 2048,
+            "validation_rows": 511,
+            "fit_seconds": 1.2032214000355452,
+            "ap": 0.7985770275681414,
+            "roc_auc": 0.8487593092458292,
+            "log_loss": 0.47163774579634243,
+            "accuracy": 0.7906066536203522,
+            "poison_recall": 0.5979381443298969,
+            "edible_specificity": 0.9085173501577287,
+            "poison_precision": 0.8,
+            "threshold": 0.5,
+            "tn": 288,
+            "fp": 29,
+            "fn": 78,
+            "tp": 116
+          }
+        ],
+        "n_splits": 5,
+        "cv_seed": 20261010,
+        "fold_fingerprint": "bf2c02d8ca3b8612f843343484a74cd992f136977c5ed016078f5976d5788f21",
+        "cv_protocol": "stratified_feature_groups_v3_boundary_purged",
+        "tuning_specificity_at_recall_0.9": 0.4625550660792952,
+        "tuning_threshold_at_recall_0.9": 0.2215284391534391,
+        "tuning_achieved_recall_0.9": 0.9,
+        "tuning_specificity_at_recall_0.95": 0.28067967275015737,
+        "tuning_threshold_at_recall_0.95": 0.15269444444444447,
+        "tuning_achieved_recall_0.95": 0.9505154639175257,
+        "tuning_specificity_at_recall_0.98": 0.10950283196979227,
+        "tuning_threshold_at_recall_0.98": 0.08546428571428571,
+        "tuning_achieved_recall_0.98": 0.9804123711340206,
+        "tuning_specificity_at_recall_0.995": 0.03838892385147896,
+        "tuning_threshold_at_recall_0.995": 0.0513611111111111,
+        "tuning_achieved_recall_0.995": 0.9958762886597938,
+        "tuning_specificity_at_recall_1.0": 0.02706104468219006,
+        "tuning_threshold_at_recall_1.0": 0.04084722222222222,
+        "tuning_achieved_recall_1.0": 1.0,
+        "search_objective": 0.7915907852714883
+      },
+      "trained_rows": 2559,
+      "threshold_calibration_rows": 640
+    },
+    {
+      "name": "v3_random_forest_0085",
+      "family": "random_forest",
+      "config": {
+        "family": "random_forest",
+        "features": {
+          "include_noise": false,
+          "engineered": false,
+          "missing_counts": true,
+          "drop_spore": false
+        },
+        "preprocessing": {
+          "numeric_missing": "median",
+          "missing_flags": false,
+          "categorical_missing": "constant",
+          "scale": null,
+          "encoding": "onehot",
+          "min_frequency": 3
+        },
+        "params": {
+          "n_estimators": 600,
+          "max_depth": null,
+          "min_samples_leaf": 1,
+          "max_features": 0.34117402306616995,
+          "criterion": "log_loss",
+          "class_weight": null,
+          "bootstrap": true,
+          "max_samples": 0.9323795430463285
+        }
+      },
+      "selection_goal": "ranking",
+      "selected_for_goals": [
+        "ranking"
+      ],
+      "artifact_path": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\v3_random_forest_0085.joblib",
+      "artifact_sha256": "05224f09087990c840eed7cf436b6ccec375b21f7967554121388c624cc0e4bb",
+      "calibration_predictions": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\v3_random_forest_0085_calibration.csv",
+      "calibration_predictions_sha256": "e7104b8dd279abe1e07935de4bb2022bd2b27f1ba47681984bdc020ccd83dae4",
+      "inference_validation": {
+        "inference_device": "cpu",
+        "training_threads": 4,
+        "inference_threads": 1,
+        "reason": "Deterministic tree probability aggregation before threshold selection",
+        "reload_max_absolute_difference": 0.0,
+        "calibration_score_dtype": "float64",
+        "reloaded_score_dtype": "float64",
+        "calibration_score_rows": 640
+      },
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "calibration": {
+            "ap": 0.8029993768647958,
+            "roc_auc": 0.8522986835001454,
+            "log_loss": 0.45692234842281687,
+            "accuracy": 0.684375,
+            "poison_recall": 0.9008264462809917,
+            "edible_specificity": 0.5527638190954773,
+            "poison_precision": 0.5505050505050505,
+            "threshold": 0.22166666666666668,
+            "tn": 220,
+            "fp": 178,
+            "fn": 24,
+            "tp": 218
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "calibration": {
+            "ap": 0.8029993768647958,
+            "roc_auc": 0.8522986835001454,
+            "log_loss": 0.45692234842281687,
+            "accuracy": 0.575,
+            "poison_recall": 0.9504132231404959,
+            "edible_specificity": 0.34673366834170855,
+            "poison_precision": 0.46938775510204084,
+            "threshold": 0.155,
+            "tn": 138,
+            "fp": 260,
+            "fn": 12,
+            "tp": 230
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "calibration": {
+            "ap": 0.8029993768647958,
+            "roc_auc": 0.8522986835001454,
+            "log_loss": 0.45692234842281687,
+            "accuracy": 0.4609375,
+            "poison_recall": 0.9834710743801653,
+            "edible_specificity": 0.14321608040201006,
+            "poison_precision": 0.4110535405872193,
+            "threshold": 0.09166666666666666,
+            "tn": 57,
+            "fp": 341,
+            "fn": 4,
+            "tp": 238
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "calibration": {
+            "ap": 0.8029993768647958,
+            "roc_auc": 0.8522986835001454,
+            "log_loss": 0.45692234842281687,
+            "accuracy": 0.434375,
+            "poison_recall": 0.9958677685950413,
+            "edible_specificity": 0.09296482412060302,
+            "poison_precision": 0.4003322259136213,
+            "threshold": 0.07333333333333333,
+            "tn": 37,
+            "fp": 361,
+            "fn": 1,
+            "tp": 241
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "calibration": {
+            "ap": 0.8029993768647958,
+            "roc_auc": 0.8522986835001454,
+            "log_loss": 0.45692234842281687,
+            "accuracy": 0.4234375,
+            "poison_recall": 1.0,
+            "edible_specificity": 0.0728643216080402,
+            "poison_precision": 0.3960720130932897,
+            "threshold": 0.06666666666666667,
+            "tn": 29,
+            "fp": 369,
+            "fn": 0,
+            "tp": 242
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "calibration": {
+            "ap": 0.8029993768647958,
+            "roc_auc": 0.8522986835001454,
+            "log_loss": 0.45692234842281687,
+            "accuracy": 0.7953125,
+            "poison_recall": 0.5826446280991735,
+            "edible_specificity": 0.9246231155778895,
+            "poison_precision": 0.8245614035087719,
+            "threshold": 0.5,
+            "tn": 368,
+            "fp": 30,
+            "fn": 101,
+            "tp": 141
+          }
+        }
+      ],
+      "search_metrics": {
+        "ap": 0.7663726809037323,
+        "roc_auc": 0.8258176380139232,
+        "log_loss": 0.496346081686175,
+        "accuracy": 0.7850722938647909,
+        "poison_recall": 0.5814432989690722,
+        "edible_specificity": 0.9093769666456891,
+        "poison_precision": 0.7966101694915254,
+        "threshold": 0.5,
+        "tn": 1445,
+        "fp": 144,
+        "fn": 406,
+        "tp": 564,
+        "cv_ap_mean": 0.7684598354832792,
+        "cv_ap_std": 0.029161355828626934,
+        "train_ap_mean": 1.0,
+        "seconds": 5.625107700005174,
+        "folds": [
+          {
+            "fold": 0,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.0953973999712616,
+            "ap": 0.7968639594040828,
+            "roc_auc": 0.849526680931077,
+            "log_loss": 0.47804040202849063,
+            "accuracy": 0.794921875,
+            "poison_recall": 0.5979381443298969,
+            "edible_specificity": 0.9150943396226415,
+            "poison_precision": 0.8111888111888111,
+            "threshold": 0.5,
+            "tn": 291,
+            "fp": 27,
+            "fn": 78,
+            "tp": 116
+          },
+          {
+            "fold": 1,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.0425191999529488,
+            "ap": 0.800487093730557,
+            "roc_auc": 0.8419892368540489,
+            "log_loss": 0.47416765533318916,
+            "accuracy": 0.802734375,
+            "poison_recall": 0.5876288659793815,
+            "edible_specificity": 0.9339622641509434,
+            "poison_precision": 0.8444444444444444,
+            "threshold": 0.5,
+            "tn": 297,
+            "fp": 21,
+            "fn": 80,
+            "tp": 114
+          },
+          {
+            "fold": 2,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.0522622000426054,
+            "ap": 0.7206576830015612,
+            "roc_auc": 0.7871117811061402,
+            "log_loss": 0.5304815554698511,
+            "accuracy": 0.759765625,
+            "poison_recall": 0.5412371134020618,
+            "edible_specificity": 0.8930817610062893,
+            "poison_precision": 0.7553956834532374,
+            "threshold": 0.5,
+            "tn": 284,
+            "fp": 34,
+            "fn": 89,
+            "tp": 105
+          },
+          {
+            "fold": 3,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.0498141999705695,
+            "ap": 0.7569207905682191,
+            "roc_auc": 0.8220190624392142,
+            "log_loss": 0.5043840118533734,
+            "accuracy": 0.779296875,
+            "poison_recall": 0.5773195876288659,
+            "edible_specificity": 0.9025157232704403,
+            "poison_precision": 0.7832167832167832,
+            "threshold": 0.5,
+            "tn": 287,
+            "fp": 31,
+            "fn": 82,
+            "tp": 112
+          },
+          {
+            "fold": 4,
+            "train_rows": 2048,
+            "validation_rows": 511,
+            "fit_seconds": 1.0268381999921985,
+            "ap": 0.7673696507119756,
+            "roc_auc": 0.8313684997886109,
+            "log_loss": 0.4946534778791603,
+            "accuracy": 0.7886497064579256,
+            "poison_recall": 0.6030927835051546,
+            "edible_specificity": 0.9022082018927445,
+            "poison_precision": 0.7905405405405406,
+            "threshold": 0.5,
+            "tn": 286,
+            "fp": 31,
+            "fn": 77,
+            "tp": 117
+          }
+        ],
+        "n_splits": 5,
+        "cv_seed": 20261010,
+        "fold_fingerprint": "bf2c02d8ca3b8612f843343484a74cd992f136977c5ed016078f5976d5788f21",
+        "cv_protocol": "stratified_feature_groups_v3_boundary_purged",
+        "tuning_specificity_at_recall_0.9": 0.46129641283826306,
+        "tuning_threshold_at_recall_0.9": 0.22,
+        "tuning_achieved_recall_0.9": 0.9020618556701031,
+        "tuning_specificity_at_recall_0.95": 0.249842668344871,
+        "tuning_threshold_at_recall_0.95": 0.145,
+        "tuning_achieved_recall_0.95": 0.9515463917525773,
+        "tuning_specificity_at_recall_0.98": 0.11768407803650094,
+        "tuning_threshold_at_recall_0.98": 0.09166666666666666,
+        "tuning_achieved_recall_0.98": 0.9804123711340206,
+        "tuning_specificity_at_recall_0.995": 0.033354310887350525,
+        "tuning_threshold_at_recall_0.995": 0.05,
+        "tuning_achieved_recall_0.995": 0.9958762886597938,
+        "tuning_specificity_at_recall_1.0": 0.0037759597230963005,
+        "tuning_threshold_at_recall_1.0": 0.025,
+        "tuning_achieved_recall_1.0": 1.0,
+        "search_objective": 0.7809519689005228
+      },
+      "trained_rows": 2559,
+      "threshold_calibration_rows": 640
+    },
+    {
+      "name": "v3_high_recall_random_forest_0048",
+      "family": "random_forest",
+      "config": {
+        "family": "random_forest",
+        "features": {
+          "include_noise": false,
+          "engineered": false,
+          "missing_counts": true,
+          "drop_spore": false
+        },
+        "preprocessing": {
+          "numeric_missing": "knn",
+          "missing_flags": false,
+          "categorical_missing": "constant",
+          "scale": null,
+          "encoding": "onehot",
+          "min_frequency": null
+        },
+        "params": {
+          "n_estimators": 600,
+          "max_depth": null,
+          "min_samples_leaf": 1,
+          "max_features": 0.7592713888130099,
+          "criterion": "log_loss",
+          "class_weight": {
+            "0": 1.0,
+            "1": 5.0
+          },
+          "bootstrap": true,
+          "max_samples": 0.9696628025929537
+        }
+      },
+      "selection_goal": "high_recall",
+      "selected_for_goals": [
+        "high_recall"
+      ],
+      "artifact_path": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\v3_high_recall_random_forest_0048.joblib",
+      "artifact_sha256": "85978f68967ad245fb8f36c7289b2501333e5ab4609ea927f74570159f54e57d",
+      "calibration_predictions": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\v3_high_recall_random_forest_0048_calibration.csv",
+      "calibration_predictions_sha256": "5c0cdb272ea19be9d78f02d80e1f83f75733de9a96eba17cc0884029f7ba18bf",
+      "inference_validation": {
+        "inference_device": "cpu",
+        "training_threads": 4,
+        "inference_threads": 1,
+        "reason": "Deterministic tree probability aggregation before threshold selection",
+        "reload_max_absolute_difference": 0.0,
+        "calibration_score_dtype": "float64",
+        "reloaded_score_dtype": "float64",
+        "calibration_score_rows": 640
+      },
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "calibration": {
+            "ap": 0.7983700879600997,
+            "roc_auc": 0.8448388637401885,
+            "log_loss": 0.4770131278468681,
+            "accuracy": 0.6703125,
+            "poison_recall": 0.9008264462809917,
+            "edible_specificity": 0.5301507537688442,
+            "poison_precision": 0.5382716049382716,
+            "threshold": 0.2866666666666667,
+            "tn": 211,
+            "fp": 187,
+            "fn": 24,
+            "tp": 218
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "calibration": {
+            "ap": 0.7983700879600997,
+            "roc_auc": 0.8448388637401885,
+            "log_loss": 0.4770131278468681,
+            "accuracy": 0.571875,
+            "poison_recall": 0.9504132231404959,
+            "edible_specificity": 0.3417085427135678,
+            "poison_precision": 0.46747967479674796,
+            "threshold": 0.19166666666666668,
+            "tn": 136,
+            "fp": 262,
+            "fn": 12,
+            "tp": 230
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "calibration": {
+            "ap": 0.7983700879600997,
+            "roc_auc": 0.8448388637401885,
+            "log_loss": 0.4770131278468681,
+            "accuracy": 0.484375,
+            "poison_recall": 0.9834710743801653,
+            "edible_specificity": 0.18090452261306533,
+            "poison_precision": 0.4219858156028369,
+            "threshold": 0.13166666666666665,
+            "tn": 72,
+            "fp": 326,
+            "fn": 4,
+            "tp": 238
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "calibration": {
+            "ap": 0.7983700879600997,
+            "roc_auc": 0.8448388637401885,
+            "log_loss": 0.4770131278468681,
+            "accuracy": 0.4046875,
+            "poison_recall": 0.9958677685950413,
+            "edible_specificity": 0.04522613065326633,
+            "poison_precision": 0.38808373590982287,
+            "threshold": 0.04833333333333333,
+            "tn": 18,
+            "fp": 380,
+            "fn": 1,
+            "tp": 241
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "calibration": {
+            "ap": 0.7983700879600997,
+            "roc_auc": 0.8448388637401885,
+            "log_loss": 0.4770131278468681,
+            "accuracy": 0.3984375,
+            "poison_recall": 1.0,
+            "edible_specificity": 0.032663316582914576,
+            "poison_precision": 0.38596491228070173,
+            "threshold": 0.035,
+            "tn": 13,
+            "fp": 385,
+            "fn": 0,
+            "tp": 242
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "calibration": {
+            "ap": 0.7983700879600997,
+            "roc_auc": 0.8448388637401885,
+            "log_loss": 0.4770131278468681,
+            "accuracy": 0.7609375,
+            "poison_recall": 0.71900826446281,
+            "edible_specificity": 0.7864321608040201,
+            "poison_precision": 0.6718146718146718,
+            "threshold": 0.5,
+            "tn": 313,
+            "fp": 85,
+            "fn": 68,
+            "tp": 174
+          }
+        }
+      ],
+      "search_metrics": {
+        "ap": 0.73326669327874,
+        "roc_auc": 0.8114118975170794,
+        "log_loss": 0.5350231522992297,
+        "accuracy": 0.7584994138335287,
+        "poison_recall": 0.7061855670103093,
+        "edible_specificity": 0.790434235368156,
+        "poison_precision": 0.6728880157170923,
+        "threshold": 0.5,
+        "tn": 1256,
+        "fp": 333,
+        "fn": 285,
+        "tp": 685,
+        "cv_ap_mean": 0.7361557389957551,
+        "cv_ap_std": 0.034219331085792754,
+        "train_ap_mean": 0.9999993365972747,
+        "seconds": 10.326056800025981,
+        "folds": [
+          {
+            "fold": 0,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 2.001057200017385,
+            "ap": 0.7922793031548526,
+            "roc_auc": 0.8504101017960188,
+            "log_loss": 0.49297629734077203,
+            "accuracy": 0.787109375,
+            "poison_recall": 0.7577319587628866,
+            "edible_specificity": 0.8050314465408805,
+            "poison_precision": 0.7033492822966507,
+            "threshold": 0.5,
+            "tn": 256,
+            "fp": 62,
+            "fn": 47,
+            "tp": 147
+          },
+          {
+            "fold": 1,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 2.010061000008136,
+            "ap": 0.7425730421968559,
+            "roc_auc": 0.8148868572910588,
+            "log_loss": 0.5186705231367067,
+            "accuracy": 0.755859375,
+            "poison_recall": 0.6804123711340206,
+            "edible_specificity": 0.8018867924528302,
+            "poison_precision": 0.676923076923077,
+            "threshold": 0.5,
+            "tn": 255,
+            "fp": 63,
+            "fn": 62,
+            "tp": 132
+          },
+          {
+            "fold": 2,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.9545219999854453,
+            "ap": 0.697225262653693,
+            "roc_auc": 0.7916990857809765,
+            "log_loss": 0.5656845836299922,
+            "accuracy": 0.75390625,
+            "poison_recall": 0.711340206185567,
+            "edible_specificity": 0.779874213836478,
+            "poison_precision": 0.6634615384615384,
+            "threshold": 0.5,
+            "tn": 248,
+            "fp": 70,
+            "fn": 56,
+            "tp": 138
+          },
+          {
+            "fold": 3,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 1.9746033999836072,
+            "ap": 0.7452008383918659,
+            "roc_auc": 0.8081436815146211,
+            "log_loss": 0.5339353496050714,
+            "accuracy": 0.755859375,
+            "poison_recall": 0.6907216494845361,
+            "edible_specificity": 0.7955974842767296,
+            "poison_precision": 0.6733668341708543,
+            "threshold": 0.5,
+            "tn": 253,
+            "fp": 65,
+            "fn": 60,
+            "tp": 134
+          },
+          {
+            "fold": 4,
+            "train_rows": 2048,
+            "validation_rows": 511,
+            "fit_seconds": 2.051089200016577,
+            "ap": 0.7035002485815087,
+            "roc_auc": 0.7951315489934632,
+            "log_loss": 0.5639054184597013,
+            "accuracy": 0.7397260273972602,
+            "poison_recall": 0.6907216494845361,
+            "edible_specificity": 0.7697160883280757,
+            "poison_precision": 0.6473429951690821,
+            "threshold": 0.5,
+            "tn": 244,
+            "fp": 73,
+            "fn": 60,
+            "tp": 134
+          }
+        ],
+        "n_splits": 5,
+        "cv_seed": 20261010,
+        "fold_fingerprint": "bf2c02d8ca3b8612f843343484a74cd992f136977c5ed016078f5976d5788f21",
+        "cv_protocol": "stratified_feature_groups_v3_boundary_purged",
+        "tuning_specificity_at_recall_0.9": 0.4436752674638137,
+        "tuning_threshold_at_recall_0.9": 0.2916666666666667,
+        "tuning_achieved_recall_0.9": 0.9,
+        "tuning_specificity_at_recall_0.95": 0.26620516047828824,
+        "tuning_threshold_at_recall_0.95": 0.19666666666666666,
+        "tuning_achieved_recall_0.95": 0.9515463917525773,
+        "tuning_specificity_at_recall_0.98": 0.1334172435494021,
+        "tuning_threshold_at_recall_0.98": 0.11833333333333333,
+        "tuning_achieved_recall_0.98": 0.9804123711340206,
+        "tuning_specificity_at_recall_0.995": 0.028319697923222198,
+        "tuning_threshold_at_recall_0.995": 0.04,
+        "tuning_achieved_recall_0.995": 0.9958762886597938,
+        "tuning_specificity_at_recall_1.0": 0.003146633102580232,
+        "tuning_threshold_at_recall_1.0": 0.008333333333333333,
+        "tuning_achieved_recall_1.0": 1.0,
+        "search_objective": 0.7494659970196695
+      },
+      "trained_rows": 2559,
+      "threshold_calibration_rows": 640
+    },
+    {
+      "name": "reference_random_forest",
+      "family": "random_forest",
+      "config": {
+        "family": "random_forest",
+        "features": {
+          "include_noise": false,
+          "engineered": false,
+          "missing_counts": false,
+          "drop_spore": false
+        },
+        "preprocessing": {
+          "numeric_missing": "median",
+          "missing_flags": false,
+          "categorical_missing": "constant",
+          "scale": null,
+          "encoding": "onehot",
+          "min_frequency": null
+        },
+        "params": {
+          "n_estimators": 150,
+          "min_samples_leaf": 3
+        }
+      },
+      "selection_goal": "ranking",
+      "selected_for_goals": [
+        "ranking"
+      ],
+      "artifact_path": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\reference_random_forest.joblib",
+      "artifact_sha256": "fa55f64092ac9e087a1a9d2cad7a8cbc6c07d4f9206bd21250a1323d6487b783",
+      "calibration_predictions": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\reference_random_forest_calibration.csv",
+      "calibration_predictions_sha256": "dd9e19a8a2b01adfefd2caf856a8dbe80d3d7f3c94ad795a9d654ce6c3818ae8",
+      "inference_validation": {
+        "inference_device": "cpu",
+        "training_threads": 4,
+        "inference_threads": 1,
+        "reason": "Deterministic tree probability aggregation before threshold selection",
+        "reload_max_absolute_difference": 0.0,
+        "calibration_score_dtype": "float64",
+        "reloaded_score_dtype": "float64",
+        "calibration_score_rows": 640
+      },
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "calibration": {
+            "ap": 0.7977059993811317,
+            "roc_auc": 0.84376427592508,
+            "log_loss": 0.4941259126199512,
+            "accuracy": 0.6484375,
+            "poison_recall": 0.9008264462809917,
+            "edible_specificity": 0.4949748743718593,
+            "poison_precision": 0.5202863961813843,
+            "threshold": 0.26398731472856213,
+            "tn": 197,
+            "fp": 201,
+            "fn": 24,
+            "tp": 218
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "calibration": {
+            "ap": 0.7977059993811317,
+            "roc_auc": 0.84376427592508,
+            "log_loss": 0.4941259126199512,
+            "accuracy": 0.571875,
+            "poison_recall": 0.9504132231404959,
+            "edible_specificity": 0.3417085427135678,
+            "poison_precision": 0.46747967479674796,
+            "threshold": 0.22143971079471977,
+            "tn": 136,
+            "fp": 262,
+            "fn": 12,
+            "tp": 230
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "calibration": {
+            "ap": 0.7977059993811317,
+            "roc_auc": 0.84376427592508,
+            "log_loss": 0.4941259126199512,
+            "accuracy": 0.5046875,
+            "poison_recall": 0.9834710743801653,
+            "edible_specificity": 0.2135678391959799,
+            "poison_precision": 0.4319419237749546,
+            "threshold": 0.1863062288820383,
+            "tn": 85,
+            "fp": 313,
+            "fn": 4,
+            "tp": 238
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "calibration": {
+            "ap": 0.7977059993811317,
+            "roc_auc": 0.84376427592508,
+            "log_loss": 0.4941259126199512,
+            "accuracy": 0.4328125,
+            "poison_recall": 0.9958677685950413,
+            "edible_specificity": 0.09045226130653267,
+            "poison_precision": 0.3996683250414594,
+            "threshold": 0.14106969138956538,
+            "tn": 36,
+            "fp": 362,
+            "fn": 1,
+            "tp": 241
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "calibration": {
+            "ap": 0.7977059993811317,
+            "roc_auc": 0.84376427592508,
+            "log_loss": 0.4941259126199512,
+            "accuracy": 0.3859375,
+            "poison_recall": 1.0,
+            "edible_specificity": 0.01256281407035176,
+            "poison_precision": 0.38110236220472443,
+            "threshold": 0.09112219290864826,
+            "tn": 5,
+            "fp": 393,
+            "fn": 0,
+            "tp": 242
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "calibration": {
+            "ap": 0.7977059993811317,
+            "roc_auc": 0.84376427592508,
+            "log_loss": 0.4941259126199512,
+            "accuracy": 0.790625,
+            "poison_recall": 0.5330578512396694,
+            "edible_specificity": 0.9472361809045227,
+            "poison_precision": 0.86,
+            "threshold": 0.5,
+            "tn": 377,
+            "fp": 21,
+            "fn": 113,
+            "tp": 129
+          }
+        }
+      ],
+      "search_metrics": {
+        "ap": 0.747148901156899,
+        "roc_auc": 0.8088579343813459,
+        "log_loss": 0.5292015742125517,
+        "accuracy": 0.7584994138335287,
+        "poison_recall": 0.4670103092783505,
+        "edible_specificity": 0.9364380113278792,
+        "poison_precision": 0.8176895306859205,
+        "threshold": 0.5,
+        "tn": 1488,
+        "fp": 101,
+        "fn": 517,
+        "tp": 453,
+        "cv_ap_mean": 0.7506775119038,
+        "cv_ap_std": 0.04051401528673523,
+        "train_ap_mean": 0.9546972389566181,
+        "seconds": 1.4398878999636509,
+        "folds": [
+          {
+            "fold": 0,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 0.21527620003325865,
+            "ap": 0.7920957289478713,
+            "roc_auc": 0.8453932438565778,
+            "log_loss": 0.5128537845910511,
+            "accuracy": 0.748046875,
+            "poison_recall": 0.4536082474226804,
+            "edible_specificity": 0.9276729559748428,
+            "poison_precision": 0.7927927927927928,
+            "threshold": 0.5,
+            "tn": 295,
+            "fp": 23,
+            "fn": 106,
+            "tp": 88
+          },
+          {
+            "fold": 1,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 0.2187195000005886,
+            "ap": 0.7802938954530818,
+            "roc_auc": 0.82107890812423,
+            "log_loss": 0.5196717684239833,
+            "accuracy": 0.771484375,
+            "poison_recall": 0.4639175257731959,
+            "edible_specificity": 0.9591194968553459,
+            "poison_precision": 0.8737864077669902,
+            "threshold": 0.5,
+            "tn": 305,
+            "fp": 13,
+            "fn": 104,
+            "tp": 90
+          },
+          {
+            "fold": 2,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 0.2169259000220336,
+            "ap": 0.677390555922603,
+            "roc_auc": 0.7569863191337614,
+            "log_loss": 0.56139782273556,
+            "accuracy": 0.73046875,
+            "poison_recall": 0.39690721649484534,
+            "edible_specificity": 0.9339622641509434,
+            "poison_precision": 0.7857142857142857,
+            "threshold": 0.5,
+            "tn": 297,
+            "fp": 21,
+            "fn": 117,
+            "tp": 77
+          },
+          {
+            "fold": 3,
+            "train_rows": 2047,
+            "validation_rows": 512,
+            "fit_seconds": 0.22892349999165162,
+            "ap": 0.740830681208164,
+            "roc_auc": 0.8010763145950852,
+            "log_loss": 0.5321864755363751,
+            "accuracy": 0.767578125,
+            "poison_recall": 0.5,
+            "edible_specificity": 0.9308176100628931,
+            "poison_precision": 0.8151260504201681,
+            "threshold": 0.5,
+            "tn": 296,
+            "fp": 22,
+            "fn": 97,
+            "tp": 97
+          },
+          {
+            "fold": 4,
+            "train_rows": 2048,
+            "validation_rows": 511,
+            "fit_seconds": 0.22869039996294305,
+            "ap": 0.7627766979872805,
+            "roc_auc": 0.8205957917330645,
+            "log_loss": 0.5198798132113326,
+            "accuracy": 0.7749510763209393,
+            "poison_recall": 0.520618556701031,
+            "edible_specificity": 0.9305993690851735,
+            "poison_precision": 0.8211382113821138,
+            "threshold": 0.5,
+            "tn": 295,
+            "fp": 22,
+            "fn": 93,
+            "tp": 101
+          }
+        ],
+        "n_splits": 5,
+        "cv_seed": 20261010,
+        "fold_fingerprint": "bf2c02d8ca3b8612f843343484a74cd992f136977c5ed016078f5976d5788f21",
+        "cv_protocol": "stratified_feature_groups_v3_boundary_purged",
+        "tuning_specificity_at_recall_0.9": 0.38451856513530525,
+        "tuning_threshold_at_recall_0.9": 0.2505534074570688,
+        "tuning_achieved_recall_0.9": 0.9,
+        "tuning_specificity_at_recall_0.95": 0.22466960352422904,
+        "tuning_threshold_at_recall_0.95": 0.20926914165182536,
+        "tuning_achieved_recall_0.95": 0.9505154639175257,
+        "tuning_specificity_at_recall_0.98": 0.10446821900566394,
+        "tuning_threshold_at_recall_0.98": 0.16723736991616636,
+        "tuning_achieved_recall_0.98": 0.9804123711340206,
+        "tuning_specificity_at_recall_0.995": 0.028949024543738155,
+        "tuning_threshold_at_recall_0.995": 0.12009282223689216,
+        "tuning_achieved_recall_0.995": 0.9958762886597938,
+        "tuning_specificity_at_recall_1.0": 0.014474512271869133,
+        "tuning_threshold_at_recall_1.0": 0.10263452683829874,
+        "tuning_achieved_recall_1.0": 1.0,
+        "search_objective": 0.7619109920800116
+      },
+      "trained_rows": 2559,
+      "threshold_calibration_rows": 640
+    },
+    {
+      "name": "frozen_weighted_average",
+      "family": "positive_weight_mixture",
+      "selection_goal": "ranking_comparator",
+      "config": {
+        "name": "frozen_weighted_average",
+        "selection_goal": "ranking_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_random_forest_0085"
+        ],
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "mode": "mean",
+        "ap": 0.777271819819702,
+        "cv_ap_mean": 0.7812554701540889,
+        "tuning_specificity_at_recall_0.95": 0.28319697923222154,
+        "tuning_specificity_at_recall_0.98": 0.11327879169288857,
+        "tuning_specificity_at_recall_0.995": 0.03587161736941469,
+        "tuning_specificity_at_recall_1.0": 0.017621145374449365,
+        "ranking_objective": 0.7954153191157,
+        "high_recall_objective": 0.06852286336321567
+      },
+      "artifact_path": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\frozen_weighted_average.joblib",
+      "artifact_sha256": "3f09b90925f819eef8863d29cf2e3a96bf2e24f473ecedf7a5301a4d0de286cb",
+      "inference_validation": {
+        "inference_device": "cpu",
+        "reload_max_absolute_difference": 0.0,
+        "calibration_score_dtype": "float64",
+        "reloaded_score_dtype": "float64",
+        "calibration_score_rows": 640
+      },
+      "score_interpretation": "Mean of model probability estimates",
+      "calibration_predictions": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\frozen_weighted_average_calibration.csv",
+      "calibration_predictions_sha256": "57d2add184330ce55b889ef11f7d2e223b6643262c0d9414667fe5315060d622",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "calibration": {
+            "ap": 0.8121781027253545,
+            "roc_auc": 0.8554861082270859,
+            "log_loss": 0.45320464936676447,
+            "accuracy": 0.6453125,
+            "poison_recall": 0.9008264462809917,
+            "edible_specificity": 0.4899497487437186,
+            "poison_precision": 0.517814726840855,
+            "threshold": 0.21012380952380957,
+            "tn": 195,
+            "fp": 203,
+            "fn": 24,
+            "tp": 218
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "calibration": {
+            "ap": 0.8121781027253545,
+            "roc_auc": 0.8554861082270859,
+            "log_loss": 0.45320464936676447,
+            "accuracy": 0.5578125,
+            "poison_recall": 0.9504132231404959,
+            "edible_specificity": 0.31909547738693467,
+            "poison_precision": 0.4590818363273453,
+            "threshold": 0.14870952380952385,
+            "tn": 127,
+            "fp": 271,
+            "fn": 12,
+            "tp": 230
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "calibration": {
+            "ap": 0.8121781027253545,
+            "roc_auc": 0.8554861082270859,
+            "log_loss": 0.45320464936676447,
+            "accuracy": 0.475,
+            "poison_recall": 0.9834710743801653,
+            "edible_specificity": 0.1658291457286432,
+            "poison_precision": 0.41754385964912283,
+            "threshold": 0.09302222222222223,
+            "tn": 66,
+            "fp": 332,
+            "fn": 4,
+            "tp": 238
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "calibration": {
+            "ap": 0.8121781027253545,
+            "roc_auc": 0.8554861082270859,
+            "log_loss": 0.45320464936676447,
+            "accuracy": 0.428125,
+            "poison_recall": 0.9958677685950413,
+            "edible_specificity": 0.0829145728643216,
+            "poison_precision": 0.3976897689768977,
+            "threshold": 0.06784126984126984,
+            "tn": 33,
+            "fp": 365,
+            "fn": 1,
+            "tp": 241
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "calibration": {
+            "ap": 0.8121781027253545,
+            "roc_auc": 0.8554861082270859,
+            "log_loss": 0.45320464936676447,
+            "accuracy": 0.428125,
+            "poison_recall": 1.0,
+            "edible_specificity": 0.08040201005025126,
+            "poison_precision": 0.3980263157894737,
+            "threshold": 0.06640317460317462,
+            "tn": 32,
+            "fp": 366,
+            "fn": 0,
+            "tp": 242
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "calibration": {
+            "ap": 0.8121781027253545,
+            "roc_auc": 0.8554861082270859,
+            "log_loss": 0.45320464936676447,
+            "accuracy": 0.7984375,
+            "poison_recall": 0.6198347107438017,
+            "edible_specificity": 0.907035175879397,
+            "poison_precision": 0.8021390374331551,
+            "threshold": 0.5,
+            "tn": 361,
+            "fp": 37,
+            "fn": 92,
+            "tp": 150
+          }
+        }
+      ],
+      "search_metrics": {
+        "name": "frozen_weighted_average",
+        "selection_goal": "ranking_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_random_forest_0085"
+        ],
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "mode": "mean",
+        "ap": 0.777271819819702,
+        "cv_ap_mean": 0.7812554701540889,
+        "tuning_specificity_at_recall_0.95": 0.28319697923222154,
+        "tuning_specificity_at_recall_0.98": 0.11327879169288857,
+        "tuning_specificity_at_recall_0.995": 0.03587161736941469,
+        "tuning_specificity_at_recall_1.0": 0.017621145374449365,
+        "ranking_objective": 0.7954153191157,
+        "high_recall_objective": 0.06852286336321567
+      },
+      "trained_rows": 2559,
+      "threshold_calibration_rows": 640
+    },
+    {
+      "name": "frozen_max_risk",
+      "family": "max_risk_mixture",
+      "selection_goal": "high_recall_comparator",
+      "config": {
+        "name": "frozen_max_risk",
+        "selection_goal": "high_recall_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_high_recall_random_forest_0048"
+        ],
+        "weights": [
+          1.0,
+          1.0
+        ],
+        "mode": "max",
+        "ap": 0.7467692245740598,
+        "cv_ap_mean": 0.7493505055656857,
+        "tuning_specificity_at_recall_0.95": 0.289490245437382,
+        "tuning_specificity_at_recall_0.98": 0.1258653241032096,
+        "tuning_specificity_at_recall_0.995": 0.03901825047199492,
+        "tuning_specificity_at_recall_1.0": 0.015103838892385202,
+        "ranking_objective": 0.7638250178375549,
+        "high_recall_objective": 0.07097635991610307
+      },
+      "artifact_path": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\frozen_max_risk.joblib",
+      "artifact_sha256": "4e3454bd8a37b3f9e9ec93c4eb7277289398c3fa603764ed6035d032153d67e2",
+      "inference_validation": {
+        "inference_device": "cpu",
+        "reload_max_absolute_difference": 0.0,
+        "calibration_score_dtype": "float64",
+        "reloaded_score_dtype": "float64",
+        "calibration_score_rows": 640
+      },
+      "score_interpretation": "Uncalibrated ensemble risk score, not poison probability",
+      "calibration_predictions": "C:\\Users\\tomis\\CloudAI-research\\2026-10-10\\mushrooms\\candidates\\frozen_max_risk_calibration.csv",
+      "calibration_predictions_sha256": "4231b61f5a396752ecb5fb566bf26c8c2b355384bd8a0ca5fc36abe43c391e61",
+      "policies": [
+        {
+          "target_poison_recall": 0.9,
+          "calibration": {
+            "ap": 0.8082251806570285,
+            "roc_auc": 0.8534719049794427,
+            "log_loss": 0.47584334398062894,
+            "accuracy": 0.659375,
+            "poison_recall": 0.9008264462809917,
+            "edible_specificity": 0.5125628140703518,
+            "poison_precision": 0.529126213592233,
+            "threshold": 0.31,
+            "tn": 204,
+            "fp": 194,
+            "fn": 24,
+            "tp": 218
+          }
+        },
+        {
+          "target_poison_recall": 0.95,
+          "calibration": {
+            "ap": 0.8082251806570285,
+            "roc_auc": 0.8534719049794427,
+            "log_loss": 0.47584334398062894,
+            "accuracy": 0.55625,
+            "poison_recall": 0.9504132231404959,
+            "edible_specificity": 0.3165829145728643,
+            "poison_precision": 0.4581673306772908,
+            "threshold": 0.20166666666666666,
+            "tn": 126,
+            "fp": 272,
+            "fn": 12,
+            "tp": 230
+          }
+        },
+        {
+          "target_poison_recall": 0.98,
+          "calibration": {
+            "ap": 0.8082251806570285,
+            "roc_auc": 0.8534719049794427,
+            "log_loss": 0.47584334398062894,
+            "accuracy": 0.465625,
+            "poison_recall": 0.9834710743801653,
+            "edible_specificity": 0.1507537688442211,
+            "poison_precision": 0.4131944444444444,
+            "threshold": 0.13666666666666666,
+            "tn": 60,
+            "fp": 338,
+            "fn": 4,
+            "tp": 238
+          }
+        },
+        {
+          "target_poison_recall": 0.995,
+          "calibration": {
+            "ap": 0.8082251806570285,
+            "roc_auc": 0.8534719049794427,
+            "log_loss": 0.47584334398062894,
+            "accuracy": 0.434375,
+            "poison_recall": 0.9958677685950413,
+            "edible_specificity": 0.09296482412060302,
+            "poison_precision": 0.4003322259136213,
+            "threshold": 0.10729563492063492,
+            "tn": 37,
+            "fp": 361,
+            "fn": 1,
+            "tp": 241
+          }
+        },
+        {
+          "target_poison_recall": 1.0,
+          "calibration": {
+            "ap": 0.8082251806570285,
+            "roc_auc": 0.8534719049794427,
+            "log_loss": 0.47584334398062894,
+            "accuracy": 0.415625,
+            "poison_recall": 1.0,
+            "edible_specificity": 0.06030150753768844,
+            "poison_precision": 0.39285714285714285,
+            "threshold": 0.08377777777777777,
+            "tn": 24,
+            "fp": 374,
+            "fn": 0,
+            "tp": 242
+          }
+        },
+        {
+          "target_poison_recall": null,
+          "policy": "default_threshold_0.5",
+          "calibration": {
+            "ap": 0.8082251806570285,
+            "roc_auc": 0.8534719049794427,
+            "log_loss": 0.47584334398062894,
+            "accuracy": 0.765625,
+            "poison_recall": 0.7520661157024794,
+            "edible_specificity": 0.7738693467336684,
+            "poison_precision": 0.6691176470588235,
+            "threshold": 0.5,
+            "tn": 308,
+            "fp": 90,
+            "fn": 60,
+            "tp": 182
+          }
+        }
+      ],
+      "search_metrics": {
+        "name": "frozen_max_risk",
+        "selection_goal": "high_recall_comparator",
+        "sources": [
+          "v3_extra_trees_0094",
+          "v3_high_recall_random_forest_0048"
+        ],
+        "weights": [
+          1.0,
+          1.0
+        ],
+        "mode": "max",
+        "ap": 0.7467692245740598,
+        "cv_ap_mean": 0.7493505055656857,
+        "tuning_specificity_at_recall_0.95": 0.289490245437382,
+        "tuning_specificity_at_recall_0.98": 0.1258653241032096,
+        "tuning_specificity_at_recall_0.995": 0.03901825047199492,
+        "tuning_specificity_at_recall_1.0": 0.015103838892385202,
+        "ranking_objective": 0.7638250178375549,
+        "high_recall_objective": 0.07097635991610307
+      },
+      "trained_rows": 2559,
+      "threshold_calibration_rows": 640
+    }
+  ],
+  "always_poisonous_baseline_calibration": {
+    "ap": 0.378125,
+    "roc_auc": 0.5,
+    "log_loss": 10.023440771079537,
+    "accuracy": 0.378125,
+    "poison_recall": 1.0,
+    "edible_specificity": 0.0,
+    "poison_precision": 0.378125,
+    "threshold": 0.0,
+    "tn": 0,
+    "fp": 398,
+    "fn": 0,
+    "tp": 242
+  },
+  "threshold_selection_note": "Calibration operating metrics are fitted to the chosen threshold and optimistic. Evaluate these frozen thresholds once on confirmation; do not adjust after seeing confirmation.",
+  "training_note": "Candidates fitted on search only. Do not refit on search+calibration then pretend these thresholds were independently calibrated for the refitted model."
+}
