@@ -1,0 +1,14 @@
+{
+  "origin": "Frozen local research on 10 October 2026. Copied without refitting.",
+  "sha256": {
+    "citibike_counts_xgboost.joblib": "39709c535cb397c7d87a8a9250f3141343fd7542249e1c57b92ef00ead026878",
+    "citibike_weather_cpu.joblib": "fe6403522e8908770a52fc0e53e08798e9770b3a2316e1c5ad011a2736b1a7b2",
+    "citibike_weather_gru.joblib": "7ca73661dd100e1114ee4c4fe519c2df15f338c4c923978888d4ce6d1146ea34",
+    "mushroom_extra_trees.joblib": "a80255f02d07f1be6e42ec614e8430a2cb70477c47cf9db727358dfaafab1bc5"
+  },
+  "mushroom_cautious_threshold": 0.0398015873015873,
+  "mushroom_training_rows": 2559,
+  "mushroom_calibration_rows": 640,
+  "bike_training_end": "2023-06-30",
+  "final_tests_scored": false
+}

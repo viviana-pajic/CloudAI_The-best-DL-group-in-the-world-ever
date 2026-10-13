@@ -1,12 +1,7 @@
 .git
-.venv
-.venv-pycaret
-.tools
-data
-reports
-*.ipynb
+.venv*
 __pycache__
-**/__pycache__
-models/*
-!models/mushroom_candidate.joblib
-!models/citibike_candidate.joblib
+data/raw
+data/processed
+reports/local_check
+reports/aws

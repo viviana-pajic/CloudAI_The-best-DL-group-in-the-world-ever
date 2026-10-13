@@ -1,0 +1,2 @@
+# Install with the CPU or CUDA index described in the guide.
+torch==2.11.0
