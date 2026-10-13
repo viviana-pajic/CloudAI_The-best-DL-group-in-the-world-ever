@@ -10,7 +10,8 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.review_models import BIKES, load_model, predict_mushroom, predict_bike, bike_example, mushroom_example
-from src.release_integrity import release_summary, verify_release
+from src.release_integrity import release_summary, verify_release, digest
+from src.demo_examples import random_example
 
 class Handler(BaseHTTPRequestHandler):
     def respond(self, status, content, kind='application/json'):
@@ -19,6 +20,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Content-Type', kind + '; charset=utf-8')
         self.send_header('Content-Length', str(len(body)))
         self.send_header('X-Content-Type-Options', 'nosniff')
+        self.send_header('Cache-Control', 'no-store')
         self.end_headers()
         self.wfile.write(body)
 
@@ -33,7 +35,9 @@ class Handler(BaseHTTPRequestHandler):
                 'model_origin': manifest['origin'], 'model_sha256': manifest['sha256'],
                 'mushroom_cautious_threshold': manifest['mushroom_cautious_threshold'],
                 'frozen_release': release_summary(),
-                'final_tests_complete': (ROOT/'reports/final_test_results.json').is_file()})
+                'final_tests_complete': (ROOT/'reports/final_test_results.json').is_file(),
+                'interface_update_sha256': digest(ROOT/'release_ui_update.json', text=True)
+                    if (ROOT/'release_ui_update.json').is_file() else None})
         if path.path == '/api/release':
             file = ROOT/'reports/final_test_results.json'
             if not file.is_file():
@@ -42,6 +46,15 @@ class Handler(BaseHTTPRequestHandler):
             return self.respond(200, {n: record[n] for n in
                 ['status', 'decision_sha256', 'mushrooms', 'mushrooms_default', 'mushroom_test_rows',
                  'citibike', 'citibike_lag_7', 'bike_test_days', 'bike_fallback_dates', 'citibike_weather_complete', 'citibike_lag_7_weather_complete', 'note', 'weather_limit']})
+        if path.path in ('/api/mushroom/example/random', '/api/bike/example/random'):
+            query = parse_qs(path.query)
+            try:
+                return self.respond(200, random_example(
+                    'mushrooms' if path.path.startswith('/api/mushroom/') else 'bikes',
+                    model=query.get('model', ['weather_gru'])[0],
+                    exclude=query.get('exclude', [None])[0]))
+            except ValueError as error:
+                return self.respond(400, {'error': str(error)})
         if path.path == '/api/mushroom/example':
             return self.respond(200, mushroom_example())
         if path.path == '/api/bike/example':

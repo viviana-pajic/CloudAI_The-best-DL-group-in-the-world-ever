@@ -8,7 +8,7 @@ Deadline: 15 October 2026. Oral: 23 October.
 
 ## Run the app
 
-Try the [public app](https://cloudai-team.onrender.com). The free host may take about a minute to wake up.
+Try the [public app](https://cloudai-team.onrender.com). The free host may take about a minute to wake up. Both example buttons pick real random training-side inputs and avoid repeating the previous example.
 
 Python 3.12.10. On Windows, run `scripts/setup_review.ps1` once, then:
 
@@ -82,7 +82,7 @@ The GRU blend ran on 89 dates (MAE 15,367); XGBoost handled the 3 dates with mis
 
 Follow [the notebook map](docs/NOTEBOOKS.md). Each notebook covers one step.
 
-[Data sources](docs/DATA.md) Ã‚Â· [Tasks](docs/TASKS.md) Ã‚Â· [Run and release](docs/RELEASE.md) Ã‚Â· [Work and AI use](docs/AI_USE.md)
+[Data sources](docs/DATA.md) Ãƒâ€šÃ‚Â· [Tasks](docs/TASKS.md) Ãƒâ€šÃ‚Â· [Run and release](docs/RELEASE.md) Ãƒâ€šÃ‚Â· [Work and AI use](docs/AI_USE.md)
 
 Both CPU AWS notebooks ran on 13 October. Extra Trees kept 600 trees and recalibrated its cutoff. The bike blend selected 200 boosting iterations; training-fold MAE was 9,711 rides. These cloud scores use different rows from the local checks above. See the executed notebooks and [saved runs](reports/aws/).
 

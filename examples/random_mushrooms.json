@@ -1,0 +1,2162 @@
+[
+  {
+    "example_id": "1359",
+    "input": {
+      "features": {
+        "cap-diameter": 4.76,
+        "stem-height": 6.11,
+        "stem-width": 13.34,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2368",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": null,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": null,
+        "season": "a",
+        "ring-type": "p",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4067",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.25,
+        "stem-width": 11.17,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2111",
+    "input": {
+      "features": {
+        "cap-diameter": 6.89,
+        "stem-height": 5.71,
+        "stem-width": 9.38,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": null,
+        "season": "a",
+        "ring-type": null,
+        "cap-shape": "f",
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3511",
+    "input": {
+      "features": {
+        "cap-diameter": 17.36,
+        "stem-height": 32.03,
+        "stem-width": 22.64,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "m",
+        "season": "a",
+        "ring-type": "m",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2322",
+    "input": {
+      "features": {
+        "cap-diameter": 7.46,
+        "stem-height": 7.89,
+        "stem-width": 14.31,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": null,
+        "ring-type": null,
+        "cap-shape": "p",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1002",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 3.81,
+        "stem-width": 6.18,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1119",
+    "input": {
+      "features": {
+        "cap-diameter": 4.96,
+        "stem-height": 7.59,
+        "stem-width": 53.48,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "l",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2154",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 4.71,
+        "stem-width": 3.53,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "m",
+        "season": "a",
+        "ring-type": "e",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "421",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 18.62,
+        "spore-print-color": null,
+        "gill-color": "g",
+        "habitat": "g",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": null,
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "220",
+    "input": {
+      "features": {
+        "cap-diameter": 5.9,
+        "stem-height": 10.19,
+        "stem-width": 12.11,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "g",
+        "season": null,
+        "ring-type": "z",
+        "cap-shape": "p",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "609",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 8.95,
+        "stem-width": 6.53,
+        "spore-print-color": "k",
+        "gill-color": null,
+        "habitat": null,
+        "season": "w",
+        "ring-type": null,
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "651",
+    "input": {
+      "features": {
+        "cap-diameter": 8.23,
+        "stem-height": 6.0,
+        "stem-width": 8.31,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "y"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1372",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 4.48,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3068",
+    "input": {
+      "features": {
+        "cap-diameter": 7.75,
+        "stem-height": 1.52,
+        "stem-width": 14.17,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "315",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 4.67,
+        "stem-width": 5.77,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": null,
+        "cap-shape": "x",
+        "stem-surface": "y"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2146",
+    "input": {
+      "features": {
+        "cap-diameter": 2.94,
+        "stem-height": null,
+        "stem-width": 5.58,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "g",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4964",
+    "input": {
+      "features": {
+        "cap-diameter": 8.24,
+        "stem-height": 11.85,
+        "stem-width": 24.44,
+        "spore-print-color": null,
+        "gill-color": "g",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "y"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3691",
+    "input": {
+      "features": {
+        "cap-diameter": 19.95,
+        "stem-height": null,
+        "stem-width": 20.54,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "m",
+        "season": null,
+        "ring-type": "m",
+        "cap-shape": null,
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1988",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 4.97,
+        "stem-width": 3.75,
+        "spore-print-color": null,
+        "gill-color": "p",
+        "habitat": null,
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": null,
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2651",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 11.82,
+        "stem-width": 6.62,
+        "spore-print-color": "k",
+        "gill-color": "k",
+        "habitat": "g",
+        "season": "w",
+        "ring-type": null,
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4285",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 7.7,
+        "stem-width": 9.59,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": null,
+        "cap-shape": null,
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2687",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 2.66,
+        "stem-width": 1.48,
+        "spore-print-color": null,
+        "gill-color": "g",
+        "habitat": "d",
+        "season": "s",
+        "ring-type": "f",
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3737",
+    "input": {
+      "features": {
+        "cap-diameter": 11.52,
+        "stem-height": 12.09,
+        "stem-width": 17.35,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": null,
+        "season": null,
+        "ring-type": null,
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1669",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 11.81,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3864",
+    "input": {
+      "features": {
+        "cap-diameter": 5.8,
+        "stem-height": 5.21,
+        "stem-width": 11.9,
+        "spore-print-color": null,
+        "gill-color": "b",
+        "habitat": "m",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3372",
+    "input": {
+      "features": {
+        "cap-diameter": 10.9,
+        "stem-height": null,
+        "stem-width": 19.2,
+        "spore-print-color": null,
+        "gill-color": "b",
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3536",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.11,
+        "stem-width": null,
+        "spore-print-color": null,
+        "gill-color": "f",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1422",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.75,
+        "stem-width": 2.6,
+        "spore-print-color": null,
+        "gill-color": "k",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4419",
+    "input": {
+      "features": {
+        "cap-diameter": 2.9,
+        "stem-height": 6.32,
+        "stem-width": 4.58,
+        "spore-print-color": null,
+        "gill-color": "u",
+        "habitat": null,
+        "season": "u",
+        "ring-type": null,
+        "cap-shape": "b",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1520",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.74,
+        "stem-width": 14.78,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "566",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 10.86,
+        "stem-width": null,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": null,
+        "ring-type": "e",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1163",
+    "input": {
+      "features": {
+        "cap-diameter": 4.75,
+        "stem-height": 6.1,
+        "stem-width": 7.57,
+        "spore-print-color": null,
+        "gill-color": "r",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3539",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 5.19,
+        "spore-print-color": null,
+        "gill-color": "p",
+        "habitat": null,
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "746",
+    "input": {
+      "features": {
+        "cap-diameter": 13.9,
+        "stem-height": null,
+        "stem-width": null,
+        "spore-print-color": "w",
+        "gill-color": null,
+        "habitat": "d",
+        "season": "u",
+        "ring-type": null,
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1516",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 7.25,
+        "stem-width": 9.75,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "l",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2874",
+    "input": {
+      "features": {
+        "cap-diameter": 9.67,
+        "stem-height": null,
+        "stem-width": 14.22,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": null,
+        "cap-shape": "x",
+        "stem-surface": "y"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3120",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 5.5,
+        "stem-width": 20.62,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "211",
+    "input": {
+      "features": {
+        "cap-diameter": 4.09,
+        "stem-height": 5.01,
+        "stem-width": 3.36,
+        "spore-print-color": null,
+        "gill-color": "p",
+        "habitat": "g",
+        "season": "a",
+        "ring-type": null,
+        "cap-shape": "b",
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1894",
+    "input": {
+      "features": {
+        "cap-diameter": 2.15,
+        "stem-height": 6.79,
+        "stem-width": 4.53,
+        "spore-print-color": null,
+        "gill-color": "u",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1625",
+    "input": {
+      "features": {
+        "cap-diameter": 15.81,
+        "stem-height": null,
+        "stem-width": 25.09,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3051",
+    "input": {
+      "features": {
+        "cap-diameter": 3.07,
+        "stem-height": 9.53,
+        "stem-width": 2.38,
+        "spore-print-color": "k",
+        "gill-color": "k",
+        "habitat": null,
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2311",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 2.67,
+        "stem-width": 6.4,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "g",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "81",
+    "input": {
+      "features": {
+        "cap-diameter": 52.94,
+        "stem-height": null,
+        "stem-width": 32.65,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "s",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": "k"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4046",
+    "input": {
+      "features": {
+        "cap-diameter": 2.57,
+        "stem-height": 2.92,
+        "stem-width": 5.33,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": null,
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3945",
+    "input": {
+      "features": {
+        "cap-diameter": 5.0,
+        "stem-height": null,
+        "stem-width": 6.91,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": null,
+        "season": "u",
+        "ring-type": null,
+        "cap-shape": null,
+        "stem-surface": "g"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2293",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 8.9,
+        "stem-width": 26.47,
+        "spore-print-color": null,
+        "gill-color": "o",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1852",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 11.22,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3014",
+    "input": {
+      "features": {
+        "cap-diameter": 3.54,
+        "stem-height": 8.01,
+        "stem-width": 5.9,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": "g",
+        "season": "a",
+        "ring-type": null,
+        "cap-shape": null,
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3597",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 7.31,
+        "stem-width": 3.67,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1309",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 5.01,
+        "stem-width": 12.81,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "914",
+    "input": {
+      "features": {
+        "cap-diameter": 8.58,
+        "stem-height": null,
+        "stem-width": null,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": null,
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "p",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3354",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 7.02,
+        "stem-width": 14.51,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": null,
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "367",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 4.5,
+        "stem-width": 5.4,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1301",
+    "input": {
+      "features": {
+        "cap-diameter": 5.32,
+        "stem-height": 8.42,
+        "stem-width": 6.41,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": "k"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3170",
+    "input": {
+      "features": {
+        "cap-diameter": 19.46,
+        "stem-height": 15.3,
+        "stem-width": 34.13,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "y"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1205",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 11.1,
+        "stem-width": 16.54,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "g",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4721",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 8.81,
+        "stem-width": 11.4,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": null,
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "616",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 4.54,
+        "stem-width": 4.66,
+        "spore-print-color": null,
+        "gill-color": "e",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1143",
+    "input": {
+      "features": {
+        "cap-diameter": 5.0,
+        "stem-height": 7.19,
+        "stem-width": 5.54,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": "k"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1784",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 1.55,
+        "stem-width": 16.73,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": null,
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3826",
+    "input": {
+      "features": {
+        "cap-diameter": 5.43,
+        "stem-height": 6.73,
+        "stem-width": 6.93,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "m",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3147",
+    "input": {
+      "features": {
+        "cap-diameter": 3.6,
+        "stem-height": 5.21,
+        "stem-width": 5.5,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "l",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "b",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4536",
+    "input": {
+      "features": {
+        "cap-diameter": 14.17,
+        "stem-height": 9.63,
+        "stem-width": 18.51,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": null,
+        "season": "a",
+        "ring-type": "l",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2243",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 7.9,
+        "stem-width": 15.25,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "g",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1088",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.62,
+        "stem-width": null,
+        "spore-print-color": "k",
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3522",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 5.01,
+        "stem-width": 28.6,
+        "spore-print-color": null,
+        "gill-color": "f",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": "g"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "558",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 13.87,
+        "stem-width": 78.96,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "p",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3178",
+    "input": {
+      "features": {
+        "cap-diameter": 13.39,
+        "stem-height": 4.94,
+        "stem-width": 25.0,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4245",
+    "input": {
+      "features": {
+        "cap-diameter": 10.01,
+        "stem-height": 5.41,
+        "stem-width": 21.51,
+        "spore-print-color": null,
+        "gill-color": "b",
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4579",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 14.49,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "g",
+        "season": null,
+        "ring-type": "e",
+        "cap-shape": "p",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2896",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 7.84,
+        "stem-width": 22.07,
+        "spore-print-color": null,
+        "gill-color": "p",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": null,
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4185",
+    "input": {
+      "features": {
+        "cap-diameter": 4.32,
+        "stem-height": 4.37,
+        "stem-width": 9.31,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3029",
+    "input": {
+      "features": {
+        "cap-diameter": 5.17,
+        "stem-height": 6.25,
+        "stem-width": 5.71,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3903",
+    "input": {
+      "features": {
+        "cap-diameter": 2.84,
+        "stem-height": 3.48,
+        "stem-width": 12.42,
+        "spore-print-color": null,
+        "gill-color": "f",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": "g"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2861",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 3.41,
+        "spore-print-color": null,
+        "gill-color": "k",
+        "habitat": null,
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "b",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3515",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 14.92,
+        "stem-width": 23.48,
+        "spore-print-color": "n",
+        "gill-color": "o",
+        "habitat": "d",
+        "season": "w",
+        "ring-type": "r",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4460",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.49,
+        "stem-width": 8.37,
+        "spore-print-color": null,
+        "gill-color": "g",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "e",
+        "cap-shape": "x",
+        "stem-surface": "y"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4338",
+    "input": {
+      "features": {
+        "cap-diameter": 2.12,
+        "stem-height": null,
+        "stem-width": null,
+        "spore-print-color": "p",
+        "gill-color": null,
+        "habitat": "g",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2359",
+    "input": {
+      "features": {
+        "cap-diameter": 12.48,
+        "stem-height": 11.04,
+        "stem-width": 17.03,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "e",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4181",
+    "input": {
+      "features": {
+        "cap-diameter": 7.76,
+        "stem-height": 9.55,
+        "stem-width": 13.02,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": "t"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1258",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 5.98,
+        "stem-width": 15.98,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4506",
+    "input": {
+      "features": {
+        "cap-diameter": 5.55,
+        "stem-height": 11.18,
+        "stem-width": 11.66,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2139",
+    "input": {
+      "features": {
+        "cap-diameter": 12.2,
+        "stem-height": 9.06,
+        "stem-width": 25.56,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "l",
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2916",
+    "input": {
+      "features": {
+        "cap-diameter": 17.91,
+        "stem-height": 16.64,
+        "stem-width": null,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "p",
+        "stem-surface": "y"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4283",
+    "input": {
+      "features": {
+        "cap-diameter": 15.59,
+        "stem-height": null,
+        "stem-width": 18.12,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": null,
+        "season": "a",
+        "ring-type": null,
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2948",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 5.42,
+        "stem-width": 1.98,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": null,
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": "t"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4254",
+    "input": {
+      "features": {
+        "cap-diameter": 7.35,
+        "stem-height": 3.38,
+        "stem-width": 7.79,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "g",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3459",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 10.1,
+        "stem-width": 15.18,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3045",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 5.08,
+        "stem-width": 6.55,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": null,
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1427",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 8.74,
+        "stem-width": 14.76,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "c",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "71",
+    "input": {
+      "features": {
+        "cap-diameter": 1.51,
+        "stem-height": null,
+        "stem-width": 2.5,
+        "spore-print-color": null,
+        "gill-color": "k",
+        "habitat": "g",
+        "season": "u",
+        "ring-type": null,
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2398",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 2.87,
+        "stem-width": 18.31,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "w",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2223",
+    "input": {
+      "features": {
+        "cap-diameter": 24.74,
+        "stem-height": 30.15,
+        "stem-width": 21.33,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "m",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1707",
+    "input": {
+      "features": {
+        "cap-diameter": 3.27,
+        "stem-height": null,
+        "stem-width": 0.0,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "o",
+        "stem-surface": "f"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2924",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 4.89,
+        "stem-width": 21.48,
+        "spore-print-color": null,
+        "gill-color": "b",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2795",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.78,
+        "stem-width": 13.69,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3768",
+    "input": {
+      "features": {
+        "cap-diameter": 8.54,
+        "stem-height": 7.38,
+        "stem-width": 13.81,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": null,
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1693",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 3.86,
+        "stem-width": 11.04,
+        "spore-print-color": null,
+        "gill-color": "k",
+        "habitat": null,
+        "season": null,
+        "ring-type": "e",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "952",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 11.19,
+        "spore-print-color": null,
+        "gill-color": "g",
+        "habitat": "g",
+        "season": "u",
+        "ring-type": null,
+        "cap-shape": null,
+        "stem-surface": "s"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4559",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 5.52,
+        "stem-width": 11.68,
+        "spore-print-color": null,
+        "gill-color": "r",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "283",
+    "input": {
+      "features": {
+        "cap-diameter": 6.44,
+        "stem-height": 3.32,
+        "stem-width": 8.79,
+        "spore-print-color": null,
+        "gill-color": "p",
+        "habitat": "g",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3916",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 6.35,
+        "stem-width": 2.78,
+        "spore-print-color": null,
+        "gill-color": "n",
+        "habitat": "g",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3773",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 10.58,
+        "stem-width": 32.65,
+        "spore-print-color": "w",
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "p",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3771",
+    "input": {
+      "features": {
+        "cap-diameter": 10.34,
+        "stem-height": 11.28,
+        "stem-width": 35.16,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "912",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 8.66,
+        "spore-print-color": null,
+        "gill-color": "p",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1383",
+    "input": {
+      "features": {
+        "cap-diameter": 3.28,
+        "stem-height": 4.38,
+        "stem-width": 6.8,
+        "spore-print-color": null,
+        "gill-color": "o",
+        "habitat": null,
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2365",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 12.25,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4442",
+    "input": {
+      "features": {
+        "cap-diameter": 4.58,
+        "stem-height": 7.75,
+        "stem-width": 59.97,
+        "spore-print-color": "g",
+        "gill-color": "f",
+        "habitat": "l",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4154",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 15.65,
+        "spore-print-color": null,
+        "gill-color": "y",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "1732",
+    "input": {
+      "features": {
+        "cap-diameter": 8.28,
+        "stem-height": 12.24,
+        "stem-width": 20.37,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "g",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2715",
+    "input": {
+      "features": {
+        "cap-diameter": 5.18,
+        "stem-height": 8.22,
+        "stem-width": 8.98,
+        "spore-print-color": null,
+        "gill-color": null,
+        "habitat": null,
+        "season": "s",
+        "ring-type": null,
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "2609",
+    "input": {
+      "features": {
+        "cap-diameter": 1.06,
+        "stem-height": null,
+        "stem-width": 1.7,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "l",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4155",
+    "input": {
+      "features": {
+        "cap-diameter": 5.93,
+        "stem-height": 5.02,
+        "stem-width": 17.35,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": "u",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "4707",
+    "input": {
+      "features": {
+        "cap-diameter": 5.23,
+        "stem-height": 4.86,
+        "stem-width": 8.82,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "g",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "f",
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "373",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 3.79,
+        "stem-width": 2.52,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "g",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "s",
+        "stem-surface": "h"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "187",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": null,
+        "stem-width": 13.62,
+        "spore-print-color": "w",
+        "gill-color": "w",
+        "habitat": null,
+        "season": "a",
+        "ring-type": null,
+        "cap-shape": "f",
+        "stem-surface": "i"
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3969",
+    "input": {
+      "features": {
+        "cap-diameter": 14.91,
+        "stem-height": 9.28,
+        "stem-width": 33.43,
+        "spore-print-color": null,
+        "gill-color": "o",
+        "habitat": "d",
+        "season": "a",
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "855",
+    "input": {
+      "features": {
+        "cap-diameter": 5.04,
+        "stem-height": null,
+        "stem-width": 10.98,
+        "spore-print-color": null,
+        "gill-color": "o",
+        "habitat": "m",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  },
+  {
+    "example_id": "3011",
+    "input": {
+      "features": {
+        "cap-diameter": null,
+        "stem-height": 3.45,
+        "stem-width": 8.87,
+        "spore-print-color": null,
+        "gill-color": "w",
+        "habitat": "d",
+        "season": null,
+        "ring-type": "f",
+        "cap-shape": "x",
+        "stem-surface": null
+      },
+      "policy": "cautious"
+    }
+  }
+]

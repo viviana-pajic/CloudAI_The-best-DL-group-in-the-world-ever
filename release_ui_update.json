@@ -1,0 +1,34 @@
+{
+  "utc": "2026-10-13T20:00:13.505320+00:00",
+  "operator": "Tomislav Novosel",
+  "assistance": "Codex",
+  "user_request": "Make both public example buttons load different random real examples.",
+  "scope": "Interface and training-side demo inputs only. Prediction code, model files, cutoffs and final results unchanged.",
+  "original_decision_sha256": "7e799f3271e6b9801cde52f5233b67704c9abc3b8639de9cfc80bbfbe8cfe7b3",
+  "updated_files": {
+    "app/review.html": {
+      "original_sha256": "49196c3d9d32dea430ccbbdbf3cdc3df28cb2b9e664b49a3f3321d5f008b7391",
+      "updated_sha256": "f97aef51dc63ecffdc892c98e12a519a3d34a80fce8ebc9485f10540878244f8"
+    },
+    "app/review_server.py": {
+      "original_sha256": "edb35a46a510c769fac54f19bbe22f43d7c370bfe67020eee04e9106047c2be3",
+      "updated_sha256": "7092ad5fff9482274aa626e3a92a78250c11494bafe132ba72282db8b9bb80b4"
+    },
+    "src/release_integrity.py": {
+      "original_sha256": "b9030c596f7e94396c1cc564145b93d92e6f44f77b8586c6b49cd4f93ec87378",
+      "updated_sha256": "c69d46454c7a63d6fe5d12faef73c31a70170c922cd7d6c8698df715b48cbae7"
+    }
+  },
+  "added_files": {
+    "src/demo_examples.py": "251bbdbf54c2367096bee3ef2ece5f50a54c4e6334a5486d3c3c391892ab2439",
+    "examples/random_mushrooms.json": "3746b902c4aee9078ed39edd31ca2133c09dd6f6fc1e7a6a68989c584d305ebb",
+    "examples/random_bikes.json": "f054e1f6903de865d4d0d095d025e0ff3bb1c3ed70304fd141cd53e4a847e707",
+    "examples/random_example_sources.json": "ddbd1a72af1d478b1c6cfb7e2745d8e19fcb0da09d65924681268c48b7278e4e",
+    "scripts/verify_random_examples.py": "2ba3789c8fad5f20450c150813ee51dc3d89d827c5332614f1c1544ef93cff72"
+  },
+  "final_result_sha256": "8e73f94563f4f7520db273cd3f9a85d3d4035c82c877990b38a0f777c5a1eb66",
+  "final_prediction_sha256": {
+    "final_mushroom_predictions.csv": "ceeef9af89b548ec59545f9d4ea5184358714141874e10bf6666a344927a355a",
+    "final_bike_predictions.csv": "9820b5a6d144bfa3eff6a542dc93be38bcdcad232fad468cd93661c08daacfeb"
+  }
+}

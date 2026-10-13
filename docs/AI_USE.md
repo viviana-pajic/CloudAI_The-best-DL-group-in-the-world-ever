@@ -9,3 +9,5 @@ Each person reviews their files, records what they checked and commits from thei
 ## Final release - 13 October
 
 Tomislav requested release selection, freezing, final testing and hosting checks. Codex prepared the release and ran the once-only test. Models were chosen from development evidence. Missing December forecast inputs led to a counts-only fallback before test targets were read; both decision records remain. No model or cutoff was tuned against final results. New notebooks read saved predictions and results. Teammates must review and explain the work themselves.
+
+Tomislav requested random examples in the public app. Codex added training-side example pools and a recorded interface-only update. Frozen prediction code, models, thresholds and final scores stayed unchanged.

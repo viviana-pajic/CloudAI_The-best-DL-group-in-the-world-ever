@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-13T20:01:03.058337+00:00",
+  "url": "http://127.0.0.1:62780",
+  "pool_sizes": {
+    "mushrooms": 120,
+    "bikes": 153
+  },
+  "checks": {
+    "all_example_contracts_valid": true,
+    "adjacent_repeats_excluded": true,
+    "mushrooms": {
+      "different_on_every_click": true,
+      "example_ids": [
+        "2398",
+        "220",
+        "3969"
+      ],
+      "predictions_match_frozen_local_model": true
+    },
+    "counts": {
+      "different_on_every_click": true,
+      "example_ids": [
+        "2023-04-30",
+        "2023-03-14",
+        "2023-05-03"
+      ],
+      "predictions_match_frozen_local_model": true
+    },
+    "weather_cpu": {
+      "different_on_every_click": true,
+      "example_ids": [
+        "2023-04-14",
+        "2023-06-28",
+        "2023-05-23"
+      ],
+      "predictions_match_frozen_local_model": true
+    },
+    "weather_gru": {
+      "different_on_every_click": true,
+      "example_ids": [
+        "2023-03-26",
+        "2023-05-06",
+        "2023-02-26"
+      ],
+      "predictions_match_frozen_local_model": true
+    },
+    "invalid_model_rejected": true
+  },
+  "original_decision_sha256": "7e799f3271e6b9801cde52f5233b67704c9abc3b8639de9cfc80bbfbe8cfe7b3",
+  "interface_update_sha256": "20a4b6ef98446b6dccaf6affc25800b1a1dbc845eda9f29df1ad78de04c4c8be",
+  "reserved_test_targets_read_or_rescored": false,
+  "passed": true
+}

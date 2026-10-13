@@ -21,7 +21,7 @@ Python 3.12.10. Run `scripts/setup_review.ps1` once on Windows, then:
 
 Open http://127.0.0.1:8780. The page sends inputs to the Python API. Saved pipelines return predictions. An empty forecast list selects the GRU's counts-only fallback. Partial or invalid forecasts produce an error.
 
-Use the environments in [NOTEBOOKS.md](NOTEBOOKS.md). Startup verifies frozen source and model hashes. The app reads final scores from `reports/final_test_results.json`; it never scores test targets on a browser request. The manifest's `final_tests_scored: false` describes the original artifact-copy stage. Current test status is in the final report and `/health`.
+Use the environments in [NOTEBOOKS.md](NOTEBOOKS.md). Startup verifies frozen prediction source and model hashes. The requested random-example interface update is recorded in `release_ui_update.json`; the original decision and final results remain unchanged. The app reads final scores from `reports/final_test_results.json`; it never scores test targets on a browser request. The manifest's `final_tests_scored: false` describes the original artifact-copy stage. Current test status is in the final report and `/health`.
 
 ## AWS evidence
 
@@ -64,3 +64,4 @@ Verified 13 October: serving commit `d8d44dede9373151f828a626b2fc86fd95740e0a`. 
 - Rehearse explaining the inputs, splits, missing values, thresholds and fallback.
 - Submit the repository link in Canvas by 15 October 2026, 23:59. Verify lecturer access and save the receipt.
 - Keep free hosting available for assessment and check it before the 23 October oral.
+Random-example update: both buttons select real training-side inputs and exclude the previous example. Fixed example endpoints remain available for repeatable checks. `scripts/verify_random_examples.py` checks pool validity, changing examples and prediction parity without fitting or scoring reserved targets.

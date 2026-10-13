@@ -1,0 +1,25 @@
+{
+  "purpose": "Real random demo inputs; no class labels or target-day ride counts in the payloads.",
+  "mushrooms": {
+    "pool_size": 120,
+    "partition": "search training only",
+    "sampling_seed": 20261013,
+    "duplicate_feature_payloads_removed": true
+  },
+  "bikes": {
+    "pool_size": 153,
+    "start": "2023-01-29",
+    "end": "2023-06-30",
+    "history": "28 earlier completed daily totals",
+    "weather": "Existing archived forecast inputs; CPU needs 8 dates, GRU 1, counts none."
+  },
+  "source_sha256": {
+    "data/mushroom_development.csv": "aa2802a482c3788f558a8d2dbedefd31e81663cc7c9b083e10ea816f0e4c37b9",
+    "common/mushroom_partitions.json": "90089407511ec4bde55e395a091fda8d0681c423d33f89f24b7ee37fae9f2eb0",
+    "data/citibike_development_daily.csv": "aef21b6e5c8343ef7e187a6bbda4e0dd4fc153173a3cee273b8889611561a19e",
+    "audit/weather/forecast_daily_temperature.csv": "540aec85e6ddfa86880aed6a5f78392869ef7240faceaab56ffc7f2e91f38b8e",
+    "audit/weather/forecast_daily_jma_precip_wind.csv": "2aa261757ac895655a0b6d032b6b62625817c1b7ad3b22e009b0e8402c766bdc"
+  },
+  "final_tests_read_or_rescored": false,
+  "model_files_or_prediction_code_changed": false
+}
