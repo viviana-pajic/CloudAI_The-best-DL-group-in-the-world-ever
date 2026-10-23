@@ -2,6 +2,8 @@
 
 Read saved outputs in this order. The original class comparisons and later research use different splits; compare scores within their own protocol. AWS notebooks 10 and 16 have saved cloud outputs from 13 October.
 
+Team review completed on 22 October 2026 by Tomislav Novosel, Viviana Pajic and Muneeb Shakoor. The optional AWS GPU notebook was reviewed but not executed.
+
 ## Mushrooms
 
 | Notebook | Step |

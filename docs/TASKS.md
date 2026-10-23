@@ -1,6 +1,6 @@
 # Tasks
 
-All six handoff commits are complete. Local checks and GitHub builds passed. Both CPU AWS notebooks ran on 13 October. The public app and an actual automatic update passed checks. Release models are frozen. The once-only final test is complete. Final outputs are saved. Teammate reproduction and submission remain pending.
+All six handoff commits are complete. Local checks and GitHub builds passed. Both CPU AWS notebooks ran on 13 October. The public app and an actual automatic update passed checks. Release models are frozen. The once-only final test is complete. Final outputs are saved. All three members reviewed the notebooks on 22 October 2026. Teammate reproduction is not recorded.
 
 ## Completed work
 
@@ -15,24 +15,25 @@ Task 3 is checked locally; fresh teammate reproduction belongs to task 33. Contr
 
 ## Team review
 
-- Everyone explains the results and the inputs their model needs.
-- Review both completed AWS notebooks. Tomislav used the supplied CPU notebook in `us-east-1`; no personal AWS account or GPU upgrade was used.
-- Review the frozen release, final results and public app. Do not tune against the final scores.
+- Completed on 22 October 2026: Tomislav, Viviana and Muneeb reviewed all notebooks.
+- Reviewed both completed AWS notebooks. Tomislav used the supplied CPU notebook in `us-east-1`; no personal AWS account or GPU upgrade was used.
+- Reviewed the frozen release, final results and public app notebooks. Do not tune against the final scores.
 
 ## Remaining work
 
 | Tasks | Work | Owner/status |
 |---|---|---|
 | 5 | Confirm AWS and hosting access | Done: university sandbox and free Render service |
-| 26 | Run mushroom AWS notebook 10 and save evidence | Done: Tomislav, with Codex assistance; Muneeb review pending |
+| 26 | Run mushroom AWS notebook 10 and save evidence | Done: Tomislav, with Codex assistance; Muneeb and team review complete |
 | 27 | Run bike AWS CPU notebook 16; GPU 17 optional | Done: Tomislav, with Codex assistance; GPU run optional |
 | 28 | Choose and freeze release models and threshold | Done: Tomislav, with Codex assistance; frozen before scoring |
 | 29 | Host both prediction paths | Done: Tomislav; public app and all prediction options checked |
 | 30 | Verify a GitHub-triggered model update | Done: Tomislav; passing workflow triggered Render and the new commit passed public checks |
 | 31 | Score the reserved final tests once | Done: Tomislav, with Codex assistance; 1,000 mushroom rows and 92 bike days |
 | 32 | Save final outputs and explanations | Done: final notebooks, predictions, graphs and README |
-| 33 | Reproduce the release from a clean environment | Done: clean checkout, fresh Linux/Docker build and public parity checks; teammate explanation/reproduction pending |
-| 34, 36-38 | Cross-review, prepare the demo, rehearse and check assessment hosting | Team; pending |
-| 35 | Submit the repository link in Canvas | Team; pending |
+| 33 | Reproduce the release from a clean environment | Done: clean checkout, fresh Linux/Docker build and public parity checks; team review complete; teammate reproduction not recorded |
+| 36 | Cross-review all notebooks | Done: Tomislav, Viviana and Muneeb, 22 October 2026 |
+| 34, 37-38 | Prepare the demo, rehearse and check assessment hosting | Team |
+| 35 | Submit the repository link in Canvas | Submitted, as reported by Tomislav |
 
 Use the [release steps](RELEASE.md). Target: 14 October. Deadline: 15 October 2026, 23:59. Oral: 23 October.
